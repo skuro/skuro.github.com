@@ -1,13 +1,15 @@
 body {
   -webkit-font-smoothing: antialiased;
   margin: 0px;
+  background-color: #000;
 }
 
 div.post {
   font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
   display: block;
   font-size: 16px;
-  margin-top: -10px;
+  margin-top: -1px;
+  padding-right: 10px;
   line-height: 150%;
 }
 
@@ -29,6 +31,7 @@ div.post h1 {
   border-bottom: 1px solid #ccc;
   margin-bottom: 0px;
   padding-bottom: 10px;
+  padding-top: 10px;
 }
 
 a, a:visited {
@@ -95,12 +98,15 @@ div.post h2.date {
   display: block;
   font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
   margin-bottom: 30px;
-  margin-left: 0px;
+  margin-left: 20%;
   margin-right: 0px;
   margin-top: 0px;
   padding-bottom: 30px;
   width: 60%;
-  padding-left: 20%;
+  background-color: #fff;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
 }
 
 #sidebar {
@@ -108,12 +114,11 @@ div.post h2.date {
   font-family: Helvetica, sans-serif;
   height: 289px;
   margin-bottom: 0px;
-  margin-left: 0px;
+  margin-left: 10px;
   margin-right: 0px;
-  margin-top: 0px;
+  margin-top: 10px;
   position: fixed;
   top: 15px;
-
 }
 
 #sidebar #logo {
@@ -290,7 +295,7 @@ span.categories a:hover {
 }
 
 div#googleads {
-  margin: 50px 0px 0px -10px;
+  margin: 50px 0px 0px -1px;
 }
 
 div.gist-file {
