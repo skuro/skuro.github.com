@@ -2,10 +2,13 @@
 layout: post
 title: "Maven 3 Cookbook reviewed"
 primary_img: http://www.skuro.tk/wp-content/uploads/2011/09/Apache-Maven-3-Cookbook.png
+categories: [work, code]
 ---
 
 Better late than ever, here you can find my review on the Packt
 Publishing [Apache Maven 3 Cookbook](http://www.google.nl/url?sa=t&rct=j&q=packt&source=web&cd=1&ved=0CCkQFjAA&url=http%3A%2F%2Fwww.packtpub.com%2F&ei=2VbCTq6qHsjs-gbEzZD_DQ&usg=AFQjCNE3QDtLQQneLEduZpKvWcyN8Bp3kg&sig2=AHMqZnDXQwCV5prbVMayGQ) written by [Srirangan](http://srirangan.net/). Let's see what it has to offer.
+
+&nbsp;  
 
 The basics
 ----------
