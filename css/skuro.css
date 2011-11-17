@@ -34,7 +34,7 @@ div.post h1 {
 a, a:visited {
   text-decoration: none;
   color: #000;
-  font-weight: 100;
+  font-weight: bold;
 }
 
 a:hover {
@@ -43,7 +43,7 @@ a:hover {
 
 div.post h2 {
   font-family: 'Yanone Kaffeesatz', sans-serif;
-  font-size: 20px;
+  font-size: 25px;
   font-weight: normal;
   border-bottom: 1px solid #ccc;
 }
@@ -224,7 +224,7 @@ blockquote {
   display: block;
   padding: 10px;
   margin: 10px;
-  background-color: #aaa;
+  background-color: #ddd;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
@@ -234,4 +234,11 @@ blockquote {
   border-top: 1px solid #ccc;
   padding-top: 10px;
   margin-top: 50px;
+}
+
+pre code {
+  display:block;
+  background-color: #aaa;
+  padding: 5px;
+  -moz-border-radius: 10px;
 }
