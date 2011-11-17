@@ -4,7 +4,7 @@ title: "GOTO's spirit still haunts Java..."
 ---
 Some days ago I was debugging some LDAP-related customizations I made on <a title="Alfresco ECM" href="http://www.alfresco.com" target="_blank">Alfresco</a>, and I run into an odd piece of code which made my eyebrow raise: labeled <code>break</code> (and <code>continue</code>) statements. Believe it or not, labels are still there, and someone still uses them. Here's a dumb example:
 
-{% highlight clojure  %}
+<code>
 String[] someStrings = getStringsFromSomewhere ();
 String[] patterns = getPatternsFromSomewhereElse ();
 // find a string which matches one of the patterns
@@ -21,7 +21,7 @@ for (String s : strings)
                 }
         }
 }
-{% endhighlight %}
+</code>
 
 Using lables, we're now to break the <strong>outer</strong> loop while still inside the <strong>inner</strong> loop. Even if this example code is somewhat clear and straightforward, and it could be handy to use lables in nested loops, with more complex logic and/or with an extensive use of labels, the code can easily became unreadable, with a taste of spaghetti a' la' GOTO.
 
