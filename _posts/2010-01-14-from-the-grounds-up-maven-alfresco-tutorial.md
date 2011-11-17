@@ -1,9 +1,11 @@
 ---
 layout: post
 title: "From the grounds up, your Maven powered Alfresco dev box"
+categories: [alm, alfresco]
 ---
-<img class="aligncenter size-full wp-image-240" title="mint alf mvn" src="http://www.skuro.tk/wp-content/uploads/2010/01/mint-alf.png" alt="mint alf mvn" width="437" height="311" />
-<h1>The target</h1>
+<img class="aligncenter size-full wp-image-240" title="mint alf mvn" src="/img/post/mint-alf.png" alt="mint alf mvn" width="437" height="311" />
+The target
+----------
 To start your Alfresco development experience, you need a development environment. Let's say you're more into this Maven and you'd rather leverage its capabilities instead of using the default ant based build system provided along with the SDK. In this tutorial, I'll guide you through the process of setting up from scratch your development environment. And by saying "from scratch", I really mean it: we'll start from a fresh installed Linux box and the we will add piece over piece until we'll be see the Alfresco flower on our browser.  This will be a *basic* tutorial, just to put in place the foundation for later improvements.
 
 I'm actually performing these steps in a virtual machine, so that next time a quick&amp;dirty Alfresco PoC is required I might use this very same VM to start right away from a known, dev ready point.
@@ -16,54 +18,43 @@ The shopping list here includes a JDK, Maven and... well, that should be it, the
 <h3>MySQL</h3>
 First thing first, let's install it:
 
-[code]
-~$ sudo apt-get install mysql-server
-[/code]
-
+    ~$ sudo apt-get install mysql-server
 
 When this is done, we have to create the db Alfresco is going to use:
 
-[code]
-~$ mysql -u root
-mysql&gt; CREATE DATABASE alf_jetty;
-mysql&gt; GRANT ALL ON alf_jetty.* TO 'alfresco'@'%' IDENTIFIED BY 'alfresco';
-[/code]
-
+    ~$ mysql -u root
+    mysql&gt; CREATE DATABASE alf_jetty;
+    mysql&gt; GRANT ALL ON alf_jetty.* TO 'alfresco'@'%' IDENTIFIED BY 'alfresco';
 
 Username and password are the default for the <a href="http://wiki.alfresco.com/wiki/Managing_Alfresco_Lifecyle_with_Maven">maven stuff</a> we're going to use.
 <h3>Java</h3>
 Java™ 5 <a href="http://java.sun.com/products/archive/eol.policy.html">has already passed on</a>, let it rest in peace. Instead, go and install Java™ 6:
 
-[code]
-~$ sudo apt-get install sun-java6-jdk
-[/code]
+    ~$ sudo apt-get install sun-java6-jdk
+    [/code]
+
 <h3>Maven</h3>
 Hold on the temptation of installing Maven 3 or to ask apt-get to do this task for you. We're going to the official <a href="http://maven.apache.org/download.html">download page</a> and following the links to get the latest stable 2.x release. You should end up with something like apache-maven-2.2.1-bin.tar.bz2 on your file system. Then do the following:
 
-[code]
-~$ cs /opt
-~$ sudo tar xvjf apache-maven-2.2.1-bin.tar.bz2
-~$ sudo ln -sfv /opt/apache-maven-2.2.1/bin/mvn /usr/bin/mvn
-[/code]
-
+    ~$ cs /opt
+    ~$ sudo tar xvjf apache-maven-2.2.1-bin.tar.bz2
+    ~$ sudo ln -sfv /opt/apache-maven-2.2.1/bin/mvn /usr/bin/mvn
 
 There are less intrusive ways to bring your downloaded application into your PATH, but this is the quickest possible. Let's go on to the next step.
 <h3>Plumbing</h3>
 We're almost there, we just have to lay down our projects. Let's start with the Alfresco repo extension:
 
-[code]
-~$ mkdir -p development/alfresco-showcase
-~$ cd development/alfresco-showcase
-alfresco-showcase$ wget http://download.skuro.tk/alfresco-showcase/pom.xml
-alfresco-showcase$ mvn archetype:generate -DarchetypeGroupId=com.sourcesense.alfresco \
- -DarchetypeArtifactId=maven-alfresco-extension-archetype \
- -DarchetypeVersion=1.9.1 \
- -DgroupId=it.sk.alfresco \
- -DartifactId=alfresco-showcase-extension \
- -Dversion=1.0-SNAPSHOT \
- -DarchetypeRepository=http://maven.alfresco.com/nexus/content/repositories/releases \
- -DinteractiveMode=false
-[/code]
+    ~$ mkdir -p development/alfresco-showcase
+    ~$ cd development/alfresco-showcase
+    alfresco-showcase$ wget http://download.skuro.tk/alfresco-showcase/pom.xml
+    alfresco-showcase$ mvn archetype:generate -DarchetypeGroupId=com.sourcesense.alfresco \
+     -DarchetypeArtifactId=maven-alfresco-extension-archetype \
+     -DarchetypeVersion=1.9.1 \
+     -DgroupId=it.sk.alfresco \
+     -DartifactId=alfresco-showcase-extension \
+     -Dversion=1.0-SNAPSHOT \
+     -DarchetypeRepository=http://maven.alfresco.com/nexus/content/repositories/releases \
+     -DinteractiveMode=false
 
 The POM I'm making available <a href="http://download.skuro.tk/alfresco-showcase/pom.xml">here</a> is just a very basically one, I'm using it here just for you to speed up the process.
 
@@ -71,11 +62,10 @@ The POM I'm making available <a href="http://download.skuro.tk/alfresco-showcase
 <h3>First achievement</h3>
 Ok, let's stop here now and see what we've done by now. Go to the alfresco-showcase folder and type:
 
-[code]
-alfresco-showcase$ MAVEN_OPTS=&quot;-Xmx512m -XX:MaxPermSize=128m&quot; \
- mvn clean install -Prun
-[/code]
+    alfresco-showcase$ MAVEN_OPTS="-Xmx512m -XX:MaxPermSize=128m" \
+     mvn clean install -Prun
 
-This will start a local jetty instance where Alfresco 3.2 community will be deployed. So, if you now point your browser to http://localhost:8080/alfresco you will finally see that flower we talked about at the beginning of this post.
+This will start a local jetty instance where Alfresco 3.2 community will be deployed. So, if you now point your browser to <code>http://localhost:8080/alfresco</code> you will finally see that flower we talked about at the beginning of this post.
+
 <h2>Next steps</h2>
 That's it for now, but other blocks are still missing: what about AMPs? And WCM? And does Share fits in the picture? I'll cover all the points in the next episodes of this series. See you there!

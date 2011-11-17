@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "SproutCore encoding gotchas"
+categories: [javascript]
+primary_img: /img/post/sproutcore.png
 ---
-<img class="aligncenter size-full wp-image-329" title="SproutCore logo" src="http://www.skuro.tk/wp-content/uploads/2010/09/sproutcore.png" alt="SproutCore logo" width="241" height="255" />
 
 These days I'm trying out <a title="Sproutcore homepage" href="http://www.sproutcore.com/">SproutCore</a>, an MVC framework written in Javascript that aims to help developing rich client web applications. I'm not going to entertain you with any juicy technical spotlight, as they'll hopefully find their way in these pages later on with plenty of details. At the moment I'd like to share a little problem I got stuck with that had a non trivial solution<del datetime="2010-09-28T20:03:47+00:00">,  at least for the noob I am</del>.
 

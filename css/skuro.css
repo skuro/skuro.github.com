@@ -291,3 +291,7 @@ span.categories a:hover {
 div#googleads {
   margin: 50px 0px 0px -10px;
 }
+
+div.gist-file {
+  font-size: 12px;
+}

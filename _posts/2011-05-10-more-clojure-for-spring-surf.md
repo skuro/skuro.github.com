@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "More Clojure for Spring Surf"
+primary_img: /img/post/spring-p-clj.jpg
+categories: [alfresco, clojure]
 ---
-<img class="aligncenter size-full wp-image-362" title="spring-plus-clj" src="http://www.skuro.tk/wp-content/uploads/2011/05/spring-p-clj.jpg" alt="spring-plus-clj" width="300" height="100" />
 
 After some time from my <a href="http://www.skuro.tk/2010/05/23/spring-surf-meets-clojure">initial announcement</a>, I've started again working on my <a href="https://github.com/skuro/spring-webscripts-addon-clojure">Clojure addon for Spring Surf</a>. While it's still a rudimentary piece of glue code, it's now getting better and better, so much that I decided it's good enough now to release an alpha version on <a href="http://clojars.org/it.sk.spring.surf.clojure/spring-webscripts-addon-clojure">clojars</a>. Here's what this library currently provides:
 <ul>

@@ -1,9 +1,10 @@
 ---
 layout: post
 title: "Tales from an Icelandic volcano victim"
+categories: [italian]
 ---
-<img class="aligncenter size-full wp-image-286" title="hourly" src="http://www.skuro.tk/wp-content/uploads/2010/04/hourly.png" alt="" width="546" height="546" />
-Last weekend <a href="http://en.wikipedia.org/wiki/Eyjafjallaj%C3%B6kull">Eyjafjallajökull</a> decided my long-planned trip to visit my dear family in Italy had to be exhausting. On Friday, April 16th at 2pm my flight to Milan, scheduled to leave Amsterdam <a href="http://www.schiphol.nl/">Schiphol</a> at 8pm, was eventually cancelled. It had to be the first step of a longer journey, which was planned to be as follows:
+
+Last weekend <a href="http://en.wikipedia.org/wiki/Eyjafjallaj%C3%B6kull">Eyjafjallaj&ouml;kull</a> decided my long-planned trip to visit my dear family in Italy had to be exhausting. On Friday, April 16th at 2pm my flight to Milan, scheduled to leave Amsterdam <a href="http://www.schiphol.nl/">Schiphol</a> at 8pm, was eventually cancelled. It had to be the first step of a longer journey, which was planned to be as follows:
 <ul>
 	<li><strong>Amsterdam -&gt; Milan</strong> - Friday, 16th April @8pm</li>
 	<li><strong>Milan -&gt; Cagliari</strong> - Saturday, 17th April @10am</li>
@@ -48,3 +49,5 @@ Coffee, sugar, my girlfriend took the driver seat. I slept for the usual 300km a
 We arrived at home around 4.30pm. We were both completely exhausted, done, finished. Yet something more was left to do: empty the car, fuel it, take it back to the airport where the rental agency is, and then, finally, back at home, with enough energies left to get on and crush on the bed. 12h of sleep later, the whole story started to look like a long, distant, strange dream.
 
 It has been devastating, and I don't think I'm going to did it again. Still, the only regret I have is that I didn't take pictures, as my camera was packed within my luggage. I now look at the map above, which pin points all the steps along our way back here, and think "did it". And I cannot hide a smile.
+
+![Our journey, hour by hour](/img/post/hourly-map.png)

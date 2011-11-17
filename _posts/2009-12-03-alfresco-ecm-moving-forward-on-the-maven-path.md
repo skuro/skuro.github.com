@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "Alfresco ECM moving forward on the Maven path"
+categories: [alfresco, alm]
 ---
-<a href="http://www.skuro.tk/wp-content/uploads/2009/12/mavenalfresco.jpg"><img class="aligncenter size-full wp-image-219" title="mavenalfresco" src="http://www.skuro.tk/wp-content/uploads/2009/12/mavenalfresco.jpg" alt="mavenalfresco" width="462" height="106" /></a>
+<img class="aligncenter size-full wp-image-219" title="mavenalfresco" src="/img/post/mavenalfresco.jpg" alt="mavenalfresco" width="462" height="106" />
 
 These days some milestones have been placed that are both consolidating past efforts and promising great improvements on maven based processes around <a href="http://www.alfresco.com">Alfresco ECM</a>.
 
