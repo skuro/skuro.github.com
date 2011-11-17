@@ -2,7 +2,7 @@
 layout: default
 title:  "Current Posts"
 ---
-<div id="archive">
+<div id="archive" class="archive">
 	<ul>
 {% for post in site.posts %}
 	<li><span class="date">{{ post.date | date: "%e %B %Y" }}</span>

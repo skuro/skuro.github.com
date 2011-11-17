@@ -244,3 +244,32 @@ pre code {
   -moz-border-radius: 10px;
   border-radius: 10px;
 }
+
+.archive{
+  margin-top: 10px;
+  font-family: "Helvetica", sans-serif;
+}
+.archive ul{
+  margin: 0;
+  padding: 0;
+}
+.archive li{
+  font-size: 13px;
+  list-style: none;
+  padding: 5px 3px;
+  margin: 0;
+  color: #777;
+  border-bottom: 1px solid #eee;
+}
+.archive li span{
+  float: right;
+}
+
+.archive a:hover{
+  text-decoration: underline;
+}
+
+.archive span.date {
+  padding: 5px 3px;
+  margin: 15px 0px 15px 0px;
+}
