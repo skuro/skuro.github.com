@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Maven 3 Cookbook reviewed"
-primary_img: http://www.skuro.tk/wp-content/uploads/2011/09/Apache-Maven-3-Cookbook.png
+primary_img: /img/post/Apache-Maven-3-Cookbook.png
 categories: [alm]
 ---
 

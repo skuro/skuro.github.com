@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Slides from Alfresco the Clojure way"
+categories: [clojure, alfresco]
 ---
-<img class="aligncenter"  src="http://www.skuro.tk/wp-content/uploads/2011/11/Screen-shot-2011-11-10-at-4.16.07-PM.png" alt="preso&#039;s title" title="preso&#039;s title" width="300" height="132" class="size-full wp-image-424" />
 
 I just gave a talk at the Alfresco DevCon 2011 in London, and I published the slides at slideshare:
 
@@ -12,4 +12,4 @@ I just gave a talk at the Alfresco DevCon 2011 in London, and I published the sl
 
 There's also an <a href="http://slidesha.re/uqUqOW">extended version</a> of the presentation that I originally wrote, which ended up being too big for the time slot I had.
 
-Hope you either enjoyed the talk or the slides, next steps are getting to <a href="https://github.com/skuro">Github</a> and fork <a href="https://github.com/skuro/lambdalf">lambdalf</a> and <a href="https://github.com/skuro/spring-webscripts-addon-clojure">clojure webscripts</a> away!
+Hope you either enjoyed the talk or the slides, next steps are getting to [GitHub](https://github.com/skuro) and fork [lambdalf](https://github.com/skuro/lambdalf) and [clojure webscripts](https://github.com/skuro/spring-webscripts-addon-clojure) away!

@@ -10,7 +10,7 @@ title:  "Current Posts"
 	<a href="{{ post.url }}">{{ post.title }}</a>
         <span class="categories">
         {% for c in post.categories %}
-        <a href="category/{{ c }}">[{{ c | uppercase }}]</a>
+        <a href="category/{{ c }}">#{{ c }}</a>
         {% endfor %}
         </span>        
 	</li> 
