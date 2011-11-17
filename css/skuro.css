@@ -261,8 +261,10 @@ pre code {
   color: #777;
   border-bottom: 1px solid #eee;
 }
-.archive li span{
-  float: right;
+
+.archive a {
+  color: #39c;
+  margin-bottom: 0px;
 }
 
 .archive a:hover{
@@ -271,5 +273,21 @@ pre code {
 
 .archive span.date {
   padding: 5px 3px;
-  margin: 15px 0px 15px 0px;
+  float: right;
+}
+
+.archive span.categories {
+  height: 15px;
+}
+
+span.categories a {
+  color: #aaa;
+}
+
+span.categories a:hover {
+  color: red;
+}
+
+div#googleads {
+  margin-top: 50px;
 }
