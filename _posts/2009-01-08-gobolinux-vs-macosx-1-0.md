@@ -1,10 +1,11 @@
 ---
 layout: post
 title: "GoboLinux vs MacOSX 1-0"
+categories: [linux, apple]
 ---
 Be aware that the title is nothing but provocatory: it's not really about what's best between the two opponent, but they've some stuff similar to each other, and the former follows a better path. Let's see what's all about...
 
-[caption id="" align="aligncenter" width="90" caption="GoboLinux logo"]<img title="GoboLinux logo" src="http://toko.baliwae.com/images/gobo.jpg" alt="GoboLinux logo" width="90" height="83" />[/caption]
+<img title="GoboLinux logo" src="http://toko.baliwae.com/images/gobo.jpg" alt="GoboLinux logo" width="90" height="83" style="float:right" />
 
 Recently I ran into a weird Linux distribution I never heard of: <a title="GoboLinux homepage" href="http://www.gobolinux.org/">GoboLinux</a>. The (most innovative) idea behind this distribution is that the Unix <a title="Wikipedia entry on the FHS" href="http://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard">Fileystem Hierarchy Standard</a> is somewhat obsolete and allows for the package manager mess that breaks software packages compatibility among different Linux distros. The GoboLinux developers chose then to move away from it, though holding compatibility to it, and reinvent a filesystem structure that eradicates any need of a package manager: every application, with its binaries, configuration files, resources and whatever, is entirely placed in its own folder tree. No more /etc/appnamerc, /usr/bin/appname or any other file spreaded around the whole filesystem, but /Programs/Appname/version/Settings and /Programs/Appname/version/bin/appname. Thus GoboLinux developer claims that:
 <blockquote><em>the filesystem is the package manager</em></blockquote>

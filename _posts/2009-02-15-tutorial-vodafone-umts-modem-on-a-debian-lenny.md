@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "Tutorial: Vodafone UMTS modem on a Debian lenny"
+primary_img: /img/post/vodafone-umts.jpg
+categories: [linux]
 ---
-<img class="alignleft size-medium wp-image-58" title="Huawei e220, w/Debian power!" src="http://www.skuro.tk/wp-content/uploads/2009/02/voda_3g_modem_1-300x255.jpg" alt="Huawei e220, w/Debian power!" width="300" height="255" />
 
 Today I finally had the time to give it a try to have my Vodafone UMTS modem running on my [not so] old Debian lenny/SID which is actually powering my desktop  PC.
 I was a little scared, I must admit, since I never dealt with PPP stuff with linux... I always avoided it actually â˜º
@@ -10,96 +11,83 @@ I was a little scared, I must admit, since I never dealt with PPP stuff with lin
 It turned out, it was way much easier than I originally thought. The tougher part was due to my PC have no internet connection available, so that I had no chance to apt-get nothing. I knew there would be something missing, as there actually were, so I turned on my MacBook pro[<a href="#note-2">1</a>] (for which Mama VF provides a crappy software) and stated digging the net for what I needed...
 
 My Linux skills are not being used since some months, but I still remember some rules about a penguin dealing with new cool devices.
-<ul>
-	<li><strong>Know your hardware</strong></li>
-</ul>
+
+Know your hardware
+------------------
+
 As always, the first thing you have to do when trying to install some new device on a linux box is to collect as much information as possible about the harware it is based on. This time it was  too easy: the bottom part of the modem has some bold lines stating
 
-[code]
-HUAWEI
-Model: e220
-[/code]
-
+    HUAWEI
+    Model: e220
 
 way too easy, man!
-<ul>
-	<li><strong>Find out if/how good your hardware is already sopported</strong></li>
-</ul>
-I was expecting some exotic standalone projects were offering linux support for this little device, but it turned out it is supported out of the box by the Linux kernel since version 2.6.20, and it's written also in the <a title="Huawei e220 on wikipedia" href="http://en.wikipedia.org/wiki/Vodafone_Mobile_Connect_USB_Modem">wikipedia entry</a> for the modem! Geezz... time has changed, don't you think so? â˜º
+
+Find out if/how good your hardware is already sopported
+-------------------------------------------------------
+
+I was expecting some exotic standalone projects were offering linux support for this little device, but it turned out it is supported out of the box by the Linux kernel since version 2.6.20, and it's written also in the <a title="Huawei e220 on wikipedia" href="http://en.wikipedia.org/wiki/Vodafone_Mobile_Connect_USB_Modem">wikipedia entry</a> for the modem! Geezz... time has changed, don't you think so?º
 
 A quick check make a growing fear disappear[<a href="#note-2">2</a>]:
 
-[code lang="bash"]
-sku@dreamland:~$ uname -r
-2.6.22-1-mepis-smp
-[/code]
-
+    sku@dreamland:~$ uname -r
+    2.6.22-1-mepis-smp
 
 YES!
-<ul>
-	<li><strong>Find out some how-to and do it!
-</strong></li>
-</ul>
+
+Find out some how-to and do it!
+-------------------------------
+
 The official Debian wiki <a href="http://wiki.debian.org/Huawei/E220">says</a> simply:
 <blockquote>wvdial hsdpa</blockquote>
 That's it.Uhm.. no configuration, no telephone number to dial, no PIN, no nothing?! That's strange... but let's give it a try:
 
-[code lang="bash"]
-sku@dreamland:~$ wvdial hsdpa
-bash: wvdial: command not found
-[/code]
-
+    sku@dreamland:~$ wvdial hsdpa
+    bash: wvdial: command not found
 
 Ok, I already knew it. Here starts the real game! Luckily enough, there is a Debian package named wvdial which should bring all the stuff I need in my box. Since I have no internet connection, the only chance I have is to download all the .deb files by hand and install it via dpkg. apt-get told me I needed only four of the dependencies for wvdial, so I downloaded them following the links on <a href="http://packages.debian.org/lenny/wvdial">packages.debian.org</a> to cope with the version hell. Once transferred the files from the Mac into the PC, I let Debian handle them:
 
-[code lang="bash"]
-sku@dreamland:~$ sudo dpkg -i *.deb
-[/code]
-<ul>
-	<li><strong>Find the right configuration</strong></li>
-</ul>
+    sku@dreamland:~$ sudo dpkg -i *.deb
+
+Find the right configuration
+----------------------------
+
 It was impossible that no configuration at all was needed, and in fact some stuff was to be written somewhere, since wvdial complained about no wvdial.conf present in /etc. The first configuration was obtained with the wvdialconf tool provided by the wvdial package, but something was still missing:
 
-[code lang="plain"]
-sku@dreamland:~/Desktop/wvdial/test$ wvdial
---&gt; WvDial: Internet dialer version 1.60
---&gt; Cannot get information for serial port.
---&gt; Initializing modem.
---&gt; Sending: ATZ
-ATZ
-OK
---&gt; Sending: ATQ0 V1 E1 S0=0 &amp;amp;C1 &amp;amp;D2
-ATQ0 V1 E1 S0=0 &amp;amp;C1 &amp;amp;D2
-OK
---&gt; Modem initialized.
---&gt; Configuration does not specify a valid phone number.
---&gt; Configuration does not specify a valid login name.
---&gt; Configuration does not specify a valid password.
-sku@dreamland:~/Desktop/wvdial/test$
-[/code]
-
+    sku@dreamland:~/Desktop/wvdial/test$ wvdial
+    --> WvDial: Internet dialer version 1.60
+    --> Cannot get information for serial port.
+    --> Initializing modem.
+    --> Sending: ATZ
+    ATZ
+    OK
+    --> Sending: ATQ0 V1 E1 S0=0 &amp;amp;C1 &amp;amp;D2
+    ATQ0 V1 E1 S0=0 &amp;amp;C1 &amp;amp;D2
+    OK
+    --> Modem initialized.
+    --> Configuration does not specify a valid phone number.
+    --> Configuration does not specify a valid login name.
+    --> Configuration does not specify a valid password.
+    sku@dreamland:~/Desktop/wvdial/test$
 
 After some other Internet investigation and tries, I finally came to a working configuration (user name and password can be anything, AFAIK):
 
-[code]
-sku@dreamland:~$ cat /etc/wvdial.conf
+    sku@dreamland:~$ cat /etc/wvdial.conf
+    [Dialer Defaults]
+    Init1 = ATZ
+    Init2 = ATQ0 V1 E1 S0=0 &amp;amp;C1 &amp;amp;D2
+    Init3 = AT+CPIN=&quot;0000&quot;
+    Modem Type = Analog Modem
+    ISDN = 0
+    New PPPD = yes
+    Phone = *99***1#
+    Modem = /dev/ttyUSB0
+    Username = vodafone
+    Password = vodafone
+    Baud = 460800
 
-[Dialer Defaults]
-Init1 = ATZ
-Init2 = ATQ0 V1 E1 S0=0 &amp;amp;C1 &amp;amp;D2
-Init3 = AT+CPIN=&quot;0000&quot;
-Modem Type = Analog Modem
-ISDN = 0
-New PPPD = yes
-Phone = *99***1#
-Modem = /dev/ttyUSB0
-Username = vodafone
-Password = vodafone
-Baud = 460800
-[/code]
-<ul>
-	<li><strong>Have fun</strong></li>
-</ul>
+Have fun
+--------
+
 Last time `sudo wvdial` did the trick and, well, now I'm writing this post from my PC through the Huawei e220! ;)
 I really appreciate how straightforward is now to do such things in Linux. Apart from the configuration, for which I had to guess a little bit how to handle it by my own, apt-get and a good howto would have been enough for everyone to install the required software.
 

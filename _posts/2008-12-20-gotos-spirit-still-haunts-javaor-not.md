@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "GOTO's spirit still haunts Java..."
+categories: [java]
 ---
 Some days ago I was debugging some LDAP-related customizations I made on <a title="Alfresco ECM" href="http://www.alfresco.com" target="_blank">Alfresco</a>, and I run into an odd piece of code which made my eyebrow raise: labeled <code>break</code> (and <code>continue</code>) statements. Believe it or not, labels are still there, and someone still uses them. Here's a dumb example:
 
