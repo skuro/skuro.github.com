@@ -1,7 +1,16 @@
 body {
   -webkit-font-smoothing: antialiased;
   margin: 0px;
+  padding: 0px;
   background-color: #000;
+  background-image: url("/img/bg-grey.gif");
+  height: 100%;
+}
+
+#container {
+  height: 100%;
+  min-height:100%;
+  position:relative;
 }
 
 div.post {
@@ -68,6 +77,8 @@ div.post h2.date {
   width: 100%;
   background-color: #000;
   border-top: 2px solid #aaa;
+  bottom: 0px;
+  height: 100px;
 }
 
 #footer a {
@@ -101,7 +112,7 @@ div.post h2.date {
   margin-left: 20%;
   margin-right: 0px;
   margin-top: 0px;
-  padding-bottom: 30px;
+  padding-bottom: 250px;
   width: 60%;
   background-color: #fff;
   -webkit-border-radius: 10px;
@@ -252,13 +263,10 @@ pre code {
 }
 
 .archive{
-  margin-top: 10px;
+  margin-top: 23px;
   font-family: "Helvetica", sans-serif;
 }
-.archive ul{
-  margin: 0;
-  padding: 0;
-}
+
 .archive li{
   font-size: 13px;
   list-style: none;
