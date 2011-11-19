@@ -56,7 +56,6 @@ module Jekyll
       site.categories.keys.each do |category|
         c = Hash["title" => category,
                  "size" => 20 + 3*site.categories[category].length]
-        print(c)
         cats.push(c)
       end
       write_categories_cloud(site, cats)
