@@ -263,8 +263,12 @@ pre code {
 }
 
 .archive{
-  margin-top: 23px;
   font-family: "Helvetica", sans-serif;
+}
+
+.archive ul {
+  padding: 0px;
+  margin: 0px;
 }
 
 .archive li{
@@ -303,9 +307,22 @@ span.categories a:hover {
 }
 
 div#googleads {
-  margin: 50px 0px 0px -1px;
+  margin: 50px 0px 0px 0px;
 }
 
 div.gist-file {
   font-size: 12px;
+}
+
+.cat-cloud a {
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  color: #aaa;
+}
+
+.cat-cloud a:hover {
+  color: red;
+}
+
+div.cat-cloud {
+  margin: 20px 0px;
 }

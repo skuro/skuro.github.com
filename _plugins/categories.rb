@@ -14,6 +14,20 @@ module Jekyll
     end
   end
 
+  class CategoriesCloud < Page
+    def initialize(site, base, categories)
+      @site = site
+      @base = base
+      @categories = categories
+      @name = 'index.html'
+      @dir = 'category'
+
+      self.process(@name)
+      self.read_yaml(File.join(base, '_layouts'), 'categories.html')
+      self.data['categories'] = categories;
+    end
+  end
+
   class CategoryGenerator < Generator
     safe true
     
@@ -31,6 +45,28 @@ module Jekyll
       index.render(site.layouts, site.site_payload)
       index.write(site.dest)
       site.pages << index
+    end
+  end
+
+  class CategoriesGenerator < Generator
+    safe true
+
+    def generate(site)
+      cats = Array.new
+      site.categories.keys.each do |category|
+        c = Hash["title" => category,
+                 "size" => 20 + 3*site.categories[category].length]
+        print(c)
+        cats.push(c)
+      end
+      write_categories_cloud(site, cats)
+    end
+
+    def write_categories_cloud(site, categories)
+      cloud = CategoriesCloud.new(site, site.source, categories)
+      cloud.render(site.layouts, site.site_payload)
+      cloud.write(site.dest)
+      site.pages << cloud
     end
   end
 
