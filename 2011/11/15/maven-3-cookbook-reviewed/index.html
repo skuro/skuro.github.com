@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html>
+  <head>
+    <title>SKURO! -- Shading lights</title>
+    <meta name="generator" content="skuro.tk/0.1 | enlive/1.0.0" />
+    <meta name="description" content="Personal Blog of Carlo Sciolla" />
+    <meta name="keywords" content="clojure,enlive,moustache,java,alfresco,lambdalf,performance" />
+    <link rel="stylesheet" href="/css/skuro.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="/css/font.css" type="text/css" media="screen" />
+  </head>
+  <body>
+    <div id="container">
+    <div id="wrapper">
+      <div id="sidebar">
+        <h1 id="logo">SKURO!</h1>
+        <div id="links">
+          <span>
+            <a href="/">home</a>
+          </span>
+          <span>
+            <a href="/category/">categories</a>
+          </span>
+          <span>
+            <a href="/about/">about</a>
+          </span>
+        </div>
+        <img src="/img/avatar.jpg" id="avatar" />
+        <h4 id="underlogo">shading lights</h4>
+        <div id="social">
+          <div id="mousing"></div>
+          <a href="http://github.com/skuro">
+            <img src="/img/github.png" id="github" />
+          </a>
+          <a href="http://twitter.com/skuro">
+            <img src="/img/twitter.png" id="twitter" />
+          </a>
+          <a href="http://feeds.feedburner.com/Skuro">
+            <img src="/img/rss.png" id="rss" />
+          </a>
+          <a href="http://nl.linkedin.com/in/carlosciolla">
+            <img src="/img/linkedin.png" id="linkedin" />
+          </a>
+        </div>
+        <div id="googleads">
+          <script type="text/javascript">
+            <!--
+                google_ad_client = "ca-pub-5536661153340295";
+                /* jekyll-site */
+                google_ad_slot = "1546169966";
+                google_ad_width = 120;
+                google_ad_height = 240;
+                //-->
+          </script>
+          <script type="text/javascript"
+                  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+          </script>
+        </div>
+      </div>
+      
+      <div id="content">
+        <div class="post">
+  <h1 class="title">
+  <a href="/2011/11/15/maven-3-cookbook-reviewed">Maven 3 Cookbook reviewed</a>
+</h1>
+<h2 class="date">
+  November 15, 2011
+  
+   -- filed under 
+  
+  <a href="/category/alm">#alm</a>
+  
+  
+</h2>
+
+  
+  <img src="/img/post/Apache-Maven-3-Cookbook.png" class="primary" />
+  
+  <p>Better late than ever, here you can find my review on the Packt
+Publishing <a href="http://www.google.nl/url?sa=t&amp;rct=j&amp;q=packt&amp;source=web&amp;cd=1&amp;ved=0CCkQFjAA&amp;url=http%3A%2F%2Fwww.packtpub.com%2F&amp;ei=2VbCTq6qHsjs-gbEzZD_DQ&amp;usg=AFQjCNE3QDtLQQneLEduZpKvWcyN8Bp3kg&amp;sig2=AHMqZnDXQwCV5prbVMayGQ">Apache Maven 3 Cookbook</a> written by <a href="http://srirangan.net/">Srirangan</a>. Let's see what it has to offer.</p>
+
+<p>&nbsp;</p>
+
+<h2>The basics</h2>
+
+<p>The author aims to talk to Maven, and possibly <span title="Application Lifecycle Management">ALM</span>, illiterates. This means the first step is to allow the reader to bootstrap his build infrastructure. This is one of the main Maven features, and the first chapters are easily leaping from nothing to a QA and TDD enabled build system. The book exploits Maven magic all the way there, and goes really fast to the target, no time for digressions on how, why or how does it compare with other build systems.</p>
+
+<h2>The ALM</h2>
+
+<p>Chapter 3 it's a bit off topic, even though it's probably for the greater good: it broadens the attention to ALM as a whole, all on open source products such as Hudson/Jenkins, SCM and a bit of agile. The topic is so huge that one single chapter cannot afford to cover it extensively, nor effectively: take it as an introduction to software lifecycle management, and dig somewhere else if you want more (and you definitely want). Chapter 4 indulges a bit more in QA and non functional build features, such as documentation and reporting. After all, the real mission of Maven <strong>is</strong> ALM.</p>
+
+<h2>The Meat</h2>
+
+<p>Chapters 5 to 9 form the really juicy part of the book. I'm not going to rewrite the <a href="http://www.packtpub.com/toc/apache-maven-3-cookbook-table-contents">TOC</a> here, but it's definitely a rich set of handy recipes that can either directly target common needs or provide inspirational snippets that will effectively help you writing your POM. Good marks for the attention to languages other than Java (but bad marks for forgetting <a href="https://github.com/talios/clojure-maven-plugin">Clojure</a>!).</p>
+
+<p>These chapters offer much more value than the previous, as they're better aiming at developer needs. Still, focus could have been more towards existing Maven users, leaving the newbies to better learning paths.</p>
+
+<h2>Overall impression</h2>
+
+<blockquote><strong>tl;dr:</strong> If you are already a Maven literate, it's a book you probably want to have close to your keyboard. Just forget about the first three or four chapters.
+</blockquote>
+
+
+<p>The book is an authentic source of good base recipes, that you would keep on your desk for quick reference of specific build tasks you need to implement (and your Google foo is weak). All the recipes are provided with a little description of what happens under the hood, so that you may use such knowledge to build upon them your more complex procedures. The whole focus on the book is on getting things done, with
+lesser attention to fully understanding Maven: after all, a recipes book cannot replace a cooking course. As a result, its tutorial style of presenting recipes completely overlooks fundamental concepts such as plugins, executions and goals, with seldom sloppy terminology ("archetype:generate" is a goal, not a command). While it can be good to always have this book on your desk, if you're a Maven newbie it's highly recommended to look somewhere else to build up your knowledge.</p>
+
+<h2>Full disclosure</h2>
+
+<p>I was asked by Packt to provide this online review, for which I've been handed over a digital preview of the book.</p>
+
+  
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'skuro';
+//    var disqus_id = '/2011/11/15/maven-3-cookbook-reviewed';
+//    var disqus_url = [location.protocol, '//', location.host, location.pathname].join('');
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+  
+
+</div>
+
+      </div>
+      
+    </div>
+    <div id="footer">
+      <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0;margin-bottom:10px" alt="Creative Commons License" /></a><br /><span rel="dct:type" property="dct:title" href="http://purl.org/dc/dcmitype/Text">SKURO! Blog</span> by <a rel="cc:attributionURL" property="cc:attributionName" href="http://skuro.tk">Carlo Sciolla</a> is licensed under a <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.<br />Based on a work at <a rel="dct:source" href="http://skuro.tk">skuro.tk</a>.
+    </div>
+    </div>
+    <script src="/js/jquery.min.1.4.1.js" type="text/javascript">
+    </script>
+    <script src="/js/skuro.js" type="text/javascript">
+    </script>
+  </body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html>
+  <head>
+    <title>SKURO! -- Shading lights</title>
+    <meta name="generator" content="skuro.tk/0.1 | enlive/1.0.0" />
+    <meta name="description" content="Personal Blog of Carlo Sciolla" />
+    <meta name="keywords" content="clojure,enlive,moustache,java,alfresco,lambdalf,performance" />
+    <link rel="stylesheet" href="/css/skuro.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="/css/font.css" type="text/css" media="screen" />
+  </head>
+  <body>
+    <div id="container">
+    <div id="wrapper">
+      <div id="sidebar">
+        <h1 id="logo">SKURO!</h1>
+        <div id="links">
+          <span>
+            <a href="/">home</a>
+          </span>
+          <span>
+            <a href="/category/">categories</a>
+          </span>
+          <span>
+            <a href="/about/">about</a>
+          </span>
+        </div>
+        <img src="/img/avatar.jpg" id="avatar" />
+        <h4 id="underlogo">shading lights</h4>
+        <div id="social">
+          <div id="mousing"></div>
+          <a href="http://github.com/skuro">
+            <img src="/img/github.png" id="github" />
+          </a>
+          <a href="http://twitter.com/skuro">
+            <img src="/img/twitter.png" id="twitter" />
+          </a>
+          <a href="http://feeds.feedburner.com/Skuro">
+            <img src="/img/rss.png" id="rss" />
+          </a>
+          <a href="http://nl.linkedin.com/in/carlosciolla">
+            <img src="/img/linkedin.png" id="linkedin" />
+          </a>
+        </div>
+        <div id="googleads">
+          <script type="text/javascript">
+            <!--
+                google_ad_client = "ca-pub-5536661153340295";
+                /* jekyll-site */
+                google_ad_slot = "1546169966";
+                google_ad_width = 120;
+                google_ad_height = 240;
+                //-->
+          </script>
+          <script type="text/javascript"
+                  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+          </script>
+        </div>
+      </div>
+      
+      <div id="content">
+        <div class="post">
+  <h1 class="title">
+  <a href="/2011/05/10/more-clojure-for-spring-surf">More Clojure for Spring Surf</a>
+</h1>
+<h2 class="date">
+  May 10, 2011
+  
+   -- filed under 
+  
+  <a href="/category/alfresco">#alfresco</a>
+  
+  <a href="/category/clojure">#clojure</a>
+  
+  
+</h2>
+
+  
+  <img src="/img/post/spring-p-clj.jpg" class="primary" />
+  
+  <p>After some time from my <a href="http://www.skuro.tk/2010/05/23/spring-surf-meets-clojure">initial announcement</a>, I've started again working on my <a href="https://github.com/skuro/spring-webscripts-addon-clojure">Clojure addon for Spring Surf</a>. While it's still a rudimentary piece of glue code, it's now getting better and better, so much that I decided it's good enough now to release an alpha version on <a href="http://clojars.org/it.sk.spring.surf.clojure/spring-webscripts-addon-clojure">clojars</a>. Here's what this library currently provides:</p>
+
+<ul>
+    <li>a <a href="https://github.com/skuro/spring-webscripts-addon-clojure/blob/master/src/main/java/org/springframework/extensions/webscripts/processor/ClojureScriptProcessor.java">ScriptProcessor</a> that allows webscript controllers to be written in Clojure</li>
+    <li><a href="https://github.com/skuro/spring-webscripts-addon-clojure/blob/master/src/main/clojure/spring/surf/webscript.clj">a <em>WebScript</em> protocol and some utility functions</a> to ease development of your own web scripts</li>
+    <li>enough <a href="https://github.com/skuro/spring-webscripts-addon-clojure/tree/master/src/main/resources/org/springframework/extensions/clj/webscripts">spring configuration</a> to enable this addon just by importing the provided contextes</li>
+</ul>
+
+
+<p>The approach is indeed easy and hopefully straightforward: the idea is to have your WebScript clojure controllers return an instance of a concrete implementation of the WebScript protocol, which will implement the <em>run</em> method the way you like.</p>
+
+<p>Here's the sample code from a <a href="https://gist.github.com/965008">gist</a> you might want to have a look at to better understand how to use this library:</p>
+
+<script src="https://gist.github.com/965008.js?file=sample.get.clj"></script>
+
+
+<p>You can also find other samples in the project <a href="https://github.com/skuro/spring-webscripts-addon-clojure/tree/master/src/test/resources/webscripts/test">tests</a>.</p>
+
+<p>The next episode will be about <a href="https://github.com/skuro/lambdalf"><em>lambdalf</em></a>, an Alfresco AMP I've been initially developing to prove the Clojure surf addon works fine, but that is now growing to be a full blown project by itself: a Clojure API for Alfresco!</p>
+
+<p>Stay tuned. <span style="color: #ffffff;">UVBRKNJTRFH7</span></p>
+
+  
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'skuro';
+//    var disqus_id = '/2011/05/10/more-clojure-for-spring-surf';
+//    var disqus_url = [location.protocol, '//', location.host, location.pathname].join('');
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+  
+
+</div>
+
+      </div>
+      
+    </div>
+    <div id="footer">
+      <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0;margin-bottom:10px" alt="Creative Commons License" /></a><br /><span rel="dct:type" property="dct:title" href="http://purl.org/dc/dcmitype/Text">SKURO! Blog</span> by <a rel="cc:attributionURL" property="cc:attributionName" href="http://skuro.tk">Carlo Sciolla</a> is licensed under a <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.<br />Based on a work at <a rel="dct:source" href="http://skuro.tk">skuro.tk</a>.
+    </div>
+    </div>
+    <script src="/js/jquery.min.1.4.1.js" type="text/javascript">
+    </script>
+    <script src="/js/skuro.js" type="text/javascript">
+    </script>
+  </body>
+</html>

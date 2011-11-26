@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html>
+  <head>
+    <title>SKURO! -- Shading lights</title>
+    <meta name="generator" content="skuro.tk/0.1 | enlive/1.0.0" />
+    <meta name="description" content="Personal Blog of Carlo Sciolla" />
+    <meta name="keywords" content="clojure,enlive,moustache,java,alfresco,lambdalf,performance" />
+    <link rel="stylesheet" href="/css/skuro.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="/css/font.css" type="text/css" media="screen" />
+  </head>
+  <body>
+    <div id="container">
+    <div id="wrapper">
+      <div id="sidebar">
+        <h1 id="logo">SKURO!</h1>
+        <div id="links">
+          <span>
+            <a href="/">home</a>
+          </span>
+          <span>
+            <a href="/category/">categories</a>
+          </span>
+          <span>
+            <a href="/about/">about</a>
+          </span>
+        </div>
+        <img src="/img/avatar.jpg" id="avatar" />
+        <h4 id="underlogo">shading lights</h4>
+        <div id="social">
+          <div id="mousing"></div>
+          <a href="http://github.com/skuro">
+            <img src="/img/github.png" id="github" />
+          </a>
+          <a href="http://twitter.com/skuro">
+            <img src="/img/twitter.png" id="twitter" />
+          </a>
+          <a href="http://feeds.feedburner.com/Skuro">
+            <img src="/img/rss.png" id="rss" />
+          </a>
+          <a href="http://nl.linkedin.com/in/carlosciolla">
+            <img src="/img/linkedin.png" id="linkedin" />
+          </a>
+        </div>
+        <div id="googleads">
+          <script type="text/javascript">
+            <!--
+                google_ad_client = "ca-pub-5536661153340295";
+                /* jekyll-site */
+                google_ad_slot = "1546169966";
+                google_ad_width = 120;
+                google_ad_height = 240;
+                //-->
+          </script>
+          <script type="text/javascript"
+                  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+          </script>
+        </div>
+      </div>
+      
+      <div id="content">
+        <div class="post">
+  <h1 class="title">
+  <a href="/2009/12/15/are-you-good-at-javascript-1">Are you good at Javascript? #1</a>
+</h1>
+<h2 class="date">
+  December 15, 2009
+  
+   -- filed under 
+  
+  <a href="/category/javascript">#javascript</a>
+  
+  
+</h2>
+
+  
+  <p><img class="aligncenter size-full wp-image-224" title="javascript" src="/img/post/javascript.jpg" alt="javascript" width="627" height="126" /></p>
+
+<p>I'm not, really. Still I've been debugging some JS code just to remember why I was not <a href="http://twitter.com/skuro/status/6367988240">so excited</a> in the past about the language: your code needs to cope with  browser specific crap.</p>
+
+<p>Now, are <strong>you</strong> good at Javascript? If so, without running it, have a look at the following code:</p>
+
+<pre><code>var array = [
+  {
+      key : 'value',
+      foo : 'bar'
+  },
+  {
+      key : 'eulav',
+      foo : 'rab'
+  },
+];
+
+for (var i = 0 ; i &amp;lt; array.length ; i++)
+{
+  console.log (&amp;quot;key -&amp;gt; &amp;quot; + array[i].key);
+  console.log (&amp;quot;foo -&amp;gt; &amp;quot; + array[i].foo);
+}
+</code></pre>
+
+<p>How many elements does the <code>array</code> variable holds?</p>
+
+<p>That code actually hides an Evil&#8482; syntax detail I discovered today. Now, since I've been recently approached by the viral ideas of <a href="http://codemeself.blogspot.com/">somebody</a>, I felt compelled to fully understand the above code (and the bug we worked together from which this example came out). So if you really want some hints about what the hell is this all about:</p>
+
+<ul>
+<li>if you're not running Microsoft IE7, chances are you're not going to see anything weird in the console output :-)</li>
+<li>section 11.1.4 of the <a href="http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf">ECMAScript v3</a> spec tells you all you need to know about the array initializers</li>
+</ul>
+
+
+<p>After all, I'll be probably continuing to study this "suddenly-a-hot-chick" Javascript thing, hoping to find a better world where my eventual code will be living into than that I found in the old days.</p>
+
+  
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'skuro';
+//    var disqus_id = '/2009/12/15/are-you-good-at-javascript-1';
+//    var disqus_url = [location.protocol, '//', location.host, location.pathname].join('');
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+  
+
+</div>
+
+      </div>
+      
+    </div>
+    <div id="footer">
+      <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0;margin-bottom:10px" alt="Creative Commons License" /></a><br /><span rel="dct:type" property="dct:title" href="http://purl.org/dc/dcmitype/Text">SKURO! Blog</span> by <a rel="cc:attributionURL" property="cc:attributionName" href="http://skuro.tk">Carlo Sciolla</a> is licensed under a <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.<br />Based on a work at <a rel="dct:source" href="http://skuro.tk">skuro.tk</a>.
+    </div>
+    </div>
+    <script src="/js/jquery.min.1.4.1.js" type="text/javascript">
+    </script>
+    <script src="/js/skuro.js" type="text/javascript">
+    </script>
+  </body>
+</html>

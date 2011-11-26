@@ -1,0 +1,328 @@
+body {
+  -webkit-font-smoothing: antialiased;
+  margin: 0px;
+  padding: 0px;
+  background-color: #000;
+  background-image: url("/img/bg-grey.gif");
+  height: 100%;
+}
+
+#container {
+  height: 100%;
+  min-height:100%;
+  position:relative;
+}
+
+div.post {
+  font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+  display: block;
+  font-size: 16px;
+  margin-top: -1px;
+  padding-right: 10px;
+  line-height: 150%;
+}
+
+div.post h3 {
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  border-bottom: 1px solid #ccc;
+  font-size: 22px;
+}
+
+div.post img.primary {
+  float: right;
+  margin: 0px 0px 5px 10px;
+}
+
+div.post h1 {
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-weight: 400;
+  font-size: 36px;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 0px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+a, a:visited {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+}
+
+a:hover {
+  color: red;
+}
+
+div.post h2 {
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 25px;
+  font-weight: normal;
+  border-bottom: 1px solid #ccc;
+}
+
+div.post h2.date {
+  color: #aaa;
+  margin: 0px 0px 20px 0px;
+  border: none;
+}
+
+#footer {
+  display: block;
+  margin: 10px 0px 0px 0px;
+  padding: 30px 0px 30px 0px;
+  font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+  font-size: 12px;
+  text-align: center;
+  color: #aaa;
+  width: 100%;
+  background-color: #000;
+  border-top: 2px solid #aaa;
+  bottom: 0px;
+  height: 100px;
+}
+
+#footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+#footer a:hover {
+  text-decoration: underline;
+}
+
+#footer h4 {
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  color: #aaa;
+  font-size: 25px;
+  margin: 0px;
+  padding: 0px;
+  border-bottom: 1px solid #ccc;
+}
+
+#content {
+  margin-left: 20%;
+  min-height: 300px;
+  margin-top: 1px;
+}
+
+#wrapper {
+  display: block;
+  font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+  margin-bottom: 30px;
+  margin-left: 20%;
+  margin-right: 0px;
+  margin-top: 0px;
+  padding-bottom: 250px;
+  width: 60%;
+  background-color: #fff;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+
+#sidebar {
+  display: block;
+  font-family: Helvetica, sans-serif;
+  height: 289px;
+  margin-bottom: 0px;
+  margin-left: 10px;
+  margin-right: 0px;
+  margin-top: 10px;
+  position: fixed;
+  top: 15px;
+}
+
+#sidebar #logo {
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  margin: 0px -1000px 0px 0px;
+  padding: 0px 0px 0px 3px;
+  width: 80px;
+}
+
+#sidebar #underlogo {
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 14px;
+  margin: 0px;
+  padding: 0px 0px 5px 0px;
+  color: #aaa;
+  width: 80px;
+}
+
+#sidebar h2 {
+  text-transform: uppercase;
+}
+
+div#signature {
+  display: none;
+}
+
+h2#name {
+  margin-bottom: 2px;
+  letter-spacing: 3px;
+  font-size: 19px;
+  border-bottom: 1px solid;
+  color: #888;
+}
+
+h2#surname {
+  font-size: 18px;  
+  margin-top: 0px;
+  margin-bottom: 5px;
+}
+
+#avatar {
+  border-radius: 5px;
+  display: inline;
+  height: 75px;
+  width: 75px;
+  margin-left: 2px;
+  opacity: 0.8;
+  position: static;
+  float:left;
+}
+
+#avatar:hover {
+  opacity: 1;
+}
+
+#social a {
+  display: inline;
+  text-decoration: none;
+}
+
+#social a:hover {
+  text-decoration: none;
+  background-color: transparent;
+}
+
+div#mousing {
+  height: 14px;
+  color: #aaa;
+  font-family: Helvetica, sans-serif;
+  margin-bottom: 2px;
+}
+
+div#links {
+  position: static;
+  margin-top: 2px;
+  float: right;
+}
+
+div#links span {
+  display: block;
+  color: #fff;
+  margin-bottom: 7px;
+}
+
+div#links a, div#links a:visited, div#links a:active {
+  color: #fff;
+  font-family: Helvetica, sans-serif;
+  text-decoration: none;
+  background-color: #aaa;
+  padding: 2px 5px 2px 5px;
+  font-size: 12px;
+}
+
+div#links a:hover {
+  background-color: red;
+}
+
+.share {
+  display:block;
+  margin-top: 10px;
+}
+
+.share img {
+  margin-right: 5px;
+}
+
+blockquote {
+  display: block;
+  padding: 10px;
+  margin: 10px;
+  background-color: #ddd;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+
+#disqus_thread {
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+  margin-top: 50px;
+}
+
+pre code {
+  display:block;
+  background-color: #ddd;
+  padding: 5px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  overflow-x: auto;
+}
+
+.archive{
+  font-family: "Helvetica", sans-serif;
+}
+
+.archive ul {
+  padding: 0px;
+  margin: 0px;
+}
+
+.archive li{
+  font-size: 13px;
+  list-style: none;
+  padding: 5px 3px;
+  margin: 0;
+  color: #777;
+  border-bottom: 1px solid #eee;
+}
+
+.archive a {
+  color: #39c;
+  margin-bottom: 0px;
+}
+
+.archive a:hover{
+  text-decoration: underline;
+}
+
+.archive span.date {
+  padding: 5px 3px;
+  float: right;
+}
+
+.archive span.categories {
+  height: 15px;
+}
+
+span.categories a {
+  color: #aaa;
+}
+
+span.categories a:hover {
+  color: red;
+}
+
+div#googleads {
+  margin: 50px 0px 0px 0px;
+}
+
+div.gist-file {
+  font-size: 12px;
+}
+
+.cat-cloud a {
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  color: #aaa;
+}
+
+.cat-cloud a:hover {
+  color: red;
+}
+
+div.cat-cloud {
+  margin: 20px 0px;
+}
