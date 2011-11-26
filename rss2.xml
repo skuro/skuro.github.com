@@ -3,7 +3,7 @@
     <title type="text" xml:lang="en">SKURO! -- Shading lights</title>
     <link type="application/atom+xml" href="http://skuro.tk/rss2/" rel="self"/>
     <link type="text" href="http://skuro.tk" rel="alternate"/>
-    <updated>2011-11-26T23:26:41+01:00</updated>
+    <updated>2011-11-26T23:33:35+01:00</updated>
     <id>http://skuro.tk</id>
     <author>
         <name>Carlo Sciolla</name>
@@ -13,7 +13,7 @@
 ---
 ---
 <entry>
-  <title></title>
+  <title>Maven 3 Cookbook reviewed</title>
   <link href="http://skuro.tk/2011/11/15/maven-3-cookbook-reviewed/"/>
   <updated>2011-11-15T00:00:00+01:00</updated>
   <id>http://skuro.tk/2011/11/15/maven-3-cookbook-reviewed/</id>
@@ -55,7 +55,7 @@ lesser attention to fully understanding Maven: after all, a recipes book cannot 
 ---
 ---
 <entry>
-  <title></title>
+  <title>Slides from Alfresco the Clojure way</title>
   <link href="http://skuro.tk/2011/11/10/slides-from-alfresco-the-clojure-way/"/>
   <updated>2011-11-10T00:00:00+01:00</updated>
   <id>http://skuro.tk/2011/11/10/slides-from-alfresco-the-clojure-way/</id>
@@ -76,7 +76,7 @@ lesser attention to fully understanding Maven: after all, a recipes book cannot 
 ---
 ---
 <entry>
-  <title></title>
+  <title>October Amsterdam Clojure with Uncle Bob</title>
   <link href="http://skuro.tk/2011/09/27/october-amsterdam-clojure-with-uncle-bob/"/>
   <updated>2011-09-27T00:00:00+02:00</updated>
   <id>http://skuro.tk/2011/09/27/october-amsterdam-clojure-with-uncle-bob/</id>
@@ -95,7 +95,7 @@ Wednesday, October 12th we're going to have a great &lt;a href=&quot;http://bit.
 ---
 ---
 <entry>
-  <title></title>
+  <title>Reviewing Maven 3 Cookbook from Packt Publishing</title>
   <link href="http://skuro.tk/2011/09/06/reviewing-maven-3-cookbook-from-packt-publishing/"/>
   <updated>2011-09-06T00:00:00+02:00</updated>
   <id>http://skuro.tk/2011/09/06/reviewing-maven-3-cookbook-from-packt-publishing/</id>
@@ -115,7 +115,7 @@ Wednesday, October 12th we're going to have a great &lt;a href=&quot;http://bit.
 ---
 ---
 <entry>
-  <title></title>
+  <title>Clojure makes it to the Alfresco DevCon2011</title>
   <link href="http://skuro.tk/2011/09/04/clojure-makes-it-the-alfresco-devcon-2011-emea-london/"/>
   <updated>2011-09-04T00:00:00+02:00</updated>
   <id>http://skuro.tk/2011/09/04/clojure-makes-it-the-alfresco-devcon-2011-emea-london/</id>
@@ -154,7 +154,7 @@ Wednesday, October 12th we're going to have a great &lt;a href=&quot;http://bit.
 ---
 ---
 <entry>
-  <title></title>
+  <title>H2 embedded DB and Alfresco 3.4</title>
   <link href="http://skuro.tk/2011/08/03/h2-embedded-db-and-alfresco-3-4/"/>
   <updated>2011-08-03T00:00:00+02:00</updated>
   <id>http://skuro.tk/2011/08/03/h2-embedded-db-and-alfresco-3-4/</id>
@@ -179,7 +179,7 @@ hibernate.dialect=org.hibernate.dialect.H2Dialect
 ---
 ---
 <entry>
-  <title></title>
+  <title>Verifying my Technorati claim</title>
   <link href="http://skuro.tk/2011/05/11/verifying-my-technorati-claim/"/>
   <updated>2011-05-11T00:00:00+02:00</updated>
   <id>http://skuro.tk/2011/05/11/verifying-my-technorati-claim/</id>
@@ -201,7 +201,7 @@ hibernate.dialect=org.hibernate.dialect.H2Dialect
 ---
 ---
 <entry>
-  <title></title>
+  <title>More Clojure for Spring Surf</title>
   <link href="http://skuro.tk/2011/05/10/more-clojure-for-spring-surf/"/>
   <updated>2011-05-10T00:00:00+02:00</updated>
   <id>http://skuro.tk/2011/05/10/more-clojure-for-spring-surf/</id>
@@ -233,7 +233,7 @@ hibernate.dialect=org.hibernate.dialect.H2Dialect
 ---
 ---
 <entry>
-  <title></title>
+  <title>Performance boost in Clojure 1.3 (alpha4)</title>
   <link href="http://skuro.tk/2011/01/24/performance-boost-in-clojure-1-3/"/>
   <updated>2011-01-24T00:00:00+01:00</updated>
   <id>http://skuro.tk/2011/01/24/performance-boost-in-clojure-1-3/</id>
@@ -281,7 +281,7 @@ hibernate.dialect=org.hibernate.dialect.H2Dialect
 ---
 ---
 <entry>
-  <title></title>
+  <title>SproutCore encoding gotchas</title>
   <link href="http://skuro.tk/2010/09/30/sproutcore-encoding-gotchas/"/>
   <updated>2010-09-30T00:00:00+02:00</updated>
   <id>http://skuro.tk/2010/09/30/sproutcore-encoding-gotchas/</id>
@@ -307,7 +307,7 @@ hibernate.dialect=org.hibernate.dialect.H2Dialect
 ---
 ---
 <entry>
-  <title></title>
+  <title>Crampi alla lingua</title>
   <link href="http://skuro.tk/2010/09/29/crampi-alla-lingua-italiano-inglese/"/>
   <updated>2010-09-29T00:00:00+02:00</updated>
   <id>http://skuro.tk/2010/09/29/crampi-alla-lingua-italiano-inglese/</id>
@@ -350,7 +350,7 @@ hibernate.dialect=org.hibernate.dialect.H2Dialect
 ---
 ---
 <entry>
-  <title></title>
+  <title>Spring Surf meets Clojure</title>
   <link href="http://skuro.tk/2010/05/23/spring-surf-meets-clojure/"/>
   <updated>2010-05-23T00:00:00+02:00</updated>
   <id>http://skuro.tk/2010/05/23/spring-surf-meets-clojure/</id>
@@ -389,7 +389,7 @@ hibernate.dialect=org.hibernate.dialect.H2Dialect
 ---
 ---
 <entry>
-  <title></title>
+  <title>Handling Microsoft Windows NTP sync</title>
   <link href="http://skuro.tk/2010/04/23/handling-microsoft-windows-ntp-sync/"/>
   <updated>2010-04-23T00:00:00+02:00</updated>
   <id>http://skuro.tk/2010/04/23/handling-microsoft-windows-ntp-sync/</id>
@@ -444,7 +444,7 @@ If your clock drifted too far away Windows will refuse to sync. In order to disa
 ---
 ---
 <entry>
-  <title></title>
+  <title>Tales from an Icelandic volcano victim</title>
   <link href="http://skuro.tk/2010/04/21/tales-from-an-icelandic-volcano-victim/"/>
   <updated>2010-04-21T00:00:00+02:00</updated>
   <id>http://skuro.tk/2010/04/21/tales-from-an-icelandic-volcano-victim/</id>
@@ -517,7 +517,7 @@ If your clock drifted too far away Windows will refuse to sync. In order to disa
 ---
 ---
 <entry>
-  <title></title>
+  <title>Amsterdam Clojurians meeting #4 - Dojo style</title>
   <link href="http://skuro.tk/2010/04/14/amsterdam-clojurians-meeting-4-dojo-style/"/>
   <updated>2010-04-14T00:00:00+02:00</updated>
   <id>http://skuro.tk/2010/04/14/amsterdam-clojurians-meeting-4-dojo-style/</id>
@@ -537,7 +537,7 @@ If your clock drifted too far away Windows will refuse to sync. In order to disa
 ---
 ---
 <entry>
-  <title></title>
+  <title>From the grounds up, your Maven powered Alfresco dev box</title>
   <link href="http://skuro.tk/2010/01/14/from-the-grounds-up-maven-alfresco-tutorial/"/>
   <updated>2010-01-14T00:00:00+01:00</updated>
   <id>http://skuro.tk/2010/01/14/from-the-grounds-up-maven-alfresco-tutorial/</id>
@@ -643,7 +643,7 @@ alfresco-showcase$ mvn archetype:generate -DarchetypeGroupId=com.sourcesense.alf
 ---
 ---
 <entry>
-  <title></title>
+  <title>Alfresco ACL on WCM WebForms, an howto</title>
   <link href="http://skuro.tk/2010/01/12/alfresco-acl-on-wcm-webforms-an-howto/"/>
   <updated>2010-01-12T00:00:00+01:00</updated>
   <id>http://skuro.tk/2010/01/12/alfresco-acl-on-wcm-webforms-an-howto/</id>
@@ -691,7 +691,7 @@ alfresco-showcase$ mvn archetype:generate -DarchetypeGroupId=com.sourcesense.alf
 ---
 ---
 <entry>
-  <title></title>
+  <title>Are you good at Javascript? #1</title>
   <link href="http://skuro.tk/2009/12/15/are-you-good-at-javascript-1/"/>
   <updated>2009-12-15T00:00:00+01:00</updated>
   <id>http://skuro.tk/2009/12/15/are-you-good-at-javascript-1/</id>
@@ -737,7 +737,7 @@ for (var i = 0 ; i &amp;amp;lt; array.length ; i++)
 ---
 ---
 <entry>
-  <title></title>
+  <title>Google Chrome on Air&#8482;</title>
   <link href="http://skuro.tk/2009/12/04/google-chrome-on-air%25e2%2584%25a2/"/>
   <updated>2009-12-04T00:00:00+01:00</updated>
   <id>http://skuro.tk/2009/12/04/google-chrome-on-air%25e2%2584%25a2/</id>
@@ -765,7 +765,7 @@ for (var i = 0 ; i &amp;amp;lt; array.length ; i++)
 ---
 ---
 <entry>
-  <title></title>
+  <title>Alfresco ECM moving forward on the Maven path</title>
   <link href="http://skuro.tk/2009/12/03/alfresco-ecm-moving-forward-on-the-maven-path/"/>
   <updated>2009-12-03T00:00:00+01:00</updated>
   <id>http://skuro.tk/2009/12/03/alfresco-ecm-moving-forward-on-the-maven-path/</id>
