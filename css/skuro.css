@@ -13,6 +13,11 @@ body {
   position:relative;
 }
 
+.homelink:hover {
+  cursor: pointer;
+  color: red;
+}
+
 div.post {
   font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
   display: block;

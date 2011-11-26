@@ -12,10 +12,10 @@
     <div id="container">
     <div id="wrapper">
       <div id="sidebar">
-        <h1 id="logo">SKURO!</h1>
+        <h1 class="homelink" id="logo">SKURO!</h1>
         <div id="links">
           <span>
-            <a href="/">home</a>
+            <a href="/archive/">archive</a>
           </span>
           <span>
             <a href="/category/">categories</a>
@@ -24,7 +24,7 @@
             <a href="/about/">about</a>
           </span>
         </div>
-        <img src="/img/avatar.jpg" id="avatar" />
+        <img class="homelink" src="/img/avatar.jpg" id="avatar" />
         <h4 id="underlogo">shading lights</h4>
         <div id="social">
           <div id="mousing"></div>
@@ -58,413 +58,80 @@
       </div>
       
       <div id="content">
-        <div class="post">
-  <h1>Archive</h1>
-  <div id="archive" class="archive">
-    <ul>
-      
-        <li>
-  <span class="date">15 November 2011</span>
+        
+
+<div class="post">
+
+<!-- copied from post_header include -->
+<h1 class="title">
   <a href="/2011/11/15/maven-3-cookbook-reviewed">Maven 3 Cookbook reviewed</a>
-  <span class="categories">
-    
-    <a href="/category/alm">#alm</a>
-    
-  </span>        
-</li> 
+</h1>
+<h2 class="date">
+  November 15, 2011
+  
+   -- filed under 
+  
+  <a href="/category/alm">#alm</a>
+  
+  
+</h2>
+<!-- end copy -->
 
-      
-        <li>
-  <span class="date">10 November 2011</span>
-  <a href="/2011/11/10/slides-from-alfresco-the-clojure-way">Slides from Alfresco the Clojure way</a>
-  <span class="categories">
-    
-    <a href="/category/clojure">#clojure</a>
-    
-    <a href="/category/alfresco">#alfresco</a>
-    
-  </span>        
-</li> 
+  
+  <img src="/img/post/Apache-Maven-3-Cookbook.png" class="primary" />
+  
+  <p>Better late than ever, here you can find my review on the Packt
+Publishing <a href="http://www.google.nl/url?sa=t&amp;rct=j&amp;q=packt&amp;source=web&amp;cd=1&amp;ved=0CCkQFjAA&amp;url=http%3A%2F%2Fwww.packtpub.com%2F&amp;ei=2VbCTq6qHsjs-gbEzZD_DQ&amp;usg=AFQjCNE3QDtLQQneLEduZpKvWcyN8Bp3kg&amp;sig2=AHMqZnDXQwCV5prbVMayGQ">Apache Maven 3 Cookbook</a> written by <a href="http://srirangan.net/">Srirangan</a>. Let's see what it has to offer.</p>
 
-      
-        <li>
-  <span class="date">27 September 2011</span>
-  <a href="/2011/09/27/october-amsterdam-clojure-with-uncle-bob">October Amsterdam Clojure with Uncle Bob</a>
-  <span class="categories">
-    
-    <a href="/category/clojure">#clojure</a>
-    
-    <a href="/category/meetup">#meetup</a>
-    
-    <a href="/category/amsterdam">#amsterdam</a>
-    
-  </span>        
-</li> 
+<p>&nbsp;</p>
 
-      
-        <li>
-  <span class="date"> 6 September 2011</span>
-  <a href="/2011/09/06/reviewing-maven-3-cookbook-from-packt-publishing">Reviewing Maven 3 Cookbook from Packt Publishing</a>
-  <span class="categories">
-    
-    <a href="/category/alm">#alm</a>
-    
-  </span>        
-</li> 
+<h2>The basics</h2>
 
-      
-        <li>
-  <span class="date"> 4 September 2011</span>
-  <a href="/2011/09/04/clojure-makes-it-the-alfresco-devcon-2011-emea-london">Clojure makes it to the Alfresco DevCon2011</a>
-  <span class="categories">
-    
-    <a href="/category/clojure">#clojure</a>
-    
-    <a href="/category/alfresco">#alfresco</a>
-    
-  </span>        
-</li> 
+<p>The author aims to talk to Maven, and possibly <span title="Application Lifecycle Management">ALM</span>, illiterates. This means the first step is to allow the reader to bootstrap his build infrastructure. This is one of the main Maven features, and the first chapters are easily leaping from nothing to a QA and TDD enabled build system. The book exploits Maven magic all the way there, and goes really fast to the target, no time for digressions on how, why or how does it compare with other build systems.</p>
 
-      
-        <li>
-  <span class="date"> 3 August 2011</span>
-  <a href="/2011/08/03/h2-embedded-db-and-alfresco-3-4">H2 embedded DB and Alfresco 3.4</a>
-  <span class="categories">
-    
-    <a href="/category/alfresco">#alfresco</a>
-    
-    <a href="/category/alm">#alm</a>
-    
-  </span>        
-</li> 
+<h2>The ALM</h2>
 
-      
-        <li>
-  <span class="date">11 May 2011</span>
-  <a href="/2011/05/11/verifying-my-technorati-claim">Verifying my Technorati claim</a>
-  <span class="categories">
-    
-    <a href="/category/blog">#blog</a>
-    
-  </span>        
-</li> 
+<p>Chapter 3 it's a bit off topic, even though it's probably for the greater good: it broadens the attention to ALM as a whole, all on open source products such as Hudson/Jenkins, SCM and a bit of agile. The topic is so huge that one single chapter cannot afford to cover it extensively, nor effectively: take it as an introduction to software lifecycle management, and dig somewhere else if you want more (and you definitely want). Chapter 4 indulges a bit more in QA and non functional build features, such as documentation and reporting. After all, the real mission of Maven <strong>is</strong> ALM.</p>
 
-      
-        <li>
-  <span class="date">10 May 2011</span>
-  <a href="/2011/05/10/more-clojure-for-spring-surf">More Clojure for Spring Surf</a>
-  <span class="categories">
-    
-    <a href="/category/alfresco">#alfresco</a>
-    
-    <a href="/category/clojure">#clojure</a>
-    
-  </span>        
-</li> 
+<h2>The Meat</h2>
 
-      
-        <li>
-  <span class="date">24 January 2011</span>
-  <a href="/2011/01/24/performance-boost-in-clojure-1-3">Performance boost in Clojure 1.3 (alpha4)</a>
-  <span class="categories">
-    
-    <a href="/category/clojure">#clojure</a>
-    
-  </span>        
-</li> 
+<p>Chapters 5 to 9 form the really juicy part of the book. I'm not going to rewrite the <a href="http://www.packtpub.com/toc/apache-maven-3-cookbook-table-contents">TOC</a> here, but it's definitely a rich set of handy recipes that can either directly target common needs or provide inspirational snippets that will effectively help you writing your POM. Good marks for the attention to languages other than Java (but bad marks for forgetting <a href="https://github.com/talios/clojure-maven-plugin">Clojure</a>!).</p>
 
-      
-        <li>
-  <span class="date">30 September 2010</span>
-  <a href="/2010/09/30/sproutcore-encoding-gotchas">SproutCore encoding gotchas</a>
-  <span class="categories">
-    
-    <a href="/category/javascript">#javascript</a>
-    
-  </span>        
-</li> 
+<p>These chapters offer much more value than the previous, as they're better aiming at developer needs. Still, focus could have been more towards existing Maven users, leaving the newbies to better learning paths.</p>
 
-      
-        <li>
-  <span class="date">29 September 2010</span>
-  <a href="/2010/09/29/crampi-alla-lingua-italiano-inglese">Crampi alla lingua</a>
-  <span class="categories">
-    
-    <a href="/category/italian">#italian</a>
-    
-  </span>        
-</li> 
+<h2>Overall impression</h2>
 
-      
-        <li>
-  <span class="date">23 May 2010</span>
-  <a href="/2010/05/23/spring-surf-meets-clojure">Spring Surf meets Clojure</a>
-  <span class="categories">
-    
-    <a href="/category/clojure">#clojure</a>
-    
-    <a href="/category/alfresco">#alfresco</a>
-    
-  </span>        
-</li> 
+<blockquote><strong>tl;dr:</strong> If you are already a Maven literate, it's a book you probably want to have close to your keyboard. Just forget about the first three or four chapters.
+</blockquote>
 
-      
-        <li>
-  <span class="date">23 April 2010</span>
-  <a href="/2010/04/23/handling-microsoft-windows-ntp-sync">Handling Microsoft Windows NTP sync</a>
-  <span class="categories">
-    
-    <a href="/category/windows">#windows</a>
-    
-  </span>        
-</li> 
 
-      
-        <li>
-  <span class="date">21 April 2010</span>
-  <a href="/2010/04/21/tales-from-an-icelandic-volcano-victim">Tales from an Icelandic volcano victim</a>
-  <span class="categories">
-    
-    <a href="/category/italian">#italian</a>
-    
-  </span>        
-</li> 
+<p>The book is an authentic source of good base recipes, that you would keep on your desk for quick reference of specific build tasks you need to implement (and your Google foo is weak). All the recipes are provided with a little description of what happens under the hood, so that you may use such knowledge to build upon them your more complex procedures. The whole focus on the book is on getting things done, with
+lesser attention to fully understanding Maven: after all, a recipes book cannot replace a cooking course. As a result, its tutorial style of presenting recipes completely overlooks fundamental concepts such as plugins, executions and goals, with seldom sloppy terminology ("archetype:generate" is a goal, not a command). While it can be good to always have this book on your desk, if you're a Maven newbie it's highly recommended to look somewhere else to build up your knowledge.</p>
 
-      
-        <li>
-  <span class="date">14 April 2010</span>
-  <a href="/2010/04/14/amsterdam-clojurians-meeting-4-dojo-style">Amsterdam Clojurians meeting #4 - Dojo style</a>
-  <span class="categories">
-    
-    <a href="/category/amsterdam">#amsterdam</a>
-    
-    <a href="/category/clojure">#clojure</a>
-    
-    <a href="/category/meetup">#meetup</a>
-    
-  </span>        
-</li> 
+<h2>Full disclosure</h2>
 
-      
-        <li>
-  <span class="date">14 January 2010</span>
-  <a href="/2010/01/14/from-the-grounds-up-maven-alfresco-tutorial">From the grounds up, your Maven powered Alfresco dev box</a>
-  <span class="categories">
-    
-    <a href="/category/alm">#alm</a>
-    
-    <a href="/category/alfresco">#alfresco</a>
-    
-  </span>        
-</li> 
+<p>I was asked by Packt to provide this online review, for which I've been handed over a digital preview of the book.</p>
 
-      
-        <li>
-  <span class="date">12 January 2010</span>
-  <a href="/2010/01/12/alfresco-acl-on-wcm-webforms-an-howto">Alfresco ACL on WCM WebForms, an howto</a>
-  <span class="categories">
-    
-    <a href="/category/alfresco">#alfresco</a>
-    
-  </span>        
-</li> 
+  
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'skuro';
+//    var disqus_id = '/index.html';
+//    var disqus_url = [location.protocol, '//', location.host, location.pathname].join('');
 
-      
-        <li>
-  <span class="date">15 December 2009</span>
-  <a href="/2009/12/15/are-you-good-at-javascript-1">Are you good at Javascript? #1</a>
-  <span class="categories">
-    
-    <a href="/category/javascript">#javascript</a>
-    
-  </span>        
-</li> 
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
 
-      
-        <li>
-  <span class="date"> 4 December 2009</span>
-  <a href="/2009/12/04/google-chrome-on-air%25e2%2584%25a2">Google Chrome on Air&#8482;</a>
-  <span class="categories">
-    
-  </span>        
-</li> 
+  
 
-      
-        <li>
-  <span class="date"> 3 December 2009</span>
-  <a href="/2009/12/03/alfresco-ecm-moving-forward-on-the-maven-path">Alfresco ECM moving forward on the Maven path</a>
-  <span class="categories">
-    
-    <a href="/category/alfresco">#alfresco</a>
-    
-    <a href="/category/alm">#alm</a>
-    
-  </span>        
-</li> 
-
-      
-        <li>
-  <span class="date">20 October 2009</span>
-  <a href="/2009/10/20/home-sweet-home">Home sweet home</a>
-  <span class="categories">
-    
-    <a href="/category/blog">#blog</a>
-    
-  </span>        
-</li> 
-
-      
-        <li>
-  <span class="date">12 October 2009</span>
-  <a href="/2009/10/12/migration-days">Migration days</a>
-  <span class="categories">
-    
-    <a href="/category/blog">#blog</a>
-    
-  </span>        
-</li> 
-
-      
-        <li>
-  <span class="date">11 October 2009</span>
-  <a href="/2009/10/11/multiple-eclipse-instances-a-smart-way">Multiple Eclipse instances, a smart way</a>
-  <span class="categories">
-    
-    <a href="/category/eclipse">#eclipse</a>
-    
-  </span>        
-</li> 
-
-      
-        <li>
-  <span class="date"> 7 October 2009</span>
-  <a href="/2009/10/07/how-to-configure-alsa-for-your-asus-p5k-on-linux-mint">(how to configure Alsa for your Asus P5K on) Linux Mint</a>
-  <span class="categories">
-    
-    <a href="/category/linux">#linux</a>
-    
-  </span>        
-</li> 
-
-      
-        <li>
-  <span class="date">15 September 2009</span>
-  <a href="/2009/09/15/alfresco-and-ldap-sync-lock-my-admin-no-more">Alfresco and LDAP sync lock my Admin no more!</a>
-  <span class="categories">
-    
-    <a href="/category/alfresco">#alfresco</a>
-    
-  </span>        
-</li> 
-
-      
-        <li>
-  <span class="date"> 5 April 2009</span>
-  <a href="/2009/04/05/quick-fix-for-alsa-error-cannot-find-the-slot-for-index-0">Quick fix for ALSA error: cannot find the slot for index 0</a>
-  <span class="categories">
-    
-    <a href="/category/linux">#linux</a>
-    
-  </span>        
-</li> 
-
-      
-        <li>
-  <span class="date">24 March 2009</span>
-  <a href="/2009/03/24/apache-meetups-day-1">Apache Meetups - Day #1</a>
-  <span class="categories">
-    
-    <a href="/category/meetup">#meetup</a>
-    
-  </span>        
-</li> 
-
-      
-        <li>
-  <span class="date">17 February 2009</span>
-  <a href="/2009/02/17/tutorial-corkscrew-on-leopard">Tutorial: Corkscrew on Leopard</a>
-  <span class="categories">
-    
-    <a href="/category/apple">#apple</a>
-    
-  </span>        
-</li> 
-
-      
-        <li>
-  <span class="date">15 February 2009</span>
-  <a href="/2009/02/15/tutorial-vodafone-umts-modem-on-a-debian-lenny">Tutorial: Vodafone UMTS modem on a Debian lenny</a>
-  <span class="categories">
-    
-    <a href="/category/linux">#linux</a>
-    
-  </span>        
-</li> 
-
-      
-        <li>
-  <span class="date"> 8 January 2009</span>
-  <a href="/2009/01/08/gobolinux-vs-macosx-1-0">GoboLinux vs MacOSX 1-0</a>
-  <span class="categories">
-    
-    <a href="/category/linux">#linux</a>
-    
-    <a href="/category/apple">#apple</a>
-    
-  </span>        
-</li> 
-
-      
-        <li>
-  <span class="date">30 December 2008</span>
-  <a href="/2008/12/30/virtualboxed-ubuntu-with-kde4-on-a-macbookpro">VirtualBox'ed Ubuntu with KDE4 on a MacbookPro</a>
-  <span class="categories">
-    
-    <a href="/category/linux">#linux</a>
-    
-    <a href="/category/apple">#apple</a>
-    
-  </span>        
-</li> 
-
-      
-        <li>
-  <span class="date">21 December 2008</span>
-  <a href="/2008/12/21/encode-videos-for-the-philips-sa3325-with-mencoder">Encode videos for the Philips SA3325 with mencoder</a>
-  <span class="categories">
-    
-    <a href="/category/linux">#linux</a>
-    
-    <a href="/category/apple">#apple</a>
-    
-  </span>        
-</li> 
-
-      
-        <li>
-  <span class="date">20 December 2008</span>
-  <a href="/2008/12/20/here-we-are-again">Here we are. Again</a>
-  <span class="categories">
-    
-    <a href="/category/blog">#blog</a>
-    
-  </span>        
-</li> 
-
-      
-        <li>
-  <span class="date">20 December 2008</span>
-  <a href="/2008/12/20/gotos-spirit-still-haunts-javaor-not">GOTO's spirit still haunts Java...</a>
-  <span class="categories">
-    
-    <a href="/category/java">#java</a>
-    
-  </span>        
-</li> 
-
-      
-    </ul>
-  </div>
 </div>
 
 
