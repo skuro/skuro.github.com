@@ -32,6 +32,10 @@ jQuery(document).ready(function($){
     $('#mousing').html("&nbsp;");
   });
 
+  $('#avatar').click(function() {
+    document.location.href='/';  
+  });
+
 });
 
 
