@@ -3,12 +3,230 @@
     <title type="text" xml:lang="en">SKURO! -- Shading lights</title>
     <link type="application/atom+xml" href="http://skuro.tk/rss2/" rel="self"/>
     <link type="text" href="http://skuro.tk" rel="alternate"/>
-    <updated>2011-11-26T23:18:05+01:00</updated>
+    <updated>2011-11-26T23:19:24+01:00</updated>
     <id>http://skuro.tk</id>
     <author>
         <name>Carlo Sciolla</name>
     </author>
     <rights>Copyright (c) 2010-2011 Carlo Sciolla</rights>
     
+---
+---
+<entry>
+  <title></title>
+  <link href="http://skuro.tk/2011/11/10/slides-from-alfresco-the-clojure-way/"/>
+  <updated>2011-11-10T00:00:00+01:00</updated>
+  <id>http://skuro.tk/2011/11/10/slides-from-alfresco-the-clojure-way/</id>
+  <summary type="html">&lt;p&gt;I just gave a talk at the Alfresco DevCon 2011 in London, and I published the slides at slideshare:&lt;/p&gt;
+
+&lt;div style=&quot;width:425px; padding-left: 10%&quot; id=&quot;__ss_10104981&quot;&gt;
+&lt;iframe src=&quot;http://www.slideshare.net/slideshow/embed_code/10104981&quot; width=&quot;425&quot; height=&quot;355&quot; frameborder=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;There's also an &lt;a href=&quot;http://slidesha.re/uqUqOW&quot;&gt;extended version&lt;/a&gt; of the presentation that I originally wrote, which ended up being too big for the time slot I had.&lt;/p&gt;
+
+&lt;p&gt;Hope you either enjoyed the talk or the slides, next steps are getting to &lt;a href=&quot;https://github.com/skuro&quot;&gt;GitHub&lt;/a&gt; and fork &lt;a href=&quot;https://github.com/skuro/lambdalf&quot;&gt;lambdalf&lt;/a&gt; and &lt;a href=&quot;https://github.com/skuro/spring-webscripts-addon-clojure&quot;&gt;clojure webscripts&lt;/a&gt; away!&lt;/p&gt;
+</summary>
+</entry>
+
+
+---
+---
+<entry>
+  <title></title>
+  <link href="http://skuro.tk/2011/09/27/october-amsterdam-clojure-with-uncle-bob/"/>
+  <updated>2011-09-27T00:00:00+02:00</updated>
+  <id>http://skuro.tk/2011/09/27/october-amsterdam-clojure-with-uncle-bob/</id>
+  <summary type="html">&lt;p&gt;I'm very excited to announce that we have finalized the details, and
+Wednesday, October 12th we're going to have a great &lt;a href=&quot;http://bit.ly/ams-clj&quot;&gt;Amsterdam Clojure meetup&lt;/a&gt;&quot;, with great talks and an awesome guest speaker: &lt;a href=&quot;http://twitter.com/#!/unclebobmartin&quot;&gt;&quot;Uncle&quot; Bob Martin&lt;/a&gt; from &lt;a href=&quot;http://www.objectmentor.com/&quot;&gt;Object Mentor&lt;/a&gt; and of &lt;a href=&quot;http://www.cleancoders.com/&quot;&gt;Clean Coders&lt;/a&gt; fame.&lt;/p&gt;
+
+&lt;p&gt;Thanks to &lt;a href=&quot;http://www.sourcesense.com&quot;&gt;Sourcesense&lt;/a&gt;, which is once again backing up and ultimately allowing this event to happen in an awesome location such as the &lt;a href=&quot;http://www.dezwijger.nl/&quot;&gt;Pakhuis de Zwijger&lt;/a&gt;, I look forward to meet a number of Clojure enthusiast, newcomers or tired Java developers looking for something new.&lt;/p&gt;
+
+&lt;p&gt;We have limited seating possibilities, so make sure to register at the &lt;a href=&quot;http://www.meetup.com/The-Amsterdam-Clojure-Meetup-Group/events/33351892/&quot;&gt;meetup official page&lt;/a&gt; to ensure there will be a spot for you!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://bit.ly/ams-clj&quot;&gt;&lt;img src=&quot;http://download.skuro.tk/flyer.jpg&quot; alt=&quot;&amp;quot;Click to register&amp;quot;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+</summary>
+</entry>
+
+
+---
+---
+<entry>
+  <title></title>
+  <link href="http://skuro.tk/2011/09/04/clojure-makes-it-the-alfresco-devcon-2011-emea-london/"/>
+  <updated>2011-09-04T00:00:00+02:00</updated>
+  <id>http://skuro.tk/2011/09/04/clojure-makes-it-the-alfresco-devcon-2011-emea-london/</id>
+  <summary type="html">&lt;p&gt;If you're a bit into Alfresco, you surerly know what the &lt;a href=&quot;http://www.amiando.com/alfresco-devcon-london-2011.html&quot;&gt;DevCon&lt;/a&gt; is.&lt;/p&gt;
+
+&lt;p&gt;To use the same words from &lt;a href=&quot;http://blogs.alfresco.com/wp/devcon/2011/08/04/save-the-date-alfresco-devcon-san-diego-london/&quot;&gt;Jeff Potts&lt;/a&gt;:
+&amp;nbsp;&lt;br/&gt;
+&amp;nbsp;&lt;/p&gt;
+
+&lt;blockquote&gt;the premier event for digging into the details of the Alfresco platform and collaborating with others who are doing the same&lt;/blockquote&gt;
+
+
+&lt;p&gt;Now, as soon as I received the &lt;a href=&quot;http://ecmarchitect.com/archives/2011/08/09/1449&quot;&gt;CallForPapers&lt;/a&gt; I immediately (and impulsively!) submitted a talk named &lt;em&gt;Alfresco, the Clojure way&lt;/em&gt; in the Customizing Alfresco track, where I wanted to introduce to enthusiastic Alfresco developers how to do their job using a fantastic &lt;a href=&quot;http://clojure.org&quot;&gt;programming language&lt;/a&gt;. It was just last week that I was notified that yes, my talk made it to the conference schedule! Clojure goes to London!&lt;/p&gt;
+
+&lt;p&gt;It will be great chance for Clojure to prove itself a great tool, and to get some more exposure to software professionals around Europe and beyond. Now that things got serious, I really need to put my presentation together, and that's where you can provide some help.&lt;/p&gt;
+
+&lt;p&gt;I still don't know the time slot the presentation will be given, but surely enough I'll publish online the full version of it as soon as I'll be back from London. The following is the initial list of topics I'd like to cover, but I'm eager to know from you what you would like to add to it.&lt;/p&gt;
+
+&lt;h2&gt;High level topics&lt;/h2&gt;
+
+&lt;ul&gt;
+    &lt;li&gt;crash-course on &lt;a href=&quot;http://clojure.org/reader&quot;&gt;Clojure syntax&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;extremely fast digression on some core language features and &lt;a href=&quot;http://en.wikipedia.org/wiki/Functional_programming&quot;&gt;functional programming&lt;/a&gt; topics&lt;/li&gt;
+    &lt;li&gt;introduction to &lt;a href=&quot;https://github.com/skuro/lambdalf&quot;&gt;lambdalf&lt;/a&gt;, a Clojure adapter to the Alfresco &lt;a href=&quot;http://wiki.alfresco.com/wiki/Java_Foundation_API&quot;&gt;Foundation API&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;introduction to the &lt;a href=&quot;https://github.com/skuro/spring-webscripts-addon-clojure&quot;&gt;Clojure addon&lt;/a&gt; for the Spring Web Script framework&lt;/li&gt;
+    &lt;li&gt;show and tell: start Alfresco, start a &lt;a href=&quot;https://github.com/technomancy/swank-clojure&quot;&gt;swank&lt;/a&gt; server and do live coding against the repository&lt;/li&gt;
+    &lt;li&gt;&lt;em&gt;OPTIONAL:&lt;/em&gt; showcase a Clojure-based &lt;a href=&quot;https://github.com/skuro/lambdalf-samples&quot;&gt;sample&lt;/a&gt; Alfresco application&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;Again, I don't know how much time I'll be given, so I can't even guarantee I'll have time for all the above topics to get a proper introduction, but since I also might have still enough time to cover other topics, what would you like to see in there?&lt;/p&gt;
+</summary>
+</entry>
+
+
+---
+---
+<entry>
+  <title></title>
+  <link href="http://skuro.tk/2011/05/10/more-clojure-for-spring-surf/"/>
+  <updated>2011-05-10T00:00:00+02:00</updated>
+  <id>http://skuro.tk/2011/05/10/more-clojure-for-spring-surf/</id>
+  <summary type="html">&lt;p&gt;After some time from my &lt;a href=&quot;http://www.skuro.tk/2010/05/23/spring-surf-meets-clojure&quot;&gt;initial announcement&lt;/a&gt;, I've started again working on my &lt;a href=&quot;https://github.com/skuro/spring-webscripts-addon-clojure&quot;&gt;Clojure addon for Spring Surf&lt;/a&gt;. While it's still a rudimentary piece of glue code, it's now getting better and better, so much that I decided it's good enough now to release an alpha version on &lt;a href=&quot;http://clojars.org/it.sk.spring.surf.clojure/spring-webscripts-addon-clojure&quot;&gt;clojars&lt;/a&gt;. Here's what this library currently provides:&lt;/p&gt;
+
+&lt;ul&gt;
+    &lt;li&gt;a &lt;a href=&quot;https://github.com/skuro/spring-webscripts-addon-clojure/blob/master/src/main/java/org/springframework/extensions/webscripts/processor/ClojureScriptProcessor.java&quot;&gt;ScriptProcessor&lt;/a&gt; that allows webscript controllers to be written in Clojure&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/skuro/spring-webscripts-addon-clojure/blob/master/src/main/clojure/spring/surf/webscript.clj&quot;&gt;a &lt;em&gt;WebScript&lt;/em&gt; protocol and some utility functions&lt;/a&gt; to ease development of your own web scripts&lt;/li&gt;
+    &lt;li&gt;enough &lt;a href=&quot;https://github.com/skuro/spring-webscripts-addon-clojure/tree/master/src/main/resources/org/springframework/extensions/clj/webscripts&quot;&gt;spring configuration&lt;/a&gt; to enable this addon just by importing the provided contextes&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;The approach is indeed easy and hopefully straightforward: the idea is to have your WebScript clojure controllers return an instance of a concrete implementation of the WebScript protocol, which will implement the &lt;em&gt;run&lt;/em&gt; method the way you like.&lt;/p&gt;
+
+&lt;p&gt;Here's the sample code from a &lt;a href=&quot;https://gist.github.com/965008&quot;&gt;gist&lt;/a&gt; you might want to have a look at to better understand how to use this library:&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/965008.js?file=sample.get.clj&quot;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;You can also find other samples in the project &lt;a href=&quot;https://github.com/skuro/spring-webscripts-addon-clojure/tree/master/src/test/resources/webscripts/test&quot;&gt;tests&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The next episode will be about &lt;a href=&quot;https://github.com/skuro/lambdalf&quot;&gt;&lt;em&gt;lambdalf&lt;/em&gt;&lt;/a&gt;, an Alfresco AMP I've been initially developing to prove the Clojure surf addon works fine, but that is now growing to be a full blown project by itself: a Clojure API for Alfresco!&lt;/p&gt;
+
+&lt;p&gt;Stay tuned. &lt;span style=&quot;color: #ffffff;&quot;&gt;UVBRKNJTRFH7&lt;/span&gt;&lt;/p&gt;
+</summary>
+</entry>
+
+
+---
+---
+<entry>
+  <title></title>
+  <link href="http://skuro.tk/2011/01/24/performance-boost-in-clojure-1-3/"/>
+  <updated>2011-01-24T00:00:00+01:00</updated>
+  <id>http://skuro.tk/2011/01/24/performance-boost-in-clojure-1-3/</id>
+  <summary type="html">&lt;p&gt;As release 1.3 of Clojure is &lt;a href=&quot;http://www.assembla.com/spaces/clojure/milestones/238781-release-next&quot;&gt;on its way&lt;/a&gt;, I decided to give the currently available alpha4 a try and see some of the good stuff it brings. First thing first, I wanted to experiment myself with the performance gain that the extended support for native types would bring. I ran into an old &lt;a title=&quot;old post, but inspirational&quot; href=&quot;http://hughw.blogspot.com/2009/01/clojure-vs-javafx-script-only-5x-slower.html&quot;&gt;post&lt;/a&gt; from which I got the inspiration for the specific test to run: the &lt;a title=&quot;Takeuchi function on Wikipedia&quot; href=&quot;http://en.wikipedia.org/wiki/Tak_(function)&quot;&gt;Takeuchi function&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;aligncenter size-full wp-image-340&quot; title=&quot;Full disclosure: I own a Triumph Street Triple and I love Clojure&quot; src=&quot;/img/post/clj-triple.jpg&quot; alt=&quot;Full disclosure: I own a Triumph Street Triple and I love Clojure&quot; width=&quot;375&quot; height=&quot;322&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The Java implementation for Tak provided me with a bottom line for performance comparison:&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/788834.js?file=Tak.java&quot;&gt;&lt;/script&gt;
+
+
+&lt;p&gt; Then I used the Clojure version provided in the original blog post run to test against Clojure 1.2: &lt;script src=&quot;https://gist.github.com/788834.js?file=tak2.clj&quot;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Finally, I leveraged the new syntax for the &lt;a href=&quot;http://dev.clojure.org/display/doc/Enhanced+Primitive+Support&quot;&gt;enhanced primitives support&lt;/a&gt; to test against Clojure 1.3 (thanks to &lt;a href=&quot;http://twitter.com/neotyk&quot;&gt;neotyk&lt;/a&gt; to point that out to me):&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/788834.js?file=tak.clj&quot;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;As you can see, timing is tracked from the application code, as various accessory overhead like JVM and Clojure runtime bootstrap are not in the scope of this post.&lt;/p&gt;
+
+&lt;p&gt;As this benchmark is &quot;just for fun&quot;, I won't pretent I did an extensive benchmark, or that I engineered a bullet proof benchmark strategy and the like. I just ran the above code some tens of times and here follows the average running time for the three versions:&lt;/p&gt;
+
+&lt;p&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;NOTE: an updated benchmark is provided down below&lt;/span&gt;
+&lt;span style=&quot;color: #ff0000;&quot;&gt;NOTE2: to have a more fair performance comparison, &lt;a href=&quot;#reloaded&quot;&gt;keep reading&lt;/a&gt;&lt;/span&gt;
+&lt;img class=&quot;aligncenter size-full wp-image-344&quot; title=&quot;Benchmark results&quot; src=&quot;http://www.skuro.tk/wp-content/uploads/2011/01/clj-bench-graph.png&quot; alt=&quot;Average running time in ms&quot; width=&quot;467&quot; height=&quot;292&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The results tells of a &lt;strong&gt;~4.5x&lt;/strong&gt; speed gain, &lt;del datetime=&quot;2011-01-26T09:59:07+00:00&quot;&gt;getting close to match plain Java code performance&lt;/del&gt;.&lt;/p&gt;
+
+&lt;p&gt;Now, even if such a benchmark won't be any news to the Clojure community, it's still &lt;strong&gt;absolutely awesome&lt;/strong&gt; to see such a performance gain in the next release of this beautiful Lispy language :-)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Update: &lt;/strong&gt;following the advice by &lt;strong&gt;Jürgen Hötzel&lt;/strong&gt; in his comment, I slightly modified my Clojure sources to change &lt;span style=&quot;font-family: monospace;&quot;&gt;&lt;a href=&quot;http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/-&quot;&gt;clojure.core/-&lt;/a&gt;&lt;/span&gt; with &lt;span style=&quot;font-family: monospace;&quot;&gt;&lt;a href=&quot;http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/unchecked-subtract&quot;&gt;clojure.core/unchecked-subtract&lt;/a&gt;&lt;/span&gt; and re-run the test. Here's the final results, which are way better for Clojure, especially for version 1.2:&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;aligncenter size-full wp-image-350&quot; title=&quot;clj-bench-graph-unchecked&quot; src=&quot;http://www.skuro.tk/wp-content/uploads/2011/01/clj-bench-graph-unchecked.png&quot; alt=&quot;&quot; width=&quot;493&quot; height=&quot;302&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Update 2:&lt;/strong&gt; the following graph shows the impact of the direct use of the &lt;span style=&quot;font-family: monospace;&quot;&gt;recur&lt;/span&gt; special form tested against plain recursive invocation of Tak, as per requested in some comments
+&lt;img class=&quot;aligncenter size-full wp-image-353&quot; title=&quot;clj-bench-graph-norecur&quot; src=&quot;http://www.skuro.tk/wp-content/uploads/2011/01/clj-bench-graph-norecur.png&quot; alt=&quot;&quot; width=&quot;476&quot; height=&quot;267&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Update 3:&lt;a name=&quot;reloaded&quot;&gt;&lt;/a&gt;&lt;/strong&gt; even if this all started as a quick&amp;amp;dirty, amatorial benchmark, it attracted quite some &lt;a href=&quot;http://news.ycombinator.com/item?id=2134950&quot;&gt;attentions&lt;/a&gt;, demanding more fair and precise benchmarks, especially on the Java vs Clojure comparison. As in the Java version of Tak I used Integers and not primitive types, there is an unfair burden Java had to carry along the computation. The following is the result of a re-run of the test for Java (using primitive &lt;span style=&quot;font-family: monospace;&quot;&gt;long&lt;/span&gt;) and Clojure 1.3:
+&lt;img class=&quot;aligncenter size-full wp-image-356&quot; title=&quot;clj-bench-reloaded&quot; src=&quot;http://www.skuro.tk/wp-content/uploads/2011/01/clj-bench-reloaded.png&quot; alt=&quot;&quot; width=&quot;463&quot; height=&quot;272&quot; /&gt;&lt;/p&gt;
+</summary>
+</entry>
+
+
+---
+---
+<entry>
+  <title></title>
+  <link href="http://skuro.tk/2010/05/23/spring-surf-meets-clojure/"/>
+  <updated>2010-05-23T00:00:00+02:00</updated>
+  <id>http://skuro.tk/2010/05/23/spring-surf-meets-clojure/</id>
+  <summary type="html">&lt;p&gt;For those who missed it, some time ago the &lt;a href=&quot;http://www.alfresco.com/&quot;&gt;Alfresco&lt;/a&gt; guys &lt;a href=&quot;http://www.alfresco.com/media/releases/2009/12/spring_surf/&quot;&gt;donated&lt;/a&gt; their &lt;a href=&quot;http://wiki.alfresco.com/wiki/Surf_Platform&quot;&gt;Surf Platform&lt;/a&gt; to &lt;a href=&quot;http://www.springsource.com/&quot;&gt;SpringSource&lt;/a&gt;, giving birth to the now-called &lt;a href=&quot;http://www.springsource.org/extensions/se-surf&quot;&gt;SpringSurf&lt;/a&gt;, which is thereby described as:&lt;/p&gt;
+
+&lt;blockquote&gt;a view composition framework for Spring MVC that plugs into your existing Spring applications. It provides a scriptable and content-centric approach to building web applications.&lt;/blockquote&gt;
+
+
+&lt;p&gt;I'm not going to introduce you how to use this yet-another MVC framework, but Michael Uzquiano provided an &lt;a href=&quot;http://blogs.alfresco.com/wp/uzi/2009/11/03/using-surf-in-your-spring-apps/&quot;&gt;awesome blogpost&lt;/a&gt;, in case you were interested into learning more about it.&lt;/p&gt;
+
+&lt;p&gt;Part of the job of this Spring Surf framework is to provide an easy to use web scripting framework, REST like, that enables you to easily put together a View and, optionally, a Controller to implement a web API, provide them in the classpath together with a small XML descriptor, and your REST API is deployed right away. In the SpringSurf parlance, this is called called WebScript. Again, technical insights about the framework are better explained &lt;a href=&quot;http://blogs.alfresco.com/wp/webcasts/2010/01/introducing-spring-surf-and-spring-web-scripts/&quot;&gt;elsewhere&lt;/a&gt;, so no repetitions here. What I think is cool about Spring Surf, and I'm here with you to discuss, is it's multi-language focus: web script Controllers can be written in Javascript, PHP or Groovy right out of the box, allowing you to choose whichever language you prefer. Moreover, if you just peek at Spring Surf &lt;a href=&quot;https://anonsvn.springframework.org/svn/se-surf/tags/release-1.0.0.M3/spring-webscripts-addons/&quot;&gt;source code&lt;/a&gt;, plugging in support for new languages doesn't look so hard, so I decided to challenge myself and write support for Clojure backed webscripts. You can find the result of my efforts on &lt;a href=&quot;http://github.com/skuro/spring-webscripts-addon-clojure&quot;&gt;github&lt;/a&gt;, with a sample webscript that proves the concept.&lt;/p&gt;
+
+&lt;p&gt;Following the webscript framework praxis, a &lt;em&gt;model&lt;/em&gt; map object is passed around that acts as a container for whichever result your computation will produce, that will at the end handed over to a view rendition engine, &lt;a href=&quot;http://freemarker.sourceforge.net/&quot;&gt;Freemarker&lt;/a&gt; in our case, to build the resulting document. Webscripts are intended to support a number of different output formats, from JSON to XML to plain text, so being generic here is not an option.&lt;/p&gt;
+
+&lt;p&gt;Anyway, the first thing you usually do is to populate the &lt;em&gt;model&lt;/em&gt; map with a number of objects that will be needed by the rendering engine to build the response. To support this use case, this first implementation of the Clojure backend for Spring Surf webscripts expects your Clojure &quot;script&quot; to yield a map, in Clojure sense. This map will be then forwarded to a Freemarker template and used to build a webpage or whatever the user asked for, i.e. this controller:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(ns web.script.test)
+
+{:foo &quot;bar&quot;}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;and this freemarker template:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;foo: ${foo}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;will provide &quot;foo: bar&quot; back to the client.&lt;/p&gt;
+
+&lt;p&gt;This is just an experiment at the moment, and far from being production-quality stuff. Still, it has been instructing to build a  Java-to-Clojure integration, and nonetheless it might come in handy when I'll be trying to put more Clojure in my working life.&lt;/p&gt;
+
+&lt;p&gt;(bye)&lt;/p&gt;
+</summary>
+</entry>
+
+
+---
+---
+<entry>
+  <title></title>
+  <link href="http://skuro.tk/2010/04/14/amsterdam-clojurians-meeting-4-dojo-style/"/>
+  <updated>2010-04-14T00:00:00+02:00</updated>
+  <id>http://skuro.tk/2010/04/14/amsterdam-clojurians-meeting-4-dojo-style/</id>
+  <summary type="html">&lt;p&gt;Today the fourth meeting of the Amsterdam Clojure user group was held at the now usual &lt;a href=&quot;http://www.sourcesense.com&quot;&gt;Sourcesense&lt;/a&gt; offices venue in Amsterdam.&lt;/p&gt;
+
+&lt;p&gt;It has been probably the most successful one until now: thanks to some newcomers we had the most participated event ever with 10 nerdy, awesome geeks sitting together to discuss about nerdy, awesome stuff with lots of parenthesis.&lt;/p&gt;
+
+&lt;p&gt;As previously proposed by &lt;a href=&quot;http://lifeisagraph.net/&quot;&gt;Jeff Rose&lt;/a&gt;, we started thinking about improvements we could provide to the standard Clojure REPL, deciding for colorful messages for the &lt;strong&gt;doc&lt;/strong&gt; function. &lt;a href=&quot;http://sam.aaron.name/&quot;&gt;Sam Aaron&lt;/a&gt; proposed then to follow a dojo-like approach, with a single laptop connected to a projector where everybody has the chance to step in and do some coding while everybody else discuss possible approaches and alternatives.&lt;/p&gt;
+
+&lt;p&gt;The resulting code from this session is available on &lt;a href=&quot;http://github.com/ams-clj/clansi&quot;&gt;github&lt;/a&gt;. It does just a simple thing, it provides a way to override the default &lt;strong&gt;doc&lt;/strong&gt; behavior in order to make use of our custom, colorful implementation of &lt;strong&gt;print-doc&lt;/strong&gt;. And even if it doesn't look like rocket science, I can guarantee that being there and looking at how we came up with that, from some impressive vim-fu showed by &lt;a href=&quot;http://blog.rubyenrails.nl/&quot;&gt;Michiel de Mare&lt;/a&gt; to the clever and clean code provided by &lt;a href=&quot;http://blog.remvee.net/&quot;&gt;Remco van 't Veer&lt;/a&gt;, was indeed a lot of fun!&lt;/p&gt;
+
+&lt;p&gt;If all this sounds interesting to you, go and checkout the group &lt;a href=&quot;http://groups.google.com/group/amsterdam-clojurians&quot;&gt;mailing list&lt;/a&gt; or just show up at the next meeting, second Wednesday of each month at the &lt;a href=&quot;http://www.sourcesense.nl/contact/&quot;&gt;Sourcesense office&lt;/a&gt;.&lt;/p&gt;
+</summary>
+</entry>
+
+
 
 </feed>
