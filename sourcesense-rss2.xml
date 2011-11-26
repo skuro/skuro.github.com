@@ -1,6 +1,6 @@
 ---
 layout: feed
-permalink: /category/developer/clojure/feed
+permalink: /category/sourcesense/feed
 ---
 {% for post in site.categories.sourcesense limit:20 %}
 {% include feeditem.xml %}
