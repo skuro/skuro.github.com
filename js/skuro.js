@@ -31,6 +31,10 @@ jQuery(document).ready(function($){
   $('#linkedin').mouseout(function(){
     $('#mousing').html("&nbsp;");
   });
+  
+  $('.homelink').click( function(){
+    window.location = '/';
+  });
 
 });
 
