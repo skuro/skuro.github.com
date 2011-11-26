@@ -1,0 +1,9 @@
+---
+---
+<entry>
+  <title></title>
+  <link href="http://skuro.tk{{ post.url }}/"/>
+  <updated>{{ post.date | date_to_xmlschema }}</updated>
+  <id>http://skuro.tk{{ post.url }}/</id>
+  <summary type="html">{{ post.content | xml_escape }}</summary>
+</entry>
