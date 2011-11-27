@@ -3,13 +3,55 @@
     <title type="text" xml:lang="en">SKURO! -- Shading lights</title>
     <link type="application/atom+xml" href="http://skuro.tk/rss2/" rel="self"/>
     <link type="text" href="http://skuro.tk" rel="alternate"/>
-    <updated>2011-11-27T00:49:02+01:00</updated>
+    <updated>2011-11-27T01:52:50+01:00</updated>
     <id>http://skuro.tk</id>
     <author>
         <name>Carlo Sciolla</name>
     </author>
     <rights>Copyright (c) 2010-2011 Carlo Sciolla</rights>
     
+---
+---
+<entry>
+  <title>Jekyll, Github and Emacs</title>
+  <link href="http://skuro.tk/2011/11/27/jekyll-github-and-emacs/"/>
+  <updated>2011-11-27T00:00:00+01:00</updated>
+  <id>http://skuro.tk/2011/11/27/jekyll-github-and-emacs/</id>
+  <summary type="html">&lt;blockquote&gt;&lt;p&gt;&lt;strong&gt;tl;dr:&lt;/strong&gt; I moved from Wordpress to &lt;a href=&quot;github.com/mojombo/jekyll&quot;&gt;Jekyll&lt;/a&gt;, you can now find the sources for this blog on &lt;a href=&quot;https://github.com/skuro/skuro.github.com&quot;&gt;Github&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;It has been a great adventure to host my blog on a private machine for &lt;a href=&quot;http://skuro.tk/2009/10/20/home-sweet-home/&quot;&gt;more than two years&lt;/a&gt;. Setting up everything, in a pure DIY fashion, has been instructive and a funny journey. Unfortunately, there were a number of reasons why a privately hosted &lt;a href=&quot;http://wordpress.org&quot;&gt;Wordpress&lt;/a&gt; instance was not optimal anymore.&lt;/p&gt;
+
+&lt;p&gt;I also gave the whole blog a new look, shamelessly copying much of &lt;a href=&quot;http://zachholman.com&quot;&gt;Zach Holman&lt;/a&gt; design, I think it greatly improves readibility. Feedback welcome!&lt;/p&gt;
+
+&lt;h2&gt;Going down&lt;/h2&gt;
+
+&lt;p&gt;It first happened at the beginning of this year that &lt;a href=&quot;http://skuro.tk/2011/01/24/performance-boost-in-clojure-1-3&quot;&gt;one of my posts&lt;/a&gt; attracted a good deal of attention. While it wasn't really that big thing, 2k requests/hour were enough to drain every bit of available memory my VPS had to offer, thus repeatedly killing my whole &lt;a href=&quot;http://en.wikipedia.org/wiki/LAMP_(software_bundle&quot;&gt;LAMP&lt;/a&gt;) system down. It has to be noted that I'm no PHP nor Wordpress expert, and I was also so sloppy to let every single &lt;a href=&quot;http://httpd.apache.org/&quot;&gt;apache&lt;/a&gt; process (-&gt; request) suck up to a round 20MB. No wander my machine went down, and while I was able to finally handle 1k request/hour order of magnitude &lt;a href=&quot;http://skuro.tk/2011/09/04/clojure-makes-it-the-alfresco-devcon-2011-emea-london&quot;&gt;several&lt;/a&gt; &lt;a href=&quot;http://skuro.tk/2011/09/27/october-amsterdam-clojure-with-uncle-bob&quot;&gt;times&lt;/a&gt; &lt;a href=&quot;http://skuro.tk/2011/11/10/slides-from-alfresco-the-clojure-way&quot;&gt;later&lt;/a&gt; on, it was everytime on the edge of the catastrophe. It was clear to me that my Wordpress blog was to be replaced.&lt;/p&gt;
+
+&lt;p&gt;Note: I'm not saying LAMP + Wordpress is not a good option for a personal blog, it just wasn't an attractive option for me to get into the details of how to make it robust enough in my case.&lt;/p&gt;
+
+&lt;h2&gt;Static content&lt;/h2&gt;
+
+&lt;p&gt;PHP allows for highly dynamic content via server side rendering. Cool, but does a blog &lt;em&gt;really&lt;/em&gt; need such power? The reality is that most of the pages served by a blog are the same almost all the time.Apart from when you create a new post, there's hardly any difference in a page in its whole lifetime. All the &lt;a href=&quot;http://news.ycombinator.com/item?id=896744&quot;&gt;features&lt;/a&gt; you might get out of a blog engine such as Wordpress are in my case of no real use.&lt;/p&gt;
+
+&lt;p&gt;Static content was appealing from a number of reasons: lightweight, plain HTML and resources (JS, CSS). The whole site fits in my mental picture quite easily. I needed only a thin layer that would allow me to use a more convenient interface to the presentation layer than HTML.&lt;/p&gt;
+
+&lt;h2&gt;Github Pages and Jekyll&lt;/h2&gt;
+
+&lt;p&gt;I did some initial experiments with a fully custom &lt;a href=&quot;http://clojure.org&quot;&gt;Clojure&lt;/a&gt; blog engine, where I explored various combinations of &lt;a href=&quot;https://github.com/weavejester/compojure/wiki&quot;&gt;Compojure&lt;/a&gt;, &lt;a href=&quot;http://webnoir.org/&quot;&gt;Noir&lt;/a&gt;, &lt;a href=&quot;https://github.com/weavejester/hiccup&quot;&gt;Hiccup&lt;/a&gt;, &lt;a href=&quot;https://github.com/cgrand/enlive&quot;&gt;Enlive&lt;/a&gt;, etc. While it was a nice exercise, it was really more of a technical exercise which wasn't getting me nowhere, as I kept running in circles while picking up new technologies every other day. &lt;a href=&quot;http://pages.github.com/&quot;&gt;Github Pages&lt;/a&gt; was there, tempting me all along the way: I already loved &lt;a href=&quot;http://git-scm.com/&quot;&gt;Git&lt;/a&gt; and &lt;a href=&quot;http://daringfireball.net/projects/markdown/&quot;&gt;Markdown&lt;/a&gt;, and delegating the whole infrastructure to Github was eventually tackling the very core of my original issues with hosting my own blog. It was when I found a great &lt;a href=&quot;http://vitobotta.com/how-to-migrate-from-wordpress-to-jekyll/&quot;&gt;migration guide&lt;/a&gt; that I couldn't deny anymore Github hosted &lt;a href=&quot;github.com/mojombo/jekyll&quot;&gt;Jekyll&lt;/a&gt; was the best option I had.&lt;/p&gt;
+
+&lt;h2&gt;Emacs, of course&lt;/h2&gt;
+
+&lt;p&gt;Migrating to Jekyll took just a couple of days, I even wrote my first Ruby &lt;a href=&quot;https://github.com/skuro/skuro.github.com/blob/sources/_plugins/categories.rb&quot;&gt;code&lt;/a&gt; ever. Everything looked pretty promising, but I needed an extra step: there was no point in having a plain text interface if I couldn't use the &lt;a href=&quot;http://www.gnu.org/s/emacs/&quot;&gt;Almighty Emacs&amp;trade;&lt;/a&gt; editor as the main interface to my blog. Sure thing, I wasn't the first to think so, and I promptly found an &lt;a href=&quot;http://metajack.im/2009/01/02/manage-jekyll-from-emacs/&quot;&gt;initial implementation&lt;/a&gt; I could use to start walking the Emacs way.&lt;/p&gt;
+
+&lt;p&gt;Needless to say, I'm writing this very post from Emacs. And it feels good.&lt;/p&gt;
+
+&lt;h2&gt;Conclusions&lt;/h2&gt;
+
+&lt;p&gt;With this first post I just started feeling the good parts of my new setup. There are huge areas of improvements here and there, but hey, for just a 4 days job I can't be more happy!&lt;/p&gt;
+</summary>
+</entry>
+
+
 ---
 ---
 <entry>
@@ -758,26 +800,6 @@ for (var i = 0 ; i &amp;amp;lt; array.length ; i++)
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;I will miss a lot my dear Ubiquity extension, and I still think Firefox is not &lt;a href=&quot;http://www.microsoft.com/windows/Internet-explorer/default.aspx&quot;&gt;that bad&lt;/a&gt; as a browser. But I spend 95% of my computer life on a browser, as Google guys didn't have troubles to &lt;a href=&quot;http://googleblog.blogspot.com/2009/07/introducing-google-chrome-os.html&quot;&gt;argue&lt;/a&gt;, and therefore speed matters. A lot.&lt;/p&gt;
-</summary>
-</entry>
-
-
----
----
-<entry>
-  <title>Alfresco ECM moving forward on the Maven path</title>
-  <link href="http://skuro.tk/2009/12/03/alfresco-ecm-moving-forward-on-the-maven-path/"/>
-  <updated>2009-12-03T00:00:00+01:00</updated>
-  <id>http://skuro.tk/2009/12/03/alfresco-ecm-moving-forward-on-the-maven-path/</id>
-  <summary type="html">&lt;p&gt;&lt;img class=&quot;aligncenter size-full wp-image-219&quot; title=&quot;mavenalfresco&quot; src=&quot;/img/post/mavenalfresco.jpg&quot; alt=&quot;mavenalfresco&quot; width=&quot;462&quot; height=&quot;106&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;These days some milestones have been placed that are both consolidating past efforts and promising great improvements on maven based processes around &lt;a href=&quot;http://www.alfresco.com&quot;&gt;Alfresco ECM&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;First and foremost, to prove the Alfresco commitment in mavenizing the product, have a look at their hosted &lt;a href=&quot;http://sonatype.com/&quot;&gt;Sonatype&lt;/a&gt; &lt;a href=&quot;http://maven.alfresco.com&quot;&gt;Nexus instance&lt;/a&gt;. Even if big changes &lt;a href=&quot;http://maven.alfresco.com/nexus/content/repositories/releases/org/alfresco/alfresco/3.2r/alfresco-3.2r.pom&quot;&gt;are still due&lt;/a&gt;, you'll be more than happy to find Alfresco dismembered in maven artifacts, each one with it's POM. Most of them are just a kind of placeholders, but here and there you can find some &lt;a href=&quot;http://maven.alfresco.com/nexus/content/repositories/releases/org/alfresco/alfresco-jlan/3.3.0-preview-1/alfresco-jlan-3.3.0-preview-1.pom&quot;&gt;hints&lt;/a&gt; of what they're going to be.&lt;/p&gt;
-
-&lt;p&gt;Aside, the same Nexus instance also offers a new home for the &lt;a href=&quot;http://maven.alfresco.com/nexus/content/repositories/releases/com/sourcesense/&quot;&gt;components&lt;/a&gt; developed within &lt;a href=&quot;http://www.sourcesense.com&quot;&gt;Sourcesense &lt;/a&gt;that up until now are the only way to &lt;a href=&quot;http://mindthegab.com/2009/11/07/maven-alfresco-lifecycle-to-gather-all-maven-alfresco-components/&quot;&gt;leverage Maven when dealing with Alfresco&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;A &lt;a href=&quot;http://mindthegab.com/2009/12/02/dreams-come-true-launching-the-alfresco-community-maven-repository/&quot;&gt;great post&lt;/a&gt; from &lt;a href=&quot;http://twitter.com/mindthegabz&quot;&gt;the guy&lt;/a&gt; that made it happen will provide you more and more &lt;a href=&quot;http://maven.alfresco.com/nexus/content/repositories/alfresco-docs/maven-alfresco-lifecycle/index.html&quot;&gt;insights&lt;/a&gt;, &lt;a href=&quot;http://code.google.com/p/maven-alfresco-archetypes/&quot;&gt;pointers&lt;/a&gt; and stuff. All with a Maven taste.&lt;/p&gt;
 </summary>
 </entry>
 
