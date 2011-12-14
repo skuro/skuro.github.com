@@ -331,3 +331,24 @@ div.gist-file {
 div.cat-cloud {
   margin: 20px 0px;
 }
+
+table {
+  border: 1px solid black;
+  text-align: center;
+}
+
+tr, td {
+  padding: 0px;
+  margin: 0px;
+}
+
+thead {
+  background-color: grey;
+  color: #fff;
+  padding: 0px;
+  margin: 0px;
+}
+
+thead td {
+  padding: 0px 3px 0px 3px;
+}
