@@ -3,13 +3,50 @@
     <title type="text" xml:lang="en">SKURO! -- Shading lights</title>
     <link type="application/atom+xml" href="http://skuro.tk/rss2/" rel="self"/>
     <link type="text" href="http://skuro.tk" rel="alternate"/>
-    <updated>2011-12-13T18:02:36+01:00</updated>
+    <updated>2011-12-14T09:49:41+01:00</updated>
     <id>http://skuro.tk</id>
     <author>
         <name>Carlo Sciolla</name>
     </author>
     <rights>Copyright (c) 2010-2011 Carlo Sciolla</rights>
     
+<entry>
+  <title>H2 support updated for Alfresco 4.x</title>
+  <link href="http://skuro.tk/2011/12/14/h2-support-for-alfresco-4x/"/>
+  <updated>2011-12-14T00:00:00+01:00</updated>
+  <id>http://skuro.tk/2011/12/14/h2-support-for-alfresco-4x/</id>
+  <summary type="html">&lt;h2&gt;H2 Support reloaded&lt;/h2&gt;
+
+&lt;p&gt;Some time ago I &lt;a href=&quot;/2011/08/03/h2-embedded-db-and-alfresco-3-4/&quot;&gt;announced&lt;/a&gt; a &lt;a href=&quot;https://github.com/skuro/alfresco-h2-support&quot;&gt;module&lt;/a&gt; to enhance &lt;a href=&quot;http://www.alfresco.com&quot;&gt;Alfresco&lt;/a&gt; in order to support H2 as its persistent data storage. While it was successfully tested against Alfresco v3.4 and v3.5, &lt;a href=&quot;http://www.mindthegab.com&quot;&gt;@mindthegab&lt;/a&gt; pointed me out that Alfresco v4.x wasn't even starting when using the H2 module.&lt;/p&gt;
+
+&lt;p&gt;A quick look at the PostgreSQL scripts and configuration of Alfresco 4 revealed that they were indeed radically changed in the new release, so that an update was necessary.&lt;/p&gt;
+
+&lt;h2&gt;Matching versions&lt;/h2&gt;
+
+&lt;p&gt;Since 3.4+ and 4.x version series have quite different configuration, you need to use a different version of the h2 module depending on the Alfresco version you're running, namely:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;td&gt;H2 module&lt;/td&gt;&lt;td&gt;Alfresco versions supported&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1.1&lt;/td&gt;&lt;td&gt;3.4+&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1.2&lt;/td&gt;&lt;td&gt;4.x&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+
+&lt;p&gt;The artifacts for both versions are available on &lt;a href=&quot;http://clojars.org&quot;&gt;clojars&lt;/a&gt;, please refer to the official documentation for the usage guide.&lt;/p&gt;
+</summary>
+</entry>
+
+
 <entry>
   <title>Jekyll, Github and Emacs</title>
   <link href="http://skuro.tk/2011/11/27/jekyll-github-and-emacs/"/>
@@ -734,32 +771,6 @@ for (var i = 0 ; i &amp;amp;lt; array.length ; i++)
 
 
 &lt;p&gt;After all, I'll be probably continuing to study this &quot;suddenly-a-hot-chick&quot; Javascript thing, hoping to find a better world where my eventual code will be living into than that I found in the old days.&lt;/p&gt;
-</summary>
-</entry>
-
-
-<entry>
-  <title>Google Chrome on Air&#8482;</title>
-  <link href="http://skuro.tk/2009/12/04/google-chrome-on-air%25e2%2584%25a2/"/>
-  <updated>2009-12-04T00:00:00+01:00</updated>
-  <id>http://skuro.tk/2009/12/04/google-chrome-on-air%25e2%2584%25a2/</id>
-  <summary type="html">&lt;p&gt;&lt;img class=&quot;size-full wp-image-210 aligncenter&quot; title=&quot;chrome-ff&quot; src=&quot;/img/post/chrome-ff.png&quot; alt=&quot;Chrome VS Firefox&quot; width=&quot;549&quot; height=&quot;230&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Today I eventually made one big decision, dropping &lt;a href=&quot;http://www.mozilla-europe.org/en/firefox/&quot;&gt;Firefox&lt;/a&gt; (call it Shiretoko, if you want) as my default browser and embracing &lt;a href=&quot;http://www.google.com/chrome&quot;&gt;Chrome&lt;/a&gt;. Why? Well, they're right: Chome is &lt;strong&gt;fast&lt;/strong&gt;. Really fast.&lt;/p&gt;
-
-&lt;p&gt;It is not even a matter of how quick it's able to render a web page or to execute JS code (though that's also an &lt;a href=&quot;http://code.google.com/p/v8/&quot;&gt;interesting topic&lt;/a&gt;) that lead me to the decision, I just happened to start Chrome, browse a bit, open some different windows with some 20 tabs each, and then, from &lt;a href=&quot;http://www.tweetdeck.com/beta/&quot;&gt;TweetDeck&lt;/a&gt;, I clicked on a link. That's exactly when it all started. I mean Firefox, begun to start. Intentional wordplay.&lt;/p&gt;
-
-&lt;p&gt;After reindexing my whole home folder, it finally showed up some content. It might even be that I installed too many plugins (&lt;a href=&quot;https://addons.mozilla.org/en-US/firefox/addon/1843&quot;&gt;firebug&lt;/a&gt;, &lt;a href=&quot;https://addons.mozilla.org/en-US/firefox/addon/9527&quot;&gt;ubiquity&lt;/a&gt;, &lt;a href=&quot;https://addons.mozilla.org/en-US/firefox/addon/2079&quot;&gt;seleniumIDE&lt;/a&gt;, &lt;a href=&quot;https://addons.mozilla.org/en-US/firefox/addon/3006&quot;&gt;downloadHelper&lt;/a&gt;, and &lt;a href=&quot;https://addons.mozilla.org/en-US/firefox/addon/59&quot;&gt;userAgent switcher&lt;/a&gt;, that's it), but it still needed~10s before showing up anything, not to steal any credit from the waiting time on loading my saved sessions of 2 windows with around 10 tabs each.&lt;/p&gt;
-
-&lt;p&gt;Then I decided to give it a try: I restarted Chrome. And that was the moment I decided I don't want to waste my time wating for Firefox startup. Chrome -&amp;gt; Options -&amp;gt; Make Chrome my default browser.&lt;/p&gt;
-
-&lt;p&gt;Now we come at the problem mentioned in the subject: even if Chrome is now my default browser, Adobe Air applications such as TweetDeck still trigger a new Firefox tab upon clicks on an HTTP link. I googled around (too much google, I know. And it's getting worse as I speak, I fear!) just to find a bunch &lt;a href=&quot;http://blog.andreaolivato.net/open-source/change-adobe-air-apps-default-browser.html&quot;&gt;crazy guys&lt;/a&gt; editing binary libraries using &lt;a href=&quot;http://www.vim.org/&quot;&gt;vim&lt;/a&gt;. Although I really love vim, I was pleased to find an &lt;a href=&quot;http://blog.andreaolivato.net/open-source/change-adobe-air-apps-default-browser.html#comment-13651946&quot;&gt;interesting comment&lt;/a&gt; that led to a &lt;a href=&quot;http://www.roytanck.com/2009/08/26/getting-adobe-air-to-use-the-default-browser-under-ubuntu/&quot;&gt;solution&lt;/a&gt;:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;export GNOME_DESKTOP_SESSION_ID=Default
-/opt/TweetDeck/bin/TweetDeck
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;I will miss a lot my dear Ubiquity extension, and I still think Firefox is not &lt;a href=&quot;http://www.microsoft.com/windows/Internet-explorer/default.aspx&quot;&gt;that bad&lt;/a&gt; as a browser. But I spend 95% of my computer life on a browser, as Google guys didn't have troubles to &lt;a href=&quot;http://googleblog.blogspot.com/2009/07/introducing-google-chrome-os.html&quot;&gt;argue&lt;/a&gt;, and therefore speed matters. A lot.&lt;/p&gt;
 </summary>
 </entry>
 
