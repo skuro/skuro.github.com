@@ -60,154 +60,89 @@
       <div id="content">
         <div class="post">
   <h1 class="title">
-    Posts filed under <a href="category/alfresco/index.html">#alfresco</a>
-  </h1>
-  <div id="archive" class="archive">
-    <ul>
-      
-        <li>
-  <span class="date">15 September 2009</span>
-  <a href="/2009/09/15/alfresco-and-ldap-sync-lock-my-admin-no-more">Alfresco and LDAP sync lock my Admin no more!</a>
-  <span class="categories">
-    
-    <a href="/category/alfresco">#alfresco</a>
-    
-  </span>        
-</li> 
-
-      
-        <li>
-  <span class="date"> 3 December 2009</span>
-  <a href="/2009/12/03/alfresco-ecm-moving-forward-on-the-maven-path">Alfresco ECM moving forward on the Maven path</a>
-  <span class="categories">
-    
-    <a href="/category/alfresco">#alfresco</a>
-    
-    <a href="/category/alm">#alm</a>
-    
-  </span>        
-</li> 
-
-      
-        <li>
-  <span class="date">12 January 2010</span>
-  <a href="/2010/01/12/alfresco-acl-on-wcm-webforms-an-howto">Alfresco ACL on WCM WebForms, an howto</a>
-  <span class="categories">
-    
-    <a href="/category/alfresco">#alfresco</a>
-    
-  </span>        
-</li> 
-
-      
-        <li>
-  <span class="date">14 January 2010</span>
-  <a href="/2010/01/14/from-the-grounds-up-maven-alfresco-tutorial">From the grounds up, your Maven powered Alfresco dev box</a>
-  <span class="categories">
-    
-    <a href="/category/alm">#alm</a>
-    
-    <a href="/category/alfresco">#alfresco</a>
-    
-  </span>        
-</li> 
-
-      
-        <li>
-  <span class="date">23 May 2010</span>
-  <a href="/2010/05/23/spring-surf-meets-clojure">Spring Surf meets Clojure</a>
-  <span class="categories">
-    
-    <a href="/category/clojure">#clojure</a>
-    
-    <a href="/category/alfresco">#alfresco</a>
-    
-  </span>        
-</li> 
-
-      
-        <li>
-  <span class="date">10 May 2011</span>
-  <a href="/2011/05/10/more-clojure-for-spring-surf">More Clojure for Spring Surf</a>
-  <span class="categories">
-    
-    <a href="/category/alfresco">#alfresco</a>
-    
-    <a href="/category/clojure">#clojure</a>
-    
-  </span>        
-</li> 
-
-      
-        <li>
-  <span class="date"> 3 August 2011</span>
-  <a href="/2011/08/03/h2-embedded-db-and-alfresco-3-4">H2 embedded DB and Alfresco 3.4</a>
-  <span class="categories">
-    
-    <a href="/category/alfresco">#alfresco</a>
-    
-    <a href="/category/alm">#alm</a>
-    
-  </span>        
-</li> 
-
-      
-        <li>
-  <span class="date"> 4 September 2011</span>
-  <a href="/2011/09/04/clojure-makes-it-the-alfresco-devcon-2011-emea-london">Clojure makes it to the Alfresco DevCon2011</a>
-  <span class="categories">
-    
-    <a href="/category/clojure">#clojure</a>
-    
-    <a href="/category/alfresco">#alfresco</a>
-    
-  </span>        
-</li> 
-
-      
-        <li>
-  <span class="date">10 November 2011</span>
-  <a href="/2011/11/10/slides-from-alfresco-the-clojure-way">Slides from Alfresco the Clojure way</a>
-  <span class="categories">
-    
-    <a href="/category/clojure">#clojure</a>
-    
-    <a href="/category/alfresco">#alfresco</a>
-    
-  </span>        
-</li> 
-
-      
-        <li>
-  <span class="date">14 December 2011</span>
-  <a href="/2011/12/14/h2-support-for-alfresco-4x">H2 support updated for Alfresco 4.x</a>
-  <span class="categories">
-    
-    <a href="/category/alm">#alm</a>
-    
-    <a href="/category/alfresco">#alfresco</a>
-    
-  </span>        
-</li> 
-
-      
-        <li>
-  <span class="date"> 6 March 2012</span>
   <a href="/2012/03/06/spring-surf-clojure-and-alfresco-h2-support-now-in-maven-central">Spring surf Clojure and Alfresco H2 support now in Maven Central</a>
-  <span class="categories">
-    
-    <a href="/category/alfresco">#alfresco</a>
-    
-    <a href="/category/alm">#alm</a>
-    
-    <a href="/category/sonatype">#sonatype</a>
-    
-  </span>        
-</li> 
+</h1>
+<h2 class="date">
+  March  6, 2012
+  
+   -- filed under 
+  
+  <a href="/category/alfresco">#alfresco</a>
+  
+  <a href="/category/alm">#alm</a>
+  
+  <a href="/category/sonatype">#sonatype</a>
+  
+  
+</h2>
 
-      
-    </ul>
-  </div>
+  
+  <img src="/img/post/maven-central.png" class="primary" />
+  
+  <p><strong>tl;dr:</strong> I had to change the groupId of both
+  <a href="https://github.com/skuro/alfresco-h2-support">h2-support</a> and
+  <a href="https://github.com/skuro/spring-webscripts-addon-clojure">spring-webscripts-addon-clojure</a>. Good
+  news is, they're now available on Maven Central!</p>
+
+<h2>Build management dilemma</h2>
+
+<p>Part of <a href="http://www.backbase.com">my company</a> offering is an Alfresco
+based CMS, which we build the
+<a href="code.google.com/p/maven-alfresco-archetypes/">mave way</a>. While this
+is already a nicely integrated build with the rest of the other
+products, I currently find it annoying to require a database to be
+installed wherever the project is built (ubiquitous MySQL installed
+locally on my laptop, on the CI server, etc.). As I'm maintaining an
+H2 <a href="https://github.com/skuro/alfresco-h2-support">compatibility module</a>
+for Alfresco it's natural for me to integrate and use it.</p>
+
+<p>There was only one thing blocking this process, and that's the maven
+repository where such artifact were deployed.</p>
+
+<h2>Deploy on Central</h2>
+
+<p>As much as I love <a href="http://clojars.org">Clojars</a>, it sill requires to be manually configured
+when dealing with a pure Maven build. Since it's not quite an option to add
+an artifacts repository for something as small as <code>h2-support</code>, I
+decided to just follow the guidelines for Maven Central sync on
+<a href="https://docs.sonatype.org/display/Repository/Sonatype+OSS+Maven+Repository+Usage+Guide">OSS Sonatype</a> and
+rename the group ID to resabmle my personal web domain. This means I
+did dirty, dirty things that bought me an entire eternity in hell,
+such as retagging both
+<a href="https://github.com/skuro/alfresco-h2-support/tree/v1.1">v1.1</a> and
+<a href="https://github.com/skuro/alfresco-h2-support/tree/v1.2">v1.2</a>.</p>
+
+<p>But, as the only change in the POM is "non functional" such as
+description, developers and such, it's not going to hurt much I
+believe.</p>
+
+<p>This move is reflected also in the currently unreleased
+<code>spring-webscripts-addon-clojure</code>, so if you'll be using it or
+you need <code>h2-support</code> remember to use the <code>tk.skuro.*</code> group IDs, and
+you won't need to add a <code>&lt;repository&gt;</code> to your POM ever again.</p>
+
+<p>Thanks <a href="http://www.sonatype.com">Sonatype</a> for the awesome service!</p>
+
+  
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'skuro';
+//    var disqus_id = '/2012/03/06/spring-surf-clojure-and-alfresco-h2-support-now-in-maven-central';
+//    var disqus_url = [location.protocol, '//', location.host, location.pathname].join('');
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+  
+
 </div>
 
       </div>

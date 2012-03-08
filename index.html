@@ -64,52 +64,69 @@
 
 <!-- copied from post_header include -->
 <h1 class="title">
-  <a href="/2011/12/14/h2-support-for-alfresco-4x">H2 support updated for Alfresco 4.x</a>
+  <a href="/2012/03/06/spring-surf-clojure-and-alfresco-h2-support-now-in-maven-central">Spring surf Clojure and Alfresco H2 support now in Maven Central</a>
 </h1>
 <h2 class="date">
-  December 14, 2011
+  March  6, 2012
   
    -- filed under 
   
+  <a href="/category/alfresco">#alfresco</a>
+  
   <a href="/category/alm">#alm</a>
   
-  <a href="/category/alfresco">#alfresco</a>
+  <a href="/category/sonatype">#sonatype</a>
   
   
 </h2>
 <!-- end copy -->
 
   
-  <img src="/img/post/alfresco-h2.png" class="primary" />
+  <img src="/img/post/maven-central.png" class="primary" />
   
-  <h2>H2 Support reloaded</h2>
+  <p><strong>tl;dr:</strong> I had to change the groupId of both
+  <a href="https://github.com/skuro/alfresco-h2-support">h2-support</a> and
+  <a href="https://github.com/skuro/spring-webscripts-addon-clojure">spring-webscripts-addon-clojure</a>. Good
+  news is, they're now available on Maven Central!</p>
 
-<p>Some time ago I <a href="/2011/08/03/h2-embedded-db-and-alfresco-3-4/">announced</a> a <a href="https://github.com/skuro/alfresco-h2-support">module</a> to enhance <a href="http://www.alfresco.com">Alfresco</a> in order to support H2 as its persistent data storage. While it was successfully tested against Alfresco v3.4 and v3.5, <a href="http://www.mindthegab.com">@mindthegab</a> pointed me out that Alfresco v4.x wasn't even starting when using the H2 module.</p>
+<h2>Build management dilemma</h2>
 
-<p>A quick look at the PostgreSQL scripts and configuration of Alfresco 4 revealed that they were indeed radically changed in the new release, so that an update was necessary.</p>
+<p>Part of <a href="http://www.backbase.com">my company</a> offering is an Alfresco
+based CMS, which we build the
+<a href="code.google.com/p/maven-alfresco-archetypes/">mave way</a>. While this
+is already a nicely integrated build with the rest of the other
+products, I currently find it annoying to require a database to be
+installed wherever the project is built (ubiquitous MySQL installed
+locally on my laptop, on the CI server, etc.). As I'm maintaining an
+H2 <a href="https://github.com/skuro/alfresco-h2-support">compatibility module</a>
+for Alfresco it's natural for me to integrate and use it.</p>
 
-<h2>Matching versions</h2>
+<p>There was only one thing blocking this process, and that's the maven
+repository where such artifact were deployed.</p>
 
-<p>Since 3.4+ and 4.x version series have quite different configuration, you need to use a different version of the h2 module depending on the Alfresco version you're running, namely:</p>
+<h2>Deploy on Central</h2>
 
-<table>
-  <thead>
-    <tr>
-      <td>H2 module</td><td>Alfresco versions supported</td>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1.1</td><td>3.4+</td>
-    </tr>
-    <tr>
-      <td>1.2</td><td>4.x</td>
-    </tr>
-  </tbody>
-</table>
+<p>As much as I love <a href="http://clojars.org">Clojars</a>, it sill requires to be manually configured
+when dealing with a pure Maven build. Since it's not quite an option to add
+an artifacts repository for something as small as <code>h2-support</code>, I
+decided to just follow the guidelines for Maven Central sync on
+<a href="https://docs.sonatype.org/display/Repository/Sonatype+OSS+Maven+Repository+Usage+Guide">OSS Sonatype</a> and
+rename the group ID to resabmle my personal web domain. This means I
+did dirty, dirty things that bought me an entire eternity in hell,
+such as retagging both
+<a href="https://github.com/skuro/alfresco-h2-support/tree/v1.1">v1.1</a> and
+<a href="https://github.com/skuro/alfresco-h2-support/tree/v1.2">v1.2</a>.</p>
 
+<p>But, as the only change in the POM is "non functional" such as
+description, developers and such, it's not going to hurt much I
+believe.</p>
 
-<p>The artifacts for both versions are available on <a href="http://clojars.org">clojars</a>, please refer to the official documentation for the usage guide.</p>
+<p>This move is reflected also in the currently unreleased
+<code>spring-webscripts-addon-clojure</code>, so if you'll be using it or
+you need <code>h2-support</code> remember to use the <code>tk.skuro.*</code> group IDs, and
+you won't need to add a <code>&lt;repository&gt;</code> to your POM ever again.</p>
+
+<p>Thanks <a href="http://www.sonatype.com">Sonatype</a> for the awesome service!</p>
 
   
   <div id="disqus_thread"></div>

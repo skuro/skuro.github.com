@@ -3,13 +3,65 @@
     <title type="text" xml:lang="en">SKURO! -- Shading lights</title>
     <link type="application/atom+xml" href="http://skuro.tk/rss2/" rel="self"/>
     <link type="text" href="http://skuro.tk" rel="alternate"/>
-    <updated>2011-12-14T09:49:41+01:00</updated>
+    <updated>2012-03-08T08:05:03+01:00</updated>
     <id>http://skuro.tk</id>
     <author>
         <name>Carlo Sciolla</name>
     </author>
     <rights>Copyright (c) 2010-2011 Carlo Sciolla</rights>
     
+<entry>
+  <title>Spring surf Clojure and Alfresco H2 support now in Maven Central</title>
+  <link href="http://skuro.tk/2012/03/06/spring-surf-clojure-and-alfresco-h2-support-now-in-maven-central/"/>
+  <updated>2012-03-06T00:00:00+01:00</updated>
+  <id>http://skuro.tk/2012/03/06/spring-surf-clojure-and-alfresco-h2-support-now-in-maven-central/</id>
+  <summary type="html">&lt;p&gt;&lt;strong&gt;tl;dr:&lt;/strong&gt; I had to change the groupId of both
+  &lt;a href=&quot;https://github.com/skuro/alfresco-h2-support&quot;&gt;h2-support&lt;/a&gt; and
+  &lt;a href=&quot;https://github.com/skuro/spring-webscripts-addon-clojure&quot;&gt;spring-webscripts-addon-clojure&lt;/a&gt;. Good
+  news is, they're now available on Maven Central!&lt;/p&gt;
+
+&lt;h2&gt;Build management dilemma&lt;/h2&gt;
+
+&lt;p&gt;Part of &lt;a href=&quot;http://www.backbase.com&quot;&gt;my company&lt;/a&gt; offering is an Alfresco
+based CMS, which we build the
+&lt;a href=&quot;code.google.com/p/maven-alfresco-archetypes/&quot;&gt;mave way&lt;/a&gt;. While this
+is already a nicely integrated build with the rest of the other
+products, I currently find it annoying to require a database to be
+installed wherever the project is built (ubiquitous MySQL installed
+locally on my laptop, on the CI server, etc.). As I'm maintaining an
+H2 &lt;a href=&quot;https://github.com/skuro/alfresco-h2-support&quot;&gt;compatibility module&lt;/a&gt;
+for Alfresco it's natural for me to integrate and use it.&lt;/p&gt;
+
+&lt;p&gt;There was only one thing blocking this process, and that's the maven
+repository where such artifact were deployed.&lt;/p&gt;
+
+&lt;h2&gt;Deploy on Central&lt;/h2&gt;
+
+&lt;p&gt;As much as I love &lt;a href=&quot;http://clojars.org&quot;&gt;Clojars&lt;/a&gt;, it sill requires to be manually configured
+when dealing with a pure Maven build. Since it's not quite an option to add
+an artifacts repository for something as small as &lt;code&gt;h2-support&lt;/code&gt;, I
+decided to just follow the guidelines for Maven Central sync on
+&lt;a href=&quot;https://docs.sonatype.org/display/Repository/Sonatype+OSS+Maven+Repository+Usage+Guide&quot;&gt;OSS Sonatype&lt;/a&gt; and
+rename the group ID to resabmle my personal web domain. This means I
+did dirty, dirty things that bought me an entire eternity in hell,
+such as retagging both
+&lt;a href=&quot;https://github.com/skuro/alfresco-h2-support/tree/v1.1&quot;&gt;v1.1&lt;/a&gt; and
+&lt;a href=&quot;https://github.com/skuro/alfresco-h2-support/tree/v1.2&quot;&gt;v1.2&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;But, as the only change in the POM is &quot;non functional&quot; such as
+description, developers and such, it's not going to hurt much I
+believe.&lt;/p&gt;
+
+&lt;p&gt;This move is reflected also in the currently unreleased
+&lt;code&gt;spring-webscripts-addon-clojure&lt;/code&gt;, so if you'll be using it or
+you need &lt;code&gt;h2-support&lt;/code&gt; remember to use the &lt;code&gt;tk.skuro.*&lt;/code&gt; group IDs, and
+you won't need to add a &lt;code&gt;&amp;lt;repository&amp;gt;&lt;/code&gt; to your POM ever again.&lt;/p&gt;
+
+&lt;p&gt;Thanks &lt;a href=&quot;http://www.sonatype.com&quot;&gt;Sonatype&lt;/a&gt; for the awesome service!&lt;/p&gt;
+</summary>
+</entry>
+
+
 <entry>
   <title>H2 support updated for Alfresco 4.x</title>
   <link href="http://skuro.tk/2011/12/14/h2-support-for-alfresco-4x/"/>
@@ -727,50 +779,6 @@ alfresco-showcase$ mvn archetype:generate -DarchetypeGroupId=com.sourcesense.alf
 
 
 &lt;p&gt;This technique allows for a whole lot of use cases, where different divisions are not allowed to author content of different types. The only drawback of this solution is that when you have more than one web project per Alfresco instance, and you want to reuse the web forms, you will need to setup different groups for the different web projects (this will almost always be the case, anyway) and do the ACL configuration twice. Not that big deal, of course, but the lack of any centralized ACL managing tool will make it harder to maintain the permissions schemes.&lt;/p&gt;
-</summary>
-</entry>
-
-
-<entry>
-  <title>Are you good at Javascript? #1</title>
-  <link href="http://skuro.tk/2009/12/15/are-you-good-at-javascript-1/"/>
-  <updated>2009-12-15T00:00:00+01:00</updated>
-  <id>http://skuro.tk/2009/12/15/are-you-good-at-javascript-1/</id>
-  <summary type="html">&lt;p&gt;&lt;img class=&quot;aligncenter size-full wp-image-224&quot; title=&quot;javascript&quot; src=&quot;/img/post/javascript.jpg&quot; alt=&quot;javascript&quot; width=&quot;627&quot; height=&quot;126&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;I'm not, really. Still I've been debugging some JS code just to remember why I was not &lt;a href=&quot;http://twitter.com/skuro/status/6367988240&quot;&gt;so excited&lt;/a&gt; in the past about the language: your code needs to cope with  browser specific crap.&lt;/p&gt;
-
-&lt;p&gt;Now, are &lt;strong&gt;you&lt;/strong&gt; good at Javascript? If so, without running it, have a look at the following code:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;var array = [
-  {
-      key : 'value',
-      foo : 'bar'
-  },
-  {
-      key : 'eulav',
-      foo : 'rab'
-  },
-];
-
-for (var i = 0 ; i &amp;amp;lt; array.length ; i++)
-{
-  console.log (&amp;amp;quot;key -&amp;amp;gt; &amp;amp;quot; + array[i].key);
-  console.log (&amp;amp;quot;foo -&amp;amp;gt; &amp;amp;quot; + array[i].foo);
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;How many elements does the &lt;code&gt;array&lt;/code&gt; variable holds?&lt;/p&gt;
-
-&lt;p&gt;That code actually hides an Evil&amp;#8482; syntax detail I discovered today. Now, since I've been recently approached by the viral ideas of &lt;a href=&quot;http://codemeself.blogspot.com/&quot;&gt;somebody&lt;/a&gt;, I felt compelled to fully understand the above code (and the bug we worked together from which this example came out). So if you really want some hints about what the hell is this all about:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;if you're not running Microsoft IE7, chances are you're not going to see anything weird in the console output :-)&lt;/li&gt;
-&lt;li&gt;section 11.1.4 of the &lt;a href=&quot;http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf&quot;&gt;ECMAScript v3&lt;/a&gt; spec tells you all you need to know about the array initializers&lt;/li&gt;
-&lt;/ul&gt;
-
-
-&lt;p&gt;After all, I'll be probably continuing to study this &quot;suddenly-a-hot-chick&quot; Javascript thing, hoping to find a better world where my eventual code will be living into than that I found in the old days.&lt;/p&gt;
 </summary>
 </entry>
 
