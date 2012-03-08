@@ -16,7 +16,7 @@ Build management dilemma
 
 Part of [my company](http://www.backbase.com) offering is an Alfresco
 based CMS, which we build the 
-[mave way](code.google.com/p/maven-alfresco-archetypes/). While this
+[maven way](code.google.com/p/maven-alfresco-archetypes/). While this
 is already a nicely integrated build with the rest of the other
 products, I currently find it annoying to require a database to be
 installed wherever the project is built (ubiquitous MySQL installed
@@ -30,7 +30,7 @@ repository where such artifact were deployed.
 Deploy on Central
 -----------------
 
-As much as I love [Clojars](http://clojars.org), it sill requires to be manually configured
+As much as I love [Clojars](http://clojars.org), it still requires to be manually configured
 when dealing with a pure Maven build. Since it's not quite an option to add
 an artifacts repository for something as small as `h2-support`, I
 decided to just follow the guidelines for Maven Central sync on 
