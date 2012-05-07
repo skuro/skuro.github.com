@@ -3,7 +3,7 @@
     <title type="text" xml:lang="en">SKURO! -- Shading lights</title>
     <link type="application/atom+xml" href="http://skuro.tk/rss2/" rel="self"/>
     <link type="text" href="http://skuro.tk" rel="alternate"/>
-    <updated>2012-03-08T08:05:03+01:00</updated>
+    <updated>2012-05-08T00:22:23+02:00</updated>
     <id>http://skuro.tk</id>
     <author>
         <name>Carlo Sciolla</name>
@@ -24,7 +24,7 @@
 
 &lt;p&gt;Part of &lt;a href=&quot;http://www.backbase.com&quot;&gt;my company&lt;/a&gt; offering is an Alfresco
 based CMS, which we build the
-&lt;a href=&quot;code.google.com/p/maven-alfresco-archetypes/&quot;&gt;mave way&lt;/a&gt;. While this
+&lt;a href=&quot;code.google.com/p/maven-alfresco-archetypes/&quot;&gt;maven way&lt;/a&gt;. While this
 is already a nicely integrated build with the rest of the other
 products, I currently find it annoying to require a database to be
 installed wherever the project is built (ubiquitous MySQL installed
@@ -37,7 +37,7 @@ repository where such artifact were deployed.&lt;/p&gt;
 
 &lt;h2&gt;Deploy on Central&lt;/h2&gt;
 
-&lt;p&gt;As much as I love &lt;a href=&quot;http://clojars.org&quot;&gt;Clojars&lt;/a&gt;, it sill requires to be manually configured
+&lt;p&gt;As much as I love &lt;a href=&quot;http://clojars.org&quot;&gt;Clojars&lt;/a&gt;, it still requires to be manually configured
 when dealing with a pure Maven build. Since it's not quite an option to add
 an artifacts repository for something as small as &lt;code&gt;h2-support&lt;/code&gt;, I
 decided to just follow the guidelines for Maven Central sync on
@@ -78,11 +78,9 @@ you won't need to add a &lt;code&gt;&amp;lt;repository&amp;gt;&lt;/code&gt; to y
 &lt;p&gt;Since 3.4+ and 4.x version series have quite different configuration, you need to use a different version of the h2 module depending on the Alfresco version you're running, namely:&lt;/p&gt;
 
 &lt;table&gt;
-  &lt;thead&gt;
     &lt;tr&gt;
-      &lt;td&gt;H2 module&lt;/td&gt;&lt;td&gt;Alfresco versions supported&lt;/td&gt;
+      &lt;th&gt;H2 module&lt;/th&gt;&lt;th&gt;Alfresco versions supported&lt;/th&gt;
     &lt;/tr&gt;
-  &lt;/thead&gt;
   &lt;tbody&gt;
     &lt;tr&gt;
       &lt;td&gt;1.1&lt;/td&gt;&lt;td&gt;3.4+&lt;/td&gt;
