@@ -1,7 +1,7 @@
 <h1>
   <a href="{{ page.url }}">{{ page.title }}</a>
 </h1>
-<ribbon>
+<blockquote class="date-wrapper">
   <h5 class="date">
     {{ page.date | date: "%B %e, %Y" }}
     {% if page.categories != empty %}
@@ -11,4 +11,4 @@
     {% endfor %}
     {% endif %}
   </h5>
-</ribbon>
+</blockquote>

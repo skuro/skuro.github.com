@@ -44,6 +44,7 @@ levels to the following open source projects:
 
 <img src="http://www.elementmypc.com/main/images/featured/opensource.png" alt="OSI" style="float:left; margin: 0px 20px;" />
 
-* [`lambdalf`](https://lambdalf.skuro.tk) -- Clojure bridge for Alfresco
+* [`plan-maven-plugin`](http://plan-maven-plugin.skuro.tk) -- Unravel your maven build
+* [`lambdalf`](http://lambdalf.skuro.tk) -- Clojure bridge for Alfresco
 * [`spring-webscripts-clojure-plugin`](https://github.com/skuro/spring-webscripts-clojure-plugin) -- The name tells it all
-* [`maven-alfresco-archetypes`](http://code.google.com/p/maven-alfresco-archetypes/) -- 'Cause `maven` can be good
+* [`maven-alfresco-archetypes`](http://code.google.com/p/maven-alfresco-archetypes/) -- Properly build your Alfresco projects

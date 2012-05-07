@@ -11,7 +11,7 @@ comments: true
 <h1>
   <a href="{{ post.url }}">{{ post.title }}</a>
 </h1>
-<ribbon>
+<blockquote class="date-wrapper">
   <h5 class="date">
     {{ post.date | date: "%B %e, %Y" }}
     {% if post.categories != empty %}
@@ -21,7 +21,7 @@ comments: true
     {% endfor %}
     {% endif %}
   </h5>
-</ribbon>
+</blockquote>
 <!-- end copy -->
 
   {% if post.primary_img %}
