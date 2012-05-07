@@ -11,15 +11,17 @@ comments: true
 <h1>
   <a href="{{ post.url }}">{{ post.title }}</a>
 </h1>
-<h5 class="date">
-  {{ post.date | date: "%B %e, %Y" }}
-  {% if post.categories != empty %}
-   - tagged
-  {% for c in post.categories %}
-  <a href="/category/{{ c }}">#{{ c }}</a>
-  {% endfor %}
-  {% endif %}
-</h5>
+<ribbon>
+  <h5 class="date">
+    {{ post.date | date: "%B %e, %Y" }}
+    {% if post.categories != empty %}
+     - tagged
+    {% for c in post.categories %}
+    <a href="/category/{{ c }}">#{{ c }}</a>
+    {% endfor %}
+    {% endif %}
+  </h5>
+</ribbon>
 <!-- end copy -->
 
   {% if post.primary_img %}
