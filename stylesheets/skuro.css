@@ -9,19 +9,19 @@ footer img {
 
 ribbon {
   background: #C6C6C6;
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ddfbfc), color-stop(100%, #c6eafa));
-  background: -webkit-linear-gradient(#ddfbfc, #c6eafa);
-  background: -moz-linear-gradient(#ddfbfc, #c6eafa);
-  background: -o-linear-gradient(#ddfbfc, #c6eafa);
-  background: -ms-linear-gradient(#ddfbfc, #c6eafa);
-  background: linear-gradient(#ddfbfc, #c6eafa);
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #cecece), color-stop(100%, #e0e0e0));
+  background: -webkit-linear-gradient(#cecece, #e0e0e0);
+  background: -moz-linear-gradient(#cecece, #e0e0e0);
+  background: -o-linear-gradient(#cecece, #e0e0e0);
+  background: -ms-linear-gradient(#cecece, #e0e0e0);
+  background: linear-gradient(#cecece, #e0e0e0);
+  border-bottom: 1px solid #e1e1e1;
   position: relative;
   margin: 0px 0px 20px -23px;
   padding: 0px 25px 0px 20px;
   display: block;
   width: 100%;
-  border-bottom: 1px solid #B2D2E1;
-  border-right: 1px solid #B2D2E1;
+  border-right: 1px solid #e1e1e1;
 }
 
 h5.date {

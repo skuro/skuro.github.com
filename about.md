@@ -23,11 +23,11 @@ Work stuff
 <img src="http://profile.ak.fbcdn.net/hprofile-ak-snc4/23271_352288013495_939_q.jpg" style="float:right; margin: 0px 20px" />
 
 I grew up from fiddling with embedded linux systems, to mobile
-development, to **mainstream** Java&trade; backend development. I got
+development, to mainstream Java&trade; backend development. I got
 certified as an [Alfresco](http://www.alfresco.com) Recognized Developer on 2011.
 
 I currently work at [Backbase](http://www.backbase.com), where I act
-as a developer and content/ECM expert.
+as a Product Lead and content/ECM expert.
 
 Clojure
 -------
@@ -44,6 +44,6 @@ levels to the following open source projects:
 
 <img src="http://www.elementmypc.com/main/images/featured/opensource.png" alt="OSI" style="float:left; margin: 0px 20px;" />
 
-* [`lambdalf`](https://github.com/skuro/lambdalf) -- Clojure bridge for Alfresco
+* [`lambdalf`](https://lambdalf.skuro.tk) -- Clojure bridge for Alfresco
 * [`spring-webscripts-clojure-plugin`](https://github.com/skuro/spring-webscripts-clojure-plugin) -- The name tells it all
-* [`maven-alfresco-archetypes`](code.google.com/p/maven-alfresco-archetypes/) -- 'Cause `maven` can be good
+* [`maven-alfresco-archetypes`](http://code.google.com/p/maven-alfresco-archetypes/) -- 'Cause `maven` can be good
