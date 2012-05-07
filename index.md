@@ -8,18 +8,18 @@ comments: true
 <div class="post">
 
 <!-- copied from post_header include -->
-<h1 class="title">
+<h1>
   <a href="{{ post.url }}">{{ post.title }}</a>
 </h1>
-<h2 class="date">
+<h5 class="date">
   {{ post.date | date: "%B %e, %Y" }}
   {% if post.categories != empty %}
-   -- filed under 
+   - tagged
   {% for c in post.categories %}
   <a href="/category/{{ c }}">#{{ c }}</a>
   {% endfor %}
   {% endif %}
-</h2>
+</h5>
 <!-- end copy -->
 
   {% if post.primary_img %}

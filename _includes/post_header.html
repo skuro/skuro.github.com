@@ -1,12 +1,14 @@
-<h1 class="title">
+<h1>
   <a href="{{ page.url }}">{{ page.title }}</a>
 </h1>
-<h2 class="date">
-  {{ page.date | date: "%B %e, %Y" }}
-  {% if page.categories != empty %}
-   -- filed under 
-  {% for c in page.categories %}
-  <a href="/category/{{ c }}">#{{ c }}</a>
-  {% endfor %}
-  {% endif %}
-</h2>
+<ribbon>
+  <h5 class="date">
+    {{ page.date | date: "%B %e, %Y" }}
+    {% if page.categories != empty %}
+    - tagged 
+    {% for c in page.categories %}
+    <a href="/category/{{ c }}">#{{ c }}</a>
+    {% endfor %}
+    {% endif %}
+  </h5>
+</ribbon>

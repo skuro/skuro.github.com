@@ -19,11 +19,9 @@ Matching versions
 Since 3.4+ and 4.x version series have quite different configuration, you need to use a different version of the h2 module depending on the Alfresco version you're running, namely:
 
 <table>
-  <thead>
     <tr>
-      <td>H2 module</td><td>Alfresco versions supported</td>
+      <th>H2 module</th><th>Alfresco versions supported</th>
     </tr>
-  </thead>
   <tbody>
     <tr>
       <td>1.1</td><td>3.4+</td>
