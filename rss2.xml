@@ -3,13 +3,87 @@
     <title type="text" xml:lang="en">SKURO! -- Shading lights</title>
     <link type="application/atom+xml" href="http://skuro.tk/rss2/" rel="self"/>
     <link type="text" href="http://skuro.tk" rel="alternate"/>
-    <updated>2012-05-08T00:22:23+02:00</updated>
+    <updated>2012-05-08T10:57:51+02:00</updated>
     <id>http://skuro.tk</id>
     <author>
         <name>Carlo Sciolla</name>
     </author>
     <rights>Copyright (c) 2010-2011 Carlo Sciolla</rights>
     
+<entry>
+  <title>Debug your build with the plan maven plugin</title>
+  <link href="http://skuro.tk/2012/05/08/debug-your-build-with-the-plan-maven-plugin/"/>
+  <updated>2012-05-08T00:00:00+02:00</updated>
+  <id>http://skuro.tk/2012/05/08/debug-your-build-with-the-plan-maven-plugin/</id>
+  <summary type="html">&lt;h1&gt;Contention over configuration&lt;/h1&gt;
+
+&lt;p&gt;While &lt;a href=&quot;http://www.thoughtworks.com/&quot;&gt;ThoughtWorks&lt;/a&gt; put it &lt;a href=&quot;http://www.thoughtworks.com/sites/www.thoughtworks.com/files/images/52/radar-march-2012-tools.jpg&quot;&gt;on hold&lt;/a&gt;, there are still a number of occasions where a normal Java guy such as the truly yours have to face refactorings of ginormus Maven builds. In my company, for instance, I'm now in the situation where I need to speed up the build of one component whose project structure involves 27 POM files, with up to 4 levels of nesting. Needless to say, there are tens of plugin executions, plugins and all the possible Maven black magic you can think of. The default options for build introspection (help plugin, enable debug, etc.) left me helpless in the middle of a gargantuan build execution log file.&lt;/p&gt;
+
+&lt;h1&gt;Plan plugin FTW&lt;/h1&gt;
+
+&lt;p&gt;I ended up writing a small plugin to help me debugging the build by dumping the execution plan. I originally named it &lt;a href=&quot;http://plan-maven-plugin.skuro.tk&quot;&gt;&lt;code&gt;plan-maven-plugin&lt;/code&gt;&lt;/a&gt;, and put all the sources on &lt;a href=&quot;https://github.com/skuro/plan-maven-plugin&quot;&gt;github&lt;/a&gt;. As the plugin is already on &lt;a href=&quot;http://search.maven.org/#artifactdetails%7Ctk.skuro%7Cplan-maven-plugin%7C1.1%7Cmaven-plugin&quot;&gt;Maven Central&lt;/a&gt;, you only need to place the following in your &lt;code&gt;settings.xml&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;pluginGroups&amp;gt;
+  &amp;lt;pluginGroup&amp;gt;tk.skuro&amp;lt;/pluginGroup&amp;gt;
+&amp;lt;/pluginGroups&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Thanks to &lt;a href=&quot;https://github.com/dthume&quot;&gt;David Thume&lt;/a&gt;, this is what it looks like now:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ mvn plan:plan -Dgoals=clean,javadoc:jar,sources:jar,package,gpg:sign
+...
+[INFO] --- plan-maven-plugin:1.1:plan (default-cli) @ plan-maven-plugin ---
+[INFO] 
+[INFO] Current lifecycle:
+[INFO]     pre-clean
+[INFO]     clean
+[INFO]     post-clean
+[INFO]     validate
+[INFO]     initialize
+[INFO]     generate-sources
+[INFO]     process-sources
+[INFO]     generate-resources
+[INFO]     process-resources
+[INFO]     compile
+[INFO]     process-classes
+[INFO]     generate-test-sources
+[INFO]     process-test-sources
+[INFO]     generate-test-resources
+[INFO]     process-test-resources
+[INFO]     test-compile
+[INFO]     process-test-classes
+[INFO]     test
+[INFO]     prepare-package
+[INFO]     package
+[INFO]     pre-integration-test
+[INFO]     integration-test
+[INFO]     post-integration-test
+[INFO]     verify
+[INFO]     install
+[INFO]     deploy
+[INFO]     
+[INFO] Execution plan:
+[INFO]     [clean] org.apache.maven.plugins:maven-clean-plugin:clean (default-clean)
+[INFO]     [-] org.apache.maven.plugins:maven-javadoc-plugin:jar (default-cli)
+[INFO]     [-] org.apache.maven.plugins:maven-source-plugin:jar (default-cli)
+[INFO]     [validate] org.apache.maven.plugins:maven-enforcer-plugin:enforce (enforce-maven)
+[INFO]     [generate-resources] org.apache.maven.plugins:maven-plugin-plugin:descriptor (default-descriptor)
+[INFO]     [process-resources] org.apache.maven.plugins:maven-resources-plugin:resources (default-resources)
+[INFO]     [compile] org.apache.maven.plugins:maven-compiler-plugin:compile (default-compile)
+[INFO]     [process-test-resources] org.apache.maven.plugins:maven-resources-plugin:testResources (default-testResources)
+[INFO]     [test-compile] org.apache.maven.plugins:maven-compiler-plugin:testCompile (default-testCompile)
+[INFO]     [test] org.apache.maven.plugins:maven-surefire-plugin:test (default-test)
+[INFO]     [package] org.apache.maven.plugins:maven-jar-plugin:jar (default-jar)
+[INFO]     [package] org.apache.maven.plugins:maven-plugin-plugin:addPluginArtifactMetadata (default-addPluginArtifactMetadata)
+[INFO]     [-] org.apache.maven.plugins:maven-gpg-plugin:sign (default-cli)
+...
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I still have a long way to go before I can bring my build to acceptable performance levels, but surely enough this will give me much more insights on what's possibly going wrong. Enjoy!&lt;/p&gt;
+</summary>
+</entry>
+
+
 <entry>
   <title>Spring surf Clojure and Alfresco H2 support now in Maven Central</title>
   <link href="http://skuro.tk/2012/03/06/spring-surf-clojure-and-alfresco-h2-support-now-in-maven-central/"/>
@@ -731,52 +805,6 @@ alfresco-showcase$ mvn archetype:generate -DarchetypeGroupId=com.sourcesense.alf
 
 
 &lt;p&gt;That's it for now, but other blocks are still missing: what about AMPs? And WCM? And does Share fits in the picture? I'll cover all the points in the next episodes of this series. See you there!&lt;/p&gt;
-</summary>
-</entry>
-
-
-<entry>
-  <title>Alfresco ACL on WCM WebForms, an howto</title>
-  <link href="http://skuro.tk/2010/01/12/alfresco-acl-on-wcm-webforms-an-howto/"/>
-  <updated>2010-01-12T00:00:00+01:00</updated>
-  <id>http://skuro.tk/2010/01/12/alfresco-acl-on-wcm-webforms-an-howto/</id>
-  <summary type="html">&lt;p&gt;When it comes to setting up an Alfresco WebProjects, you configure it to make use of a set of WebForms already available on the Alfresco repository. From that moment on, every user with write rights on the web project will be able to pick one web form and push some content through it into the AVM repository. But what if you want to forbid some users to actually make use of some web forms? The default Alfresco doesn't present any GUI control that allows you to define web forms level ACLs, but in facts there's a way to define them in an easy way, without the need of any real customization. Let's see how to do that on the Alfresco WCM we setup in the previous chapters of this series.&lt;/p&gt;
-
-&lt;h2&gt;The idea&lt;/h2&gt;
-
-&lt;p&gt;So, we want to be able to relate web forms and users or groups, thus restricting access to web forms depending on your credentials. We want to configure a number of web forms to be available on the web project, while users will see only the ones they've access to when trying to create some contents, so that dropdowns and links will appear only when it's appropriate. Moreover, we do not want to waste our time on custom code, we just want Alfresco to do its job.&lt;/p&gt;
-
-&lt;p&gt;The way we are going to address this requirement is through the use of real ACL setup configured on the web forms themselves, so that the Alfresco permission checks will be able to trim the list of available web forms to the users whenever they ask for create content. Sounds reasonable, right?&lt;/p&gt;
-
-&lt;h2&gt;Bug!&lt;/h2&gt;
-
-
-&lt;p&gt;As a disclaimer, I must say the proposed approach doesn't work with a vanilla Alfresco3.2r because of a &lt;a href=&quot;https://issues.alfresco.com/jira/browse/ETHREEOH-2595&quot;&gt;nasty bug&lt;/a&gt; that will throw Exceptions all over the place once you configured restrictive ACLs on web forms. Thanks to the OpenSource nature of Alfresco, and thanks to &lt;a href=&quot;http://twitter.com/bradsdavis&quot;&gt;Brad Davis&lt;/a&gt; that provided a patch for it, we can just change the Alfresco source code and we'll be able to go forward. While we wait for a real mavenized Alfresco, this involves having the Alfresco SDK properly installed on your system, apply the patch and upload it to your local maven repo. To ease your life, you can just go with this last step using this patched &lt;a href=&quot;http://download.skuro.tk/alfresco/alfresco-3.2r-community-patched.war&quot;&gt;Alfresco WAR&lt;/a&gt; and type:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;utopia-II:Downloads skuro$ mvn install:install-file -DartifactId=alfresco -DgroupId=org.alfresco \
- -Dversion=3.2r -Dtype=war -Dclassifier=community-patched -Dfile=alfresco-3.2r-community-patched.war
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;After that you have to switch to this artifact in your alfresco-extension project's pom dependencies.&lt;/p&gt;
-
-&lt;h2&gt;Define the ACL&lt;/h2&gt;
-
-
-&lt;p&gt;Now start up Alfresco and login as the &lt;em&gt;admin&lt;/em&gt;. To prove the ACL effectiveness, we will need two users and one group. In the following I'll assume the users are called &lt;em&gt;bob&lt;/em&gt; and &lt;em&gt;todd&lt;/em&gt; and the group, where only &lt;em&gt;bob&lt;/em&gt; is listed, is called &lt;em&gt;full-access&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;Now go to the &lt;em&gt;&lt;strong&gt;Company Home/Data Dictionary/Web Forms&lt;/strong&gt;&lt;/em&gt; folder and open the property sheet of the &lt;em&gt;&lt;strong&gt;article&lt;/strong&gt;&lt;/em&gt; web form folder.&lt;/p&gt;
-
-&lt;p&gt;You'll be now able to customize the permissions on this level by clicking on &lt;em&gt;&lt;strong&gt;Manage Space users&lt;/strong&gt;&lt;/em&gt;, that will bring you to the ACL managing wizard. &lt;strong&gt;Uncheck&lt;/strong&gt; the &lt;strong&gt;&lt;em&gt;Inherit Parent Space Permissions&lt;/em&gt;&lt;/strong&gt; box and then click on &lt;em&gt;&lt;strong&gt;Invite..&lt;/strong&gt;&lt;/em&gt;, setting up the &lt;em&gt;full-access&lt;/em&gt; group to have the &lt;em&gt;&lt;strong&gt;Coordinator&lt;/strong&gt;&lt;/em&gt; role.&lt;/p&gt;
-
-&lt;h2&gt;Test it&lt;/h2&gt;
-
-
-&lt;p&gt;We're already done! Now, try to log in into Alfresco with the two users and verify that only bob can actually see the article web form appearing on the UI.&lt;/p&gt;
-
-&lt;h2&gt;Conclusion&lt;/h2&gt;
-
-
-&lt;p&gt;This technique allows for a whole lot of use cases, where different divisions are not allowed to author content of different types. The only drawback of this solution is that when you have more than one web project per Alfresco instance, and you want to reuse the web forms, you will need to setup different groups for the different web projects (this will almost always be the case, anyway) and do the ACL configuration twice. Not that big deal, of course, but the lack of any centralized ACL managing tool will make it harder to maintain the permissions schemes.&lt;/p&gt;
 </summary>
 </entry>
 
