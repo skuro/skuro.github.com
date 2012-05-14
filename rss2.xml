@@ -3,13 +3,80 @@
     <title type="text" xml:lang="en">SKURO! -- Shading lights</title>
     <link type="application/atom+xml" href="http://skuro.tk/rss2/" rel="self"/>
     <link type="text" href="http://skuro.tk" rel="alternate"/>
-    <updated>2012-05-08T10:57:51+02:00</updated>
+    <updated>2012-05-14T15:28:23+02:00</updated>
     <id>http://skuro.tk</id>
     <author>
         <name>Carlo Sciolla</name>
     </author>
     <rights>Copyright (c) 2010-2011 Carlo Sciolla</rights>
     
+<entry>
+  <title>Legacy libraries for your maven build</title>
+  <link href="http://skuro.tk/2012/05/14/legacy-libraries-for-your-maven-build/"/>
+  <updated>2012-05-14T00:00:00+02:00</updated>
+  <id>http://skuro.tk/2012/05/14/legacy-libraries-for-your-maven-build/</id>
+  <summary type="html">&lt;h1&gt;Legacy libraries&lt;/h1&gt;
+
+&lt;p&gt;Dealing with legacy code is always tricky, and adapting your tooling to leverage them is sometimes plain hard. Especially when you're building your projects with Maven and your code happens to depend on some ancient library which appear to be unknown to the Internet™, you probably have to figure out how to tell Maven where to find that damn library. This is also the problem when dealing with e.g. proprietary third party libraries which don't ship with a POM, therefore they don't mavenly exist.&lt;/p&gt;
+
+&lt;h1&gt;Local repositories FTW&lt;/h1&gt;
+
+&lt;p&gt;There are a number of possible solutions to the above mentioned problem, which ideally involve a shared, remote artifact repository where to deploy the JAR file that causes you headaches. Recently, I found myself in the need of creating (yet another) Maven build around some &lt;a href=&quot;http://www.alfresco.com&quot;&gt;Alfresco&lt;/a&gt;, to enable &lt;a href=&quot;http://skuro.tk/lambdalf/&quot;&gt;Lambdalf&lt;/a&gt; to build its Clojure sources. The rocky road to Maven for Alfresco is still long, and as a result you find yourself dealing with some iffy libraries when coding against Alfresco. Some examples, just opening up the WAR files:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;truezip.jar&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;mybaties-3.0.4-patched.jar&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;acegi-security-0.8.2_patched.jar&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;One solution I found that doesn't require setting up your publicly available &lt;a href=&quot;http://www.sonatype.org/nexus/&quot;&gt;Nexus&lt;/a&gt; repository, nor using someone else's &lt;a href=&quot;http://www.jfrog.com/products.php&quot;&gt;Artifactory&lt;/a&gt;, is to provide the problematic JARs in a maven repository as part of your sources. Suppose you have a mysterious &lt;code&gt;fluff.jar&lt;/code&gt; library you need to include in your classpath, here's how it works:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;place the JAR file in &lt;code&gt;src/main/lib/fluff/fluff/unknown/fluff-unknown.jar&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;setup the dependency in your POM:&lt;/p&gt;
+
+&lt;p&gt;  &lt;dependencies&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;dependency&amp;gt;
+  &amp;lt;groupId&amp;gt;fluff&amp;lt;/groupId&amp;gt;
+  &amp;lt;artifactId&amp;gt;fluff&amp;lt;/artifactId&amp;gt;
+  &amp;lt;version&amp;gt;unknown&amp;lt;/version&amp;gt;
+&amp;lt;/dependency&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;  &lt;/dependencies&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;still in your POM, enable the local repository:&lt;/p&gt;
+
+&lt;p&gt;  &lt;repositories&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;repository&amp;gt;
+  &amp;lt;id&amp;gt;legacy-artifacts&amp;lt;/id&amp;gt;
+  &amp;lt;url&amp;gt;file://${project.basedir}/src/main/lib&amp;lt;/url&amp;gt;
+&amp;lt;/repository&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;  &lt;/repositories&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;Voil&amp;aacute;. You just created a local, portable repository in your sources and instructed Maven to look there for artifacts.&lt;/p&gt;
+
+&lt;h1&gt;License&lt;/h1&gt;
+
+&lt;p&gt;A couple of golden rules for all the cowboy programmers out there:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;always, always, &lt;strong&gt;always check if the license allows you to redistribute the libraries&lt;/strong&gt; you're going to include in your project&lt;/li&gt;
+&lt;li&gt;never, never, &lt;strong&gt;never distribute a piece of software you're not entitled to give away&lt;/strong&gt; and &lt;strong&gt;attach the license of all third party libraries&lt;/strong&gt; along with your project&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;That said, I'll leave you to your local Maven repositories. Happy building!&lt;/p&gt;
+</summary>
+</entry>
+
+
 <entry>
   <title>Debug your build with the plan maven plugin</title>
   <link href="http://skuro.tk/2012/05/08/debug-your-build-with-the-plan-maven-plugin/"/>
@@ -701,110 +768,6 @@ If your clock drifted too far away Windows will refuse to sync. In order to disa
 &lt;p&gt;The resulting code from this session is available on &lt;a href=&quot;http://github.com/ams-clj/clansi&quot;&gt;github&lt;/a&gt;. It does just a simple thing, it provides a way to override the default &lt;strong&gt;doc&lt;/strong&gt; behavior in order to make use of our custom, colorful implementation of &lt;strong&gt;print-doc&lt;/strong&gt;. And even if it doesn't look like rocket science, I can guarantee that being there and looking at how we came up with that, from some impressive vim-fu showed by &lt;a href=&quot;http://blog.rubyenrails.nl/&quot;&gt;Michiel de Mare&lt;/a&gt; to the clever and clean code provided by &lt;a href=&quot;http://blog.remvee.net/&quot;&gt;Remco van 't Veer&lt;/a&gt;, was indeed a lot of fun!&lt;/p&gt;
 
 &lt;p&gt;If all this sounds interesting to you, go and checkout the group &lt;a href=&quot;http://groups.google.com/group/amsterdam-clojurians&quot;&gt;mailing list&lt;/a&gt; or just show up at the next meeting, second Wednesday of each month at the &lt;a href=&quot;http://www.sourcesense.nl/contact/&quot;&gt;Sourcesense office&lt;/a&gt;.&lt;/p&gt;
-</summary>
-</entry>
-
-
-<entry>
-  <title>From the grounds up, your Maven powered Alfresco dev box</title>
-  <link href="http://skuro.tk/2010/01/14/from-the-grounds-up-maven-alfresco-tutorial/"/>
-  <updated>2010-01-14T00:00:00+01:00</updated>
-  <id>http://skuro.tk/2010/01/14/from-the-grounds-up-maven-alfresco-tutorial/</id>
-  <summary type="html">&lt;p&gt;&lt;img class=&quot;aligncenter size-full wp-image-240&quot; title=&quot;mint alf mvn&quot; src=&quot;/img/post/mint-alf.png&quot; alt=&quot;mint alf mvn&quot; width=&quot;437&quot; height=&quot;311&quot; /&gt;&lt;/p&gt;
-
-&lt;h2&gt;The target&lt;/h2&gt;
-
-&lt;p&gt;To start your Alfresco development experience, you need a development environment. Let's say you're more into this Maven and you'd rather leverage its capabilities instead of using the default ant based build system provided along with the SDK. In this tutorial, I'll guide you through the process of setting up from scratch your development environment. And by saying &quot;from scratch&quot;, I really mean it: we'll start from a fresh installed Linux box and the we will add piece over piece until we'll be see the Alfresco flower on our browser.  This will be a &lt;em&gt;basic&lt;/em&gt; tutorial, just to put in place the foundation for later improvements.&lt;/p&gt;
-
-&lt;p&gt;I'm actually performing these steps in a virtual machine, so that next time a quick&amp;amp;dirty Alfresco PoC is required I might use this very same VM to start right away from a known, dev ready point.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;UPDATE: &lt;span style=&quot;color: #000000;&quot;&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;the Maven project structure I end up with at the end of this article can be downloaded directly from &lt;a title=&quot;alfresco-dev.skuro.tk // Tag: #01&quot; href=&quot;http://github.com/skuro/alfresco-dev.skuro.tk/tree/%2301&quot;&gt;GitHub&lt;/a&gt;.&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h2&gt;Operating System&lt;/h2&gt;
-
-
-&lt;p&gt;Ok, I assume you know your stuff and don't want to get a bore-some lesson on how to install Linux. The whole internet is polluted by billions of guides and tutorial since 199x, anyway, so let's just say I just completed the install process of Mint7 and I'm at my very first login. I would go for &lt;a href=&quot;http://ftp.heanet.ie/pub/linuxmint.com/stable/8/LinuxMint-8.iso&quot;&gt;Mint8&lt;/a&gt; if my current connection was fast enough to download it before I finish writing these notes, but whatever, there's nothing really bad in v7.&lt;/p&gt;
-
-&lt;h2&gt;Tools&lt;/h2&gt;
-
-
-&lt;p&gt;The shopping list here includes a JDK, Maven and... well, that should be it, theoretically. Unfortunately, due to a nasty &lt;a href=&quot;https://issues.alfresco.com/jira/browse/ALFCOM-3691&quot;&gt;regression&lt;/a&gt;, we're going to need a db. My choice goes to MySQL.&lt;/p&gt;
-
-&lt;h3&gt;MySQL&lt;/h3&gt;
-
-
-&lt;p&gt;First thing first, let's install it:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;~$ sudo apt-get install mysql-server
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;When this is done, we have to create the db Alfresco is going to use:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;~$ mysql -u root
-mysql&amp;amp;gt; CREATE DATABASE alf_jetty;
-mysql&amp;amp;gt; GRANT ALL ON alf_jetty.* TO 'alfresco'@'%' IDENTIFIED BY 'alfresco';
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Username and password are the default for the &lt;a href=&quot;http://wiki.alfresco.com/wiki/Managing_Alfresco_Lifecyle_with_Maven&quot;&gt;maven stuff&lt;/a&gt; we're going to use.&lt;/p&gt;
-
-&lt;h3&gt;Java&lt;/h3&gt;
-
-
-&lt;p&gt;Java™ 5 &lt;a href=&quot;http://java.sun.com/products/archive/eol.policy.html&quot;&gt;has already passed on&lt;/a&gt;, let it rest in peace. Instead, go and install Java™ 6:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;~$ sudo apt-get install sun-java6-jdk
-[/code]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3&gt;Maven&lt;/h3&gt;
-
-
-&lt;p&gt;Hold on the temptation of installing Maven 3 or to ask apt-get to do this task for you. We're going to the official &lt;a href=&quot;http://maven.apache.org/download.html&quot;&gt;download page&lt;/a&gt; and following the links to get the latest stable 2.x release. You should end up with something like apache-maven-2.2.1-bin.tar.bz2 on your file system. Then do the following:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;~$ cs /opt
-~$ sudo tar xvjf apache-maven-2.2.1-bin.tar.bz2
-~$ sudo ln -sfv /opt/apache-maven-2.2.1/bin/mvn /usr/bin/mvn
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;There are less intrusive ways to bring your downloaded application into your PATH, but this is the quickest possible. Let's go on to the next step.&lt;/p&gt;
-
-&lt;h3&gt;Plumbing&lt;/h3&gt;
-
-
-&lt;p&gt;We're almost there, we just have to lay down our projects. Let's start with the Alfresco repo extension:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;~$ mkdir -p development/alfresco-showcase
-~$ cd development/alfresco-showcase
-alfresco-showcase$ wget http://download.skuro.tk/alfresco-showcase/pom.xml
-alfresco-showcase$ mvn archetype:generate -DarchetypeGroupId=com.sourcesense.alfresco \
- -DarchetypeArtifactId=maven-alfresco-extension-archetype \
- -DarchetypeVersion=1.9.1 \
- -DgroupId=it.sk.alfresco \
- -DartifactId=alfresco-showcase-extension \
- -Dversion=1.0-SNAPSHOT \
- -DarchetypeRepository=http://maven.alfresco.com/nexus/content/repositories/releases \
- -DinteractiveMode=false
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The POM I'm making available &lt;a href=&quot;http://download.skuro.tk/alfresco-showcase/pom.xml&quot;&gt;here&lt;/a&gt; is just a very basically one, I'm using it here just for you to speed up the process.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;UPDATE: &lt;/strong&gt; as others pointed me out, it looks like you somehow need to download such a pom for the whole thing to stand up. That's simply not true, I'm just building a more complex dev environment and it's better if we have some structure in place. This includes having a parent project, along with its parent pom, with nested projects registered as its modules. These will come in the next posts. But that's just part of the reason for this pom to be here: I also tend to be &lt;a href=&quot;http://blogoscoped.com/archive/2005-08-24-n14.html&quot;&gt;lazy&lt;/a&gt;, so that letting you download it was easier than explaining myself. Note to self: thou shalt not post anything at 2am.&lt;/p&gt;
-
-&lt;h3&gt;First achievement&lt;/h3&gt;
-
-
-&lt;p&gt;Ok, let's stop here now and see what we've done by now. Go to the alfresco-showcase folder and type:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;alfresco-showcase$ MAVEN_OPTS=&quot;-Xmx512m -XX:MaxPermSize=128m&quot; \
- mvn clean install -Prun
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;This will start a local jetty instance where Alfresco 3.2 community will be deployed. So, if you now point your browser to &lt;code&gt;http://localhost:8080/alfresco&lt;/code&gt; you will finally see that flower we talked about at the beginning of this post.&lt;/p&gt;
-
-&lt;h2&gt;Next steps&lt;/h2&gt;
-
-
-&lt;p&gt;That's it for now, but other blocks are still missing: what about AMPs? And WCM? And does Share fits in the picture? I'll cover all the points in the next episodes of this series. See you there!&lt;/p&gt;
 </summary>
 </entry>
 
