@@ -40,3 +40,8 @@ p.persona {
 blockquote.date-wrapper {
   padding: 0px 0px 2px 20px;
 }
+
+.adsense {
+    position: fixed;
+    left: 10%;
+}
