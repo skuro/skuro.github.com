@@ -3,13 +3,43 @@
     <title type="text" xml:lang="en">SKURO! -- Shading lights</title>
     <link type="application/atom+xml" href="http://skuro.tk/rss2/" rel="self"/>
     <link type="text" href="http://skuro.tk" rel="alternate"/>
-    <updated>2012-05-14T15:28:23+02:00</updated>
+    <updated>2012-05-28T11:03:18+02:00</updated>
     <id>http://skuro.tk</id>
     <author>
         <name>Carlo Sciolla</name>
     </author>
     <rights>Copyright (c) 2010-2011 Carlo Sciolla</rights>
     
+<entry>
+  <title>Legacy artifacts repository update: going remote</title>
+  <link href="http://skuro.tk/2012/05/28/legacy-artifacts-repository-update-going-remote/"/>
+  <updated>2012-05-28T00:00:00+02:00</updated>
+  <id>http://skuro.tk/2012/05/28/legacy-artifacts-repository-update-going-remote/</id>
+  <summary type="html">&lt;h1&gt;The case against&lt;/h1&gt;
+
+&lt;p&gt;After &lt;a href=&quot;http://skuro.tk/2012/05/14/legacy-libraries-for-your-maven-build/&quot;&gt;showing&lt;/a&gt; how to use your version control repository to host legacy libraries, &lt;a href=&quot;http://discursive.com/&quot;&gt;Tim O'Brien&lt;/a&gt; made a case against its use mentioning how a maintenance hell it would be to use such a strategy, and that a repository manager like &lt;a href=&quot;http://www.sonatype.org/nexus&quot;&gt;Nexus&lt;/a&gt; or &lt;a href=&quot;http://www.jfrog.com/index.php&quot;&gt;Artifactory&lt;/a&gt; is the preferred solution. After all, with a local repository in your sources you're indeed unable to &lt;strong&gt;download&lt;/strong&gt; the JAR, so that any dependent project wouldn't be able to compile against your transitive dependencies. Isn't it part of the maven revolution to never, ever check in your libraries in your VCS?&lt;/p&gt;
+
+&lt;h1&gt;The case for&lt;/h1&gt;
+
+&lt;p&gt;When your project has a mid-big scale, and you depend on a tens of legacy/funny libraries that the whole Internet can't provide, which are maybe still likely to get updates, you should &lt;del&gt;question your project&lt;/del&gt; take the chance to leverage a repository manager. But, if your project is relatively small, with just a bunch of stray dependencies and no access to a repository manager for any reason, there's little value to gain from building an infrastructure around your JARs, and you can easily leverage a piece of infrastructure you're most likely to have already: your remote or centralized VCS repository.&lt;/p&gt;
+
+&lt;h1&gt;[Not only] Github&lt;/h1&gt;
+
+&lt;p&gt;While &lt;a href=&quot;https://github.com/&quot;&gt;Github&lt;/a&gt; is my source hosting service of choice, and I'm sticking to it for the sake of my example, the strategy is not limited to it, and as long as you have plain HTTP access to your source files you can create such an integration. &lt;a href=&quot;http://code.google.com/p/maven-svn-wagon/wiki/MavenRepositoryInsideGoogleCode&quot;&gt;SVN on Google Code&lt;/a&gt; is just another option.&lt;/p&gt;
+
+&lt;p&gt;That said, let's get to the juicy part. The main problem with a &lt;code&gt;file://&lt;/code&gt; based repository is that absolute URLs and locality of artifacts get in the way of other people leveraging your project, eventually breaking transitive dependencies access. The trick is then to just point to the remote location where your sources are already hosted and available, still exploiting the Maven repository layout. As already explained &lt;a href=&quot;http://cemerick.com/2010/08/24/hosting-maven-repos-on-github/&quot;&gt;elsewhere&lt;/a&gt;, here's the &lt;code&gt;&amp;lt;repository&amp;gt;&lt;/code&gt; definition to put in your POM in case you're on Github:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;repository&amp;gt;
+    &amp;lt;id&amp;gt;repo&amp;lt;/id&amp;gt;
+    &amp;lt;url&amp;gt;https://github.com/$USER/$PROJECT/raw/master/$PATH&amp;lt;/url&amp;gt;
+&amp;lt;/repository&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Where you have to replace &lt;code&gt;$USER&lt;/code&gt;, &lt;code&gt;$PROJECT&lt;/code&gt; and &lt;code&gt;$PATH&lt;/code&gt; with your Github username, your project name and the path to your maven repository root within your sources (e.g. &lt;code&gt;src/main/lib&lt;/code&gt; in the previous article).&lt;/p&gt;
+</summary>
+</entry>
+
+
 <entry>
   <title>Legacy libraries for your maven build</title>
   <link href="http://skuro.tk/2012/05/14/legacy-libraries-for-your-maven-build/"/>
@@ -20,6 +50,8 @@
 &lt;p&gt;Dealing with legacy code is always tricky, and adapting your tooling to leverage them is sometimes plain hard. Especially when you're building your projects with Maven and your code happens to depend on some ancient library which appear to be unknown to the Internet™, you probably have to figure out how to tell Maven where to find that damn library. This is also the problem when dealing with e.g. proprietary third party libraries which don't ship with a POM, therefore they don't mavenly exist.&lt;/p&gt;
 
 &lt;h1&gt;Local repositories FTW&lt;/h1&gt;
+
+&lt;p&gt;&lt;strong&gt;UPDATE:&lt;/strong&gt; following the argument from &lt;a href=&quot;http://discursive.com/&quot;&gt;Tim O'Brien&lt;/a&gt;, I wrote a &lt;a href=&quot;http://skuro.tk/2012/05/28/legacy-artifacts-repository-update-going-remote/&quot;&gt;follow up&lt;/a&gt; to also exploit Github as a remote repository using the same storage strategy&lt;/p&gt;
 
 &lt;p&gt;There are a number of possible solutions to the above mentioned problem, which ideally involve a shared, remote artifact repository where to deploy the JAR file that causes you headaches. Recently, I found myself in the need of creating (yet another) Maven build around some &lt;a href=&quot;http://www.alfresco.com&quot;&gt;Alfresco&lt;/a&gt;, to enable &lt;a href=&quot;http://skuro.tk/lambdalf/&quot;&gt;Lambdalf&lt;/a&gt; to build its Clojure sources. The rocky road to Maven for Alfresco is still long, and as a result you find yourself dealing with some iffy libraries when coding against Alfresco. Some examples, just opening up the WAR files:&lt;/p&gt;
 
@@ -750,24 +782,6 @@ If your clock drifted too far away Windows will refuse to sync. In order to disa
 &lt;p&gt;It has been devastating, and I don't think I'm going to did it again. Still, the only regret I have is that I didn't take pictures, as my camera was packed within my luggage. I now look at the map above, which pin points all the steps along our way back here, and think &quot;did it&quot;. And I cannot hide a smile.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/img/post/hourly-map.png&quot; alt=&quot;Our journey, hour by hour&quot; /&gt;&lt;/p&gt;
-</summary>
-</entry>
-
-
-<entry>
-  <title>Amsterdam Clojurians meeting #4 - Dojo style</title>
-  <link href="http://skuro.tk/2010/04/14/amsterdam-clojurians-meeting-4-dojo-style/"/>
-  <updated>2010-04-14T00:00:00+02:00</updated>
-  <id>http://skuro.tk/2010/04/14/amsterdam-clojurians-meeting-4-dojo-style/</id>
-  <summary type="html">&lt;p&gt;Today the fourth meeting of the Amsterdam Clojure user group was held at the now usual &lt;a href=&quot;http://www.sourcesense.com&quot;&gt;Sourcesense&lt;/a&gt; offices venue in Amsterdam.&lt;/p&gt;
-
-&lt;p&gt;It has been probably the most successful one until now: thanks to some newcomers we had the most participated event ever with 10 nerdy, awesome geeks sitting together to discuss about nerdy, awesome stuff with lots of parenthesis.&lt;/p&gt;
-
-&lt;p&gt;As previously proposed by &lt;a href=&quot;http://lifeisagraph.net/&quot;&gt;Jeff Rose&lt;/a&gt;, we started thinking about improvements we could provide to the standard Clojure REPL, deciding for colorful messages for the &lt;strong&gt;doc&lt;/strong&gt; function. &lt;a href=&quot;http://sam.aaron.name/&quot;&gt;Sam Aaron&lt;/a&gt; proposed then to follow a dojo-like approach, with a single laptop connected to a projector where everybody has the chance to step in and do some coding while everybody else discuss possible approaches and alternatives.&lt;/p&gt;
-
-&lt;p&gt;The resulting code from this session is available on &lt;a href=&quot;http://github.com/ams-clj/clansi&quot;&gt;github&lt;/a&gt;. It does just a simple thing, it provides a way to override the default &lt;strong&gt;doc&lt;/strong&gt; behavior in order to make use of our custom, colorful implementation of &lt;strong&gt;print-doc&lt;/strong&gt;. And even if it doesn't look like rocket science, I can guarantee that being there and looking at how we came up with that, from some impressive vim-fu showed by &lt;a href=&quot;http://blog.rubyenrails.nl/&quot;&gt;Michiel de Mare&lt;/a&gt; to the clever and clean code provided by &lt;a href=&quot;http://blog.remvee.net/&quot;&gt;Remco van 't Veer&lt;/a&gt;, was indeed a lot of fun!&lt;/p&gt;
-
-&lt;p&gt;If all this sounds interesting to you, go and checkout the group &lt;a href=&quot;http://groups.google.com/group/amsterdam-clojurians&quot;&gt;mailing list&lt;/a&gt; or just show up at the next meeting, second Wednesday of each month at the &lt;a href=&quot;http://www.sourcesense.nl/contact/&quot;&gt;Sourcesense office&lt;/a&gt;.&lt;/p&gt;
 </summary>
 </entry>
 
