@@ -14,6 +14,8 @@ Dealing with legacy code is always tricky, and adapting your tooling to leverage
 Local repositories FTW
 ======================
 
+<strong>UPDATE:</strong> following the argument from [Tim O'Brien](http://discursive.com/), I wrote a [follow up](http://skuro.tk/2012/05/28/legacy-artifacts-repository-update-going-remote/) to also exploit Github as a remote repository using the same storage strategy 
+
 There are a number of possible solutions to the above mentioned problem, which ideally involve a shared, remote artifact repository where to deploy the JAR file that causes you headaches. Recently, I found myself in the need of creating (yet another) Maven build around some [Alfresco](http://www.alfresco.com), to enable [Lambdalf](http://skuro.tk/lambdalf/) to build its Clojure sources. The rocky road to Maven for Alfresco is still long, and as a result you find yourself dealing with some iffy libraries when coding against Alfresco. Some examples, just opening up the WAR files:
 
 - `truezip.jar`
