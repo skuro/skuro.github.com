@@ -53,17 +53,19 @@
 
 <!-- copied from post_header include -->
 <h1>
-  <a href="/2012/05/28/legacy-artifacts-repository-update-going-remote">Legacy artifacts repository update: going remote</a>
+  <a href="/2012/06/27/h2-support-for-the-lates-alfresco-versions">H2 support updated to the latest Alfresco versions</a>
 </h1>
 <blockquote class="date-wrapper">
   <h5 class="date">
-    May 28, 2012
+    June 27, 2012
     
      - tagged
     
+    <a href="/category/alfresco">#alfresco</a>
+    
     <a href="/category/alm">#alm</a>
     
-    <a href="/category/maven">#maven</a>
+    <a href="/category/h2-support">#h2-support</a>
     
     
   </h5>
@@ -71,49 +73,28 @@
 <!-- end copy -->
 
   
-  <img src="/img/post/legacy-remote.png" class="primary" />
+  <img src="/img/post/h2-logo.png" class="primary" />
   
-  <h1>The case against</h1>
+  <p><strong>tl;dr:</strong> two new releases of <a href="https://github.com/skuro/alfresco-h2-support">H2 Support</a> are available, to support both Alfresco v4.0.1 and v4.0.2 Enterprise edition</p>
 
-<p>After <a href="http://skuro.tk/2012/05/14/legacy-libraries-for-your-maven-build/">showing</a> how to use your version control repository to host legacy libraries, <a href="http://discursive.com/">Tim O'Brien</a> made a case against its use mentioning how a maintenance hell it would be to use such a strategy, and that a repository manager like <a href="http://www.sonatype.org/nexus">Nexus</a> or <a href="http://www.jfrog.com/index.php">Artifactory</a> is the preferred solution. After all, with a local repository in your sources you're indeed unable to <strong>download</strong> the JAR, so that any dependent project wouldn't be able to compile against your transitive dependencies. Isn't it part of the maven revolution to never, ever check in your libraries in your VCS?</p>
+<p>Time flies, and (good) software always keeps a fast development pace. This applies to <a href="http://www.alfresco.com">Alfresco</a>, which released a couple of Enterprise versions since I last updated the <a href="https://github.com/skuro/alfresco-h2-support">H2 Support</a> module. Promptly, <a href="https://twitter.com/#!/pjlucidi">Piergiorgio Lucidi</a> <a href="http://code.google.com/p/maven-alfresco-archetypes/issues/detail?id=94">found out</a> that the latest H2 Support version was incompatible with Alfresco v4.0.2. Time for a new release.</p>
 
-<h1>The case for</h1>
+<h2>Double rainbows</h2>
 
-<p>When your project has a mid-big scale, and you depend on a tens of legacy/funny libraries that the whole Internet can't provide, which are maybe still likely to get updates, you should <del>question your project</del> take the chance to leverage a repository manager. But, if your project is relatively small, with just a bunch of stray dependencies and no access to a repository manager for any reason, there's little value to gain from building an infrastructure around your JARs, and you can easily leverage a piece of infrastructure you're most likely to have already: your remote or centralized VCS repository.</p>
+<p>Last time I released H2 Support Alfresco was still on v4.0.0, with v4.0.1 and v4.0.2 already released in the meanwhile. The effort to upgrade H2 Support is fairly trivial, as it only requires some diff&amp;merge of DB related configuration from the original Alfresco codebase to H2 Support sources. Hence, not one but <strong>two</strong> releases of H2 Support were issued today, namely</p>
 
-<h1>[Not only] Github</h1>
+<ul>
+<li><p><a href="https://github.com/skuro/alfresco-h2-support/tree/v1.4">v1.4</a> -- H2 Support for Alfresco v4.0.2</p></li>
+<li><p><a href="https://github.com/skuro/alfresco-h2-support/tree/v1.3">v1.3</a> -- H2 Support for Alfresco v4.0.1</p></li>
+</ul>
 
-<p>While <a href="https://github.com/">Github</a> is my source hosting service of choice, and I'm sticking to it for the sake of my example, the strategy is not limited to it, and as long as you have plain HTTP access to your source files you can create such an integration. <a href="http://code.google.com/p/maven-svn-wagon/wiki/MavenRepositoryInsideGoogleCode">SVN on Google Code</a> is just another option.</p>
 
-<p>That said, let's get to the juicy part. The main problem with a <code>file://</code> based repository is that absolute URLs and locality of artifacts get in the way of other people leveraging your project, eventually breaking transitive dependencies access. The trick is then to just point to the remote location where your sources are already hosted and available, still exploiting the Maven repository layout. As already explained <a href="http://cemerick.com/2010/08/24/hosting-maven-repos-on-github/">elsewhere</a>, here's the <code>&lt;repository&gt;</code> definition to put in your POM in case you're on Github:</p>
+<p>As usual, please refer to the <a href="https://github.com/skuro/alfresco-h2-support/wiki/H2-Database-support-for-Alfresco">official documentation</a> for matching H2 Support and Alfresco versions.</p>
 
-<pre><code>&lt;repository&gt;
-    &lt;id&gt;repo&lt;/id&gt;
-    &lt;url&gt;https://github.com/$USER/$PROJECT/raw/master/$PATH&lt;/url&gt;
-&lt;/repository&gt;
-</code></pre>
+<h2>Availability on Central</h2>
 
-<p>Where you have to replace <code>$USER</code>, <code>$PROJECT</code> and <code>$PATH</code> with your Github username, your project name and the path to your maven repository root within your sources (e.g. <code>src/main/lib</code> in the previous article).</p>
+<p>The new releases are already available on OSS Sonatype <a href="https://oss.sonatype.org/content/groups/public/tk/skuro/alfresco/h2-support/">maven repository</a>. Give it enough time and they'll end up in Maven Central.</p>
 
-  
-  <div id="disqus_thread"></div>
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-    var disqus_shortname = 'skuro';
-//    var disqus_id = '/index.html';
-//    var disqus_url = [location.protocol, '//', location.host, location.pathname].join('');
-
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
-
-  
 
 </div>
 

@@ -3,13 +3,41 @@
     <title type="text" xml:lang="en">SKURO! -- Shading lights</title>
     <link type="application/atom+xml" href="http://skuro.tk/rss2/" rel="self"/>
     <link type="text" href="http://skuro.tk" rel="alternate"/>
-    <updated>2012-05-28T11:03:18+02:00</updated>
+    <updated>2012-06-27T20:32:50+02:00</updated>
     <id>http://skuro.tk</id>
     <author>
         <name>Carlo Sciolla</name>
     </author>
     <rights>Copyright (c) 2010-2011 Carlo Sciolla</rights>
     
+<entry>
+  <title>H2 support updated to the latest Alfresco versions</title>
+  <link href="http://skuro.tk/2012/06/27/h2-support-for-the-lates-alfresco-versions/"/>
+  <updated>2012-06-27T00:00:00+02:00</updated>
+  <id>http://skuro.tk/2012/06/27/h2-support-for-the-lates-alfresco-versions/</id>
+  <summary type="html">&lt;p&gt;&lt;strong&gt;tl;dr:&lt;/strong&gt; two new releases of &lt;a href=&quot;https://github.com/skuro/alfresco-h2-support&quot;&gt;H2 Support&lt;/a&gt; are available, to support both Alfresco v4.0.1 and v4.0.2 Enterprise edition&lt;/p&gt;
+
+&lt;p&gt;Time flies, and (good) software always keeps a fast development pace. This applies to &lt;a href=&quot;http://www.alfresco.com&quot;&gt;Alfresco&lt;/a&gt;, which released a couple of Enterprise versions since I last updated the &lt;a href=&quot;https://github.com/skuro/alfresco-h2-support&quot;&gt;H2 Support&lt;/a&gt; module. Promptly, &lt;a href=&quot;https://twitter.com/#!/pjlucidi&quot;&gt;Piergiorgio Lucidi&lt;/a&gt; &lt;a href=&quot;http://code.google.com/p/maven-alfresco-archetypes/issues/detail?id=94&quot;&gt;found out&lt;/a&gt; that the latest H2 Support version was incompatible with Alfresco v4.0.2. Time for a new release.&lt;/p&gt;
+
+&lt;h2&gt;Double rainbows&lt;/h2&gt;
+
+&lt;p&gt;Last time I released H2 Support Alfresco was still on v4.0.0, with v4.0.1 and v4.0.2 already released in the meanwhile. The effort to upgrade H2 Support is fairly trivial, as it only requires some diff&amp;amp;merge of DB related configuration from the original Alfresco codebase to H2 Support sources. Hence, not one but &lt;strong&gt;two&lt;/strong&gt; releases of H2 Support were issued today, namely&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/skuro/alfresco-h2-support/tree/v1.4&quot;&gt;v1.4&lt;/a&gt; -- H2 Support for Alfresco v4.0.2&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/skuro/alfresco-h2-support/tree/v1.3&quot;&gt;v1.3&lt;/a&gt; -- H2 Support for Alfresco v4.0.1&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;As usual, please refer to the &lt;a href=&quot;https://github.com/skuro/alfresco-h2-support/wiki/H2-Database-support-for-Alfresco&quot;&gt;official documentation&lt;/a&gt; for matching H2 Support and Alfresco versions.&lt;/p&gt;
+
+&lt;h2&gt;Availability on Central&lt;/h2&gt;
+
+&lt;p&gt;The new releases are already available on OSS Sonatype &lt;a href=&quot;https://oss.sonatype.org/content/groups/public/tk/skuro/alfresco/h2-support/&quot;&gt;maven repository&lt;/a&gt;. Give it enough time and they'll end up in Maven Central.&lt;/p&gt;
+</summary>
+</entry>
+
+
 <entry>
   <title>Legacy artifacts repository update: going remote</title>
   <link href="http://skuro.tk/2012/05/28/legacy-artifacts-repository-update-going-remote/"/>
@@ -711,77 +739,6 @@ If your clock drifted too far away Windows will refuse to sync. In order to disa
 
 
 &lt;p&gt;That's it for now. I hope this will come in handy to somebody else, since I'll try to avoid any more contact with the Microsoft stacks as long as possible, since without grep, find, awk, sed, vim I feel as uncomfortable as &lt;a href=&quot;http://farm4.static.flickr.com/3290/2615393415_0d9e8eb97d.jpg&quot;&gt;this&lt;/a&gt;.&lt;/p&gt;
-</summary>
-</entry>
-
-
-<entry>
-  <title>Tales from an Icelandic volcano victim</title>
-  <link href="http://skuro.tk/2010/04/21/tales-from-an-icelandic-volcano-victim/"/>
-  <updated>2010-04-21T00:00:00+02:00</updated>
-  <id>http://skuro.tk/2010/04/21/tales-from-an-icelandic-volcano-victim/</id>
-  <summary type="html">&lt;p&gt;Last weekend &lt;a href=&quot;http://en.wikipedia.org/wiki/Eyjafjallaj%C3%B6kull&quot;&gt;Eyjafjallaj&amp;ouml;kull&lt;/a&gt; decided my long-planned trip to visit my dear family in Italy had to be exhausting. On Friday, April 16th at 2pm my flight to Milan, scheduled to leave Amsterdam &lt;a href=&quot;http://www.schiphol.nl/&quot;&gt;Schiphol&lt;/a&gt; at 8pm, was eventually cancelled. It had to be the first step of a longer journey, which was planned to be as follows:&lt;/p&gt;
-
-&lt;ul&gt;
-    &lt;li&gt;&lt;strong&gt;Amsterdam -&amp;gt; Milan&lt;/strong&gt; - Friday, 16th April @8pm&lt;/li&gt;
-    &lt;li&gt;&lt;strong&gt;Milan -&amp;gt; Cagliari&lt;/strong&gt; - Saturday, 17th April @10am&lt;/li&gt;
-    &lt;li&gt;&lt;strong&gt;Cagliari -&amp;gt; Milan&lt;/strong&gt; - Monday, 19th April @12.30pm&lt;/li&gt;
-    &lt;li&gt;&lt;strong&gt;Milan -&amp;gt; Asterdam&lt;/strong&gt; - Monday, 19th April @6pm&lt;/li&gt;
-&lt;/ul&gt;
-
-
-&lt;p&gt;When it was clear that I was not going to leave Amsterdam by plane, I did the only thing you wouldn't take seriously, if you were me: I rented &lt;a href=&quot;http://www.zercustoms.com/news/images/MomoDesign-Lancia-Ypsilon-Sport-b.jpg&quot;&gt;a car&lt;/a&gt; to try and catch the flight leaving Milan the next day. This is the story of this long, long journey.&lt;/p&gt;
-
-&lt;h2&gt;Amsterdam -&amp;gt; Milan: &lt;span style=&quot;color: red;&quot;&gt;CANCELLED&lt;/span&gt;&lt;/h2&gt;
-
-
-&lt;p&gt;I didn't take note of the steps along the way down to Milan, so I will just write down a short story here.&lt;/p&gt;
-
-&lt;p&gt;We left Amsterdam by car at around 6pm. &quot;We&quot; means just me and my girlfriend, who wasn't 100% sure I had a great idea renting the car. But she supported me all the way long, she even drove for ~300km between Frankfurt and Stuttgart, while I was sleeping next to her. She had to stop around midnight, when we both fell asleep for 2h.&lt;/p&gt;
-
-&lt;p&gt;Coffee, sugar, then I got back at the driver seat and drove with no intermediate stops, if not for fueling, down to Milan.&lt;/p&gt;
-
-&lt;p&gt;We were stopped at the customs between Switzerland and Italy (6am), where three cops checked our pockets, our luggages and even our car trying to find some criminal stuff. Needless to say, they didn't find anything, but we lost 30 precious minutes.&lt;/p&gt;
-
-&lt;p&gt;Fortunately, the traffic jam that usually takes you ages to get through when you're near Milan at rush hours was yet to ramp up, so that we made it on time at Milan airport (7.45am). We left the car at the parking area, grabbed a coffee and waited to take off.&lt;/p&gt;
-
-&lt;h2&gt;Milan -&amp;gt; Cagliari: &lt;span style=&quot;color: green;&quot;&gt; AIRBORNE &lt;/span&gt;&lt;/h2&gt;
-
-
-&lt;p&gt;This is the most boring part of this diary: everything went really good, no delays, no nothing. We arrived, we enjoyed our time and my beloved &lt;a href=&quot;http://en.wikipedia.org/wiki/Sardinia&quot;&gt;Sardinia&lt;/a&gt; (and a &lt;a href=&quot;http://www.misfits.com/&quot;&gt;Misfits&lt;/a&gt; concert, by the way). As time went by, it was clear that some more troubles were about to come.&lt;/p&gt;
-
-&lt;p&gt;We didn't care until Sunday night, when they announced that Milan airport was definitely closed.&lt;/p&gt;
-
-&lt;h2&gt;Cagliari -&amp;gt; Milan: &lt;span style=&quot;color: red;&quot;&gt; CANCELLED &lt;/span&gt;&lt;/h2&gt;
-
-
-&lt;p&gt;This hit us badly: we didn't even considered the idea that that ash could get past the Alps, and now we were stuck in an island, even though a beautiful one. We decided to go the traditional way: we bought tickets to get back to Italy &lt;a href=&quot;http://www.mobylines.com/&quot;&gt;by boat&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;This time we teamed up with &lt;a href=&quot;http://developer4work.blogspot.com/&quot;&gt;my brother&lt;/a&gt;, &lt;a href=&quot;http://paperina81.deviantart.com/&quot;&gt;his girlfriend&lt;/a&gt; and their awesome, 4 months old son. They had to come back to &lt;a href=&quot;http://en.wikipedia.org/wiki/Pisa&quot;&gt;Pisa&lt;/a&gt;, so that we could share the first part of our trip together.&lt;/p&gt;
-
-&lt;p&gt;We left &lt;a href=&quot;http://en.wikipedia.org/wiki/Iglesias&quot;&gt;Iglesias&lt;/a&gt;, my birth place, at 11am, and after some hours and two stops (feeding, then fueling) we arrived at Olbia at 2.30pm. Having studied in Pisa for 7 years, the whole boat experience became quite familiar and boring long time ago. But those 9 hours passed by quite fast,  as we enjoyed our time together with the little newborn totally starring the show.&lt;/p&gt;
-
-&lt;p&gt;We eventually arrived at &lt;a href=&quot;http://en.wikipedia.org/wiki/Livorno&quot;&gt;Livorno&lt;/a&gt; at 11pm, where my girlfriend's father was awaiting us to give us a lift to Milan. Take note: 60 years old man, driving all night long for a total of 700km just to start working the next day without any rest in between. I hope I'll have the same energy when I'll be aged the same.&lt;/p&gt;
-
-&lt;h2&gt;Milan -&amp;gt; Amsterdam: &lt;span style=&quot;color: red;&quot;&gt; CANCELLED &lt;/span&gt;&lt;/h2&gt;
-
-
-&lt;p&gt;We got at Milan airport at 2.30am, where we found a surreal, totally empty place that was nonetheless bright, colorful and with all the monitors repeating the same word &quot;cancelled&quot; to death with nobody except us staring at them, as if their only purpose was  to remind us why we were actually there.&lt;/p&gt;
-
-&lt;p&gt;Bathroom, coffee, take back the car from the parking lot and back on track: our former driver headed back to the south, we followed the &lt;a href=&quot;http://en.wikipedia.org/wiki/Pole_star&quot;&gt;Pole Star&lt;/a&gt; (3am).&lt;/p&gt;
-
-&lt;p&gt;They didn't care to stop us again at customs, so we went straight to &lt;a href=&quot;http://en.wikipedia.org/wiki/Basel&quot;&gt;Basel&lt;/a&gt;, around where we took our now traditional 2h nap at around 6am.&lt;/p&gt;
-
-&lt;p&gt;Coffee, sugar, my girlfriend took the driver seat. I slept for the usual 300km and then drove all the way to Amsterdam.&lt;/p&gt;
-
-&lt;h2&gt;The end&lt;/h2&gt;
-
-
-&lt;p&gt;We arrived at home around 4.30pm. We were both completely exhausted, done, finished. Yet something more was left to do: empty the car, fuel it, take it back to the airport where the rental agency is, and then, finally, back at home, with enough energies left to get on and crush on the bed. 12h of sleep later, the whole story started to look like a long, distant, strange dream.&lt;/p&gt;
-
-&lt;p&gt;It has been devastating, and I don't think I'm going to did it again. Still, the only regret I have is that I didn't take pictures, as my camera was packed within my luggage. I now look at the map above, which pin points all the steps along our way back here, and think &quot;did it&quot;. And I cannot hide a smile.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/img/post/hourly-map.png&quot; alt=&quot;Our journey, hour by hour&quot; /&gt;&lt;/p&gt;
 </summary>
 </entry>
 
