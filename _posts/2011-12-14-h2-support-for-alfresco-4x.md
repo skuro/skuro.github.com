@@ -1,7 +1,7 @@
 ---
 title: H2 support updated for Alfresco 4.x
 layout: post
-categories: [alm, alfresco]
+categories: [alm, alfresco, h2-support]
 primary_img: /img/post/alfresco-h2.png
 meta-description: Alfresco 4 heavily changed the database configuration and scripts. This required an update of the H2 support module
 ---

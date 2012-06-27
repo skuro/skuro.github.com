@@ -2,7 +2,7 @@
 layout: post
 title: "H2 embedded DB and Alfresco 3.4"
 primary_img: /img/post/alfresco-h2.png
-categories: [alfresco, alm]
+categories: [alfresco, alm, h2-support]
 ---
 
 One of the most useful thing an embedded DB can do for you is to provide a clean environment in your automated tests to use as a clean slate where to repeatedly and reliably test your code. It's been a while since Alfresco <a href="http://issues.alfresco.com/jira/browse/ALFCOM-3691">broke compatibility</a> with some embedded DB we used to run our tests (<a href="http://hsqldb.org/">HSQLDB</a> above all others).

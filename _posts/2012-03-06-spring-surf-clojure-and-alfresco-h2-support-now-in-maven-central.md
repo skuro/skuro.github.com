@@ -2,7 +2,7 @@
 title: Spring surf Clojure and Alfresco H2 support now in Maven Central
 layout: post
 primary_img: /img/post/maven-central.png
-categories: [alfresco, alm, sonatype]
+categories: [alfresco, alm, sonatype, h2-support]
 meta-description: Spring surf Clojure and Alfresco H2 support now in Maven Central
 ---
 
