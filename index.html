@@ -53,19 +53,21 @@
 
 <!-- copied from post_header include -->
 <h1>
-  <a href="/2012/06/27/h2-support-for-the-lates-alfresco-versions">H2 support updated to the latest Alfresco versions</a>
+  <a href="/2012/08/31/dispatch-in-clojure-presentation-slides">Slides from Dispatch in Clojure</a>
 </h1>
 <blockquote class="date-wrapper">
   <h5 class="date">
-    June 27, 2012
+    August 31, 2012
     
      - tagged
     
-    <a href="/category/alfresco">#alfresco</a>
+    <a href="/category/meetup">#meetup</a>
     
-    <a href="/category/alm">#alm</a>
+    <a href="/category/clojure">#clojure</a>
     
-    <a href="/category/h2-support">#h2-support</a>
+    <a href="/category/presentation">#presentation</a>
+    
+    <a href="/category/slides">#slides</a>
     
     
   </h5>
@@ -73,27 +75,58 @@
 <!-- end copy -->
 
   
-  <img src="/img/post/h2-logo.png" class="primary" />
+  <img src="/img/post/newflag.png" class="primary" />
   
-  <p><strong>tl;dr:</strong> two new releases of <a href="https://github.com/skuro/alfresco-h2-support">H2 Support</a> are available, to support both Alfresco v4.0.1 and v4.0.2 Enterprise edition</p>
+  <h2>Presentation slides</h2>
 
-<p>Time flies, and (good) software always keeps a fast development pace. This applies to <a href="http://www.alfresco.com">Alfresco</a>, which released a couple of Enterprise versions since I last updated the <a href="https://github.com/skuro/alfresco-h2-support">H2 Support</a> module. Promptly, <a href="https://twitter.com/#!/pjlucidi">Piergiorgio Lucidi</a> <a href="http://code.google.com/p/maven-alfresco-archetypes/issues/detail?id=94">found out</a> that the latest H2 Support version was incompatible with Alfresco v4.0.2. Time for a new release.</p>
+<p>A bit late, and already announced
+<a href="https://twitter.com/skuro/status/233285542769487875">elsewhere</a>, but
+here you can find the slides from the <em>Dispatch in Clojure</em>
+presentation I gave at the
+<a href="http://www.meetup.com/The-Amsterdam-Clojure-Meetup-Group/events/73689122/">August 2012 meetup</a>
+of the
+<a href="http://www.meetup.com/The-Amsterdam-Clojure-Meetup-Group/">Amsterdam Clojurians</a>
+group. Hopefully it will ease you bearing to wait for the <a href="amsclj.nl/october.htm">October
+Amsterdam Clojure</a> event later in October :-)</p>
 
-<h2>Double rainbows</h2>
+<p>The code samples I used in the presentation are available on <a href="https://github.com/skuro/clj-dispatch">GitHub</a>.</p>
 
-<p>Last time I released H2 Support Alfresco was still on v4.0.0, with v4.0.1 and v4.0.2 already released in the meanwhile. The effort to upgrade H2 Support is fairly trivial, as it only requires some diff&amp;merge of DB related configuration from the original Alfresco codebase to H2 Support sources. Hence, not one but <strong>two</strong> releases of H2 Support were issued today, namely</p>
+<iframe src="http://www.slideshare.net/slideshow/embed_code/13915010" width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen> </iframe>
+
+
+<h2>The story behind</h2>
+
+<p>In a previous meetup a discussion arose about
+<a href="http://clojure.org/protocols">protocols</a> and how they relate to
+<a href="http://en.wikipedia.org/wiki/Mixin">mixins</a> in other languages such
+as <a href="http://www.ruby-lang.org/en/">Ruby</a>. A quick mention to virtual
+methods dispatch table was enough to let my head spin around all the
+details I was missing on low level Clojure mechanics. A presentation
+was due.</p>
+
+<h2>What's in</h2>
+
+<p>What I was curious about, and eventually ended in the presentation, is
+how Clojure implements function calls and method dispatch from both a
+low level JVM and high level language syntax perspectives, and how
+they relate to each other. What's (briefly) covered in the
+presentation:</p>
 
 <ul>
-<li><p><a href="https://github.com/skuro/alfresco-h2-support/tree/v1.4">v1.4</a> -- H2 Support for Alfresco v4.0.2</p></li>
-<li><p><a href="https://github.com/skuro/alfresco-h2-support/tree/v1.3">v1.3</a> -- H2 Support for Alfresco v4.0.1</p></li>
+<li>JVM bytecodes used for method call</li>
+<li>plain <a href="http://clojure.org/functional_programming">function call</a> in Clojure</li>
+<li><a href="http://clojure.org/multimethods">multimethods</a></li>
+<li><a href="http://clojure.org/Protocols">protocols</a></li>
 </ul>
 
 
-<p>As usual, please refer to the <a href="https://github.com/skuro/alfresco-h2-support/wiki/H2-Database-support-for-Alfresco">official documentation</a> for matching H2 Support and Alfresco versions.</p>
+<p>What couldn't be entered in the presentation is the interesting
+digressions we had during the meetup using an open REPL, some sample
+projects and a Java decompiler.</p>
 
-<h2>Availability on Central</h2>
-
-<p>The new releases are already available on OSS Sonatype <a href="https://oss.sonatype.org/content/groups/public/tk/skuro/alfresco/h2-support/">maven repository</a>. Give it enough time and they'll end up in Maven Central.</p>
+<p>Video recordings are still a pending TODO in the meetup list, so if
+you're around Amsterdam make sure you come and <a href="http://www.meetup.com/The-Amsterdam-Clojure-Meetup-Group/">join us</a> for some other
+awesome Dutch Clojure nights!</p>
 
 
 </div>

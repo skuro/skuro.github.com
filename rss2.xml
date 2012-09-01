@@ -3,13 +3,72 @@
     <title type="text" xml:lang="en">SKURO! -- Shading lights</title>
     <link type="application/atom+xml" href="http://skuro.tk/rss2/" rel="self"/>
     <link type="text" href="http://skuro.tk" rel="alternate"/>
-    <updated>2012-06-27T20:32:50+02:00</updated>
+    <updated>2012-09-01T18:03:03+02:00</updated>
     <id>http://skuro.tk</id>
     <author>
         <name>Carlo Sciolla</name>
     </author>
     <rights>Copyright (c) 2010-2011 Carlo Sciolla</rights>
     
+<entry>
+  <title>Slides from Dispatch in Clojure</title>
+  <link href="http://skuro.tk/2012/08/31/dispatch-in-clojure-presentation-slides/"/>
+  <updated>2012-08-31T00:00:00+02:00</updated>
+  <id>http://skuro.tk/2012/08/31/dispatch-in-clojure-presentation-slides/</id>
+  <summary type="html">&lt;h2&gt;Presentation slides&lt;/h2&gt;
+
+&lt;p&gt;A bit late, and already announced
+&lt;a href=&quot;https://twitter.com/skuro/status/233285542769487875&quot;&gt;elsewhere&lt;/a&gt;, but
+here you can find the slides from the &lt;em&gt;Dispatch in Clojure&lt;/em&gt;
+presentation I gave at the
+&lt;a href=&quot;http://www.meetup.com/The-Amsterdam-Clojure-Meetup-Group/events/73689122/&quot;&gt;August 2012 meetup&lt;/a&gt;
+of the
+&lt;a href=&quot;http://www.meetup.com/The-Amsterdam-Clojure-Meetup-Group/&quot;&gt;Amsterdam Clojurians&lt;/a&gt;
+group. Hopefully it will ease you bearing to wait for the &lt;a href=&quot;amsclj.nl/october.htm&quot;&gt;October
+Amsterdam Clojure&lt;/a&gt; event later in October :-)&lt;/p&gt;
+
+&lt;p&gt;The code samples I used in the presentation are available on &lt;a href=&quot;https://github.com/skuro/clj-dispatch&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+
+&lt;iframe src=&quot;http://www.slideshare.net/slideshow/embed_code/13915010&quot; width=&quot;427&quot; height=&quot;356&quot; frameborder=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; scrolling=&quot;no&quot; style=&quot;border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px&quot; allowfullscreen&gt; &lt;/iframe&gt;
+
+
+&lt;h2&gt;The story behind&lt;/h2&gt;
+
+&lt;p&gt;In a previous meetup a discussion arose about
+&lt;a href=&quot;http://clojure.org/protocols&quot;&gt;protocols&lt;/a&gt; and how they relate to
+&lt;a href=&quot;http://en.wikipedia.org/wiki/Mixin&quot;&gt;mixins&lt;/a&gt; in other languages such
+as &lt;a href=&quot;http://www.ruby-lang.org/en/&quot;&gt;Ruby&lt;/a&gt;. A quick mention to virtual
+methods dispatch table was enough to let my head spin around all the
+details I was missing on low level Clojure mechanics. A presentation
+was due.&lt;/p&gt;
+
+&lt;h2&gt;What's in&lt;/h2&gt;
+
+&lt;p&gt;What I was curious about, and eventually ended in the presentation, is
+how Clojure implements function calls and method dispatch from both a
+low level JVM and high level language syntax perspectives, and how
+they relate to each other. What's (briefly) covered in the
+presentation:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;JVM bytecodes used for method call&lt;/li&gt;
+&lt;li&gt;plain &lt;a href=&quot;http://clojure.org/functional_programming&quot;&gt;function call&lt;/a&gt; in Clojure&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://clojure.org/multimethods&quot;&gt;multimethods&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://clojure.org/Protocols&quot;&gt;protocols&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;What couldn't be entered in the presentation is the interesting
+digressions we had during the meetup using an open REPL, some sample
+projects and a Java decompiler.&lt;/p&gt;
+
+&lt;p&gt;Video recordings are still a pending TODO in the meetup list, so if
+you're around Amsterdam make sure you come and &lt;a href=&quot;http://www.meetup.com/The-Amsterdam-Clojure-Meetup-Group/&quot;&gt;join us&lt;/a&gt; for some other
+awesome Dutch Clojure nights!&lt;/p&gt;
+</summary>
+</entry>
+
+
 <entry>
   <title>H2 support updated to the latest Alfresco versions</title>
   <link href="http://skuro.tk/2012/06/27/h2-support-for-the-lates-alfresco-versions/"/>
@@ -686,59 +745,6 @@ hibernate.dialect=org.hibernate.dialect.H2Dialect
 &lt;p&gt;This is just an experiment at the moment, and far from being production-quality stuff. Still, it has been instructing to build a  Java-to-Clojure integration, and nonetheless it might come in handy when I'll be trying to put more Clojure in my working life.&lt;/p&gt;
 
 &lt;p&gt;(bye)&lt;/p&gt;
-</summary>
-</entry>
-
-
-<entry>
-  <title>Handling Microsoft Windows NTP sync</title>
-  <link href="http://skuro.tk/2010/04/23/handling-microsoft-windows-ntp-sync/"/>
-  <updated>2010-04-23T00:00:00+02:00</updated>
-  <id>http://skuro.tk/2010/04/23/handling-microsoft-windows-ntp-sync/</id>
-  <summary type="html">&lt;p&gt;This post should raise some eyebrows around, as I'm advocating Linux since ages and I'm not at all into Microsoft stuff for the 99.99% of my time. This story comes out of that (usually negligible) 0.01%.&lt;/p&gt;
-
-&lt;h2&gt;Why bother with NTP on MS Windows?&lt;/h2&gt;
-
-&lt;p&gt;The Alfresco implementation I'm working on has to integrate with a fully MS-powered environment, with a Domain Controller pulling the strings of network entities such as users and hosts. As the customer has strict security requirements, no remote access can be granted to their intranet, and since their offices are a bit far away from mine, we decided to replicate their environment locally, providing the minimum set of components such as&lt;/p&gt;
-
-&lt;ul&gt;
-    &lt;li&gt;a domain controller (WinServer 2k8)&lt;/li&gt;
-    &lt;li&gt;a domain host (WinXP Pro SP2)&lt;/li&gt;
-    &lt;li&gt;the Alfresco server (RHELv5.4)&lt;/li&gt;
-&lt;/ul&gt;
-
-
-&lt;p&gt;I was able to build up the whole replicated environment, with a relative limited effort, using virtual machines to host all the different operating system on my laptop. I was so happy that everything worked almost at the first shot that I almost died when it all went wrong after the first reboot of the VMs: I couldn't log anymore on the WinXP box!&lt;/p&gt;
-
-&lt;p&gt;It turned out that all clocks drifted away, making Kerberos auth checks fail because of replication attacks protection. Looked like it was time to strengthen my Win-fu and configure NTP in a proper way. This is what I learned.&lt;/p&gt;
-
-&lt;h2&gt;WinServer2k8 and clock management&lt;/h2&gt;
-
-&lt;p&gt;If there's one thing I enjoyed out of all the time spent on these tasks, the prize goes definitely to w32tm: I had to deal with Windows, and there were no windows involved! As usual, whenever I'm typing into a command line, I feel at home. I'm actually writing this whole blog post to take note of the tricks I learned around w32tm and NTP clock sync. Here we go:&lt;/p&gt;
-
-&lt;ul&gt;
-    &lt;li&gt;&lt;strong&gt;Configure NTP servers&lt;/strong&gt;
-&lt;blockquote&gt;&lt;pre&gt;w32tm /config /manualpeerlist:&lt;a href=&quot;http://europe.pool.ntp.org&quot; target=&quot;_blank&quot;&gt;europe.pool.ntp.org&lt;/a&gt; \
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; /syncfromflags:manual /reliable:no /update&lt;/pre&gt;&lt;/blockquote&gt;
-&lt;/li&gt;
-    &lt;li&gt;&lt;strong&gt;Query NTP servers&lt;/strong&gt;
-&lt;blockquote&gt;&lt;pre&gt;w32tm /stripchart /computer:&lt;a href=&quot;http://europe.pool.ntp.org&quot; target=&quot;_blank&quot;&gt;europe.pool.ntp.org&lt;/a&gt; \
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; /samples:5 /dataonly&lt;/pre&gt;&lt;/blockquote&gt;
-&lt;/li&gt;
-    &lt;li&gt;&lt;strong&gt;Resync clock&lt;/strong&gt;
-&lt;blockquote&gt;&lt;pre&gt;w32tm /resync /rediscover&lt;/pre&gt;&lt;/blockquote&gt;
-&lt;/li&gt;
-    &lt;li&gt;&lt;strong&gt;Allow resync in case of huge drifts&lt;/strong&gt;
-If your clock drifted too far away Windows will refuse to sync. In order to disable such check you have to import the following changes (write them in a reg-keys.reg file and double click it):
-&lt;blockquote&gt;&lt;pre&gt;Windows Registry Editor Version 5.00
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Config]
-&quot;MaxNegPhaseCorrection&quot;=dword:ffffffff
-&quot;MaxPosPhaseCorrection&quot;=dword:ffffffff&lt;/pre&gt;&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-
-
-&lt;p&gt;That's it for now. I hope this will come in handy to somebody else, since I'll try to avoid any more contact with the Microsoft stacks as long as possible, since without grep, find, awk, sed, vim I feel as uncomfortable as &lt;a href=&quot;http://farm4.static.flickr.com/3290/2615393415_0d9e8eb97d.jpg&quot;&gt;this&lt;/a&gt;.&lt;/p&gt;
 </summary>
 </entry>
 
