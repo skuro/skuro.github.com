@@ -3,7 +3,7 @@
     <title type="text" xml:lang="en">SKURO! -- Shading lights</title>
     <link type="application/atom+xml" href="http://skuro.tk/rss2/" rel="self"/>
     <link type="text" href="http://skuro.tk" rel="alternate"/>
-    <updated>2012-09-08T02:08:37+02:00</updated>
+    <updated>2012-09-08T02:10:56+02:00</updated>
     <id>http://skuro.tk</id>
     <author>
         <name>Carlo Sciolla</name>
@@ -11,7 +11,7 @@
     <rights>Copyright (c) 2010-2011 Carlo Sciolla</rights>
     
 <entry>
-  <title>Slides from Dispatch in Clojure</title>
+  <title>org4idea adds org-mode support to Intellij IDEA</title>
   <link href="http://skuro.tk/2012/09/08/org-mode-intellij-plugin/"/>
   <updated>2012-09-08T00:00:00+02:00</updated>
   <id>http://skuro.tk/2012/09/08/org-mode-intellij-plugin/</id>
