@@ -1,5 +1,5 @@
 ---
-title: Slides from Dispatch in Clojure
+title: org4idea adds org-mode support to Intellij IDEA
 layout: post
 primary_img: /img/post/org4idea.png
 categories: [clojure, emacs, orgmode, intellij]
