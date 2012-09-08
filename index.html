@@ -53,21 +53,21 @@
 
 <!-- copied from post_header include -->
 <h1>
-  <a href="/2012/08/31/dispatch-in-clojure-presentation-slides">Slides from Dispatch in Clojure</a>
+  <a href="/2012/09/08/org-mode-intellij-plugin">Slides from Dispatch in Clojure</a>
 </h1>
 <blockquote class="date-wrapper">
   <h5 class="date">
-    August 31, 2012
+    September  8, 2012
     
      - tagged
     
-    <a href="/category/meetup">#meetup</a>
-    
     <a href="/category/clojure">#clojure</a>
     
-    <a href="/category/presentation">#presentation</a>
+    <a href="/category/emacs">#emacs</a>
     
-    <a href="/category/slides">#slides</a>
+    <a href="/category/orgmode">#orgmode</a>
+    
+    <a href="/category/intellij">#intellij</a>
     
     
   </h5>
@@ -75,58 +75,51 @@
 <!-- end copy -->
 
   
-  <img src="/img/post/newflag.png" class="primary" />
+  <img src="/img/post/org4idea.png" class="primary" />
   
-  <h2>Presentation slides</h2>
+  <p><em>tl;dr:</em> <a href="https://github.com/skuro/org4idea">org4idea</a> is a brand new
+ project to add <a href="http://orgmode.org">org-mode</a> support to <a href="http://www.jetbrains.com/idea/">IntelliJ IDEA</a></p>
 
-<p>A bit late, and already announced
-<a href="https://twitter.com/skuro/status/233285542769487875">elsewhere</a>, but
-here you can find the slides from the <em>Dispatch in Clojure</em>
-presentation I gave at the
-<a href="http://www.meetup.com/The-Amsterdam-Clojure-Meetup-Group/events/73689122/">August 2012 meetup</a>
-of the
-<a href="http://www.meetup.com/The-Amsterdam-Clojure-Meetup-Group/">Amsterdam Clojurians</a>
-group. Hopefully it will ease you bearing to wait for the <a href="amsclj.nl/october.htm">October
-Amsterdam Clojure</a> event later in October :-)</p>
+<h2>A coin with two sides</h2>
 
-<p>The code samples I used in the presentation are available on <a href="https://github.com/skuro/clj-dispatch">GitHub</a>.</p>
+<p>Given the gargantuan size of the feature list of
+<a href="http://orgmode.org/">org-mode</a>, there's hardly any competition of
+note taking systems for hackers. I'm completely sold on it since long
+time already, so much that
+<a href="http://unixhelp.ed.ac.uk/CGI/man-cgi?uptime">uptime(1)</a> returns
+always a quite precise approximation of the Emacs process lifetime.</p>
 
-<iframe src="http://www.slideshare.net/slideshow/embed_code/13915010" width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen> </iframe>
+<p>While such setup makes for a merry and seamless experience while
+hacking on my <a href="http://clojure.org/">Clojure</a> projects, the dream
+breakes when I move to work on Java code, where I shall have no other
+IDE besides <a href="http://www.jetbrains.com/idea/">IntelliJ IDEA</a>.</p>
 
+<h2>Baby steps</h2>
 
-<h2>The story behind</h2>
+<p>As there's no better way than a quick hacking session to start the
+weekend, I eventually decided to take some time to put together a
+minimal plugin to support editing org files within IntelliJ: a few
+hours later <a href="https://github.com/skuro/org4idea">org4idea</a> landed on my
+GitHub account. It's a ridiculously tiny plugin at the moment, only
+providing syntax highlight for comments and outlines.</p>
 
-<p>In a previous meetup a discussion arose about
-<a href="http://clojure.org/protocols">protocols</a> and how they relate to
-<a href="http://en.wikipedia.org/wiki/Mixin">mixins</a> in other languages such
-as <a href="http://www.ruby-lang.org/en/">Ruby</a>. A quick mention to virtual
-methods dispatch table was enough to let my head spin around all the
-details I was missing on low level Clojure mechanics. A presentation
-was due.</p>
+<p>While I'm
+not planning to support all the features and plugins of org in
+IntelliJ you can safely bet I'll be adding new features with time. You
+can always open an <a href="https://github.com/skuro/org4idea/issues">issue</a>
+to try to buy some karma points to that specific feature you desperately
+need to be implemented (well, in such cases you could also realize you're just
+one fork away).</p>
 
-<h2>What's in</h2>
+<h2>Installation</h2>
 
-<p>What I was curious about, and eventually ended in the presentation, is
-how Clojure implements function calls and method dispatch from both a
-low level JVM and high level language syntax perspectives, and how
-they relate to each other. What's (briefly) covered in the
-presentation:</p>
+<p>While the plugin still awaits approval in the official
+<a href="http://plugins.intellij.net/plugin?pr=&amp;pluginId=7095">repository</a> you
+can manually install the plugin by downloading <a href="https://github.com/downloads/skuro/org4idea/org4idea.jar">org4idea.jar</a>
+and feed it to the <em>Settings -> Plugins -> Install plugin from disk</em>
+dialog.</p>
 
-<ul>
-<li>JVM bytecodes used for method call</li>
-<li>plain <a href="http://clojure.org/functional_programming">function call</a> in Clojure</li>
-<li><a href="http://clojure.org/multimethods">multimethods</a></li>
-<li><a href="http://clojure.org/Protocols">protocols</a></li>
-</ul>
-
-
-<p>What couldn't be entered in the presentation is the interesting
-digressions we had during the meetup using an open REPL, some sample
-projects and a Java decompiler.</p>
-
-<p>Video recordings are still a pending TODO in the meetup list, so if
-you're around Amsterdam make sure you come and <a href="http://www.meetup.com/The-Amsterdam-Clojure-Meetup-Group/">join us</a> for some other
-awesome Dutch Clojure nights!</p>
+<p>Happy GTD!</p>
 
 
 </div>

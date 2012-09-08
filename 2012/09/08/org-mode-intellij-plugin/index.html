@@ -48,29 +48,14 @@
       
       <section>
         <div class="post">
-  <h1 class="title">
-    Posts filed under <a href="category/emacs/index.html">#emacs</a>
-  </h1>
-  <div id="archive" class="archive">
-    <ul>
-      
-        <li>
-  <span class="date">27 November 2011</span>
-  <a href="/2011/11/27/jekyll-github-and-emacs">Jekyll, Github and Emacs</a>
-  <span class="categories">
-    
-    <a href="/category/blog">#blog</a>
-    
-    <a href="/category/emacs">#emacs</a>
-    
-  </span>        
-</li> 
-
-      
-        <li>
-  <span class="date"> 8 September 2012</span>
+  <h1>
   <a href="/2012/09/08/org-mode-intellij-plugin">Slides from Dispatch in Clojure</a>
-  <span class="categories">
+</h1>
+<blockquote class="date-wrapper">
+  <h5 class="date">
+    September  8, 2012
+    
+    - tagged 
     
     <a href="/category/clojure">#clojure</a>
     
@@ -80,12 +65,77 @@
     
     <a href="/category/intellij">#intellij</a>
     
-  </span>        
-</li> 
+    
+  </h5>
+</blockquote>
 
-      
-    </ul>
-  </div>
+  
+  <img src="/img/post/org4idea.png" class="primary" />
+  
+  <p><em>tl;dr:</em> <a href="https://github.com/skuro/org4idea">org4idea</a> is a brand new
+ project to add <a href="http://orgmode.org">org-mode</a> support to <a href="http://www.jetbrains.com/idea/">IntelliJ IDEA</a></p>
+
+<h2>A coin with two sides</h2>
+
+<p>Given the gargantuan size of the feature list of
+<a href="http://orgmode.org/">org-mode</a>, there's hardly any competition of
+note taking systems for hackers. I'm completely sold on it since long
+time already, so much that
+<a href="http://unixhelp.ed.ac.uk/CGI/man-cgi?uptime">uptime(1)</a> returns
+always a quite precise approximation of the Emacs process lifetime.</p>
+
+<p>While such setup makes for a merry and seamless experience while
+hacking on my <a href="http://clojure.org/">Clojure</a> projects, the dream
+breakes when I move to work on Java code, where I shall have no other
+IDE besides <a href="http://www.jetbrains.com/idea/">IntelliJ IDEA</a>.</p>
+
+<h2>Baby steps</h2>
+
+<p>As there's no better way than a quick hacking session to start the
+weekend, I eventually decided to take some time to put together a
+minimal plugin to support editing org files within IntelliJ: a few
+hours later <a href="https://github.com/skuro/org4idea">org4idea</a> landed on my
+GitHub account. It's a ridiculously tiny plugin at the moment, only
+providing syntax highlight for comments and outlines.</p>
+
+<p>While I'm
+not planning to support all the features and plugins of org in
+IntelliJ you can safely bet I'll be adding new features with time. You
+can always open an <a href="https://github.com/skuro/org4idea/issues">issue</a>
+to try to buy some karma points to that specific feature you desperately
+need to be implemented (well, in such cases you could also realize you're just
+one fork away).</p>
+
+<h2>Installation</h2>
+
+<p>While the plugin still awaits approval in the official
+<a href="http://plugins.intellij.net/plugin?pr=&amp;pluginId=7095">repository</a> you
+can manually install the plugin by downloading <a href="https://github.com/downloads/skuro/org4idea/org4idea.jar">org4idea.jar</a>
+and feed it to the <em>Settings -> Plugins -> Install plugin from disk</em>
+dialog.</p>
+
+<p>Happy GTD!</p>
+
+  
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'skuro';
+//    var disqus_id = '/2012/09/08/org-mode-intellij-plugin';
+//    var disqus_url = [location.protocol, '//', location.host, location.pathname].join('');
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+  
+
 </div>
 
       </section>

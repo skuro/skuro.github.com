@@ -3,13 +3,65 @@
     <title type="text" xml:lang="en">SKURO! -- Shading lights</title>
     <link type="application/atom+xml" href="http://skuro.tk/rss2/" rel="self"/>
     <link type="text" href="http://skuro.tk" rel="alternate"/>
-    <updated>2012-09-01T18:03:03+02:00</updated>
+    <updated>2012-09-08T02:08:37+02:00</updated>
     <id>http://skuro.tk</id>
     <author>
         <name>Carlo Sciolla</name>
     </author>
     <rights>Copyright (c) 2010-2011 Carlo Sciolla</rights>
     
+<entry>
+  <title>Slides from Dispatch in Clojure</title>
+  <link href="http://skuro.tk/2012/09/08/org-mode-intellij-plugin/"/>
+  <updated>2012-09-08T00:00:00+02:00</updated>
+  <id>http://skuro.tk/2012/09/08/org-mode-intellij-plugin/</id>
+  <summary type="html">&lt;p&gt;&lt;em&gt;tl;dr:&lt;/em&gt; &lt;a href=&quot;https://github.com/skuro/org4idea&quot;&gt;org4idea&lt;/a&gt; is a brand new
+ project to add &lt;a href=&quot;http://orgmode.org&quot;&gt;org-mode&lt;/a&gt; support to &lt;a href=&quot;http://www.jetbrains.com/idea/&quot;&gt;IntelliJ IDEA&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2&gt;A coin with two sides&lt;/h2&gt;
+
+&lt;p&gt;Given the gargantuan size of the feature list of
+&lt;a href=&quot;http://orgmode.org/&quot;&gt;org-mode&lt;/a&gt;, there's hardly any competition of
+note taking systems for hackers. I'm completely sold on it since long
+time already, so much that
+&lt;a href=&quot;http://unixhelp.ed.ac.uk/CGI/man-cgi?uptime&quot;&gt;uptime(1)&lt;/a&gt; returns
+always a quite precise approximation of the Emacs process lifetime.&lt;/p&gt;
+
+&lt;p&gt;While such setup makes for a merry and seamless experience while
+hacking on my &lt;a href=&quot;http://clojure.org/&quot;&gt;Clojure&lt;/a&gt; projects, the dream
+breakes when I move to work on Java code, where I shall have no other
+IDE besides &lt;a href=&quot;http://www.jetbrains.com/idea/&quot;&gt;IntelliJ IDEA&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2&gt;Baby steps&lt;/h2&gt;
+
+&lt;p&gt;As there's no better way than a quick hacking session to start the
+weekend, I eventually decided to take some time to put together a
+minimal plugin to support editing org files within IntelliJ: a few
+hours later &lt;a href=&quot;https://github.com/skuro/org4idea&quot;&gt;org4idea&lt;/a&gt; landed on my
+GitHub account. It's a ridiculously tiny plugin at the moment, only
+providing syntax highlight for comments and outlines.&lt;/p&gt;
+
+&lt;p&gt;While I'm
+not planning to support all the features and plugins of org in
+IntelliJ you can safely bet I'll be adding new features with time. You
+can always open an &lt;a href=&quot;https://github.com/skuro/org4idea/issues&quot;&gt;issue&lt;/a&gt;
+to try to buy some karma points to that specific feature you desperately
+need to be implemented (well, in such cases you could also realize you're just
+one fork away).&lt;/p&gt;
+
+&lt;h2&gt;Installation&lt;/h2&gt;
+
+&lt;p&gt;While the plugin still awaits approval in the official
+&lt;a href=&quot;http://plugins.intellij.net/plugin?pr=&amp;amp;pluginId=7095&quot;&gt;repository&lt;/a&gt; you
+can manually install the plugin by downloading &lt;a href=&quot;https://github.com/downloads/skuro/org4idea/org4idea.jar&quot;&gt;org4idea.jar&lt;/a&gt;
+and feed it to the &lt;em&gt;Settings -&gt; Plugins -&gt; Install plugin from disk&lt;/em&gt;
+dialog.&lt;/p&gt;
+
+&lt;p&gt;Happy GTD!&lt;/p&gt;
+</summary>
+</entry>
+
+
 <entry>
   <title>Slides from Dispatch in Clojure</title>
   <link href="http://skuro.tk/2012/08/31/dispatch-in-clojure-presentation-slides/"/>
@@ -708,43 +760,6 @@ hibernate.dialect=org.hibernate.dialect.H2Dialect
 &lt;p&gt;Sono assolutamente d'accordo nel sostenere che la cultura e la lingua italiane debbano avere il primato, debbano essere sostenute e che navighino attualmente in cattive acque, ma &lt;strong&gt;questa situazione &amp;eacute; gi&amp;agrave; davanti ai nostri occhi anche senza la presenza dell'inglese in TV&lt;/strong&gt;. Ai giorni nostri l'inglese &amp;eacute; uno strumento fondamentale, che l'italiano medio non riesce ad acquisire in maniera tale da poterlo sfruttare a proprio vantaggio. Tutt'al pi&amp;ugrave; pu&amp;ograve; sperare di dare le indicazioni ad un turista approdato in terra italica.&lt;/p&gt;
 
 &lt;p&gt;Io mi sento di ribaltare il punto di vista: non si pu&amp;ograve; far si che un colpevole disinteresse per la lingua italiana vada a scapito degli interventi che possono migliorare l'apprendimento dell'inglese.&lt;/p&gt;
-</summary>
-</entry>
-
-
-<entry>
-  <title>Spring Surf meets Clojure</title>
-  <link href="http://skuro.tk/2010/05/23/spring-surf-meets-clojure/"/>
-  <updated>2010-05-23T00:00:00+02:00</updated>
-  <id>http://skuro.tk/2010/05/23/spring-surf-meets-clojure/</id>
-  <summary type="html">&lt;p&gt;For those who missed it, some time ago the &lt;a href=&quot;http://www.alfresco.com/&quot;&gt;Alfresco&lt;/a&gt; guys &lt;a href=&quot;http://www.alfresco.com/media/releases/2009/12/spring_surf/&quot;&gt;donated&lt;/a&gt; their &lt;a href=&quot;http://wiki.alfresco.com/wiki/Surf_Platform&quot;&gt;Surf Platform&lt;/a&gt; to &lt;a href=&quot;http://www.springsource.com/&quot;&gt;SpringSource&lt;/a&gt;, giving birth to the now-called &lt;a href=&quot;http://www.springsource.org/extensions/se-surf&quot;&gt;SpringSurf&lt;/a&gt;, which is thereby described as:&lt;/p&gt;
-
-&lt;blockquote&gt;a view composition framework for Spring MVC that plugs into your existing Spring applications. It provides a scriptable and content-centric approach to building web applications.&lt;/blockquote&gt;
-
-
-&lt;p&gt;I'm not going to introduce you how to use this yet-another MVC framework, but Michael Uzquiano provided an &lt;a href=&quot;http://blogs.alfresco.com/wp/uzi/2009/11/03/using-surf-in-your-spring-apps/&quot;&gt;awesome blogpost&lt;/a&gt;, in case you were interested into learning more about it.&lt;/p&gt;
-
-&lt;p&gt;Part of the job of this Spring Surf framework is to provide an easy to use web scripting framework, REST like, that enables you to easily put together a View and, optionally, a Controller to implement a web API, provide them in the classpath together with a small XML descriptor, and your REST API is deployed right away. In the SpringSurf parlance, this is called called WebScript. Again, technical insights about the framework are better explained &lt;a href=&quot;http://blogs.alfresco.com/wp/webcasts/2010/01/introducing-spring-surf-and-spring-web-scripts/&quot;&gt;elsewhere&lt;/a&gt;, so no repetitions here. What I think is cool about Spring Surf, and I'm here with you to discuss, is it's multi-language focus: web script Controllers can be written in Javascript, PHP or Groovy right out of the box, allowing you to choose whichever language you prefer. Moreover, if you just peek at Spring Surf &lt;a href=&quot;https://anonsvn.springframework.org/svn/se-surf/tags/release-1.0.0.M3/spring-webscripts-addons/&quot;&gt;source code&lt;/a&gt;, plugging in support for new languages doesn't look so hard, so I decided to challenge myself and write support for Clojure backed webscripts. You can find the result of my efforts on &lt;a href=&quot;http://github.com/skuro/spring-webscripts-addon-clojure&quot;&gt;github&lt;/a&gt;, with a sample webscript that proves the concept.&lt;/p&gt;
-
-&lt;p&gt;Following the webscript framework praxis, a &lt;em&gt;model&lt;/em&gt; map object is passed around that acts as a container for whichever result your computation will produce, that will at the end handed over to a view rendition engine, &lt;a href=&quot;http://freemarker.sourceforge.net/&quot;&gt;Freemarker&lt;/a&gt; in our case, to build the resulting document. Webscripts are intended to support a number of different output formats, from JSON to XML to plain text, so being generic here is not an option.&lt;/p&gt;
-
-&lt;p&gt;Anyway, the first thing you usually do is to populate the &lt;em&gt;model&lt;/em&gt; map with a number of objects that will be needed by the rendering engine to build the response. To support this use case, this first implementation of the Clojure backend for Spring Surf webscripts expects your Clojure &quot;script&quot; to yield a map, in Clojure sense. This map will be then forwarded to a Freemarker template and used to build a webpage or whatever the user asked for, i.e. this controller:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;(ns web.script.test)
-
-{:foo &quot;bar&quot;}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;and this freemarker template:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;foo: ${foo}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;will provide &quot;foo: bar&quot; back to the client.&lt;/p&gt;
-
-&lt;p&gt;This is just an experiment at the moment, and far from being production-quality stuff. Still, it has been instructing to build a  Java-to-Clojure integration, and nonetheless it might come in handy when I'll be trying to put more Clojure in my working life.&lt;/p&gt;
-
-&lt;p&gt;(bye)&lt;/p&gt;
 </summary>
 </entry>
 

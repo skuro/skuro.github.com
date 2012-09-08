@@ -3,13 +3,65 @@
     <title type="text" xml:lang="en">SKURO! -- Shading lights</title>
     <link type="application/atom+xml" href="http://skuro.tk/rss2/" rel="self"/>
     <link type="text" href="http://skuro.tk" rel="alternate"/>
-    <updated>2012-09-01T18:03:03+02:00</updated>
+    <updated>2012-09-08T02:08:37+02:00</updated>
     <id>http://skuro.tk</id>
     <author>
         <name>Carlo Sciolla</name>
     </author>
     <rights>Copyright (c) 2010-2011 Carlo Sciolla</rights>
     
+<entry>
+  <title>Slides from Dispatch in Clojure</title>
+  <link href="http://skuro.tk/2012/09/08/org-mode-intellij-plugin/"/>
+  <updated>2012-09-08T00:00:00+02:00</updated>
+  <id>http://skuro.tk/2012/09/08/org-mode-intellij-plugin/</id>
+  <summary type="html">&lt;p&gt;&lt;em&gt;tl;dr:&lt;/em&gt; &lt;a href=&quot;https://github.com/skuro/org4idea&quot;&gt;org4idea&lt;/a&gt; is a brand new
+ project to add &lt;a href=&quot;http://orgmode.org&quot;&gt;org-mode&lt;/a&gt; support to &lt;a href=&quot;http://www.jetbrains.com/idea/&quot;&gt;IntelliJ IDEA&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2&gt;A coin with two sides&lt;/h2&gt;
+
+&lt;p&gt;Given the gargantuan size of the feature list of
+&lt;a href=&quot;http://orgmode.org/&quot;&gt;org-mode&lt;/a&gt;, there's hardly any competition of
+note taking systems for hackers. I'm completely sold on it since long
+time already, so much that
+&lt;a href=&quot;http://unixhelp.ed.ac.uk/CGI/man-cgi?uptime&quot;&gt;uptime(1)&lt;/a&gt; returns
+always a quite precise approximation of the Emacs process lifetime.&lt;/p&gt;
+
+&lt;p&gt;While such setup makes for a merry and seamless experience while
+hacking on my &lt;a href=&quot;http://clojure.org/&quot;&gt;Clojure&lt;/a&gt; projects, the dream
+breakes when I move to work on Java code, where I shall have no other
+IDE besides &lt;a href=&quot;http://www.jetbrains.com/idea/&quot;&gt;IntelliJ IDEA&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2&gt;Baby steps&lt;/h2&gt;
+
+&lt;p&gt;As there's no better way than a quick hacking session to start the
+weekend, I eventually decided to take some time to put together a
+minimal plugin to support editing org files within IntelliJ: a few
+hours later &lt;a href=&quot;https://github.com/skuro/org4idea&quot;&gt;org4idea&lt;/a&gt; landed on my
+GitHub account. It's a ridiculously tiny plugin at the moment, only
+providing syntax highlight for comments and outlines.&lt;/p&gt;
+
+&lt;p&gt;While I'm
+not planning to support all the features and plugins of org in
+IntelliJ you can safely bet I'll be adding new features with time. You
+can always open an &lt;a href=&quot;https://github.com/skuro/org4idea/issues&quot;&gt;issue&lt;/a&gt;
+to try to buy some karma points to that specific feature you desperately
+need to be implemented (well, in such cases you could also realize you're just
+one fork away).&lt;/p&gt;
+
+&lt;h2&gt;Installation&lt;/h2&gt;
+
+&lt;p&gt;While the plugin still awaits approval in the official
+&lt;a href=&quot;http://plugins.intellij.net/plugin?pr=&amp;amp;pluginId=7095&quot;&gt;repository&lt;/a&gt; you
+can manually install the plugin by downloading &lt;a href=&quot;https://github.com/downloads/skuro/org4idea/org4idea.jar&quot;&gt;org4idea.jar&lt;/a&gt;
+and feed it to the &lt;em&gt;Settings -&gt; Plugins -&gt; Install plugin from disk&lt;/em&gt;
+dialog.&lt;/p&gt;
+
+&lt;p&gt;Happy GTD!&lt;/p&gt;
+</summary>
+</entry>
+
+
 <entry>
   <title>Slides from Dispatch in Clojure</title>
   <link href="http://skuro.tk/2012/08/31/dispatch-in-clojure-presentation-slides/"/>
