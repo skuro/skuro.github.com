@@ -3,13 +3,78 @@
     <title type="text" xml:lang="en">SKURO! -- Shading lights</title>
     <link type="application/atom+xml" href="http://skuro.tk/rss2/" rel="self"/>
     <link type="text" href="http://skuro.tk" rel="alternate"/>
-    <updated>2012-09-08T02:10:56+02:00</updated>
+    <updated>2012-10-14T17:09:21+02:00</updated>
     <id>http://skuro.tk</id>
     <author>
         <name>Carlo Sciolla</name>
     </author>
     <rights>Copyright (c) 2010-2011 Carlo Sciolla</rights>
     
+<entry>
+  <title>October Amsterdam Clojure 2012 is coming up!</title>
+  <link href="http://skuro.tk/2012/10/14/october-amsterdam-clojure-coming-up/"/>
+  <updated>2012-10-14T00:00:00+02:00</updated>
+  <id>http://skuro.tk/2012/10/14/october-amsterdam-clojure-coming-up/</id>
+  <summary type="html">&lt;p&gt;Saturday, October 27th. Less than two weeks. That's the time when
+October Amsterdam Clojure, the biggest Clojure free event in the
+Netherlands, will be up on stage. I'm so incredibly excited about it,
+I can't wait to see all the seasoned clojurians, passionate
+technologists and curious newbies meet together to discuss one of the
+most intriguing technologies of our present day. Here's a couple of
+things to remind you of what's ahead of us.&lt;/p&gt;
+
+&lt;h1&gt;Don't forget to bring a ticket&lt;/h1&gt;
+
+&lt;p&gt;As much as the event is totally free to attend, our limited logistics
+imposes us a limit on the attendance. In order to reserve your seat at
+the event, just go on the event
+&lt;a href=&quot;http://bit.ly/octamsclj-register&quot;&gt;Meetup page&lt;/a&gt; and RSVP. This much,
+and you'll be joining us and have full access to the conference.&lt;/p&gt;
+
+&lt;h1&gt;How to reach us&lt;/h1&gt;
+
+&lt;p&gt;As it goes with all Amsterdam Clojurians regular meetup, the big
+October event will be also hosted by
+&lt;a href=&quot;http://www.backbase.com&quot;&gt;Backbase&lt;/a&gt;. You can find the &lt;a href=&quot;http://www.backbase.com/contact/DIRECTIONS-backbase-INIT.pdf&quot;&gt;directions to
+the venue&lt;/a&gt; on the official &lt;a href=&quot;http://amsclj.nl/october.html&quot;&gt;event page&lt;/a&gt;.
+While it's not far from Central Station, make sure to take note of the
+correct address. Once you're in the neighborhood, it's easy to find
+us: just go to the main entrance of the big, glass building with the
+huge newspapers logos on top. Yes,
+&lt;a href=&quot;http://www.cctvinfo.com/news_images/Geutebruck_INIT_building_ext.gif&quot;&gt;that one&lt;/a&gt;.
+You'll find some of our awesome Clojurian volunteer to wait for you
+downstairs.&lt;/p&gt;
+
+&lt;h1&gt;Afterparty drinkup&lt;/h1&gt;
+
+&lt;p&gt;We're still in the process of organizing a drinkup right after the
+event, make sure your agenda is free in order to join the swarm of
+Clojure coders and discuss functional programming philosophies over a
+couple of beers!&lt;/p&gt;
+
+&lt;h1&gt;Stay up to date&lt;/h1&gt;
+
+&lt;p&gt;Events are complex beasts, and we'll try hard to let you always be up
+to date with any sudden change of the plan. If you want to double
+check the official plan, here's where you can find all the info you
+need:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;the official &lt;a href=&quot;http://bit.ly/octamsclj-register&quot;&gt;event page&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;#OctAmsClj at
+ &lt;a href=&quot;http://www.meetup.com/The-Amsterdam-Clojure-Meetup-Group/events/74036402/&quot;&gt;Meetup.com&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;our official social channels (&lt;a href=&quot;http://www.meetup.com/The-Amsterdam-Clojure-Meetup-Group/events/74036402/&quot;&gt;Twitter&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;our official social channels (&lt;a href=&quot;https://twitter.com/amsclj&quot;&gt;Twitter&lt;/a&gt;,
+(Facebook)[http://www.facebook.com/AmsterdamClojurians] and
+&lt;a href=&quot;https://plus.google.com/107873826198867434419/about&quot;&gt;Google+&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;Looking forward to meet you there!&lt;/p&gt;
+</summary>
+</entry>
+
+
 <entry>
   <title>org4idea adds org-mode support to Intellij IDEA</title>
   <link href="http://skuro.tk/2012/09/08/org-mode-intellij-plugin/"/>
@@ -719,47 +784,6 @@ hibernate.dialect=org.hibernate.dialect.H2Dialect
 &lt;p&gt;&quot;Boom baby!&quot; I said, everything got back to normality. I can save my holy plans for a rainy day. It seems that encoding is an &lt;a title=&quot;#fail&quot; href=&quot;http://www.taylorluk.com/2009/08/ruby-19-encoding-gotcha-retreat-to-ascii-8bit&quot;&gt;endless&lt;/a&gt;&lt;a title=&quot;#fail&quot; href=&quot;http://gnuu.org/2009/11/02/ruby-1-9-encoding-issues-again/&quot;&gt; source&lt;/a&gt; of &lt;a title=&quot;#fail&quot; href=&quot;http://stackoverflow.com/questions/3597255/why-does-my-sproutcore-development-server-drop-connections-with-invalid-byte-seq&quot;&gt;issues&lt;/a&gt; in the ruby world, so that probably if you have any ruby knowledge whatsoever this all rant might just seem pointless and the solution trivial.&lt;/p&gt;
 
 &lt;p&gt;Next episode on SproutCore (if everything goes well): a sample SproutCore + Clojure application. See you there!&lt;/p&gt;
-</summary>
-</entry>
-
-
-<entry>
-  <title>Crampi alla lingua</title>
-  <link href="http://skuro.tk/2010/09/29/crampi-alla-lingua-italiano-inglese/"/>
-  <updated>2010-09-29T00:00:00+02:00</updated>
-  <id>http://skuro.tk/2010/09/29/crampi-alla-lingua-italiano-inglese/</id>
-  <summary type="html">&lt;p&gt;Per la prima volta mi trovo a scrivere in Italiano in questo blog. Contando che vorrei affrontare l'argomento della guerra, se cos&amp;igrave; la si pu&amp;ograve; chiamare, tra l'Italiano e l'Inglese, mi sembra anche appropriato.&lt;/p&gt;
-
-&lt;p&gt;Tutto parte da un interessante &lt;a href=&quot;http://federicogobbo.wordpress.com/2010/09/16/goodbye-italian-hello-italglish/?utm_source=feedburner&amp;amp;utm_medium=feed&amp;amp;utm_campaign=Feed:+FedericoGobboBlogo+(Federico+Gobbo+Blog(o))&quot;&gt;blog post&lt;/a&gt; che cerca di mettere in luce le insidie di una politica aggressiva di apprendimento dell'Inglese, a scapito di un sempre pi&amp;ugrave; bistrattato Italiano: &lt;a href=&quot;http://lepolitichelinguistiche.cafebabel.com/it/post/2008/04/10/TV-pubblica-e-sottotitoli&quot;&gt;l'eliminazione del doppiaggio dalle TV di stato&lt;/a&gt; e &lt;a href=&quot;http://lepolitichelinguistiche.cafebabel.com/it/post/2010/09/11/L-anglificazione-della-scuola-italiana&quot;&gt;balzi in avanti maoisti nell'inglese a scuola&lt;/a&gt;. Vengono affrontati argomenti che mi stanno a cuore tanto da giustificare un intero post e non un semplice commento a margine.&lt;/p&gt;
-
-&lt;p&gt;Vediamo un po'.&lt;/p&gt;
-
-&lt;blockquote&gt;Il motto &quot;vietato doppiare!&quot; in uso in paesi come l'Olanda [...] ha procurato un arretramento dell'olandese e dello svedese in tutti gli ambiti, non solo quelli formali, al punto che uno straniero pu&amp;ograve; vivere l&amp;igrave; senza mai imparare una parola di olandese&lt;/blockquote&gt;
-
-
-&lt;p&gt;Da emigrato proprio in Olanda, confermo l'avanzamento dell'inglese in questa nazione, tanto da spingere a dichiarazioni pubbliche alcune cariche dello stato (ahim&amp;eacute;, ho perso il link, vi dovrete fidare)&lt;strong&gt; per limitare allo stretto necessario campagne pubblicitarie in inglese, in nome della conservazione della lingua&lt;/strong&gt;. Badate bene, &amp;egrave; un Paese dove&lt;strong&gt; un anziano di estrema periferia pu&amp;ograve; essere in grado di comunicare nella lingua d'Albione&lt;/strong&gt;. Una situazione che, nella pi&amp;ugrave; rosea delle previsioni, l'Italia riuscir&amp;agrave; a raggiungere tra mezzo secolo.&lt;/p&gt;
-
-&lt;p&gt;Epper&amp;ograve; devo anche dire che al momento il Nederlandese non vive nessun tipo di relegazione, anche e soprattutto sul posto di lavoro, dove chi non vive di IT come il sottoscritto pu&amp;ograve; avere discrete difficolt&amp;agrave; a trovare un impiego.&lt;/p&gt;
-
-&lt;p&gt;Ma andiamo avanti.&lt;/p&gt;
-
-&lt;blockquote&gt;se [si] prova a parlare nella loro lingua, loro gli rispondono in inglese. Se a un turista occasionale questa situazione pu&amp;ograve; indubbiamente essere utile, per un residente pu&amp;ograve; creare un apartheid linguistico, al punto tale che uno straniero non riuscir&amp;agrave; mai ad integrarsi veramente nel tessuto sociale del luogo&lt;/blockquote&gt;
-
-
-&lt;p&gt;Di nuovo, concordo pienamente. La quasi totalit&amp;agrave; della mia rete di amicizie in Olanda &amp;eacute; fatta di italiani ed immigrati di varie nazioni. &quot;Apartheid&quot; &amp;eacute; di origine Olandese, e ben si presta ad esprimere il concetto di come l'uomo sia tendenzialmente impermeabile ad avvicinamenti alla sfera privata da parte di chi non parla la sua lingua. &amp;eacute; un dato di fatto a cui mi sono ormai rassegnato.&lt;/p&gt;
-
-&lt;p&gt;La soluzione &amp;egrave; una ed una soltanto: &lt;strong&gt;emigrare in un altro paese comporta anche la necessit&amp;agrave; di impararne la lingua&lt;/strong&gt;. E l'Olanda &amp;egrave; anche molto ben disposta ad insegnare la propria lingua e cultura agli immigrati, con &lt;a href=&quot;http://www.iamsterdam.com/en/living/official-matters/municipal-integration&quot;&gt;corsi&lt;/a&gt; offerti a costi ridicoli. Di fatto, la maggior parte degli immigrati in Olanda ricade in fasce di reddito medio basse, con altrettanto bassi livelli di scolarizzazione, e con &lt;strong&gt;una penetrazione del Nederlandese molto forte&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Siamo ormai in chiusura.&lt;/p&gt;
-
-&lt;blockquote&gt;Andr&amp;agrave; a finire che faremo una cosa all'italiana, [...] parleremo un orrido spaghetti English pensando di essere molto bravi finch&amp;eacute; non ci scontreremo contro la dura realt&amp;agrave; [...]. Ma in quel momento, sar&amp;agrave; troppo tardi per svegliarsi.&lt;/blockquote&gt;
-
-
-&lt;p&gt;Essendo il discorso imperniato in particolare sul doppiaggio dei film, non mi trovo assolutamente d'accordo con le conclusioni. Ho sempre sostenuto che il doppiaggio dei prodotti televisivi o cinematografici in italiano sia un'enorme deficit nel nostro apprendimento dell'inglese, basti guardare Portogallo e Spagna: in Portogallo, dove il doppiaggio non avviene, si parla mediamente un buon inglese, e basta passare il confine di pochi centimetri per approdare in una Spagna completamente estranea al concetto stesso di inglese.&lt;/p&gt;
-
-&lt;p&gt;Sono assolutamente d'accordo nel sostenere che la cultura e la lingua italiane debbano avere il primato, debbano essere sostenute e che navighino attualmente in cattive acque, ma &lt;strong&gt;questa situazione &amp;eacute; gi&amp;agrave; davanti ai nostri occhi anche senza la presenza dell'inglese in TV&lt;/strong&gt;. Ai giorni nostri l'inglese &amp;eacute; uno strumento fondamentale, che l'italiano medio non riesce ad acquisire in maniera tale da poterlo sfruttare a proprio vantaggio. Tutt'al pi&amp;ugrave; pu&amp;ograve; sperare di dare le indicazioni ad un turista approdato in terra italica.&lt;/p&gt;
-
-&lt;p&gt;Io mi sento di ribaltare il punto di vista: non si pu&amp;ograve; far si che un colpevole disinteresse per la lingua italiana vada a scapito degli interventi che possono migliorare l'apprendimento dell'inglese.&lt;/p&gt;
 </summary>
 </entry>
 

@@ -3,13 +3,78 @@
     <title type="text" xml:lang="en">SKURO! -- Shading lights</title>
     <link type="application/atom+xml" href="http://skuro.tk/rss2/" rel="self"/>
     <link type="text" href="http://skuro.tk" rel="alternate"/>
-    <updated>2012-09-08T02:10:56+02:00</updated>
+    <updated>2012-10-14T17:09:21+02:00</updated>
     <id>http://skuro.tk</id>
     <author>
         <name>Carlo Sciolla</name>
     </author>
     <rights>Copyright (c) 2010-2011 Carlo Sciolla</rights>
     
+<entry>
+  <title>October Amsterdam Clojure 2012 is coming up!</title>
+  <link href="http://skuro.tk/2012/10/14/october-amsterdam-clojure-coming-up/"/>
+  <updated>2012-10-14T00:00:00+02:00</updated>
+  <id>http://skuro.tk/2012/10/14/october-amsterdam-clojure-coming-up/</id>
+  <summary type="html">&lt;p&gt;Saturday, October 27th. Less than two weeks. That's the time when
+October Amsterdam Clojure, the biggest Clojure free event in the
+Netherlands, will be up on stage. I'm so incredibly excited about it,
+I can't wait to see all the seasoned clojurians, passionate
+technologists and curious newbies meet together to discuss one of the
+most intriguing technologies of our present day. Here's a couple of
+things to remind you of what's ahead of us.&lt;/p&gt;
+
+&lt;h1&gt;Don't forget to bring a ticket&lt;/h1&gt;
+
+&lt;p&gt;As much as the event is totally free to attend, our limited logistics
+imposes us a limit on the attendance. In order to reserve your seat at
+the event, just go on the event
+&lt;a href=&quot;http://bit.ly/octamsclj-register&quot;&gt;Meetup page&lt;/a&gt; and RSVP. This much,
+and you'll be joining us and have full access to the conference.&lt;/p&gt;
+
+&lt;h1&gt;How to reach us&lt;/h1&gt;
+
+&lt;p&gt;As it goes with all Amsterdam Clojurians regular meetup, the big
+October event will be also hosted by
+&lt;a href=&quot;http://www.backbase.com&quot;&gt;Backbase&lt;/a&gt;. You can find the &lt;a href=&quot;http://www.backbase.com/contact/DIRECTIONS-backbase-INIT.pdf&quot;&gt;directions to
+the venue&lt;/a&gt; on the official &lt;a href=&quot;http://amsclj.nl/october.html&quot;&gt;event page&lt;/a&gt;.
+While it's not far from Central Station, make sure to take note of the
+correct address. Once you're in the neighborhood, it's easy to find
+us: just go to the main entrance of the big, glass building with the
+huge newspapers logos on top. Yes,
+&lt;a href=&quot;http://www.cctvinfo.com/news_images/Geutebruck_INIT_building_ext.gif&quot;&gt;that one&lt;/a&gt;.
+You'll find some of our awesome Clojurian volunteer to wait for you
+downstairs.&lt;/p&gt;
+
+&lt;h1&gt;Afterparty drinkup&lt;/h1&gt;
+
+&lt;p&gt;We're still in the process of organizing a drinkup right after the
+event, make sure your agenda is free in order to join the swarm of
+Clojure coders and discuss functional programming philosophies over a
+couple of beers!&lt;/p&gt;
+
+&lt;h1&gt;Stay up to date&lt;/h1&gt;
+
+&lt;p&gt;Events are complex beasts, and we'll try hard to let you always be up
+to date with any sudden change of the plan. If you want to double
+check the official plan, here's where you can find all the info you
+need:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;the official &lt;a href=&quot;http://bit.ly/octamsclj-register&quot;&gt;event page&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;#OctAmsClj at
+ &lt;a href=&quot;http://www.meetup.com/The-Amsterdam-Clojure-Meetup-Group/events/74036402/&quot;&gt;Meetup.com&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;our official social channels (&lt;a href=&quot;http://www.meetup.com/The-Amsterdam-Clojure-Meetup-Group/events/74036402/&quot;&gt;Twitter&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;our official social channels (&lt;a href=&quot;https://twitter.com/amsclj&quot;&gt;Twitter&lt;/a&gt;,
+(Facebook)[http://www.facebook.com/AmsterdamClojurians] and
+&lt;a href=&quot;https://plus.google.com/107873826198867434419/about&quot;&gt;Google+&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;Looking forward to meet you there!&lt;/p&gt;
+</summary>
+</entry>
+
+
 <entry>
   <title>org4idea adds org-mode support to Intellij IDEA</title>
   <link href="http://skuro.tk/2012/09/08/org-mode-intellij-plugin/"/>
