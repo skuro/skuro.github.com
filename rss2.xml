@@ -3,13 +3,74 @@
     <title type="text" xml:lang="en">SKURO! -- Shading lights</title>
     <link type="application/atom+xml" href="http://skuro.tk/rss2/" rel="self"/>
     <link type="text" href="http://skuro.tk" rel="alternate"/>
-    <updated>2012-10-14T17:09:21+02:00</updated>
+    <updated>2012-10-16T15:04:10+02:00</updated>
     <id>http://skuro.tk</id>
     <author>
         <name>Carlo Sciolla</name>
     </author>
     <rights>Copyright (c) 2010-2011 Carlo Sciolla</rights>
     
+<entry>
+  <title>H2 support 1.5 for Alfresco 4.1.1 Enterprise</title>
+  <link href="http://skuro.tk/2012/10/16/alfresco-h2-support-update/"/>
+  <updated>2012-10-16T00:00:00+02:00</updated>
+  <id>http://skuro.tk/2012/10/16/alfresco-h2-support-update/</id>
+  <summary type="html">&lt;p&gt;After Alfresco version 4.1.1 Enterprise came out earlier this month,
+&lt;a href=&quot;https://github.com/skuro/alfresco-h2-support&quot;&gt;H2 support&lt;/a&gt; needed to
+stay up to date and release a new version which incorporates the
+few schema changes in the Alfresco database. Thanks to
+&lt;a href=&quot;http://springyweb.com&quot;&gt;Jon Evans&lt;/a&gt; and &lt;a href=&quot;http://www.ixxus.com&quot;&gt;Ixxus&lt;/a&gt;,
+ H2 Support v1.5 it's already out there!&lt;/p&gt;
+
+&lt;h1&gt;Version management&lt;/h1&gt;
+
+&lt;p&gt;As
+&lt;a href=&quot;https://github.com/skuro/alfresco-h2-support/wiki/H2-Database-support-for-Alfresco&quot;&gt;usual&lt;/a&gt;,
+H2 support follows its own version numbering scheme, and you need to
+double check which one to use depending on the Alfresco version you're
+running: version 1.5 only supports Alfresco 4.1.1 Enterprise, so if
+you're targeting other versions go and update your POM.&lt;/p&gt;
+
+&lt;h1&gt;Availability on Maven Central&lt;/h1&gt;
+
+&lt;p&gt;By the time of this writing, H2 support was just pushed to
+&lt;a href=&quot;https://oss.sonatype.org/index.html&quot;&gt;Sonatype OSS&lt;/a&gt;, and while it
+should happen shortly, it still has to be synchronized with Maven
+Central. If the following Maven dependency fails to resolve, try to
+download and install it from
+&lt;a href=&quot;https://oss.sonatype.org/content/repositories/releases/tk/skuro/alfresco/h2-support/1.5/&quot;&gt;here&lt;/a&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;dependency&amp;gt;
+  &amp;lt;groupId&amp;gt;tk.skuro.alfresco&amp;lt;/groupId&amp;gt;
+  &amp;lt;artifactId&amp;gt;h2-support&amp;lt;/artifactId&amp;gt;
+  &amp;lt;version&amp;gt;1.5&amp;lt;/version&amp;gt;
+&amp;lt;/dependency&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;On a side note, the stats feature of Sonatype Nexus are plain awesome.
+I can have direct insights of the amount of downloads of H2 support
+over time, split by version number. Check it out:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/post/h2stats.png&quot; title=&quot;H2 download stats&quot; alt=&quot;H2 download stats&quot; /&gt;&lt;/p&gt;
+
+&lt;h1&gt;Your chance to be awesome&lt;/h1&gt;
+
+&lt;p&gt;Jon was just great to help H2 support and provide the patch that made
+1.5 happen. It's always inspiring to see how OpenSource drives people
+to build something together, spending time to shape technology to be
+the way we need, asking for nothing else in return than just be part
+of the community.&lt;/p&gt;
+
+&lt;p&gt;H2 support is a tiny project, and requires little
+development and maintenance. Still, you can always help by either
+testing it against &lt;a href=&quot;https://github.com/skuro/alfresco-h2-support/wiki/H2-Database-support-for-Alfresco&quot;&gt;undocumented Alfresco versions&lt;/a&gt;, or &lt;a href=&quot;https://github.com/skuro/alfresco-h2-support/issues&quot;&gt;reporting bugs&lt;/a&gt;
+or your wish list as soon as you figure them out.&lt;/p&gt;
+
+&lt;p&gt;Thanks for reading this and happy Alfresco hacking!&lt;/p&gt;
+</summary>
+</entry>
+
+
 <entry>
   <title>October Amsterdam Clojure 2012 is coming up!</title>
   <link href="http://skuro.tk/2012/10/14/october-amsterdam-clojure-coming-up/"/>
@@ -760,30 +821,6 @@ hibernate.dialect=org.hibernate.dialect.H2Dialect
 
 &lt;p&gt;&lt;strong&gt;Update 3:&lt;a name=&quot;reloaded&quot;&gt;&lt;/a&gt;&lt;/strong&gt; even if this all started as a quick&amp;amp;dirty, amatorial benchmark, it attracted quite some &lt;a href=&quot;http://news.ycombinator.com/item?id=2134950&quot;&gt;attentions&lt;/a&gt;, demanding more fair and precise benchmarks, especially on the Java vs Clojure comparison. As in the Java version of Tak I used Integers and not primitive types, there is an unfair burden Java had to carry along the computation. The following is the result of a re-run of the test for Java (using primitive &lt;span style=&quot;font-family: monospace;&quot;&gt;long&lt;/span&gt;) and Clojure 1.3:
 &lt;img class=&quot;aligncenter size-full wp-image-356&quot; title=&quot;clj-bench-reloaded&quot; src=&quot;http://www.skuro.tk/wp-content/uploads/2011/01/clj-bench-reloaded.png&quot; alt=&quot;&quot; width=&quot;463&quot; height=&quot;272&quot; /&gt;&lt;/p&gt;
-</summary>
-</entry>
-
-
-<entry>
-  <title>SproutCore encoding gotchas</title>
-  <link href="http://skuro.tk/2010/09/30/sproutcore-encoding-gotchas/"/>
-  <updated>2010-09-30T00:00:00+02:00</updated>
-  <id>http://skuro.tk/2010/09/30/sproutcore-encoding-gotchas/</id>
-  <summary type="html">&lt;p&gt;These days I'm trying out &lt;a title=&quot;Sproutcore homepage&quot; href=&quot;http://www.sproutcore.com/&quot;&gt;SproutCore&lt;/a&gt;, an MVC framework written in Javascript that aims to help developing rich client web applications. I'm not going to entertain you with any juicy technical spotlight, as they'll hopefully find their way in these pages later on with plenty of details. At the moment I'd like to share a little problem I got stuck with that had a non trivial solution&lt;del datetime=&quot;2010-09-28T20:03:47+00:00&quot;&gt;,  at least for the noob I am&lt;/del&gt;.&lt;/p&gt;
-
-&lt;p&gt;First thing you have to know is that SproutCore ships with both a rich &lt;a title=&quot;SproutCore source code&quot; href=&quot;http://github.com/sproutcore/sproutcore&quot;&gt;Javascript library&lt;/a&gt; and a set of building tools written in ruby, which go under the code name of &lt;a title=&quot;Abbot source code&quot; href=&quot;http://github.com/sproutcore/abbot&quot;&gt;abbot&lt;/a&gt;. New projects kickstart, &lt;a title=&quot;sc-gen&quot; href=&quot;http://wiki.sproutcore.com/Abbot+Spec+sc-gen&quot;&gt;scaffolding&lt;/a&gt;, &lt;a title=&quot;sc-docs&quot; href=&quot;http://blog.sproutcore.com/post/150789672/now-available-sproutcore-1-0-reference-docs&quot;&gt;automatic documentation&lt;/a&gt; are among the features that abbot provides you with, along with the ability to &lt;a title=&quot;sc-server&quot; href=&quot;http://wiki.sproutcore.com/BuildTools-Reference+sc-server&quot;&gt;run you application&lt;/a&gt; on a local web server during development. Sounds cool, isn't it? And I didn't even mention it's integrated &lt;a title=&quot;unit tests&quot; href=&quot;http://wiki.sproutcore.com/UnitTesting-Introduction&quot;&gt;unit testing&lt;/a&gt; facility!&lt;/p&gt;
-
-&lt;p&gt;I immediately tried to give it a shot, and ran through &lt;a title=&quot;Todos tutorial&quot; href=&quot;http://wiki.sproutcore.com/Todos%C2%A0Intro&quot;&gt;one of the tutorials&lt;/a&gt; to write down my first HelloWorld. The first pieces got into place, and after the first quick round I left my hello world project in such a state that I already decided to build a simple but complete application right away. How arrogant.&lt;/p&gt;
-
-&lt;p&gt;The second day something Bad™ happened, I cannot really tell what, but &lt;a title=&quot;#fail&quot; href=&quot;http://gist.github.com/597780&quot;&gt;everything&lt;/a&gt; started &lt;a title=&quot;#fail&quot; href=&quot;https://gist.github.com/f2a107a3a0a2cd49e4e5&quot;&gt;to fall apart&lt;/a&gt;: no one tool in the abbot suite worked properly, I was no more able to get any further and I started a painful journey of which I only remember installing and changing between zillions of ruby versions, crying and considering to give up with IT and to start my own religion to make a living.&lt;/p&gt;
-
-&lt;p&gt;But then I simply resorted to the #sproutcore IRC channel and I got the tip that saved the day (thanks &lt;a title=&quot;my saviour&quot; href=&quot;http://www.flashesofpanic.com/&quot;&gt;pjmorse&lt;/a&gt;!):&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;export LC_CTYPE=UTF-8&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&quot;Boom baby!&quot; I said, everything got back to normality. I can save my holy plans for a rainy day. It seems that encoding is an &lt;a title=&quot;#fail&quot; href=&quot;http://www.taylorluk.com/2009/08/ruby-19-encoding-gotcha-retreat-to-ascii-8bit&quot;&gt;endless&lt;/a&gt;&lt;a title=&quot;#fail&quot; href=&quot;http://gnuu.org/2009/11/02/ruby-1-9-encoding-issues-again/&quot;&gt; source&lt;/a&gt; of &lt;a title=&quot;#fail&quot; href=&quot;http://stackoverflow.com/questions/3597255/why-does-my-sproutcore-development-server-drop-connections-with-invalid-byte-seq&quot;&gt;issues&lt;/a&gt; in the ruby world, so that probably if you have any ruby knowledge whatsoever this all rant might just seem pointless and the solution trivial.&lt;/p&gt;
-
-&lt;p&gt;Next episode on SproutCore (if everything goes well): a sample SproutCore + Clojure application. See you there!&lt;/p&gt;
 </summary>
 </entry>
 
