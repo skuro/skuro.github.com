@@ -20,7 +20,7 @@ comments: false
     {% if post.categories != empty %}
      - tagged &nbsp;
     {% for c in post.categories %}
-    <a href="/category/{{ c }}">#{{ c }}</a><span>&nbsp;&nbsp;</span>
+    <a class="tag" href="/category/{{ c }}">#{{ c }}</a><span>&nbsp;&nbsp;</span>
     {% endfor %}
     {% endif %}
   </h5>
