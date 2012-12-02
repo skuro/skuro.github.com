@@ -18,7 +18,7 @@ comments: false
   <h5 class="date">
     {{ post.date | date: "%B %e, %Y" }}
     {% if post.categories != empty %}
-     - tagged &nbsp;
+    &nbsp;
     {% for c in post.categories %}
     <a class="tag" href="/category/{{ c }}">#{{ c }}</a><span>&nbsp;&nbsp;</span>
     {% endfor %}
