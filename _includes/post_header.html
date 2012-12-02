@@ -1,13 +1,16 @@
 <h1>
-  <a href="{{ page.url }}">{{ page.title }}</a>
+  {{ page.title }}
+  <a href="{{ page.url }}">
+    <img src="/img/link.jpg" alt="Permalink to {{ page.title }}" />
+  </a>
 </h1>
 <blockquote class="date-wrapper">
   <h5 class="date">
     {{ page.date | date: "%B %e, %Y" }}
     {% if page.categories != empty %}
-    - tagged 
+    - tagged &nbsp;
     {% for c in page.categories %}
-    <a href="/category/{{ c }}">#{{ c }}</a>
+    <a href="/category/{{ c }}">#{{ c }}</a><span>&nbsp;&nbsp;</span>
     {% endfor %}
     {% endif %}
   </h5>

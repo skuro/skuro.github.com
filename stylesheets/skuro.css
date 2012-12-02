@@ -37,6 +37,16 @@ p.persona {
   margin-top: 5px;
 }
 
+p.persona a img:hover {
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -o-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -khtml-border-radius: 3px;
+    border-radius: 3px;
+    background-color: #d33682;
+}
+
 blockquote.date-wrapper {
   padding: 0px 0px 2px 20px;
 }
@@ -44,4 +54,21 @@ blockquote.date-wrapper {
 .adsense {
     position: fixed;
     left: 10%;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+div.wrapper header h1 a {
+    text-decoration: none;
+}
+
+header ul li a:hover {
+    text-decoration: none;
+}
+
+p.persona span {
+    vertical-align:top;
+    font-variant: small-caps;
 }

@@ -9,15 +9,18 @@ comments: false
 
 <!-- copied from post_header include -->
 <h1>
-  <a href="{{ post.url }}">{{ post.title }}</a>
+  {{ post.title }}
+  <a href="{{ post.url }}">
+    <img src="/img/link.jpg" alt="Permalink to {{ post.title }}" />
+  </a>
 </h1>
 <blockquote class="date-wrapper">
   <h5 class="date">
     {{ post.date | date: "%B %e, %Y" }}
     {% if post.categories != empty %}
-     - tagged
+     - tagged &nbsp;
     {% for c in post.categories %}
-    <a href="/category/{{ c }}">#{{ c }}</a>
+    <a href="/category/{{ c }}">#{{ c }}</a><span>&nbsp;&nbsp;</span>
     {% endfor %}
     {% endif %}
   </h5>
