@@ -3,13 +3,61 @@
     <title type="text" xml:lang="en">SKURO! -- Shading lights</title>
     <link type="application/atom+xml" href="http://skuro.tk/rss2/" rel="self"/>
     <link type="text" href="http://skuro.tk" rel="alternate"/>
-    <updated>2012-10-16T15:04:10+02:00</updated>
+    <updated>2013-02-19T00:05:54+01:00</updated>
     <id>http://skuro.tk</id>
     <author>
         <name>Carlo Sciolla</name>
     </author>
     <rights>Copyright (c) 2010-2011 Carlo Sciolla</rights>
     
+<entry>
+  <title>A svn post commit hook to comment on Jira</title>
+  <link href="http://skuro.tk/2013/02/18/svn-postcommit-hook-jira-comments/"/>
+  <updated>2013-02-18T00:00:00+01:00</updated>
+  <id>http://skuro.tk/2013/02/18/svn-postcommit-hook-jira-comments/</id>
+  <summary type="html">&lt;p&gt;If I had to pick a single thing that really bothers me of &lt;a href=&quot;https://confluence.atlassian.com/display/AOD/JIRA+OnDemand&quot;&gt;Jira OnDemand&lt;/a&gt;
+is that it &lt;a href=&quot;https://jira.atlassian.com/browse/AOD-710&quot;&gt;doesn't support our hosted svn&lt;/a&gt; in any
+possible way.&lt;/p&gt;
+
+&lt;p&gt;The biggest pain developers like me have without any basic integration between the VCS and the ticketing system is that any time you have to
+test an issue, perform some code reviews, sort out some merging or simply digging the history of a given piece of code, it wastes your time to
+switch between all of your unconnected tools to accomplish your task. As an example, at &lt;a href=&quot;http://www.backbase.com&quot;&gt;Backbase&lt;/a&gt; we use
+&lt;a href=&quot;http://trac.edgewall.org/&quot;&gt;Trac&lt;/a&gt; to look at our code on a browser, and we end up having to type URLs by hand to switch on and off Jira.&lt;/p&gt;
+
+&lt;p&gt;How hard could it be to simply &lt;em&gt;link&lt;/em&gt; Jira to our commits?&lt;/p&gt;
+
+&lt;h2&gt;A hint to the solution&lt;/h2&gt;
+
+&lt;p&gt;Looking at a way to fix this issue, I first had an intuition: what our Jira &lt;em&gt;does&lt;/em&gt; support are web links to an issue. Trac is
+just another web site, why can't we use application links instead of listing the commit messages as Jira comments? After all,
+there's a &lt;a href=&quot;https://developer.atlassian.com/display/JIRADEV/JIRA+REST+API+for+Remote+Issue+Links&quot;&gt;rich API&lt;/a&gt; that I can use to
+script the hell out of our commits! It literally took me 40 minutes to come up with the following:&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/skuro/4981464.js&quot;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;It currently features:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;creates a &lt;em&gt;Related commits&lt;/em&gt; link on each Jira issue mentioned in your commit comment&lt;/li&gt;
+&lt;li&gt;multiple Jira keys in the same commit message supported&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;That's it. Not an impressive list of features, but enough for 40m hacking on bash scripts. When we'll have this hook installed
+in our svn server, we can easily go from the Jira issue to all the diffs associated with it.&lt;/p&gt;
+
+&lt;p&gt;This facilitates code reviews and
+issue verification or analysis at a later stage, enormously simplifying the life of every developer by providing that dead-simple
+integration that Atlassian doesn't want to provide out of the box.&lt;/p&gt;
+
+&lt;p&gt;I understand the performance reasons behind avoid fully integrating
+on-premise svn with OnDemand instances. Still, they could do much, much better than say they're sorry and live their customers
+lives being miserable because of it.&lt;/p&gt;
+</summary>
+</entry>
+
+
 <entry>
   <title>H2 support 1.5 for Alfresco 4.1.1 Enterprise</title>
   <link href="http://skuro.tk/2012/10/16/alfresco-h2-support-update/"/>
@@ -775,52 +823,6 @@ hibernate.dialect=org.hibernate.dialect.H2Dialect
 &lt;p&gt;The next episode will be about &lt;a href=&quot;https://github.com/skuro/lambdalf&quot;&gt;&lt;em&gt;lambdalf&lt;/em&gt;&lt;/a&gt;, an Alfresco AMP I've been initially developing to prove the Clojure surf addon works fine, but that is now growing to be a full blown project by itself: a Clojure API for Alfresco!&lt;/p&gt;
 
 &lt;p&gt;Stay tuned. &lt;span style=&quot;color: #ffffff;&quot;&gt;UVBRKNJTRFH7&lt;/span&gt;&lt;/p&gt;
-</summary>
-</entry>
-
-
-<entry>
-  <title>Performance boost in Clojure 1.3 (alpha4)</title>
-  <link href="http://skuro.tk/2011/01/24/performance-boost-in-clojure-1-3/"/>
-  <updated>2011-01-24T00:00:00+01:00</updated>
-  <id>http://skuro.tk/2011/01/24/performance-boost-in-clojure-1-3/</id>
-  <summary type="html">&lt;p&gt;As release 1.3 of Clojure is &lt;a href=&quot;http://www.assembla.com/spaces/clojure/milestones/238781-release-next&quot;&gt;on its way&lt;/a&gt;, I decided to give the currently available alpha4 a try and see some of the good stuff it brings. First thing first, I wanted to experiment myself with the performance gain that the extended support for native types would bring. I ran into an old &lt;a title=&quot;old post, but inspirational&quot; href=&quot;http://hughw.blogspot.com/2009/01/clojure-vs-javafx-script-only-5x-slower.html&quot;&gt;post&lt;/a&gt; from which I got the inspiration for the specific test to run: the &lt;a title=&quot;Takeuchi function on Wikipedia&quot; href=&quot;http://en.wikipedia.org/wiki/Tak_(function)&quot;&gt;Takeuchi function&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;img class=&quot;aligncenter size-full wp-image-340&quot; title=&quot;Full disclosure: I own a Triumph Street Triple and I love Clojure&quot; src=&quot;/img/post/clj-triple.jpg&quot; alt=&quot;Full disclosure: I own a Triumph Street Triple and I love Clojure&quot; width=&quot;375&quot; height=&quot;322&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;The Java implementation for Tak provided me with a bottom line for performance comparison:&lt;/p&gt;
-
-&lt;script src=&quot;https://gist.github.com/788834.js?file=Tak.java&quot;&gt;&lt;/script&gt;
-
-
-&lt;p&gt; Then I used the Clojure version provided in the original blog post run to test against Clojure 1.2: &lt;script src=&quot;https://gist.github.com/788834.js?file=tak2.clj&quot;&gt;&lt;/script&gt;&lt;/p&gt;
-
-&lt;p&gt;Finally, I leveraged the new syntax for the &lt;a href=&quot;http://dev.clojure.org/display/doc/Enhanced+Primitive+Support&quot;&gt;enhanced primitives support&lt;/a&gt; to test against Clojure 1.3 (thanks to &lt;a href=&quot;http://twitter.com/neotyk&quot;&gt;neotyk&lt;/a&gt; to point that out to me):&lt;/p&gt;
-
-&lt;script src=&quot;https://gist.github.com/788834.js?file=tak.clj&quot;&gt;&lt;/script&gt;
-
-
-&lt;p&gt;As you can see, timing is tracked from the application code, as various accessory overhead like JVM and Clojure runtime bootstrap are not in the scope of this post.&lt;/p&gt;
-
-&lt;p&gt;As this benchmark is &quot;just for fun&quot;, I won't pretent I did an extensive benchmark, or that I engineered a bullet proof benchmark strategy and the like. I just ran the above code some tens of times and here follows the average running time for the three versions:&lt;/p&gt;
-
-&lt;p&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;NOTE: an updated benchmark is provided down below&lt;/span&gt;
-&lt;span style=&quot;color: #ff0000;&quot;&gt;NOTE2: to have a more fair performance comparison, &lt;a href=&quot;#reloaded&quot;&gt;keep reading&lt;/a&gt;&lt;/span&gt;
-&lt;img class=&quot;aligncenter size-full wp-image-344&quot; title=&quot;Benchmark results&quot; src=&quot;http://www.skuro.tk/wp-content/uploads/2011/01/clj-bench-graph.png&quot; alt=&quot;Average running time in ms&quot; width=&quot;467&quot; height=&quot;292&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;The results tells of a &lt;strong&gt;~4.5x&lt;/strong&gt; speed gain, &lt;del datetime=&quot;2011-01-26T09:59:07+00:00&quot;&gt;getting close to match plain Java code performance&lt;/del&gt;.&lt;/p&gt;
-
-&lt;p&gt;Now, even if such a benchmark won't be any news to the Clojure community, it's still &lt;strong&gt;absolutely awesome&lt;/strong&gt; to see such a performance gain in the next release of this beautiful Lispy language :-)&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Update: &lt;/strong&gt;following the advice by &lt;strong&gt;Jürgen Hötzel&lt;/strong&gt; in his comment, I slightly modified my Clojure sources to change &lt;span style=&quot;font-family: monospace;&quot;&gt;&lt;a href=&quot;http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/-&quot;&gt;clojure.core/-&lt;/a&gt;&lt;/span&gt; with &lt;span style=&quot;font-family: monospace;&quot;&gt;&lt;a href=&quot;http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/unchecked-subtract&quot;&gt;clojure.core/unchecked-subtract&lt;/a&gt;&lt;/span&gt; and re-run the test. Here's the final results, which are way better for Clojure, especially for version 1.2:&lt;/p&gt;
-
-&lt;p&gt;&lt;img class=&quot;aligncenter size-full wp-image-350&quot; title=&quot;clj-bench-graph-unchecked&quot; src=&quot;http://www.skuro.tk/wp-content/uploads/2011/01/clj-bench-graph-unchecked.png&quot; alt=&quot;&quot; width=&quot;493&quot; height=&quot;302&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Update 2:&lt;/strong&gt; the following graph shows the impact of the direct use of the &lt;span style=&quot;font-family: monospace;&quot;&gt;recur&lt;/span&gt; special form tested against plain recursive invocation of Tak, as per requested in some comments
-&lt;img class=&quot;aligncenter size-full wp-image-353&quot; title=&quot;clj-bench-graph-norecur&quot; src=&quot;http://www.skuro.tk/wp-content/uploads/2011/01/clj-bench-graph-norecur.png&quot; alt=&quot;&quot; width=&quot;476&quot; height=&quot;267&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Update 3:&lt;a name=&quot;reloaded&quot;&gt;&lt;/a&gt;&lt;/strong&gt; even if this all started as a quick&amp;amp;dirty, amatorial benchmark, it attracted quite some &lt;a href=&quot;http://news.ycombinator.com/item?id=2134950&quot;&gt;attentions&lt;/a&gt;, demanding more fair and precise benchmarks, especially on the Java vs Clojure comparison. As in the Java version of Tak I used Integers and not primitive types, there is an unfair burden Java had to carry along the computation. The following is the result of a re-run of the test for Java (using primitive &lt;span style=&quot;font-family: monospace;&quot;&gt;long&lt;/span&gt;) and Clojure 1.3:
-&lt;img class=&quot;aligncenter size-full wp-image-356&quot; title=&quot;clj-bench-reloaded&quot; src=&quot;http://www.skuro.tk/wp-content/uploads/2011/01/clj-bench-reloaded.png&quot; alt=&quot;&quot; width=&quot;463&quot; height=&quot;272&quot; /&gt;&lt;/p&gt;
 </summary>
 </entry>
 
