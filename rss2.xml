@@ -3,13 +3,86 @@
     <title type="text" xml:lang="en">SKURO! -- Shading lights</title>
     <link type="application/atom+xml" href="http://skuro.tk/rss2/" rel="self"/>
     <link type="text" href="http://skuro.tk" rel="alternate"/>
-    <updated>2013-02-19T00:05:54+01:00</updated>
+    <updated>2013-03-10T00:10:08+01:00</updated>
     <id>http://skuro.tk</id>
     <author>
         <name>Carlo Sciolla</name>
     </author>
     <rights>Copyright (c) 2010-2011 Carlo Sciolla</rights>
     
+<entry>
+  <title>The Observer Pattern in Spring</title>
+  <link href="http://skuro.tk/2013/03/10/observer-pattern-spring-framework/"/>
+  <updated>2013-03-10T00:00:00+01:00</updated>
+  <id>http://skuro.tk/2013/03/10/observer-pattern-spring-framework/</id>
+  <summary type="html">&lt;h1&gt;Observers in Spring&lt;/h1&gt;
+
+&lt;blockquote&gt;&lt;p&gt;To the man-in-the-street, who, I'm sorry to say,&lt;br/&gt;
+Is a keen observer of life,&lt;br/&gt;
+The word &quot;Intellectual&quot; suggests straight away&lt;br/&gt;
+A man who's untrue to his wife.&lt;/p&gt;
+
+&lt;p&gt;-- W.H. Auden&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;The Observer pattern is a very basic one out of the GoF bible which is unbelivably easy to implement and still quote
+powerful so use. Here I present my take on it using the Spring observer pattern which I found quite helpful in designing
+extension points for my software.&lt;/p&gt;
+
+&lt;h1&gt;Core classes&lt;/h1&gt;
+
+&lt;p&gt;Pushing back the little NIH devil whispering in my ears, I started by reusing the standard building blocks for the
+Observer pattern: &lt;code&gt;java.util.Observable&lt;/code&gt; and &lt;code&gt;java.util.Observer&lt;/code&gt;. The Observable class provides the logic to handle a
+registry of Observers, and to propagate updates (I prefer to think more of in terms of events) to all of the registered
+Observers.&lt;/p&gt;
+
+&lt;p&gt;In the context of a Spring container, there will be beans to configure and hook together, and it's key to this exercise
+to find a flexible and handy way to connect things together.&lt;/p&gt;
+
+&lt;h1&gt;Automatic registration&lt;/h1&gt;
+
+&lt;p&gt;Supporting code for this blog post can be found on &lt;a href=&quot;https://github.com/skuro/spring-observer&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;When developing a Spring application you're always instantiating your classes as singletons within the Spring container.
+Annotations or XML configurations will take care  of initialize instances of your classes, wiring them together in a
+connected graph of objects with loose dependencies on the specific concrete classes you adopt in your code.&lt;/p&gt;
+
+&lt;p&gt;As you will always have to declare beans, it would be nice to let Spring wire obects for you in an Observer fashion,
+with a minimal coding effort required. The most minimalistic approach I could think of is to just require developers to
+declare their observer beans, and put in place enough machinery to automatically hook them to an Observable provided by
+the application. In this example I create a &lt;code&gt;ObserverBeanPostProcessor&lt;/code&gt; and a &lt;code&gt;SpringObserver&lt;/code&gt;
+tagging interface to identify which beans are actually declaring valid Observers, and register them automatically.&lt;/p&gt;
+
+&lt;p&gt;To complete the picture, the &lt;code&gt;SpringObservable&lt;/code&gt; interface declares which &lt;code&gt;Observer&lt;/code&gt; class it's able to notify, thus
+leveraging the tagging interface and letting the &lt;code&gt;ObserverBeanPostProcessor&lt;/code&gt; know which beans to filter and registser.&lt;/p&gt;
+
+&lt;p&gt;This enables a software component to provide the desired &lt;code&gt;SpringObservable&lt;/code&gt; and the &lt;code&gt;ObserverBeanPostProcessor&lt;/code&gt; beans, where
+consumers of such API will be only required to instantiate their &lt;code&gt;Observer&lt;/code&gt; beans.&lt;/p&gt;
+
+&lt;p&gt;Note that &lt;code&gt;Observers&lt;/code&gt; can be themselves &lt;code&gt;Observables&lt;/code&gt;, so that you can easily construct chains of beans in which events
+will be propagated. As long as you ensure not to form any cyclic graph, of course.&lt;/p&gt;
+
+&lt;h1&gt;Conclusions&lt;/h1&gt;
+
+&lt;p&gt;In object oriented languages such as Java, patterns are a powerful tool to apply. The Observer is a neat strategy for
+cascading changes on objects, or just to propagate events through a series of processors. All in a clean, loosly coupled
+fashion.&lt;/p&gt;
+
+&lt;p&gt;The code here is just a proof of concept, not a library which is intended for production use. The concepts and the
+implementation are easy enough to be applied in your Spring application without any need for depending on this code.&lt;/p&gt;
+</summary>
+</entry>
+
+
+<entry>
+  <title>Java StringBuilder myth debunked</title>
+  <link href="http://skuro.tk/2013/03/06/java-stringbuilder-myth/"/>
+  <updated>2013-03-06T00:00:00+01:00</updated>
+  <id>http://skuro.tk/2013/03/06/java-stringbuilder-myth/</id>
+  <summary type="html">
+</summary>
+</entry>
+
+
 <entry>
   <title>A svn post commit hook to comment on Jira</title>
   <link href="http://skuro.tk/2013/02/18/svn-postcommit-hook-jira-comments/"/>
@@ -773,56 +846,6 @@ hibernate.dialect=org.hibernate.dialect.H2Dialect
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Make sure you're using an hibernate version &amp;gt;= 3.1 as per H2 &lt;a href=&quot;http://www.h2database.com/html/tutorial.html#using_hibernate&quot;&gt;documentation&lt;/a&gt;.&lt;/p&gt;
-</summary>
-</entry>
-
-
-<entry>
-  <title>Verifying my Technorati claim</title>
-  <link href="http://skuro.tk/2011/05/11/verifying-my-technorati-claim/"/>
-  <updated>2011-05-11T00:00:00+02:00</updated>
-  <id>http://skuro.tk/2011/05/11/verifying-my-technorati-claim/</id>
-  <summary type="html">&lt;p&gt;You can safely ignore this entry, as it's only to comply to &lt;a href=&quot;http://technorati.com/&quot;&gt;technorati&lt;/a&gt; request to add a random code in a blog post to validate it.&lt;/p&gt;
-
-&lt;p&gt;I placed the code in this page, can you spot it?&lt;/p&gt;
-
-&lt;p&gt;&lt;span style=&quot;color: #ffffff;&quot;&gt; UVBRKNJTRFH7&lt;/span&gt;&lt;/p&gt;
-
-&lt;p&gt;&amp;nbsp;&lt;br/&gt;
-&amp;nbsp;&lt;br/&gt;
-&amp;nbsp;&lt;br/&gt;
-&amp;nbsp;&lt;br/&gt;
-&amp;nbsp;&lt;/p&gt;
-</summary>
-</entry>
-
-
-<entry>
-  <title>More Clojure for Spring Surf</title>
-  <link href="http://skuro.tk/2011/05/10/more-clojure-for-spring-surf/"/>
-  <updated>2011-05-10T00:00:00+02:00</updated>
-  <id>http://skuro.tk/2011/05/10/more-clojure-for-spring-surf/</id>
-  <summary type="html">&lt;p&gt;After some time from my &lt;a href=&quot;http://www.skuro.tk/2010/05/23/spring-surf-meets-clojure&quot;&gt;initial announcement&lt;/a&gt;, I've started again working on my &lt;a href=&quot;https://github.com/skuro/spring-webscripts-addon-clojure&quot;&gt;Clojure addon for Spring Surf&lt;/a&gt;. While it's still a rudimentary piece of glue code, it's now getting better and better, so much that I decided it's good enough now to release an alpha version on &lt;a href=&quot;http://clojars.org/it.sk.spring.surf.clojure/spring-webscripts-addon-clojure&quot;&gt;clojars&lt;/a&gt;. Here's what this library currently provides:&lt;/p&gt;
-
-&lt;ul&gt;
-    &lt;li&gt;a &lt;a href=&quot;https://github.com/skuro/spring-webscripts-addon-clojure/blob/master/src/main/java/org/springframework/extensions/webscripts/processor/ClojureScriptProcessor.java&quot;&gt;ScriptProcessor&lt;/a&gt; that allows webscript controllers to be written in Clojure&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;https://github.com/skuro/spring-webscripts-addon-clojure/blob/master/src/main/clojure/spring/surf/webscript.clj&quot;&gt;a &lt;em&gt;WebScript&lt;/em&gt; protocol and some utility functions&lt;/a&gt; to ease development of your own web scripts&lt;/li&gt;
-    &lt;li&gt;enough &lt;a href=&quot;https://github.com/skuro/spring-webscripts-addon-clojure/tree/master/src/main/resources/org/springframework/extensions/clj/webscripts&quot;&gt;spring configuration&lt;/a&gt; to enable this addon just by importing the provided contextes&lt;/li&gt;
-&lt;/ul&gt;
-
-
-&lt;p&gt;The approach is indeed easy and hopefully straightforward: the idea is to have your WebScript clojure controllers return an instance of a concrete implementation of the WebScript protocol, which will implement the &lt;em&gt;run&lt;/em&gt; method the way you like.&lt;/p&gt;
-
-&lt;p&gt;Here's the sample code from a &lt;a href=&quot;https://gist.github.com/965008&quot;&gt;gist&lt;/a&gt; you might want to have a look at to better understand how to use this library:&lt;/p&gt;
-
-&lt;script src=&quot;https://gist.github.com/965008.js?file=sample.get.clj&quot;&gt;&lt;/script&gt;
-
-
-&lt;p&gt;You can also find other samples in the project &lt;a href=&quot;https://github.com/skuro/spring-webscripts-addon-clojure/tree/master/src/test/resources/webscripts/test&quot;&gt;tests&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;The next episode will be about &lt;a href=&quot;https://github.com/skuro/lambdalf&quot;&gt;&lt;em&gt;lambdalf&lt;/em&gt;&lt;/a&gt;, an Alfresco AMP I've been initially developing to prove the Clojure surf addon works fine, but that is now growing to be a full blown project by itself: a Clojure API for Alfresco!&lt;/p&gt;
-
-&lt;p&gt;Stay tuned. &lt;span style=&quot;color: #ffffff;&quot;&gt;UVBRKNJTRFH7&lt;/span&gt;&lt;/p&gt;
 </summary>
 </entry>
 

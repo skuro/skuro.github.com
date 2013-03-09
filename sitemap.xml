@@ -3,7 +3,7 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">    
   <url>
     <loc>http://skuro.tk/</loc>
-    <lastmod>2013-02-19T00:05:54+01:00</lastmod>
+    <lastmod>2013-03-10T00:10:08+01:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -12,6 +12,20 @@
     <lastmod>2011-02-07T20:59:36+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://skuro.tk/2013/03/10/observer-pattern-spring-framework/</loc>
+    <lastmod>2013-03-10T00:00:00+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://skuro.tk/2013/03/06/java-stringbuilder-myth/</loc>
+    <lastmod>2013-03-06T00:00:00+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   
   <url>
@@ -136,20 +150,6 @@
   <url>
     <loc>http://skuro.tk/2011/08/03/h2-embedded-db-and-alfresco-3-4/</loc>
     <lastmod>2011-08-03T00:00:00+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>http://skuro.tk/2011/05/11/verifying-my-technorati-claim/</loc>
-    <lastmod>2011-05-11T00:00:00+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>http://skuro.tk/2011/05/10/more-clojure-for-spring-surf/</loc>
-    <lastmod>2011-05-10T00:00:00+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
