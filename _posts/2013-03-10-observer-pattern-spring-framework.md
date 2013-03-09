@@ -1,7 +1,7 @@
 ---
 title: The Observer Pattern in Spring
 layout: post
-primary_img: http://mimg.ugo.com/200907/10229/cuts/the-observer_288x288.jpg
+primary_img: /img/post/observer.png
 categories: [java, spring, patterns]
 meta-description: The Observer Pattern in a Spring application
 ---
