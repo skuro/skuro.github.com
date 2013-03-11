@@ -1,11 +1,11 @@
 ---
 title: Java StringBuilder myth debunked
 layout: post
-primary_img: /img/post/jirasvn.png
+primary_img: /img/post/joint.png
 categories: [java, performance, development]
-meta-description: It's a recurring
+meta-description: Spurious post
 ---
 
-*NOTE: this post was published before it was ready, see the real one [here][goto]*
+*NOTE: this post was published before it was ready, the real content can now be found [here][goto]*
 
-[goto]:
+[goto]: 2013/03/11/java-stringbuilder-myth-now-with-content/
