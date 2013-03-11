@@ -3,13 +3,182 @@
     <title type="text" xml:lang="en">SKURO! -- Shading lights</title>
     <link type="application/atom+xml" href="http://skuro.tk/rss2/" rel="self"/>
     <link type="text" href="http://skuro.tk" rel="alternate"/>
-    <updated>2013-03-10T00:10:08+01:00</updated>
+    <updated>2013-03-11T23:43:59+01:00</updated>
     <id>http://skuro.tk</id>
     <author>
         <name>Carlo Sciolla</name>
     </author>
     <rights>Copyright (c) 2010-2011 Carlo Sciolla</rights>
     
+<entry>
+  <title>Java StringBuilder myth debunked -- now with content!</title>
+  <link href="http://skuro.tk/2013/03/11/java-stringbuilder-myth-now-with-content/"/>
+  <updated>2013-03-11T00:00:00+01:00</updated>
+  <id>http://skuro.tk/2013/03/11/java-stringbuilder-myth-now-with-content/</id>
+  <summary type="html">&lt;h1&gt;The myth&lt;/h1&gt;
+
+&lt;blockquote&gt;&lt;p&gt;Concatenating two Strings with the plus operator is the source of all evil&lt;/p&gt;
+
+&lt;p&gt;-- Anonymous Java dev&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;NOTE&lt;/strong&gt;: The source code for the tests discussed here can be found on &lt;a href=&quot;https://github.com/skuro/stringbuilder&quot;&gt;Github&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;It's from university time that I learned to regard &lt;code&gt;String&lt;/code&gt; concatenation in Java
+using the '+' plus operator as a deadly performance sin. Recently there has been
+an internal review at &lt;a href=&quot;http://www.backbase.com&quot;&gt;Backbase R&amp;amp;D&lt;/a&gt; where such recurring
+mantra was dismissed as a myth due to &lt;code&gt;javac&lt;/code&gt; using &lt;code&gt;StringBuilder&lt;/code&gt; under the hood
+any time you use the plus operator to join Strings. I set myself up to prove
+such a point and verify the reality under different environments.&lt;/p&gt;
+
+&lt;h1&gt;The test&lt;/h1&gt;
+
+&lt;p&gt;Relying on your compiler to optimize your &lt;code&gt;String&lt;/code&gt; concatenation means that things
+might change heavily depending on the JDK vendor you adopt. As far as platform
+support goes for my daily job, three main vendors should be considered:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Oracle JDK&lt;/li&gt;
+&lt;li&gt;IBM JDK&lt;/li&gt;
+&lt;li&gt;ECJ -- for developers only&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;Moreover, while we officially support Java 5 through 6, we are also looking into
+supporting Java 7 for our products, adding another three-folded level of indirection on top of
+the three vendors. For the sake of &lt;del&gt;lazyness&lt;/del&gt; simplicity, the &lt;code&gt;ecj&lt;/code&gt; compiled
+bytecode will be run with a single JDK, namely Oracle JDK7.&lt;/p&gt;
+
+&lt;p&gt;I prepared a &lt;a href=&quot;https://www.virtualbox.org/&quot;&gt;Virtualbox&lt;/a&gt; VM with all the above JDK
+installed, then I developed some classes to express three different concatenation
+methods, amounting to three to four concatenations per method invocaiton,
+depending on the specific test case.&lt;/p&gt;
+
+&lt;p&gt;The test classes are run a thousands times for each test round, with a total of
+100 rounds each test case. The same VM is used to run all the rounds for the same
+test case, and it's restarted across different test cases, all to let the Java
+runtime perform all the optimizations it can, without affecting the other test
+cases in any way. The default options were used to start all JVMs.&lt;/p&gt;
+
+&lt;p&gt;More details can be found in the benchmark runner &lt;a href=&quot;https://github.com/skuro/stringbuilder/blob/master/bench.sh&quot;&gt;script&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h1&gt;The code&lt;/h1&gt;
+
+&lt;p&gt;Full code for both test cases and the test suite is available on &lt;a href=&quot;https://github.com/skuro/stringbuilder&quot;&gt;Github&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The following different test cases were produced to measure performance
+differences of the String concatenation with plus against the direct use of a
+&lt;code&gt;StringBuilder&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// String concat with plus
+String result = &quot;const1&quot; + base;
+result = result + &quot;const2&quot;;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;pre&gt;&lt;code&gt;// String concat with a StringBuilder
+new StringBuilder()
+              .append(&quot;const1&quot;)
+              .append(base)
+              .append(&quot;const2&quot;)
+              .append(append)
+              .toString();
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;pre&gt;&lt;code&gt;//String concat with an initialized StringBuilder
+new StringBuilder(&quot;const1&quot;)
+              .append(base)
+              .append(&quot;const2&quot;)
+              .append(append)
+              .toString();
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The general idea is to provide a concatenation both at the head and at the tail
+of constant &lt;code&gt;String&lt;/code&gt;s over a variable. The difference between the last two cases,
+both making explicit use of &lt;code&gt;StringBuilder&lt;/code&gt;, is in the latter using the 1-arg
+constructor which initializes the builder with the initial part of the result.&lt;/p&gt;
+
+&lt;h1&gt;The results&lt;/h1&gt;
+
+&lt;p&gt;Enough talking, down below here you can have a look at the generated graphs, where
+each data point corresponds to a single test round (e.g. 1000 executions of the same
+test class).&lt;/p&gt;
+
+&lt;p&gt;The discussion of the results and some more juicy details will follow.&lt;/p&gt;
+
+&lt;h2&gt;&lt;img src=&quot;img/post/catplus.png&quot; title=&quot;Concatenation with plus&quot; alt=&quot;Concatenation with plus&quot; /&gt;&lt;/h2&gt;
+
+&lt;h2&gt;&lt;img src=&quot;img/post/catsb.png&quot; title=&quot;Concatenation with StringBuilder&quot; alt=&quot;Concatenation with StringBuilder&quot; /&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;img/post/catsb2.png&quot; title=&quot;Concatenation with initalized StringBuilder&quot; alt=&quot;Concatenation with initialized StringBuilder&quot; /&gt;&lt;/p&gt;
+
+&lt;h1&gt;The discussion&lt;/h1&gt;
+
+&lt;p&gt;Oracle JKD5 is the clear loser here, appearing to be in a B league when compared
+to the others. But that's not really the scope of this exercise, and thus we'll
+gloss over it for the time being.&lt;/p&gt;
+
+&lt;p&gt;That said, there are two other interesting bits I observe in the above graph. The first is that indeed
+there is generally quite a difference between the use of the plus operator vs an explicit
+&lt;code&gt;StringBuilder&lt;/code&gt;, &lt;em&gt;especially&lt;/em&gt; if you're using Oracle Java5 which performs tree
+times worse the the rest of the crew.&lt;/p&gt;
+
+&lt;p&gt;The second observation is that while it generally holds for most of the JDKs that
+an explicit &lt;code&gt;StringBuilder&lt;/code&gt; will offer up to twice the speed as the regular plus
+operator, &lt;strong&gt;IBM JDK6 seems not to suffer&lt;/strong&gt; from any performance loss, always averaging
+25ms to complete the task in all test cases.&lt;/p&gt;
+
+&lt;p&gt;A closer look at the generated bytecode reveals some interesting details&lt;/p&gt;
+
+&lt;h1&gt;The bytecode&lt;/h1&gt;
+
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; the decompiled classes are also available on &lt;a href=&quot;https://github.com/skuro/stringbuilder&quot;&gt;Github&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Across all possible JDKs &lt;code&gt;StringBuilders&lt;/code&gt; are &lt;strong&gt;always&lt;/strong&gt; used to implement &lt;code&gt;String&lt;/code&gt;
+concatenation even in presence of a plus sign.
+Moreover, across all vendors and versions, &lt;strong&gt;there is almost no difference at all&lt;/strong&gt;
+for the same test case. The only one that stands a bit apart is &lt;a href=&quot;https://github.com/skuro/stringbuilder/blob/master/ecj/CatPlus.class.txt&quot;&gt;&lt;code&gt;ecj&lt;/code&gt;&lt;/a&gt;,
+which is the only one to cleverly optimize the &lt;code&gt;CatPlus&lt;/code&gt; test case to invoke
+the 1-arg constructor of the &lt;code&gt;StringBuilder&lt;/code&gt; instead of the 0-arg version.&lt;/p&gt;
+
+&lt;p&gt;Comparing the resulting bytecode exposes what could affect performance in the
+different scnarios:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;when concatenating with plus, &lt;em&gt;new instances of &lt;code&gt;StringBuilder&lt;/code&gt;&lt;/em&gt; are created
+any time a concatenation happens. This can easily result in a performance
+degradation due to useless invocation of the constructor plus more stress on
+the garbage collector due to throw away instances&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;compilers will take you literally and only initalize &lt;code&gt;StringBuilder&lt;/code&gt; with its
+1-arg constructor if and only if you write it that way in the original code. This
+results in respectively four and three invocations of &lt;code&gt;StringBuilder.append&lt;/code&gt; for
+&lt;a href=&quot;https://github.com/skuro/stringbuilder/blob/master/ecj/CatSB.class.txt&quot;&gt;CatSB&lt;/a&gt; and &lt;a href=&quot;https://github.com/skuro/stringbuilder/blob/master/ecj/CatSB2.class.txt&quot;&gt;CatSB2&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h1&gt;The conclusion&lt;/h1&gt;
+
+&lt;p&gt;Bytecode analysis offers the final answer to the original question.&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;Do you need to explicitly use a &lt;code&gt;StringBuilder&lt;/code&gt; to improve performance? &lt;strong&gt;Yes&lt;/strong&gt;&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;The above graphs clearly show that, unless you're using IBM JDK6 runtime, you will
+loss 50% performance when using the plus operator, although it's the one to perform
+slightly worse across the candidates when expliciting &lt;code&gt;StringBuffers&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Also, it's quite interesting to see how &lt;em&gt;JIT optimizations&lt;/em&gt; impact the overall
+performance: for instance, even in presence of different bytecode between the two
+explicit &lt;code&gt;StringBuilder&lt;/code&gt; test cases, the end result is absolutely the same in the
+long run.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;img/post/myth-confirmed.jpg&quot; alt=&quot;Myth confirmed&quot; /&gt;&lt;/p&gt;
+</summary>
+</entry>
+
+
 <entry>
   <title>The Observer Pattern in Spring</title>
   <link href="http://skuro.tk/2013/03/10/observer-pattern-spring-framework/"/>
@@ -78,7 +247,7 @@ implementation are easy enough to be applied in your Spring application without 
   <link href="http://skuro.tk/2013/03/06/java-stringbuilder-myth/"/>
   <updated>2013-03-06T00:00:00+01:00</updated>
   <id>http://skuro.tk/2013/03/06/java-stringbuilder-myth/</id>
-  <summary type="html">
+  <summary type="html">&lt;p&gt;&lt;em&gt;NOTE: this post was published before it was ready, the real content can now be found &lt;a href=&quot;2013/03/11/java-stringbuilder-myth-now-with-content/&quot;&gt;here&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 </summary>
 </entry>
 
@@ -823,29 +992,6 @@ Wednesday, October 12th we're going to have a great &lt;a href=&quot;http://bit.
 
 
 &lt;p&gt;Again, I don't know how much time I'll be given, so I can't even guarantee I'll have time for all the above topics to get a proper introduction, but since I also might have still enough time to cover other topics, what would you like to see in there?&lt;/p&gt;
-</summary>
-</entry>
-
-
-<entry>
-  <title>H2 embedded DB and Alfresco 3.4</title>
-  <link href="http://skuro.tk/2011/08/03/h2-embedded-db-and-alfresco-3-4/"/>
-  <updated>2011-08-03T00:00:00+02:00</updated>
-  <id>http://skuro.tk/2011/08/03/h2-embedded-db-and-alfresco-3-4/</id>
-  <summary type="html">&lt;p&gt;One of the most useful thing an embedded DB can do for you is to provide a clean environment in your automated tests to use as a clean slate where to repeatedly and reliably test your code. It's been a while since Alfresco &lt;a href=&quot;http://issues.alfresco.com/jira/browse/ALFCOM-3691&quot;&gt;broke compatibility&lt;/a&gt; with some embedded DB we used to run our tests (&lt;a href=&quot;http://hsqldb.org/&quot;&gt;HSQLDB&lt;/a&gt; above all others).&lt;/p&gt;
-
-&lt;p&gt;I recently regained interest into cutting out any useless dependency on MySQL or PostgreSQL on the test server to run my Alfresco tests, and H2 looked sexy. I found &lt;a href=&quot;http://www.codinginahurry.com/2010/11/27/running-alfresco-33-with-embedded-database-h2-in-postgresql-compability-mode/&quot;&gt;here&lt;/a&gt; and &lt;a href=&quot;https://issues.alfresco.com/jira/browse/ALF-3537&quot;&gt;there&lt;/a&gt; some promising work by other people, but none worked for me out of the box. I then started from scratch using PostgreSQL DB scripts and voila! Now I have back my Alfresco running against an embeddable DB! You can see &amp;amp; fork &lt;a href=&quot;http://bit.ly/nIJuLY&quot;&gt;the results&lt;/a&gt; of my job if you like. It's supposed to help you with a Maven Alfresco project, but you can probably benefit from it even if you're using some other build tools.&lt;/p&gt;
-
-&lt;p&gt;As soon as you have all those files in your classpath, be sure you edit your &lt;em&gt;alfresco-global.properties&lt;/em&gt; like the following:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;db.driver=org.h2.Driver
-db.url=jdbc:h2:alf_data/h2_data/alfresco
-db.username=alfresco
-db.password=alfresco
-hibernate.dialect=org.hibernate.dialect.H2Dialect
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Make sure you're using an hibernate version &amp;gt;= 3.1 as per H2 &lt;a href=&quot;http://www.h2database.com/html/tutorial.html#using_hibernate&quot;&gt;documentation&lt;/a&gt;.&lt;/p&gt;
 </summary>
 </entry>
 
