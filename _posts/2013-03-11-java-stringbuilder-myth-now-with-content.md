@@ -157,7 +157,7 @@ Bytecode analysis offers the final answer to the original question.
 
 The above graphs clearly show that, unless you're using IBM JDK6 runtime, you will
 loss 50% performance when using the plus operator, although it's the one to perform
-slightly worse across the candidates when expliciting `StringBuffers`.
+slightly worse across the candidates when expliciting `StringBuilder`s.
 
 Also, it's quite interesting to see how *JIT optimizations* impact the overall
 performance: for instance, even in presence of different bytecode between the two
