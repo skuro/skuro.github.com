@@ -166,11 +166,11 @@ long run.
 
 ![Myth confirmed][myth]
 
-[catplus]: img/post/catplus.png "Concatenation with plus"
-[catsb]: img/post/catsb.png "Concatenation with StringBuilder"
-[catsb2]: img/post/catsb2.png "Concatenation with initalized StringBuilder"
+[catplus]: /img/post/catplus.png "Concatenation with plus"
+[catsb]: /img/post/catsb.png "Concatenation with StringBuilder"
+[catsb2]: /img/post/catsb2.png "Concatenation with initalized StringBuilder"
 [github]: https://github.com/skuro/stringbuilder
 [ecjplus]: https://github.com/skuro/stringbuilder/blob/master/ecj/CatPlus.class.txt
 [catsbp]: https://github.com/skuro/stringbuilder/blob/master/ecj/CatSB.class.txt
 [catsb2p]: https://github.com/skuro/stringbuilder/blob/master/ecj/CatSB2.class.txt
-[myth]: img/post/myth-confirmed.jpg
+[myth]: /img/post/myth-confirmed.jpg
