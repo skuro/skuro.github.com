@@ -228,7 +228,7 @@ results in respectively four and three invocations of <code>StringBuilder.append
 
 <p>The above graphs clearly show that, unless you're using IBM JDK6 runtime, you will
 loss 50% performance when using the plus operator, although it's the one to perform
-slightly worse across the candidates when expliciting <code>StringBuffers</code>.</p>
+slightly worse across the candidates when expliciting <code>StringBuilder</code>s.</p>
 
 <p>Also, it's quite interesting to see how <em>JIT optimizations</em> impact the overall
 performance: for instance, even in presence of different bytecode between the two
