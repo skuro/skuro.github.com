@@ -1,0 +1,4 @@
+Sitemap: http://skuro.tk/sitemap.xml
+
+User-agent: *
+Disallow:
