@@ -15,7 +15,7 @@
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
-  {% for post in site.posts limit:20 %}
+  {% for post in site.posts %}
   <url>
     <loc>http://skuro.tk{{ post.url }}/</loc>
     <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
