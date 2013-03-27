@@ -50,70 +50,77 @@
       </header>
       
       <section>
-        <section>
-  <h1>Categories</h1>
-  <div>
+        <div class="post">
+  <h1>
+  H2 support 1.1.1 for Alfresco 3.4.12 Enterprise with Maven
+  <a href="/2013/03/27/h2-support-for-alfresco-3-4-12-and-maven">
+    <img src="/img/link.jpg" alt="Permalink to H2 support 1.1.1 for Alfresco 3.4.12 Enterprise with Maven" />
+  </a>
+</h1>
+<blockquote class="date-wrapper">
+  <h5 class="date">
+    March 27, 2013
     
-    <a class="tag" href="/category/development/" style="font-size:29px">#development</a>
+    &nbsp;
     
-    <a class="tag" href="/category/alm/" style="font-size:53px">#alm</a>
+    <a href="/category/alfresco">#alfresco</a><span>&nbsp;&nbsp;</span>
     
-    <a class="tag" href="/category/eclipse/" style="font-size:23px">#eclipse</a>
+    <a href="/category/h2support">#h2support</a><span>&nbsp;&nbsp;</span>
     
-    <a class="tag" href="/category/java/" style="font-size:32px">#java</a>
+    <a href="/category/maven">#maven</a><span>&nbsp;&nbsp;</span>
     
-    <a class="tag" href="/category/patterns/" style="font-size:23px">#patterns</a>
+    <a href="/category/sonatype">#sonatype</a><span>&nbsp;&nbsp;</span>
     
-    <a class="tag" href="/category/spring/" style="font-size:23px">#spring</a>
     
-    <a class="tag" href="/category/intellij/" style="font-size:23px">#intellij</a>
-    
-    <a class="tag" href="/category/alfresco/" style="font-size:62px">#alfresco</a>
-    
-    <a class="tag" href="/category/software/" style="font-size:23px">#software</a>
-    
-    <a class="tag" href="/category/h2support/" style="font-size:26px">#h2support</a>
-    
-    <a class="tag" href="/category/maven/" style="font-size:35px">#maven</a>
-    
-    <a class="tag" href="/category/meetup/" style="font-size:35px">#meetup</a>
-    
-    <a class="tag" href="/category/orgmode/" style="font-size:23px">#orgmode</a>
-    
-    <a class="tag" href="/category/amsterdam/" style="font-size:29px">#amsterdam</a>
-    
-    <a class="tag" href="/category/presentation/" style="font-size:23px">#presentation</a>
-    
-    <a class="tag" href="/category/emacs/" style="font-size:26px">#emacs</a>
-    
-    <a class="tag" href="/category/windows/" style="font-size:23px">#windows</a>
-    
-    <a class="tag" href="/category/javascript/" style="font-size:26px">#javascript</a>
-    
-    <a class="tag" href="/category/subversion/" style="font-size:23px">#subversion</a>
-    
-    <a class="tag" href="/category/italian/" style="font-size:26px">#italian</a>
-    
-    <a class="tag" href="/category/clojure/" style="font-size:50px">#clojure</a>
-    
-    <a class="tag" href="/category/blog/" style="font-size:35px">#blog</a>
-    
-    <a class="tag" href="/category/slides/" style="font-size:23px">#slides</a>
-    
-    <a class="tag" href="/category/h2-support/" style="font-size:32px">#h2-support</a>
-    
-    <a class="tag" href="/category/apple/" style="font-size:32px">#apple</a>
-    
-    <a class="tag" href="/category/linux/" style="font-size:38px">#linux</a>
-    
-    <a class="tag" href="/category/jira/" style="font-size:23px">#jira</a>
-    
-    <a class="tag" href="/category/performance/" style="font-size:26px">#performance</a>
-    
-    <a class="tag" href="/category/sonatype/" style="font-size:29px">#sonatype</a>
-    
-  </div>
-</section>
+  </h5>
+</blockquote>
+
+  
+  <img src="/img/post/h2piechart_2.png" class="primary" />
+  
+  <p>Just a quick update on the <a href="https://github.com/skuro/alfresco-h2-support">H2 support</a>
+project, today I released the <code>1.1.1</code> maintenance version which targets
+Alfresco v3.4.12 Enterprise.</p>
+
+<p>Please make sure you always double check the <a href="https://github.com/skuro/alfresco-h2-support/wiki/H2-Database-support-for-Alfresco">official documentation</a>
+to pick and choose the right version to use in your Alfresco project.</p>
+
+<h1>H2 and Maven</h1>
+
+<p>For <del>the sane</del> those among you that use the <a href="https://artifacts.alfresco.com/nexus/content/repositories/alfresco-docs/alfresco-lifecycle-aggregator/latest/index.html">Maven SDK</a>,
+you should know that <code>H2 support</code> is used to quickly boot the Alfresco repository
+webapp during your development cycles.</p>
+
+<p>If you're using a version of Alfresco other than the default 4.x that's assumed
+by the SDK, you must also adapt your H2 support version to be able to start up
+Alfresco. It's as easy as overriding the following maven property:</p>
+
+<pre><code>&lt;h2-support.version&gt;1.1.1&lt;/h2-support.version&gt;
+</code></pre>
+
+<p>Happy development!</p>
+
+  
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'skuro';
+//    var disqus_id = '/2013/03/27/h2-support-for-alfresco-3-4-12-and-maven';
+//    var disqus_url = [location.protocol, '//', location.host, location.pathname].join('');
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+  
+
+</div>
 
       </section>
 

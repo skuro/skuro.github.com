@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="/stylesheets/pygment_trac.css" />
     <link rel="stylesheet" href="/stylesheets/skuro.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <meta name="google-site-verification" content="XPlD7XrWzUh1Wb2pM1JB6AePZ3baqkD6srjyBirLAaE" />
     
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -57,22 +56,24 @@
 
 <!-- copied from post_header include -->
 <h1>
-  Java StringBuilder myth debunked -- now with content!
-  <a href="/2013/03/11/java-stringbuilder-myth-now-with-content">
-    <img src="/img/link.jpg" alt="Permalink to Java StringBuilder myth debunked -- now with content!" />
+  H2 support 1.1.1 for Alfresco 3.4.12 Enterprise with Maven
+  <a href="/2013/03/27/h2-support-for-alfresco-3-4-12-and-maven">
+    <img src="/img/link.jpg" alt="Permalink to H2 support 1.1.1 for Alfresco 3.4.12 Enterprise with Maven" />
   </a>
 </h1>
 <blockquote class="date-wrapper">
   <h5 class="date">
-    March 11, 2013
+    March 27, 2013
     
     &nbsp;
     
-    <a class="tag" href="/category/java">#java</a><span>&nbsp;&nbsp;</span>
+    <a class="tag" href="/category/alfresco">#alfresco</a><span>&nbsp;&nbsp;</span>
     
-    <a class="tag" href="/category/performance">#performance</a><span>&nbsp;&nbsp;</span>
+    <a class="tag" href="/category/h2support">#h2support</a><span>&nbsp;&nbsp;</span>
     
-    <a class="tag" href="/category/development">#development</a><span>&nbsp;&nbsp;</span>
+    <a class="tag" href="/category/maven">#maven</a><span>&nbsp;&nbsp;</span>
+    
+    <a class="tag" href="/category/sonatype">#sonatype</a><span>&nbsp;&nbsp;</span>
     
     
   </h5>
@@ -80,168 +81,29 @@
 <!-- end copy -->
 
   
-  <img src="/img/post/joint.png" class="primary" />
+  <img src="/img/post/h2piechart_2.png" class="primary" />
   
-  <h1>The myth</h1>
+  <p>Just a quick update on the <a href="https://github.com/skuro/alfresco-h2-support">H2 support</a>
+project, today I released the <code>1.1.1</code> maintenance version which targets
+Alfresco v3.4.12 Enterprise.</p>
 
-<blockquote><p>Concatenating two Strings with the plus operator is the source of all evil</p>
+<p>Please make sure you always double check the <a href="https://github.com/skuro/alfresco-h2-support/wiki/H2-Database-support-for-Alfresco">official documentation</a>
+to pick and choose the right version to use in your Alfresco project.</p>
 
-<p>-- Anonymous Java dev</p></blockquote>
+<h1>H2 and Maven</h1>
 
-<p><em><strong>NOTE</strong>: The source code for the tests discussed here can be found on <a href="https://github.com/skuro/stringbuilder">Github</a></em></p>
+<p>For <del>the sane</del> those among you that use the <a href="https://artifacts.alfresco.com/nexus/content/repositories/alfresco-docs/alfresco-lifecycle-aggregator/latest/index.html">Maven SDK</a>,
+you should know that <code>H2 support</code> is used to quickly boot the Alfresco repository
+webapp during your development cycles.</p>
 
-<p>It's from university time that I learned to regard <code>String</code> concatenation in Java
-using the '+' plus operator as a deadly performance sin. Recently there has been
-an internal review at <a href="http://www.backbase.com">Backbase R&amp;D</a> where such recurring
-mantra was dismissed as a myth due to <code>javac</code> using <code>StringBuilder</code> under the hood
-any time you use the plus operator to join Strings. I set myself up to prove
-such a point and verify the reality under different environments.</p>
+<p>If you're using a version of Alfresco other than the default 4.x that's assumed
+by the SDK, you must also adapt your H2 support version to be able to start up
+Alfresco. It's as easy as overriding the following maven property:</p>
 
-<h1>The test</h1>
-
-<p>Relying on your compiler to optimize your <code>String</code> concatenation means that things
-might change heavily depending on the JDK vendor you adopt. As far as platform
-support goes for my daily job, three main vendors should be considered:</p>
-
-<ul>
-<li>Oracle JDK</li>
-<li>IBM JDK</li>
-<li>ECJ -- for developers only</li>
-</ul>
-
-
-<p>Moreover, while we officially support Java 5 through 6, we are also looking into
-supporting Java 7 for our products, adding another three-folded level of indirection on top of
-the three vendors. For the sake of <del>lazyness</del> simplicity, the <code>ecj</code> compiled
-bytecode will be run with a single JDK, namely Oracle JDK7.</p>
-
-<p>I prepared a <a href="https://www.virtualbox.org/">Virtualbox</a> VM with all the above JDK
-installed, then I developed some classes to express three different concatenation
-methods, amounting to three to four concatenations per method invocaiton,
-depending on the specific test case.</p>
-
-<p>The test classes are run a thousands times for each test round, with a total of
-100 rounds each test case. The same VM is used to run all the rounds for the same
-test case, and it's restarted across different test cases, all to let the Java
-runtime perform all the optimizations it can, without affecting the other test
-cases in any way. The default options were used to start all JVMs.</p>
-
-<p>More details can be found in the benchmark runner <a href="https://github.com/skuro/stringbuilder/blob/master/bench.sh">script</a>.</p>
-
-<h1>The code</h1>
-
-<p>Full code for both test cases and the test suite is available on <a href="https://github.com/skuro/stringbuilder">Github</a>.</p>
-
-<p>The following different test cases were produced to measure performance
-differences of the String concatenation with plus against the direct use of a
-<code>StringBuilder</code>:</p>
-
-<pre><code>// String concat with plus
-String result = "const1" + base;
-result = result + "const2";
+<pre><code>&lt;h2-support.version&gt;1.1.1&lt;/h2-support.version&gt;
 </code></pre>
 
-<hr />
-
-<pre><code>// String concat with a StringBuilder
-new StringBuilder()
-              .append("const1")
-              .append(base)
-              .append("const2")
-              .append(append)
-              .toString();
-}
-</code></pre>
-
-<hr />
-
-<pre><code>//String concat with an initialized StringBuilder
-new StringBuilder("const1")
-              .append(base)
-              .append("const2")
-              .append(append)
-              .toString();
-</code></pre>
-
-<p>The general idea is to provide a concatenation both at the head and at the tail
-of constant <code>String</code>s over a variable. The difference between the last two cases,
-both making explicit use of <code>StringBuilder</code>, is in the latter using the 1-arg
-constructor which initializes the builder with the initial part of the result.</p>
-
-<h1>The results</h1>
-
-<p>Enough talking, down below here you can have a look at the generated graphs, where
-each data point corresponds to a single test round (e.g. 1000 executions of the same
-test class).</p>
-
-<p>The discussion of the results and some more juicy details will follow.</p>
-
-<h2><img src="/img/post/catplus.png" title="Concatenation with plus" alt="Concatenation with plus" /></h2>
-
-<h2><img src="/img/post/catsb.png" title="Concatenation with StringBuilder" alt="Concatenation with StringBuilder" /></h2>
-
-<p><img src="/img/post/catsb2.png" title="Concatenation with initalized StringBuilder" alt="Concatenation with initialized StringBuilder" /></p>
-
-<h1>The discussion</h1>
-
-<p>Oracle JKD5 is the clear loser here, appearing to be in a B league when compared
-to the others. But that's not really the scope of this exercise, and thus we'll
-gloss over it for the time being.</p>
-
-<p>That said, there are two other interesting bits I observe in the above graph. The first is that indeed
-there is generally quite a difference between the use of the plus operator vs an explicit
-<code>StringBuilder</code>, <em>especially</em> if you're using Oracle Java5 which performs tree
-times worse the the rest of the crew.</p>
-
-<p>The second observation is that while it generally holds for most of the JDKs that
-an explicit <code>StringBuilder</code> will offer up to twice the speed as the regular plus
-operator, <strong>IBM JDK6 seems not to suffer</strong> from any performance loss, always averaging
-25ms to complete the task in all test cases.</p>
-
-<p>A closer look at the generated bytecode reveals some interesting details</p>
-
-<h1>The bytecode</h1>
-
-<p><em><strong>NOTE:</strong> the decompiled classes are also available on <a href="https://github.com/skuro/stringbuilder">Github</a></em></p>
-
-<p>Across all possible JDKs <code>StringBuilders</code> are <strong>always</strong> used to implement <code>String</code>
-concatenation even in presence of a plus sign.
-Moreover, across all vendors and versions, <strong>there is almost no difference at all</strong>
-for the same test case. The only one that stands a bit apart is <a href="https://github.com/skuro/stringbuilder/blob/master/ecj/CatPlus.class.txt"><code>ecj</code></a>,
-which is the only one to cleverly optimize the <code>CatPlus</code> test case to invoke
-the 1-arg constructor of the <code>StringBuilder</code> instead of the 0-arg version.</p>
-
-<p>Comparing the resulting bytecode exposes what could affect performance in the
-different scnarios:</p>
-
-<ul>
-<li><p>when concatenating with plus, <em>new instances of <code>StringBuilder</code></em> are created
-any time a concatenation happens. This can easily result in a performance
-degradation due to useless invocation of the constructor plus more stress on
-the garbage collector due to throw away instances</p></li>
-<li><p>compilers will take you literally and only initalize <code>StringBuilder</code> with its
-1-arg constructor if and only if you write it that way in the original code. This
-results in respectively four and three invocations of <code>StringBuilder.append</code> for
-<a href="https://github.com/skuro/stringbuilder/blob/master/ecj/CatSB.class.txt">CatSB</a> and <a href="https://github.com/skuro/stringbuilder/blob/master/ecj/CatSB2.class.txt">CatSB2</a>.</p></li>
-</ul>
-
-
-<h1>The conclusion</h1>
-
-<p>Bytecode analysis offers the final answer to the original question.</p>
-
-<blockquote><p>Do you need to explicitly use a <code>StringBuilder</code> to improve performance? <strong>Yes</strong></p></blockquote>
-
-<p>The above graphs clearly show that, unless you're using IBM JDK6 runtime, you will
-loss 50% performance when using the plus operator, although it's the one to perform
-slightly worse across the candidates when expliciting <code>StringBuffers</code>.</p>
-
-<p>Also, it's quite interesting to see how <em>JIT optimizations</em> impact the overall
-performance: for instance, even in presence of different bytecode between the two
-explicit <code>StringBuilder</code> test cases, the end result is absolutely the same in the
-long run.</p>
-
-<p><img src="/img/post/myth-confirmed.jpg" alt="Myth confirmed" /></p>
+<p>Happy development!</p>
 
 
 </div>
