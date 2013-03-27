@@ -1,5 +1,5 @@
 ---
-title: H2 support 1.1.1 for Alfresco 3.4.12 Enterprise
+title: H2 support 1.1.1 for Alfresco 3.4.12 Enterprise with Maven
 layout: post
 primary_img: /img/post/h2piechart_2.png
 categories: [alfresco, h2support, maven, sonatype]
