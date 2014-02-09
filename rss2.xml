@@ -3,13 +3,57 @@
     <title type="text" xml:lang="en">SKURO! -- Shading lights</title>
     <link type="application/atom+xml" href="http://skuro.tk/rss2/" rel="self"/>
     <link type="text" href="http://skuro.tk" rel="alternate"/>
-    <updated>2013-03-27T16:47:25+01:00</updated>
+    <updated>2014-02-09T01:49:01+01:00</updated>
     <id>http://skuro.tk</id>
     <author>
         <name>Carlo Sciolla</name>
     </author>
     <rights>Copyright (c) 2010-2011 Carlo Sciolla</rights>
     
+<entry>
+  <title>SeedUML, an online PlantUML editor</title>
+  <link href="http://skuro.tk/2014/02/09/seeduml-an-online-plantuml-editor/"/>
+  <updated>2014-02-09T00:00:00+01:00</updated>
+  <id>http://skuro.tk/2014/02/09/seeduml-an-online-plantuml-editor/</id>
+  <summary type="html">&lt;h1&gt;Finally online&lt;/h1&gt;
+
+&lt;p&gt;It&#39;s my pleasure to announce the availability of &lt;a href=&quot;http://seeduml.com&quot;&gt;SeedUML&lt;/a&gt;, the online editor for UML diagrams based on the great &lt;a href=&quot;http://plantuml.sourceforge.net/&quot;&gt;PlantUML language&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;As it&#39;s in its early beta stages, I&#39;m sure you&#39;ll find some rough edges here and there, but there&#39;s some great and useful features I&#39;m sure you&#39;ll love. Especially if you&#39;re new to PlantUML, you&#39;ll find a damn easy way to create all sorts of UML diagrams, like &lt;a href=&quot;http://seeduml.com/GBK3c&quot;&gt;state&lt;/a&gt;, &lt;a href=&quot;http://seeduml.com/Nmr0D&quot;&gt;sequence&lt;/a&gt;, &lt;a href=&quot;http://seeduml.com/Jgfv9&quot;&gt;class&lt;/a&gt;, etc, all with a crystal clear plain text description. The diagram updates as you type, and you can save the image for later use, or simply link it wherever you need it to show up.&lt;/p&gt;
+
+&lt;h1&gt;Quick user guide&lt;/h1&gt;
+
+&lt;p&gt;If you need an user guide, the site is itself not easy enough to use. But let&#39;s give a couple of pointers to start with:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;you need to start a new diagram, you go to &lt;a href=&quot;&quot;&gt;http://seeduml.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;a random diagram ID is generated, and you&#39;ll be redirected to such diagram page (eg: &lt;a href=&quot;&quot;&gt;http://seeduml.com/GBK3c&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;remember to bookmark the URL if the diagram is important, as there&#39;s no user save&lt;/li&gt;
+&lt;li&gt;you follow PlantUML docs and create beautiful diagram&lt;/li&gt;
+&lt;li&gt;whenever you need to edit the doc again, you go back to the same URL (you bookmarked it, right?)&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;Done. Easy, huh?&lt;/p&gt;
+
+&lt;h1&gt;Disclaimer&lt;/h1&gt;
+
+&lt;p&gt;This is an &lt;strong&gt;early beta&lt;/strong&gt;, use at your own risk (and pleasure, hopefully). Especially, don&#39;t expect to&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;be guaranteed that your diagrams will stay there forever&lt;/li&gt;
+&lt;li&gt;the service will be up and running at all times&lt;/li&gt;
+&lt;li&gt;be able to save hidden diagrams&lt;/li&gt;
+&lt;li&gt;have a rock solid syntax highlight&lt;/li&gt;
+&lt;li&gt;etc etc etc&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;I will share some of the juicy technical details of that site later on on these pages, but for now, have fun and happy diagram authoring!&lt;/p&gt;
+</summary>
+</entry>
+
+
 <entry>
   <title>H2 support 1.1.1 for Alfresco 3.4.12 Enterprise with Maven</title>
   <link href="http://skuro.tk/2013/03/27/h2-support-for-alfresco-3-4-12-and-maven/"/>
@@ -28,9 +72,9 @@ to pick and choose the right version to use in your Alfresco project.&lt;/p&gt;
 you should know that &lt;code&gt;H2 support&lt;/code&gt; is used to quickly boot the Alfresco repository
 webapp during your development cycles.&lt;/p&gt;
 
-&lt;p&gt;If you're using a version of Alfresco other than the default 4.x that's assumed
+&lt;p&gt;If you&#39;re using a version of Alfresco other than the default 4.x that&#39;s assumed
 by the SDK, you must also adapt your H2 support version to be able to start up
-Alfresco. It's as easy as overriding the following maven property:&lt;/p&gt;
+Alfresco. It&#39;s as easy as overriding the following maven property:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;&amp;lt;h2-support.version&amp;gt;1.1.1&amp;lt;/h2-support.version&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
@@ -53,8 +97,8 @@ Alfresco. It's as easy as overriding the following maven property:&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;&lt;strong&gt;NOTE&lt;/strong&gt;: The source code for the tests discussed here can be found on &lt;a href=&quot;https://github.com/skuro/stringbuilder&quot;&gt;Github&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;It's from university time that I learned to regard &lt;code&gt;String&lt;/code&gt; concatenation in Java
-using the '+' plus operator as a deadly performance sin. Recently there has been
+&lt;p&gt;It&#39;s from university time that I learned to regard &lt;code&gt;String&lt;/code&gt; concatenation in Java
+using the &#39;+&#39; plus operator as a deadly performance sin. Recently there has been
 an internal review at &lt;a href=&quot;http://www.backbase.com&quot;&gt;Backbase R&amp;amp;D&lt;/a&gt; where such recurring
 mantra was dismissed as a myth due to &lt;code&gt;javac&lt;/code&gt; using &lt;code&gt;StringBuilder&lt;/code&gt; under the hood
 any time you use the plus operator to join Strings. I set myself up to prove
@@ -85,7 +129,7 @@ depending on the specific test case.&lt;/p&gt;
 
 &lt;p&gt;The test classes are run a thousands times for each test round, with a total of
 100 rounds each test case. The same VM is used to run all the rounds for the same
-test case, and it's restarted across different test cases, all to let the Java
+test case, and it&#39;s restarted across different test cases, all to let the Java
 runtime perform all the optimizations it can, without affecting the other test
 cases in any way. The default options were used to start all JVMs.&lt;/p&gt;
 
@@ -148,12 +192,12 @@ test class).&lt;/p&gt;
 &lt;h1&gt;The discussion&lt;/h1&gt;
 
 &lt;p&gt;Oracle JKD5 is the clear loser here, appearing to be in a B league when compared
-to the others. But that's not really the scope of this exercise, and thus we'll
+to the others. But that&#39;s not really the scope of this exercise, and thus we&#39;ll
 gloss over it for the time being.&lt;/p&gt;
 
 &lt;p&gt;That said, there are two other interesting bits I observe in the above graph. The first is that indeed
 there is generally quite a difference between the use of the plus operator vs an explicit
-&lt;code&gt;StringBuilder&lt;/code&gt;, &lt;em&gt;especially&lt;/em&gt; if you're using Oracle Java5 which performs tree
+&lt;code&gt;StringBuilder&lt;/code&gt;, &lt;em&gt;especially&lt;/em&gt; if you&#39;re using Oracle Java5 which performs tree
 times worse the the rest of the crew.&lt;/p&gt;
 
 &lt;p&gt;The second observation is that while it generally holds for most of the JDKs that
@@ -195,11 +239,11 @@ results in respectively four and three invocations of &lt;code&gt;StringBuilder.
 
 &lt;blockquote&gt;&lt;p&gt;Do you need to explicitly use a &lt;code&gt;StringBuilder&lt;/code&gt; to improve performance? &lt;strong&gt;Yes&lt;/strong&gt;&lt;/p&gt;&lt;/blockquote&gt;
 
-&lt;p&gt;The above graphs clearly show that, unless you're using IBM JDK6 runtime, you will
-loss 50% performance when using the plus operator, although it's the one to perform
+&lt;p&gt;The above graphs clearly show that, unless you&#39;re using IBM JDK6 runtime, you will
+loss 50% performance when using the plus operator, although it&#39;s the one to perform
 slightly worse across the candidates when expliciting &lt;code&gt;StringBuilder&lt;/code&gt;s.&lt;/p&gt;
 
-&lt;p&gt;Also, it's quite interesting to see how &lt;em&gt;JIT optimizations&lt;/em&gt; impact the overall
+&lt;p&gt;Also, it&#39;s quite interesting to see how &lt;em&gt;JIT optimizations&lt;/em&gt; impact the overall
 performance: for instance, even in presence of different bytecode between the two
 explicit &lt;code&gt;StringBuilder&lt;/code&gt; test cases, the end result is absolutely the same in the
 long run.&lt;/p&gt;
@@ -216,10 +260,10 @@ long run.&lt;/p&gt;
   <id>http://skuro.tk/2013/03/10/observer-pattern-spring-framework/</id>
   <summary type="html">&lt;h1&gt;Observers in Spring&lt;/h1&gt;
 
-&lt;blockquote&gt;&lt;p&gt;To the man-in-the-street, who, I'm sorry to say,&lt;br/&gt;
+&lt;blockquote&gt;&lt;p&gt;To the man-in-the-street, who, I&#39;m sorry to say,&lt;br/&gt;
 Is a keen observer of life,&lt;br/&gt;
 The word &quot;Intellectual&quot; suggests straight away&lt;br/&gt;
-A man who's untrue to his wife.&lt;/p&gt;
+A man who&#39;s untrue to his wife.&lt;/p&gt;
 
 &lt;p&gt;-- W.H. Auden&lt;/p&gt;&lt;/blockquote&gt;
 
@@ -234,14 +278,14 @@ Observer pattern: &lt;code&gt;java.util.Observable&lt;/code&gt; and &lt;code&gt;
 registry of Observers, and to propagate updates (I prefer to think more of in terms of events) to all of the registered
 Observers.&lt;/p&gt;
 
-&lt;p&gt;In the context of a Spring container, there will be beans to configure and hook together, and it's key to this exercise
+&lt;p&gt;In the context of a Spring container, there will be beans to configure and hook together, and it&#39;s key to this exercise
 to find a flexible and handy way to connect things together.&lt;/p&gt;
 
 &lt;h1&gt;Automatic registration&lt;/h1&gt;
 
 &lt;p&gt;Supporting code for this blog post can be found on &lt;a href=&quot;https://github.com/skuro/spring-observer&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;When developing a Spring application you're always instantiating your classes as singletons within the Spring container.
+&lt;p&gt;When developing a Spring application you&#39;re always instantiating your classes as singletons within the Spring container.
 Annotations or XML configurations will take care  of initialize instances of your classes, wiring them together in a
 connected graph of objects with loose dependencies on the specific concrete classes you adopt in your code.&lt;/p&gt;
 
@@ -251,7 +295,7 @@ declare their observer beans, and put in place enough machinery to automatically
 the application. In this example I create a &lt;code&gt;ObserverBeanPostProcessor&lt;/code&gt; and a &lt;code&gt;SpringObserver&lt;/code&gt;
 tagging interface to identify which beans are actually declaring valid Observers, and register them automatically.&lt;/p&gt;
 
-&lt;p&gt;To complete the picture, the &lt;code&gt;SpringObservable&lt;/code&gt; interface declares which &lt;code&gt;Observer&lt;/code&gt; class it's able to notify, thus
+&lt;p&gt;To complete the picture, the &lt;code&gt;SpringObservable&lt;/code&gt; interface declares which &lt;code&gt;Observer&lt;/code&gt; class it&#39;s able to notify, thus
 leveraging the tagging interface and letting the &lt;code&gt;ObserverBeanPostProcessor&lt;/code&gt; know which beans to filter and registser.&lt;/p&gt;
 
 &lt;p&gt;This enables a software component to provide the desired &lt;code&gt;SpringObservable&lt;/code&gt; and the &lt;code&gt;ObserverBeanPostProcessor&lt;/code&gt; beans, where
@@ -288,7 +332,7 @@ implementation are easy enough to be applied in your Spring application without 
   <updated>2013-02-18T00:00:00+01:00</updated>
   <id>http://skuro.tk/2013/02/18/svn-postcommit-hook-jira-comments/</id>
   <summary type="html">&lt;p&gt;If I had to pick a single thing that really bothers me of &lt;a href=&quot;https://confluence.atlassian.com/display/AOD/JIRA+OnDemand&quot;&gt;Jira OnDemand&lt;/a&gt;
-is that it &lt;a href=&quot;https://jira.atlassian.com/browse/AOD-710&quot;&gt;doesn't support our hosted svn&lt;/a&gt; in any
+is that it &lt;a href=&quot;https://jira.atlassian.com/browse/AOD-710&quot;&gt;doesn&#39;t support our hosted svn&lt;/a&gt; in any
 possible way.&lt;/p&gt;
 
 &lt;p&gt;The biggest pain developers like me have without any basic integration between the VCS and the ticketing system is that any time you have to
@@ -301,8 +345,8 @@ switch between all of your unconnected tools to accomplish your task. As an exam
 &lt;h2&gt;A hint to the solution&lt;/h2&gt;
 
 &lt;p&gt;Looking at a way to fix this issue, I first had an intuition: what our Jira &lt;em&gt;does&lt;/em&gt; support are web links to an issue. Trac is
-just another web site, why can't we use application links instead of listing the commit messages as Jira comments? After all,
-there's a &lt;a href=&quot;https://developer.atlassian.com/display/JIRADEV/JIRA+REST+API+for+Remote+Issue+Links&quot;&gt;rich API&lt;/a&gt; that I can use to
+just another web site, why can&#39;t we use application links instead of listing the commit messages as Jira comments? After all,
+there&#39;s a &lt;a href=&quot;https://developer.atlassian.com/display/JIRADEV/JIRA+REST+API+for+Remote+Issue+Links&quot;&gt;rich API&lt;/a&gt; that I can use to
 script the hell out of our commits! It literally took me 40 minutes to come up with the following:&lt;/p&gt;
 
 &lt;script src=&quot;https://gist.github.com/skuro/4981464.js&quot;&gt;&lt;/script&gt;
@@ -316,15 +360,15 @@ script the hell out of our commits! It literally took me 40 minutes to come up w
 &lt;/ul&gt;
 
 
-&lt;p&gt;That's it. Not an impressive list of features, but enough for 40m hacking on bash scripts. When we'll have this hook installed
+&lt;p&gt;That&#39;s it. Not an impressive list of features, but enough for 40m hacking on bash scripts. When we&#39;ll have this hook installed
 in our svn server, we can easily go from the Jira issue to all the diffs associated with it.&lt;/p&gt;
 
 &lt;p&gt;This facilitates code reviews and
 issue verification or analysis at a later stage, enormously simplifying the life of every developer by providing that dead-simple
-integration that Atlassian doesn't want to provide out of the box.&lt;/p&gt;
+integration that Atlassian doesn&#39;t want to provide out of the box.&lt;/p&gt;
 
 &lt;p&gt;I understand the performance reasons behind avoid fully integrating
-on-premise svn with OnDemand instances. Still, they could do much, much better than say they're sorry and live their customers
+on-premise svn with OnDemand instances. Still, they could do much, much better than say they&#39;re sorry and live their customers
 lives being miserable because of it.&lt;/p&gt;
 </summary>
 </entry>
@@ -340,16 +384,16 @@ lives being miserable because of it.&lt;/p&gt;
 stay up to date and release a new version which incorporates the
 few schema changes in the Alfresco database. Thanks to
 &lt;a href=&quot;http://springyweb.com&quot;&gt;Jon Evans&lt;/a&gt; and &lt;a href=&quot;http://www.ixxus.com&quot;&gt;Ixxus&lt;/a&gt;,
- H2 Support v1.5 it's already out there!&lt;/p&gt;
+ H2 Support v1.5 it&#39;s already out there!&lt;/p&gt;
 
 &lt;h1&gt;Version management&lt;/h1&gt;
 
 &lt;p&gt;As
 &lt;a href=&quot;https://github.com/skuro/alfresco-h2-support/wiki/H2-Database-support-for-Alfresco&quot;&gt;usual&lt;/a&gt;,
 H2 support follows its own version numbering scheme, and you need to
-double check which one to use depending on the Alfresco version you're
+double check which one to use depending on the Alfresco version you&#39;re
 running: version 1.5 only supports Alfresco 4.1.1 Enterprise, so if
-you're targeting other versions go and update your POM.&lt;/p&gt;
+you&#39;re targeting other versions go and update your POM.&lt;/p&gt;
 
 &lt;h1&gt;Availability on Maven Central&lt;/h1&gt;
 
@@ -376,7 +420,7 @@ over time, split by version number. Check it out:&lt;/p&gt;
 &lt;h1&gt;Your chance to be awesome&lt;/h1&gt;
 
 &lt;p&gt;Jon was just great to help H2 support and provide the patch that made
-1.5 happen. It's always inspiring to see how OpenSource drives people
+1.5 happen. It&#39;s always inspiring to see how OpenSource drives people
 to build something together, spending time to shape technology to be
 the way we need, asking for nothing else in return than just be part
 of the community.&lt;/p&gt;
@@ -396,21 +440,21 @@ or your wish list as soon as you figure them out.&lt;/p&gt;
   <link href="http://skuro.tk/2012/10/14/october-amsterdam-clojure-coming-up/"/>
   <updated>2012-10-14T00:00:00+02:00</updated>
   <id>http://skuro.tk/2012/10/14/october-amsterdam-clojure-coming-up/</id>
-  <summary type="html">&lt;p&gt;Saturday, October 27th. Less than two weeks. That's the time when
+  <summary type="html">&lt;p&gt;Saturday, October 27th. Less than two weeks. That&#39;s the time when
 October Amsterdam Clojure, the biggest Clojure free event in the
-Netherlands, will be up on stage. I'm so incredibly excited about it,
-I can't wait to see all the seasoned clojurians, passionate
+Netherlands, will be up on stage. I&#39;m so incredibly excited about it,
+I can&#39;t wait to see all the seasoned clojurians, passionate
 technologists and curious newbies meet together to discuss one of the
-most intriguing technologies of our present day. Here's a couple of
-things to remind you of what's ahead of us.&lt;/p&gt;
+most intriguing technologies of our present day. Here&#39;s a couple of
+things to remind you of what&#39;s ahead of us.&lt;/p&gt;
 
-&lt;h1&gt;Don't forget to bring a ticket&lt;/h1&gt;
+&lt;h1&gt;Don&#39;t forget to bring a ticket&lt;/h1&gt;
 
 &lt;p&gt;As much as the event is totally free to attend, our limited logistics
 imposes us a limit on the attendance. In order to reserve your seat at
 the event, just go on the event
 &lt;a href=&quot;http://bit.ly/octamsclj-register&quot;&gt;Meetup page&lt;/a&gt; and RSVP. This much,
-and you'll be joining us and have full access to the conference.&lt;/p&gt;
+and you&#39;ll be joining us and have full access to the conference.&lt;/p&gt;
 
 &lt;h1&gt;How to reach us&lt;/h1&gt;
 
@@ -418,26 +462,26 @@ and you'll be joining us and have full access to the conference.&lt;/p&gt;
 October event will be also hosted by
 &lt;a href=&quot;http://www.backbase.com&quot;&gt;Backbase&lt;/a&gt;. You can find the &lt;a href=&quot;http://www.backbase.com/contact/DIRECTIONS-backbase-INIT.pdf&quot;&gt;directions to
 the venue&lt;/a&gt; on the official &lt;a href=&quot;http://amsclj.nl/october.html&quot;&gt;event page&lt;/a&gt;.
-While it's not far from Central Station, make sure to take note of the
-correct address. Once you're in the neighborhood, it's easy to find
+While it&#39;s not far from Central Station, make sure to take note of the
+correct address. Once you&#39;re in the neighborhood, it&#39;s easy to find
 us: just go to the main entrance of the big, glass building with the
 huge newspapers logos on top. Yes,
 &lt;a href=&quot;http://www.cctvinfo.com/news_images/Geutebruck_INIT_building_ext.gif&quot;&gt;that one&lt;/a&gt;.
-You'll find some of our awesome Clojurian volunteer to wait for you
+You&#39;ll find some of our awesome Clojurian volunteer to wait for you
 downstairs.&lt;/p&gt;
 
 &lt;h1&gt;Afterparty drinkup&lt;/h1&gt;
 
-&lt;p&gt;We're still in the process of organizing a drinkup right after the
+&lt;p&gt;We&#39;re still in the process of organizing a drinkup right after the
 event, make sure your agenda is free in order to join the swarm of
 Clojure coders and discuss functional programming philosophies over a
 couple of beers!&lt;/p&gt;
 
 &lt;h1&gt;Stay up to date&lt;/h1&gt;
 
-&lt;p&gt;Events are complex beasts, and we'll try hard to let you always be up
+&lt;p&gt;Events are complex beasts, and we&#39;ll try hard to let you always be up
 to date with any sudden change of the plan. If you want to double
-check the official plan, here's where you can find all the info you
+check the official plan, here&#39;s where you can find all the info you
 need:&lt;/p&gt;
 
 &lt;ul&gt;
@@ -467,8 +511,8 @@ need:&lt;/p&gt;
 &lt;h2&gt;A coin with two sides&lt;/h2&gt;
 
 &lt;p&gt;Given the gargantuan size of the feature list of
-&lt;a href=&quot;http://orgmode.org/&quot;&gt;org-mode&lt;/a&gt;, there's hardly any competition of
-note taking systems for hackers. I'm completely sold on it since long
+&lt;a href=&quot;http://orgmode.org/&quot;&gt;org-mode&lt;/a&gt;, there&#39;s hardly any competition of
+note taking systems for hackers. I&#39;m completely sold on it since long
 time already, so much that
 &lt;a href=&quot;http://unixhelp.ed.ac.uk/CGI/man-cgi?uptime&quot;&gt;uptime(1)&lt;/a&gt; returns
 always a quite precise approximation of the Emacs process lifetime.&lt;/p&gt;
@@ -480,19 +524,19 @@ IDE besides &lt;a href=&quot;http://www.jetbrains.com/idea/&quot;&gt;IntelliJ ID
 
 &lt;h2&gt;Baby steps&lt;/h2&gt;
 
-&lt;p&gt;As there's no better way than a quick hacking session to start the
+&lt;p&gt;As there&#39;s no better way than a quick hacking session to start the
 weekend, I eventually decided to take some time to put together a
 minimal plugin to support editing org files within IntelliJ: a few
 hours later &lt;a href=&quot;https://github.com/skuro/org4idea&quot;&gt;org4idea&lt;/a&gt; landed on my
-GitHub account. It's a ridiculously tiny plugin at the moment, only
+GitHub account. It&#39;s a ridiculously tiny plugin at the moment, only
 providing syntax highlight for comments and outlines.&lt;/p&gt;
 
-&lt;p&gt;While I'm
+&lt;p&gt;While I&#39;m
 not planning to support all the features and plugins of org in
-IntelliJ you can safely bet I'll be adding new features with time. You
+IntelliJ you can safely bet I&#39;ll be adding new features with time. You
 can always open an &lt;a href=&quot;https://github.com/skuro/org4idea/issues&quot;&gt;issue&lt;/a&gt;
 to try to buy some karma points to that specific feature you desperately
-need to be implemented (well, in such cases you could also realize you're just
+need to be implemented (well, in such cases you could also realize you&#39;re just
 one fork away).&lt;/p&gt;
 
 &lt;h2&gt;Installation&lt;/h2&gt;
@@ -540,12 +584,12 @@ methods dispatch table was enough to let my head spin around all the
 details I was missing on low level Clojure mechanics. A presentation
 was due.&lt;/p&gt;
 
-&lt;h2&gt;What's in&lt;/h2&gt;
+&lt;h2&gt;What&#39;s in&lt;/h2&gt;
 
 &lt;p&gt;What I was curious about, and eventually ended in the presentation, is
 how Clojure implements function calls and method dispatch from both a
 low level JVM and high level language syntax perspectives, and how
-they relate to each other. What's (briefly) covered in the
+they relate to each other. What&#39;s (briefly) covered in the
 presentation:&lt;/p&gt;
 
 &lt;ul&gt;
@@ -556,12 +600,12 @@ presentation:&lt;/p&gt;
 &lt;/ul&gt;
 
 
-&lt;p&gt;What couldn't be entered in the presentation is the interesting
+&lt;p&gt;What couldn&#39;t be entered in the presentation is the interesting
 digressions we had during the meetup using an open REPL, some sample
 projects and a Java decompiler.&lt;/p&gt;
 
 &lt;p&gt;Video recordings are still a pending TODO in the meetup list, so if
-you're around Amsterdam make sure you come and &lt;a href=&quot;http://www.meetup.com/The-Amsterdam-Clojure-Meetup-Group/&quot;&gt;join us&lt;/a&gt; for some other
+you&#39;re around Amsterdam make sure you come and &lt;a href=&quot;http://www.meetup.com/The-Amsterdam-Clojure-Meetup-Group/&quot;&gt;join us&lt;/a&gt; for some other
 awesome Dutch Clojure nights!&lt;/p&gt;
 </summary>
 </entry>
@@ -590,7 +634,7 @@ awesome Dutch Clojure nights!&lt;/p&gt;
 
 &lt;h2&gt;Availability on Central&lt;/h2&gt;
 
-&lt;p&gt;The new releases are already available on OSS Sonatype &lt;a href=&quot;https://oss.sonatype.org/content/groups/public/tk/skuro/alfresco/h2-support/&quot;&gt;maven repository&lt;/a&gt;. Give it enough time and they'll end up in Maven Central.&lt;/p&gt;
+&lt;p&gt;The new releases are already available on OSS Sonatype &lt;a href=&quot;https://oss.sonatype.org/content/groups/public/tk/skuro/alfresco/h2-support/&quot;&gt;maven repository&lt;/a&gt;. Give it enough time and they&#39;ll end up in Maven Central.&lt;/p&gt;
 </summary>
 </entry>
 
@@ -602,17 +646,17 @@ awesome Dutch Clojure nights!&lt;/p&gt;
   <id>http://skuro.tk/2012/05/28/legacy-artifacts-repository-update-going-remote/</id>
   <summary type="html">&lt;h1&gt;The case against&lt;/h1&gt;
 
-&lt;p&gt;After &lt;a href=&quot;http://skuro.tk/2012/05/14/legacy-libraries-for-your-maven-build/&quot;&gt;showing&lt;/a&gt; how to use your version control repository to host legacy libraries, &lt;a href=&quot;http://discursive.com/&quot;&gt;Tim O'Brien&lt;/a&gt; made a case against its use mentioning how a maintenance hell it would be to use such a strategy, and that a repository manager like &lt;a href=&quot;http://www.sonatype.org/nexus&quot;&gt;Nexus&lt;/a&gt; or &lt;a href=&quot;http://www.jfrog.com/index.php&quot;&gt;Artifactory&lt;/a&gt; is the preferred solution. After all, with a local repository in your sources you're indeed unable to &lt;strong&gt;download&lt;/strong&gt; the JAR, so that any dependent project wouldn't be able to compile against your transitive dependencies. Isn't it part of the maven revolution to never, ever check in your libraries in your VCS?&lt;/p&gt;
+&lt;p&gt;After &lt;a href=&quot;http://skuro.tk/2012/05/14/legacy-libraries-for-your-maven-build/&quot;&gt;showing&lt;/a&gt; how to use your version control repository to host legacy libraries, &lt;a href=&quot;http://discursive.com/&quot;&gt;Tim O&#39;Brien&lt;/a&gt; made a case against its use mentioning how a maintenance hell it would be to use such a strategy, and that a repository manager like &lt;a href=&quot;http://www.sonatype.org/nexus&quot;&gt;Nexus&lt;/a&gt; or &lt;a href=&quot;http://www.jfrog.com/index.php&quot;&gt;Artifactory&lt;/a&gt; is the preferred solution. After all, with a local repository in your sources you&#39;re indeed unable to &lt;strong&gt;download&lt;/strong&gt; the JAR, so that any dependent project wouldn&#39;t be able to compile against your transitive dependencies. Isn&#39;t it part of the maven revolution to never, ever check in your libraries in your VCS?&lt;/p&gt;
 
 &lt;h1&gt;The case for&lt;/h1&gt;
 
-&lt;p&gt;When your project has a mid-big scale, and you depend on a tens of legacy/funny libraries that the whole Internet can't provide, which are maybe still likely to get updates, you should &lt;del&gt;question your project&lt;/del&gt; take the chance to leverage a repository manager. But, if your project is relatively small, with just a bunch of stray dependencies and no access to a repository manager for any reason, there's little value to gain from building an infrastructure around your JARs, and you can easily leverage a piece of infrastructure you're most likely to have already: your remote or centralized VCS repository.&lt;/p&gt;
+&lt;p&gt;When your project has a mid-big scale, and you depend on a tens of legacy/funny libraries that the whole Internet can&#39;t provide, which are maybe still likely to get updates, you should &lt;del&gt;question your project&lt;/del&gt; take the chance to leverage a repository manager. But, if your project is relatively small, with just a bunch of stray dependencies and no access to a repository manager for any reason, there&#39;s little value to gain from building an infrastructure around your JARs, and you can easily leverage a piece of infrastructure you&#39;re most likely to have already: your remote or centralized VCS repository.&lt;/p&gt;
 
 &lt;h1&gt;[Not only] Github&lt;/h1&gt;
 
-&lt;p&gt;While &lt;a href=&quot;https://github.com/&quot;&gt;Github&lt;/a&gt; is my source hosting service of choice, and I'm sticking to it for the sake of my example, the strategy is not limited to it, and as long as you have plain HTTP access to your source files you can create such an integration. &lt;a href=&quot;http://code.google.com/p/maven-svn-wagon/wiki/MavenRepositoryInsideGoogleCode&quot;&gt;SVN on Google Code&lt;/a&gt; is just another option.&lt;/p&gt;
+&lt;p&gt;While &lt;a href=&quot;https://github.com/&quot;&gt;Github&lt;/a&gt; is my source hosting service of choice, and I&#39;m sticking to it for the sake of my example, the strategy is not limited to it, and as long as you have plain HTTP access to your source files you can create such an integration. &lt;a href=&quot;http://code.google.com/p/maven-svn-wagon/wiki/MavenRepositoryInsideGoogleCode&quot;&gt;SVN on Google Code&lt;/a&gt; is just another option.&lt;/p&gt;
 
-&lt;p&gt;That said, let's get to the juicy part. The main problem with a &lt;code&gt;file://&lt;/code&gt; based repository is that absolute URLs and locality of artifacts get in the way of other people leveraging your project, eventually breaking transitive dependencies access. The trick is then to just point to the remote location where your sources are already hosted and available, still exploiting the Maven repository layout. As already explained &lt;a href=&quot;http://cemerick.com/2010/08/24/hosting-maven-repos-on-github/&quot;&gt;elsewhere&lt;/a&gt;, here's the &lt;code&gt;&amp;lt;repository&amp;gt;&lt;/code&gt; definition to put in your POM in case you're on Github:&lt;/p&gt;
+&lt;p&gt;That said, let&#39;s get to the juicy part. The main problem with a &lt;code&gt;file://&lt;/code&gt; based repository is that absolute URLs and locality of artifacts get in the way of other people leveraging your project, eventually breaking transitive dependencies access. The trick is then to just point to the remote location where your sources are already hosted and available, still exploiting the Maven repository layout. As already explained &lt;a href=&quot;http://cemerick.com/2010/08/24/hosting-maven-repos-on-github/&quot;&gt;elsewhere&lt;/a&gt;, here&#39;s the &lt;code&gt;&amp;lt;repository&amp;gt;&lt;/code&gt; definition to put in your POM in case you&#39;re on Github:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;&amp;lt;repository&amp;gt;
     &amp;lt;id&amp;gt;repo&amp;lt;/id&amp;gt;
@@ -632,11 +676,11 @@ awesome Dutch Clojure nights!&lt;/p&gt;
   <id>http://skuro.tk/2012/05/14/legacy-libraries-for-your-maven-build/</id>
   <summary type="html">&lt;h1&gt;Legacy libraries&lt;/h1&gt;
 
-&lt;p&gt;Dealing with legacy code is always tricky, and adapting your tooling to leverage them is sometimes plain hard. Especially when you're building your projects with Maven and your code happens to depend on some ancient library which appear to be unknown to the Internet™, you probably have to figure out how to tell Maven where to find that damn library. This is also the problem when dealing with e.g. proprietary third party libraries which don't ship with a POM, therefore they don't mavenly exist.&lt;/p&gt;
+&lt;p&gt;Dealing with legacy code is always tricky, and adapting your tooling to leverage them is sometimes plain hard. Especially when you&#39;re building your projects with Maven and your code happens to depend on some ancient library which appear to be unknown to the Internet™, you probably have to figure out how to tell Maven where to find that damn library. This is also the problem when dealing with e.g. proprietary third party libraries which don&#39;t ship with a POM, therefore they don&#39;t mavenly exist.&lt;/p&gt;
 
 &lt;h1&gt;Local repositories FTW&lt;/h1&gt;
 
-&lt;p&gt;&lt;strong&gt;UPDATE:&lt;/strong&gt; following the argument from &lt;a href=&quot;http://discursive.com/&quot;&gt;Tim O'Brien&lt;/a&gt;, I wrote a &lt;a href=&quot;http://skuro.tk/2012/05/28/legacy-artifacts-repository-update-going-remote/&quot;&gt;follow up&lt;/a&gt; to also exploit Github as a remote repository using the same storage strategy&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;UPDATE:&lt;/strong&gt; following the argument from &lt;a href=&quot;http://discursive.com/&quot;&gt;Tim O&#39;Brien&lt;/a&gt;, I wrote a &lt;a href=&quot;http://skuro.tk/2012/05/28/legacy-artifacts-repository-update-going-remote/&quot;&gt;follow up&lt;/a&gt; to also exploit Github as a remote repository using the same storage strategy&lt;/p&gt;
 
 &lt;p&gt;There are a number of possible solutions to the above mentioned problem, which ideally involve a shared, remote artifact repository where to deploy the JAR file that causes you headaches. Recently, I found myself in the need of creating (yet another) Maven build around some &lt;a href=&quot;http://www.alfresco.com&quot;&gt;Alfresco&lt;/a&gt;, to enable &lt;a href=&quot;http://skuro.tk/lambdalf/&quot;&gt;Lambdalf&lt;/a&gt; to build its Clojure sources. The rocky road to Maven for Alfresco is still long, and as a result you find yourself dealing with some iffy libraries when coding against Alfresco. Some examples, just opening up the WAR files:&lt;/p&gt;
 
@@ -647,33 +691,27 @@ awesome Dutch Clojure nights!&lt;/p&gt;
 &lt;/ul&gt;
 
 
-&lt;p&gt;One solution I found that doesn't require setting up your publicly available &lt;a href=&quot;http://www.sonatype.org/nexus/&quot;&gt;Nexus&lt;/a&gt; repository, nor using someone else's &lt;a href=&quot;http://www.jfrog.com/products.php&quot;&gt;Artifactory&lt;/a&gt;, is to provide the problematic JARs in a maven repository as part of your sources. Suppose you have a mysterious &lt;code&gt;fluff.jar&lt;/code&gt; library you need to include in your classpath, here's how it works:&lt;/p&gt;
+&lt;p&gt;One solution I found that doesn&#39;t require setting up your publicly available &lt;a href=&quot;http://www.sonatype.org/nexus/&quot;&gt;Nexus&lt;/a&gt; repository, nor using someone else&#39;s &lt;a href=&quot;http://www.jfrog.com/products.php&quot;&gt;Artifactory&lt;/a&gt;, is to provide the problematic JARs in a maven repository as part of your sources. Suppose you have a mysterious &lt;code&gt;fluff.jar&lt;/code&gt; library you need to include in your classpath, here&#39;s how it works:&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;place the JAR file in &lt;code&gt;src/main/lib/fluff/fluff/unknown/fluff-unknown.jar&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;setup the dependency in your POM:&lt;/p&gt;
 
-&lt;p&gt;  &lt;dependencies&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;dependency&amp;gt;
-  &amp;lt;groupId&amp;gt;fluff&amp;lt;/groupId&amp;gt;
-  &amp;lt;artifactId&amp;gt;fluff&amp;lt;/artifactId&amp;gt;
-  &amp;lt;version&amp;gt;unknown&amp;lt;/version&amp;gt;
-&amp;lt;/dependency&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;  &lt;/dependencies&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;  &lt;dependencies&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;fluff&lt;/groupId&gt;
+      &lt;artifactId&gt;fluff&lt;/artifactId&gt;
+      &lt;version&gt;unknown&lt;/version&gt;
+    &lt;/dependency&gt;
+  &lt;/dependencies&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;still in your POM, enable the local repository:&lt;/p&gt;
 
-&lt;p&gt;  &lt;repositories&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;repository&amp;gt;
-  &amp;lt;id&amp;gt;legacy-artifacts&amp;lt;/id&amp;gt;
-  &amp;lt;url&amp;gt;file://${project.basedir}/src/main/lib&amp;lt;/url&amp;gt;
-&amp;lt;/repository&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;  &lt;/repositories&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;  &lt;repositories&gt;
+    &lt;repository&gt;
+      &lt;id&gt;legacy-artifacts&lt;/id&gt;
+      &lt;url&gt;file://${project.basedir}/src/main/lib&lt;/url&gt;
+    &lt;/repository&gt;
+  &lt;/repositories&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 
@@ -684,12 +722,12 @@ awesome Dutch Clojure nights!&lt;/p&gt;
 &lt;p&gt;A couple of golden rules for all the cowboy programmers out there:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;always, always, &lt;strong&gt;always check if the license allows you to redistribute the libraries&lt;/strong&gt; you're going to include in your project&lt;/li&gt;
-&lt;li&gt;never, never, &lt;strong&gt;never distribute a piece of software you're not entitled to give away&lt;/strong&gt; and &lt;strong&gt;attach the license of all third party libraries&lt;/strong&gt; along with your project&lt;/li&gt;
+&lt;li&gt;always, always, &lt;strong&gt;always check if the license allows you to redistribute the libraries&lt;/strong&gt; you&#39;re going to include in your project&lt;/li&gt;
+&lt;li&gt;never, never, &lt;strong&gt;never distribute a piece of software you&#39;re not entitled to give away&lt;/strong&gt; and &lt;strong&gt;attach the license of all third party libraries&lt;/strong&gt; along with your project&lt;/li&gt;
 &lt;/ul&gt;
 
 
-&lt;p&gt;That said, I'll leave you to your local Maven repositories. Happy building!&lt;/p&gt;
+&lt;p&gt;That said, I&#39;ll leave you to your local Maven repositories. Happy building!&lt;/p&gt;
 </summary>
 </entry>
 
@@ -701,7 +739,7 @@ awesome Dutch Clojure nights!&lt;/p&gt;
   <id>http://skuro.tk/2012/05/08/debug-your-build-with-the-plan-maven-plugin/</id>
   <summary type="html">&lt;h1&gt;Contention over configuration&lt;/h1&gt;
 
-&lt;p&gt;While &lt;a href=&quot;http://www.thoughtworks.com/&quot;&gt;ThoughtWorks&lt;/a&gt; put it &lt;a href=&quot;http://www.thoughtworks.com/sites/www.thoughtworks.com/files/images/52/radar-march-2012-tools.jpg&quot;&gt;on hold&lt;/a&gt;, there are still a number of occasions where a normal Java guy such as the truly yours have to face refactorings of ginormus Maven builds. In my company, for instance, I'm now in the situation where I need to speed up the build of one component whose project structure involves 27 POM files, with up to 4 levels of nesting. Needless to say, there are tens of plugin executions, plugins and all the possible Maven black magic you can think of. The default options for build introspection (help plugin, enable debug, etc.) left me helpless in the middle of a gargantuan build execution log file.&lt;/p&gt;
+&lt;p&gt;While &lt;a href=&quot;http://www.thoughtworks.com/&quot;&gt;ThoughtWorks&lt;/a&gt; put it &lt;a href=&quot;http://www.thoughtworks.com/sites/www.thoughtworks.com/files/images/52/radar-march-2012-tools.jpg&quot;&gt;on hold&lt;/a&gt;, there are still a number of occasions where a normal Java guy such as the truly yours have to face refactorings of ginormus Maven builds. In my company, for instance, I&#39;m now in the situation where I need to speed up the build of one component whose project structure involves 27 POM files, with up to 4 levels of nesting. Needless to say, there are tens of plugin executions, plugins and all the possible Maven black magic you can think of. The default options for build introspection (help plugin, enable debug, etc.) left me helpless in the middle of a gargantuan build execution log file.&lt;/p&gt;
 
 &lt;h1&gt;Plan plugin FTW&lt;/h1&gt;
 
@@ -763,7 +801,7 @@ awesome Dutch Clojure nights!&lt;/p&gt;
 ...
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;I still have a long way to go before I can bring my build to acceptable performance levels, but surely enough this will give me much more insights on what's possibly going wrong. Enjoy!&lt;/p&gt;
+&lt;p&gt;I still have a long way to go before I can bring my build to acceptable performance levels, but surely enough this will give me much more insights on what&#39;s possibly going wrong. Enjoy!&lt;/p&gt;
 </summary>
 </entry>
 
@@ -776,7 +814,7 @@ awesome Dutch Clojure nights!&lt;/p&gt;
   <summary type="html">&lt;p&gt;&lt;strong&gt;tl;dr:&lt;/strong&gt; I had to change the groupId of both
   &lt;a href=&quot;https://github.com/skuro/alfresco-h2-support&quot;&gt;h2-support&lt;/a&gt; and
   &lt;a href=&quot;https://github.com/skuro/spring-webscripts-addon-clojure&quot;&gt;spring-webscripts-addon-clojure&lt;/a&gt;. Good
-  news is, they're now available on Maven Central!&lt;/p&gt;
+  news is, they&#39;re now available on Maven Central!&lt;/p&gt;
 
 &lt;h2&gt;Build management dilemma&lt;/h2&gt;
 
@@ -786,17 +824,17 @@ based CMS, which we build the
 is already a nicely integrated build with the rest of the other
 products, I currently find it annoying to require a database to be
 installed wherever the project is built (ubiquitous MySQL installed
-locally on my laptop, on the CI server, etc.). As I'm maintaining an
+locally on my laptop, on the CI server, etc.). As I&#39;m maintaining an
 H2 &lt;a href=&quot;https://github.com/skuro/alfresco-h2-support&quot;&gt;compatibility module&lt;/a&gt;
-for Alfresco it's natural for me to integrate and use it.&lt;/p&gt;
+for Alfresco it&#39;s natural for me to integrate and use it.&lt;/p&gt;
 
-&lt;p&gt;There was only one thing blocking this process, and that's the maven
+&lt;p&gt;There was only one thing blocking this process, and that&#39;s the maven
 repository where such artifact were deployed.&lt;/p&gt;
 
 &lt;h2&gt;Deploy on Central&lt;/h2&gt;
 
 &lt;p&gt;As much as I love &lt;a href=&quot;http://clojars.org&quot;&gt;Clojars&lt;/a&gt;, it still requires to be manually configured
-when dealing with a pure Maven build. Since it's not quite an option to add
+when dealing with a pure Maven build. Since it&#39;s not quite an option to add
 an artifacts repository for something as small as &lt;code&gt;h2-support&lt;/code&gt;, I
 decided to just follow the guidelines for Maven Central sync on
 &lt;a href=&quot;https://docs.sonatype.org/display/Repository/Sonatype+OSS+Maven+Repository+Usage+Guide&quot;&gt;OSS Sonatype&lt;/a&gt; and
@@ -807,13 +845,13 @@ such as retagging both
 &lt;a href=&quot;https://github.com/skuro/alfresco-h2-support/tree/v1.2&quot;&gt;v1.2&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;But, as the only change in the POM is &quot;non functional&quot; such as
-description, developers and such, it's not going to hurt much I
+description, developers and such, it&#39;s not going to hurt much I
 believe.&lt;/p&gt;
 
 &lt;p&gt;This move is reflected also in the currently unreleased
-&lt;code&gt;spring-webscripts-addon-clojure&lt;/code&gt;, so if you'll be using it or
+&lt;code&gt;spring-webscripts-addon-clojure&lt;/code&gt;, so if you&#39;ll be using it or
 you need &lt;code&gt;h2-support&lt;/code&gt; remember to use the &lt;code&gt;tk.skuro.*&lt;/code&gt; group IDs, and
-you won't need to add a &lt;code&gt;&amp;lt;repository&amp;gt;&lt;/code&gt; to your POM ever again.&lt;/p&gt;
+you won&#39;t need to add a &lt;code&gt;&amp;lt;repository&amp;gt;&lt;/code&gt; to your POM ever again.&lt;/p&gt;
 
 &lt;p&gt;Thanks &lt;a href=&quot;http://www.sonatype.com&quot;&gt;Sonatype&lt;/a&gt; for the awesome service!&lt;/p&gt;
 </summary>
@@ -827,13 +865,13 @@ you won't need to add a &lt;code&gt;&amp;lt;repository&amp;gt;&lt;/code&gt; to y
   <id>http://skuro.tk/2011/12/14/h2-support-for-alfresco-4x/</id>
   <summary type="html">&lt;h2&gt;H2 Support reloaded&lt;/h2&gt;
 
-&lt;p&gt;Some time ago I &lt;a href=&quot;/2011/08/03/h2-embedded-db-and-alfresco-3-4/&quot;&gt;announced&lt;/a&gt; a &lt;a href=&quot;https://github.com/skuro/alfresco-h2-support&quot;&gt;module&lt;/a&gt; to enhance &lt;a href=&quot;http://www.alfresco.com&quot;&gt;Alfresco&lt;/a&gt; in order to support H2 as its persistent data storage. While it was successfully tested against Alfresco v3.4 and v3.5, &lt;a href=&quot;http://www.mindthegab.com&quot;&gt;@mindthegab&lt;/a&gt; pointed me out that Alfresco v4.x wasn't even starting when using the H2 module.&lt;/p&gt;
+&lt;p&gt;Some time ago I &lt;a href=&quot;/2011/08/03/h2-embedded-db-and-alfresco-3-4/&quot;&gt;announced&lt;/a&gt; a &lt;a href=&quot;https://github.com/skuro/alfresco-h2-support&quot;&gt;module&lt;/a&gt; to enhance &lt;a href=&quot;http://www.alfresco.com&quot;&gt;Alfresco&lt;/a&gt; in order to support H2 as its persistent data storage. While it was successfully tested against Alfresco v3.4 and v3.5, &lt;a href=&quot;http://www.mindthegab.com&quot;&gt;@mindthegab&lt;/a&gt; pointed me out that Alfresco v4.x wasn&#39;t even starting when using the H2 module.&lt;/p&gt;
 
 &lt;p&gt;A quick look at the PostgreSQL scripts and configuration of Alfresco 4 revealed that they were indeed radically changed in the new release, so that an update was necessary.&lt;/p&gt;
 
 &lt;h2&gt;Matching versions&lt;/h2&gt;
 
-&lt;p&gt;Since 3.4+ and 4.x version series have quite different configuration, you need to use a different version of the h2 module depending on the Alfresco version you're running, namely:&lt;/p&gt;
+&lt;p&gt;Since 3.4+ and 4.x version series have quite different configuration, you need to use a different version of the h2 module depending on the Alfresco version you&#39;re running, namely:&lt;/p&gt;
 
 &lt;table&gt;
     &lt;tr&gt;
@@ -868,29 +906,29 @@ you won't need to add a &lt;code&gt;&amp;lt;repository&amp;gt;&lt;/code&gt; to y
 
 &lt;h2&gt;Going down&lt;/h2&gt;
 
-&lt;p&gt;It first happened at the beginning of this year that &lt;a href=&quot;http://skuro.tk/2011/01/24/performance-boost-in-clojure-1-3&quot;&gt;one of my posts&lt;/a&gt; attracted a good deal of attention. While it wasn't really that big thing, 2k requests/hour were enough to drain every bit of available memory my VPS had to offer, thus repeatedly killing my whole &lt;a href=&quot;http://en.wikipedia.org/wiki/LAMP_(software_bundle&quot;&gt;LAMP&lt;/a&gt;) system down. It has to be noted that I'm no PHP nor Wordpress expert, and I was also so sloppy to let every single &lt;a href=&quot;http://httpd.apache.org/&quot;&gt;apache&lt;/a&gt; process (-&gt; request) suck up to a round 20MB. No wander my machine went down, and while I was able to finally handle 1k request/hour order of magnitude &lt;a href=&quot;http://skuro.tk/2011/09/04/clojure-makes-it-the-alfresco-devcon-2011-emea-london&quot;&gt;several&lt;/a&gt; &lt;a href=&quot;http://skuro.tk/2011/09/27/october-amsterdam-clojure-with-uncle-bob&quot;&gt;times&lt;/a&gt; &lt;a href=&quot;http://skuro.tk/2011/11/10/slides-from-alfresco-the-clojure-way&quot;&gt;later&lt;/a&gt; on, it was everytime on the edge of the catastrophe. It was clear to me that my Wordpress blog was to be replaced.&lt;/p&gt;
+&lt;p&gt;It first happened at the beginning of this year that &lt;a href=&quot;http://skuro.tk/2011/01/24/performance-boost-in-clojure-1-3&quot;&gt;one of my posts&lt;/a&gt; attracted a good deal of attention. While it wasn&#39;t really that big thing, 2k requests/hour were enough to drain every bit of available memory my VPS had to offer, thus repeatedly killing my whole &lt;a href=&quot;http://en.wikipedia.org/wiki/LAMP_(software_bundle&quot;&gt;LAMP&lt;/a&gt;) system down. It has to be noted that I&#39;m no PHP nor Wordpress expert, and I was also so sloppy to let every single &lt;a href=&quot;http://httpd.apache.org/&quot;&gt;apache&lt;/a&gt; process (-&gt; request) suck up to a round 20MB. No wander my machine went down, and while I was able to finally handle 1k request/hour order of magnitude &lt;a href=&quot;http://skuro.tk/2011/09/04/clojure-makes-it-the-alfresco-devcon-2011-emea-london&quot;&gt;several&lt;/a&gt; &lt;a href=&quot;http://skuro.tk/2011/09/27/october-amsterdam-clojure-with-uncle-bob&quot;&gt;times&lt;/a&gt; &lt;a href=&quot;http://skuro.tk/2011/11/10/slides-from-alfresco-the-clojure-way&quot;&gt;later&lt;/a&gt; on, it was everytime on the edge of the catastrophe. It was clear to me that my Wordpress blog was to be replaced.&lt;/p&gt;
 
-&lt;p&gt;Note: I'm not saying LAMP + Wordpress is not a good option for a personal blog, it just wasn't an attractive option for me to get into the details of how to make it robust enough in my case.&lt;/p&gt;
+&lt;p&gt;Note: I&#39;m not saying LAMP + Wordpress is not a good option for a personal blog, it just wasn&#39;t an attractive option for me to get into the details of how to make it robust enough in my case.&lt;/p&gt;
 
 &lt;h2&gt;Static content&lt;/h2&gt;
 
-&lt;p&gt;PHP allows for highly dynamic content via server side rendering. Cool, but does a blog &lt;em&gt;really&lt;/em&gt; need such power? The reality is that most of the pages served by a blog are the same almost all the time.Apart from when you create a new post, there's hardly any difference in a page in its whole lifetime. All the &lt;a href=&quot;http://news.ycombinator.com/item?id=896744&quot;&gt;features&lt;/a&gt; you might get out of a blog engine such as Wordpress are in my case of no real use.&lt;/p&gt;
+&lt;p&gt;PHP allows for highly dynamic content via server side rendering. Cool, but does a blog &lt;em&gt;really&lt;/em&gt; need such power? The reality is that most of the pages served by a blog are the same almost all the time.Apart from when you create a new post, there&#39;s hardly any difference in a page in its whole lifetime. All the &lt;a href=&quot;http://news.ycombinator.com/item?id=896744&quot;&gt;features&lt;/a&gt; you might get out of a blog engine such as Wordpress are in my case of no real use.&lt;/p&gt;
 
 &lt;p&gt;Static content was appealing from a number of reasons: lightweight, plain HTML and resources (JS, CSS). The whole site fits in my mental picture quite easily. I needed only a thin layer that would allow me to use a more convenient interface to the presentation layer than HTML.&lt;/p&gt;
 
 &lt;h2&gt;Github Pages and Jekyll&lt;/h2&gt;
 
-&lt;p&gt;I did some initial experiments with a fully custom &lt;a href=&quot;http://clojure.org&quot;&gt;Clojure&lt;/a&gt; blog engine, where I explored various combinations of &lt;a href=&quot;https://github.com/weavejester/compojure/wiki&quot;&gt;Compojure&lt;/a&gt;, &lt;a href=&quot;http://webnoir.org/&quot;&gt;Noir&lt;/a&gt;, &lt;a href=&quot;https://github.com/weavejester/hiccup&quot;&gt;Hiccup&lt;/a&gt;, &lt;a href=&quot;https://github.com/cgrand/enlive&quot;&gt;Enlive&lt;/a&gt;, etc. While it was a nice exercise, it was really more of a technical exercise which wasn't getting me nowhere, as I kept running in circles while picking up new technologies every other day. &lt;a href=&quot;http://pages.github.com/&quot;&gt;Github Pages&lt;/a&gt; was there, tempting me all along the way: I already loved &lt;a href=&quot;http://git-scm.com/&quot;&gt;Git&lt;/a&gt; and &lt;a href=&quot;http://daringfireball.net/projects/markdown/&quot;&gt;Markdown&lt;/a&gt;, and delegating the whole infrastructure to Github was eventually tackling the very core of my original issues with hosting my own blog. It was when I found a great &lt;a href=&quot;http://vitobotta.com/how-to-migrate-from-wordpress-to-jekyll/&quot;&gt;migration guide&lt;/a&gt; that I couldn't deny anymore Github hosted &lt;a href=&quot;github.com/mojombo/jekyll&quot;&gt;Jekyll&lt;/a&gt; was the best option I had.&lt;/p&gt;
+&lt;p&gt;I did some initial experiments with a fully custom &lt;a href=&quot;http://clojure.org&quot;&gt;Clojure&lt;/a&gt; blog engine, where I explored various combinations of &lt;a href=&quot;https://github.com/weavejester/compojure/wiki&quot;&gt;Compojure&lt;/a&gt;, &lt;a href=&quot;http://webnoir.org/&quot;&gt;Noir&lt;/a&gt;, &lt;a href=&quot;https://github.com/weavejester/hiccup&quot;&gt;Hiccup&lt;/a&gt;, &lt;a href=&quot;https://github.com/cgrand/enlive&quot;&gt;Enlive&lt;/a&gt;, etc. While it was a nice exercise, it was really more of a technical exercise which wasn&#39;t getting me nowhere, as I kept running in circles while picking up new technologies every other day. &lt;a href=&quot;http://pages.github.com/&quot;&gt;Github Pages&lt;/a&gt; was there, tempting me all along the way: I already loved &lt;a href=&quot;http://git-scm.com/&quot;&gt;Git&lt;/a&gt; and &lt;a href=&quot;http://daringfireball.net/projects/markdown/&quot;&gt;Markdown&lt;/a&gt;, and delegating the whole infrastructure to Github was eventually tackling the very core of my original issues with hosting my own blog. It was when I found a great &lt;a href=&quot;http://vitobotta.com/how-to-migrate-from-wordpress-to-jekyll/&quot;&gt;migration guide&lt;/a&gt; that I couldn&#39;t deny anymore Github hosted &lt;a href=&quot;github.com/mojombo/jekyll&quot;&gt;Jekyll&lt;/a&gt; was the best option I had.&lt;/p&gt;
 
 &lt;h2&gt;Emacs, of course&lt;/h2&gt;
 
-&lt;p&gt;Migrating to Jekyll took just a couple of days, I even wrote my first Ruby &lt;a href=&quot;https://github.com/skuro/skuro.github.com/blob/sources/_plugins/categories.rb&quot;&gt;code&lt;/a&gt; ever. Everything looked pretty promising, but I needed an extra step: there was no point in having a plain text interface if I couldn't use the &lt;a href=&quot;http://www.gnu.org/s/emacs/&quot;&gt;Almighty Emacs&amp;trade;&lt;/a&gt; editor as the main interface to my blog. Sure thing, I wasn't the first to think so, and I promptly found an &lt;a href=&quot;http://metajack.im/2009/01/02/manage-jekyll-from-emacs/&quot;&gt;initial implementation&lt;/a&gt; I could use to start walking the Emacs way.&lt;/p&gt;
+&lt;p&gt;Migrating to Jekyll took just a couple of days, I even wrote my first Ruby &lt;a href=&quot;https://github.com/skuro/skuro.github.com/blob/sources/_plugins/categories.rb&quot;&gt;code&lt;/a&gt; ever. Everything looked pretty promising, but I needed an extra step: there was no point in having a plain text interface if I couldn&#39;t use the &lt;a href=&quot;http://www.gnu.org/s/emacs/&quot;&gt;Almighty Emacs&amp;trade;&lt;/a&gt; editor as the main interface to my blog. Sure thing, I wasn&#39;t the first to think so, and I promptly found an &lt;a href=&quot;http://metajack.im/2009/01/02/manage-jekyll-from-emacs/&quot;&gt;initial implementation&lt;/a&gt; I could use to start walking the Emacs way.&lt;/p&gt;
 
-&lt;p&gt;Needless to say, I'm writing this very post from Emacs. And it feels good.&lt;/p&gt;
+&lt;p&gt;Needless to say, I&#39;m writing this very post from Emacs. And it feels good.&lt;/p&gt;
 
 &lt;h2&gt;Conclusions&lt;/h2&gt;
 
-&lt;p&gt;With this first post I just started feeling the good parts of my new setup. There are huge areas of improvements here and there, but hey, for just a 4 days job I can't be more happy!&lt;/p&gt;
+&lt;p&gt;With this first post I just started feeling the good parts of my new setup. There are huge areas of improvements here and there, but hey, for just a 4 days job I can&#39;t be more happy!&lt;/p&gt;
 </summary>
 </entry>
 
@@ -901,7 +939,7 @@ you won't need to add a &lt;code&gt;&amp;lt;repository&amp;gt;&lt;/code&gt; to y
   <updated>2011-11-15T00:00:00+01:00</updated>
   <id>http://skuro.tk/2011/11/15/maven-3-cookbook-reviewed/</id>
   <summary type="html">&lt;p&gt;Better late than ever, here you can find my review on the Packt
-Publishing &lt;a href=&quot;http://www.google.nl/url?sa=t&amp;amp;rct=j&amp;amp;q=packt&amp;amp;source=web&amp;amp;cd=1&amp;amp;ved=0CCkQFjAA&amp;amp;url=http%3A%2F%2Fwww.packtpub.com%2F&amp;amp;ei=2VbCTq6qHsjs-gbEzZD_DQ&amp;amp;usg=AFQjCNE3QDtLQQneLEduZpKvWcyN8Bp3kg&amp;amp;sig2=AHMqZnDXQwCV5prbVMayGQ&quot;&gt;Apache Maven 3 Cookbook&lt;/a&gt; written by &lt;a href=&quot;http://srirangan.net/&quot;&gt;Srirangan&lt;/a&gt;. Let's see what it has to offer.&lt;/p&gt;
+Publishing &lt;a href=&quot;http://www.google.nl/url?sa=t&amp;amp;rct=j&amp;amp;q=packt&amp;amp;source=web&amp;amp;cd=1&amp;amp;ved=0CCkQFjAA&amp;amp;url=http%3A%2F%2Fwww.packtpub.com%2F&amp;amp;ei=2VbCTq6qHsjs-gbEzZD_DQ&amp;amp;usg=AFQjCNE3QDtLQQneLEduZpKvWcyN8Bp3kg&amp;amp;sig2=AHMqZnDXQwCV5prbVMayGQ&quot;&gt;Apache Maven 3 Cookbook&lt;/a&gt; written by &lt;a href=&quot;http://srirangan.net/&quot;&gt;Srirangan&lt;/a&gt;. Let&#39;s see what it has to offer.&lt;/p&gt;
 
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 
@@ -911,26 +949,26 @@ Publishing &lt;a href=&quot;http://www.google.nl/url?sa=t&amp;amp;rct=j&amp;amp;
 
 &lt;h2&gt;The ALM&lt;/h2&gt;
 
-&lt;p&gt;Chapter 3 it's a bit off topic, even though it's probably for the greater good: it broadens the attention to ALM as a whole, all on open source products such as Hudson/Jenkins, SCM and a bit of agile. The topic is so huge that one single chapter cannot afford to cover it extensively, nor effectively: take it as an introduction to software lifecycle management, and dig somewhere else if you want more (and you definitely want). Chapter 4 indulges a bit more in QA and non functional build features, such as documentation and reporting. After all, the real mission of Maven &lt;strong&gt;is&lt;/strong&gt; ALM.&lt;/p&gt;
+&lt;p&gt;Chapter 3 it&#39;s a bit off topic, even though it&#39;s probably for the greater good: it broadens the attention to ALM as a whole, all on open source products such as Hudson/Jenkins, SCM and a bit of agile. The topic is so huge that one single chapter cannot afford to cover it extensively, nor effectively: take it as an introduction to software lifecycle management, and dig somewhere else if you want more (and you definitely want). Chapter 4 indulges a bit more in QA and non functional build features, such as documentation and reporting. After all, the real mission of Maven &lt;strong&gt;is&lt;/strong&gt; ALM.&lt;/p&gt;
 
 &lt;h2&gt;The Meat&lt;/h2&gt;
 
-&lt;p&gt;Chapters 5 to 9 form the really juicy part of the book. I'm not going to rewrite the &lt;a href=&quot;http://www.packtpub.com/toc/apache-maven-3-cookbook-table-contents&quot;&gt;TOC&lt;/a&gt; here, but it's definitely a rich set of handy recipes that can either directly target common needs or provide inspirational snippets that will effectively help you writing your POM. Good marks for the attention to languages other than Java (but bad marks for forgetting &lt;a href=&quot;https://github.com/talios/clojure-maven-plugin&quot;&gt;Clojure&lt;/a&gt;!).&lt;/p&gt;
+&lt;p&gt;Chapters 5 to 9 form the really juicy part of the book. I&#39;m not going to rewrite the &lt;a href=&quot;http://www.packtpub.com/toc/apache-maven-3-cookbook-table-contents&quot;&gt;TOC&lt;/a&gt; here, but it&#39;s definitely a rich set of handy recipes that can either directly target common needs or provide inspirational snippets that will effectively help you writing your POM. Good marks for the attention to languages other than Java (but bad marks for forgetting &lt;a href=&quot;https://github.com/talios/clojure-maven-plugin&quot;&gt;Clojure&lt;/a&gt;!).&lt;/p&gt;
 
-&lt;p&gt;These chapters offer much more value than the previous, as they're better aiming at developer needs. Still, focus could have been more towards existing Maven users, leaving the newbies to better learning paths.&lt;/p&gt;
+&lt;p&gt;These chapters offer much more value than the previous, as they&#39;re better aiming at developer needs. Still, focus could have been more towards existing Maven users, leaving the newbies to better learning paths.&lt;/p&gt;
 
 &lt;h2&gt;Overall impression&lt;/h2&gt;
 
-&lt;blockquote&gt;&lt;strong&gt;tl;dr:&lt;/strong&gt; If you are already a Maven literate, it's a book you probably want to have close to your keyboard. Just forget about the first three or four chapters.
+&lt;blockquote&gt;&lt;strong&gt;tl;dr:&lt;/strong&gt; If you are already a Maven literate, it&#39;s a book you probably want to have close to your keyboard. Just forget about the first three or four chapters.
 &lt;/blockquote&gt;
 
 
 &lt;p&gt;The book is an authentic source of good base recipes, that you would keep on your desk for quick reference of specific build tasks you need to implement (and your Google foo is weak). All the recipes are provided with a little description of what happens under the hood, so that you may use such knowledge to build upon them your more complex procedures. The whole focus on the book is on getting things done, with
-lesser attention to fully understanding Maven: after all, a recipes book cannot replace a cooking course. As a result, its tutorial style of presenting recipes completely overlooks fundamental concepts such as plugins, executions and goals, with seldom sloppy terminology (&quot;archetype:generate&quot; is a goal, not a command). While it can be good to always have this book on your desk, if you're a Maven newbie it's highly recommended to look somewhere else to build up your knowledge.&lt;/p&gt;
+lesser attention to fully understanding Maven: after all, a recipes book cannot replace a cooking course. As a result, its tutorial style of presenting recipes completely overlooks fundamental concepts such as plugins, executions and goals, with seldom sloppy terminology (&quot;archetype:generate&quot; is a goal, not a command). While it can be good to always have this book on your desk, if you&#39;re a Maven newbie it&#39;s highly recommended to look somewhere else to build up your knowledge.&lt;/p&gt;
 
 &lt;h2&gt;Full disclosure&lt;/h2&gt;
 
-&lt;p&gt;I was asked by Packt to provide this online review, for which I've been handed over a digital preview of the book.&lt;/p&gt;
+&lt;p&gt;I was asked by Packt to provide this online review, for which I&#39;ve been handed over a digital preview of the book.&lt;/p&gt;
 </summary>
 </entry>
 
@@ -947,7 +985,7 @@ lesser attention to fully understanding Maven: after all, a recipes book cannot 
 &lt;/div&gt;
 
 
-&lt;p&gt;There's also an &lt;a href=&quot;http://slidesha.re/uqUqOW&quot;&gt;extended version&lt;/a&gt; of the presentation that I originally wrote, which ended up being too big for the time slot I had.&lt;/p&gt;
+&lt;p&gt;There&#39;s also an &lt;a href=&quot;http://slidesha.re/uqUqOW&quot;&gt;extended version&lt;/a&gt; of the presentation that I originally wrote, which ended up being too big for the time slot I had.&lt;/p&gt;
 
 &lt;p&gt;Hope you either enjoyed the talk or the slides, next steps are getting to &lt;a href=&quot;https://github.com/skuro&quot;&gt;GitHub&lt;/a&gt; and fork &lt;a href=&quot;https://github.com/skuro/lambdalf&quot;&gt;lambdalf&lt;/a&gt; and &lt;a href=&quot;https://github.com/skuro/spring-webscripts-addon-clojure&quot;&gt;clojure webscripts&lt;/a&gt; away!&lt;/p&gt;
 </summary>
@@ -959,32 +997,14 @@ lesser attention to fully understanding Maven: after all, a recipes book cannot 
   <link href="http://skuro.tk/2011/09/27/october-amsterdam-clojure-with-uncle-bob/"/>
   <updated>2011-09-27T00:00:00+02:00</updated>
   <id>http://skuro.tk/2011/09/27/october-amsterdam-clojure-with-uncle-bob/</id>
-  <summary type="html">&lt;p&gt;I'm very excited to announce that we have finalized the details, and
-Wednesday, October 12th we're going to have a great &lt;a href=&quot;http://bit.ly/ams-clj&quot;&gt;Amsterdam Clojure meetup&lt;/a&gt;&quot;, with great talks and an awesome guest speaker: &lt;a href=&quot;http://twitter.com/#!/unclebobmartin&quot;&gt;&quot;Uncle&quot; Bob Martin&lt;/a&gt; from &lt;a href=&quot;http://www.objectmentor.com/&quot;&gt;Object Mentor&lt;/a&gt; and of &lt;a href=&quot;http://www.cleancoders.com/&quot;&gt;Clean Coders&lt;/a&gt; fame.&lt;/p&gt;
+  <summary type="html">&lt;p&gt;I&#39;m very excited to announce that we have finalized the details, and
+Wednesday, October 12th we&#39;re going to have a great &lt;a href=&quot;http://bit.ly/ams-clj&quot;&gt;Amsterdam Clojure meetup&lt;/a&gt;&quot;, with great talks and an awesome guest speaker: &lt;a href=&quot;http://twitter.com/#!/unclebobmartin&quot;&gt;&quot;Uncle&quot; Bob Martin&lt;/a&gt; from &lt;a href=&quot;http://www.objectmentor.com/&quot;&gt;Object Mentor&lt;/a&gt; and of &lt;a href=&quot;http://www.cleancoders.com/&quot;&gt;Clean Coders&lt;/a&gt; fame.&lt;/p&gt;
 
 &lt;p&gt;Thanks to &lt;a href=&quot;http://www.sourcesense.com&quot;&gt;Sourcesense&lt;/a&gt;, which is once again backing up and ultimately allowing this event to happen in an awesome location such as the &lt;a href=&quot;http://www.dezwijger.nl/&quot;&gt;Pakhuis de Zwijger&lt;/a&gt;, I look forward to meet a number of Clojure enthusiast, newcomers or tired Java developers looking for something new.&lt;/p&gt;
 
 &lt;p&gt;We have limited seating possibilities, so make sure to register at the &lt;a href=&quot;http://www.meetup.com/The-Amsterdam-Clojure-Meetup-Group/events/33351892/&quot;&gt;meetup official page&lt;/a&gt; to ensure there will be a spot for you!&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://bit.ly/ams-clj&quot;&gt;&lt;img src=&quot;http://download.skuro.tk/flyer.jpg&quot; alt=&quot;&amp;quot;Click to register&amp;quot;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-</summary>
-</entry>
-
-
-<entry>
-  <title>Reviewing Maven 3 Cookbook from Packt Publishing</title>
-  <link href="http://skuro.tk/2011/09/06/reviewing-maven-3-cookbook-from-packt-publishing/"/>
-  <updated>2011-09-06T00:00:00+02:00</updated>
-  <id>http://skuro.tk/2011/09/06/reviewing-maven-3-cookbook-from-packt-publishing/</id>
-  <summary type="html">&lt;p&gt;Packt Publishing recently proposed me to review their new &lt;a href=&quot;http://www.packtpub.com/apache-maven-3-0-cookbook/book&quot;&gt;book&lt;/a&gt; &lt;em&gt;Maven 3 Cookbook&lt;/em&gt; written by &lt;a href=&quot;http://srirangan.net/&quot;&gt;Srirangan&lt;/a&gt;. I just received a copy of the book, I'll start reading it immediately and provide my review in a future blog post here.&lt;/p&gt;
-
-&lt;p&gt;In the meanwhile, here's the book &lt;a href=&quot;http://www.packtpub.com/apache-maven-3-0-cookbook/book&quot;&gt;home page&lt;/a&gt; where to find the detailed &lt;a href=&quot;http://www.packtpub.com/toc/apache-maven-3-cookbook-table-contents&quot;&gt;table of contents&lt;/a&gt; and a sample chapter.&lt;/p&gt;
-
-&lt;p&gt;&amp;nbsp;&lt;br/&gt;
-&amp;nbsp;&lt;br/&gt;
-&amp;nbsp;&lt;br/&gt;
-&amp;nbsp;&lt;br/&gt;
-&amp;nbsp;&lt;/p&gt;
 </summary>
 </entry>
 

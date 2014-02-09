@@ -97,27 +97,21 @@
 <li><p>place the JAR file in <code>src/main/lib/fluff/fluff/unknown/fluff-unknown.jar</code></p></li>
 <li><p>setup the dependency in your POM:</p>
 
-<p>  <dependencies></p>
-
-<pre><code>&lt;dependency&gt;
-  &lt;groupId&gt;fluff&lt;/groupId&gt;
-  &lt;artifactId&gt;fluff&lt;/artifactId&gt;
-  &lt;version&gt;unknown&lt;/version&gt;
-&lt;/dependency&gt;
-</code></pre>
-
-<p>  </dependencies></p></li>
+<p>  <dependencies>
+    <dependency>
+      <groupId>fluff</groupId>
+      <artifactId>fluff</artifactId>
+      <version>unknown</version>
+    </dependency>
+  </dependencies></p></li>
 <li><p>still in your POM, enable the local repository:</p>
 
-<p>  <repositories></p>
-
-<pre><code>&lt;repository&gt;
-  &lt;id&gt;legacy-artifacts&lt;/id&gt;
-  &lt;url&gt;file://${project.basedir}/src/main/lib&lt;/url&gt;
-&lt;/repository&gt;
-</code></pre>
-
-<p>  </repositories></p></li>
+<p>  <repositories>
+    <repository>
+      <id>legacy-artifacts</id>
+      <url>file://${project.basedir}/src/main/lib</url>
+    </repository>
+  </repositories></p></li>
 </ul>
 
 
