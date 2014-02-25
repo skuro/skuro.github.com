@@ -1,0 +1,577 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title type="text" xml:lang="en">SKURO! -- Shading lights</title>
+    <link type="application/atom+xml" href="http://skuro.tk/rss2/" rel="self"/>
+    <link type="text" href="http://skuro.tk" rel="alternate"/>
+    <updated>2014-02-25T23:52:23+01:00</updated>
+    <id>http://skuro.tk</id>
+    <author>
+        <name>Carlo Sciolla</name>
+    </author>
+    <rights>Copyright (c) 2010-2011 Carlo Sciolla</rights>
+    
+<entry>
+  <title>H2 support 1.1.1 for Alfresco 3.4.12 Enterprise with Maven</title>
+  <link href="http://skuro.tk/2013/03/27/h2-support-for-alfresco-3-4-12-and-maven/"/>
+  <updated>2013-03-27T00:00:00+01:00</updated>
+  <id>http://skuro.tk/2013/03/27/h2-support-for-alfresco-3-4-12-and-maven/</id>
+  <summary type="html">&lt;p&gt;Just a quick update on the &lt;a href=&quot;https://github.com/skuro/alfresco-h2-support&quot;&gt;H2 support&lt;/a&gt;
+project, today I released the &lt;code&gt;1.1.1&lt;/code&gt; maintenance version which targets
+Alfresco v3.4.12 Enterprise.&lt;/p&gt;
+
+&lt;p&gt;Please make sure you always double check the &lt;a href=&quot;https://github.com/skuro/alfresco-h2-support/wiki/H2-Database-support-for-Alfresco&quot;&gt;official documentation&lt;/a&gt;
+to pick and choose the right version to use in your Alfresco project.&lt;/p&gt;
+
+&lt;h1&gt;H2 and Maven&lt;/h1&gt;
+
+&lt;p&gt;For &lt;del&gt;the sane&lt;/del&gt; those among you that use the &lt;a href=&quot;https://artifacts.alfresco.com/nexus/content/repositories/alfresco-docs/alfresco-lifecycle-aggregator/latest/index.html&quot;&gt;Maven SDK&lt;/a&gt;,
+you should know that &lt;code&gt;H2 support&lt;/code&gt; is used to quickly boot the Alfresco repository
+webapp during your development cycles.&lt;/p&gt;
+
+&lt;p&gt;If you&#39;re using a version of Alfresco other than the default 4.x that&#39;s assumed
+by the SDK, you must also adapt your H2 support version to be able to start up
+Alfresco. It&#39;s as easy as overriding the following maven property:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;h2-support.version&amp;gt;1.1.1&amp;lt;/h2-support.version&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Happy development!&lt;/p&gt;
+</summary>
+</entry>
+
+
+<entry>
+  <title>H2 support 1.5 for Alfresco 4.1.1 Enterprise</title>
+  <link href="http://skuro.tk/2012/10/16/alfresco-h2-support-update/"/>
+  <updated>2012-10-16T00:00:00+02:00</updated>
+  <id>http://skuro.tk/2012/10/16/alfresco-h2-support-update/</id>
+  <summary type="html">&lt;p&gt;After Alfresco version 4.1.1 Enterprise came out earlier this month,
+&lt;a href=&quot;https://github.com/skuro/alfresco-h2-support&quot;&gt;H2 support&lt;/a&gt; needed to
+stay up to date and release a new version which incorporates the
+few schema changes in the Alfresco database. Thanks to
+&lt;a href=&quot;http://springyweb.com&quot;&gt;Jon Evans&lt;/a&gt; and &lt;a href=&quot;http://www.ixxus.com&quot;&gt;Ixxus&lt;/a&gt;,
+ H2 Support v1.5 it&#39;s already out there!&lt;/p&gt;
+
+&lt;h1&gt;Version management&lt;/h1&gt;
+
+&lt;p&gt;As
+&lt;a href=&quot;https://github.com/skuro/alfresco-h2-support/wiki/H2-Database-support-for-Alfresco&quot;&gt;usual&lt;/a&gt;,
+H2 support follows its own version numbering scheme, and you need to
+double check which one to use depending on the Alfresco version you&#39;re
+running: version 1.5 only supports Alfresco 4.1.1 Enterprise, so if
+you&#39;re targeting other versions go and update your POM.&lt;/p&gt;
+
+&lt;h1&gt;Availability on Maven Central&lt;/h1&gt;
+
+&lt;p&gt;By the time of this writing, H2 support was just pushed to
+&lt;a href=&quot;https://oss.sonatype.org/index.html&quot;&gt;Sonatype OSS&lt;/a&gt;, and while it
+should happen shortly, it still has to be synchronized with Maven
+Central. If the following Maven dependency fails to resolve, try to
+download and install it from
+&lt;a href=&quot;https://oss.sonatype.org/content/repositories/releases/tk/skuro/alfresco/h2-support/1.5/&quot;&gt;here&lt;/a&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;dependency&amp;gt;
+  &amp;lt;groupId&amp;gt;tk.skuro.alfresco&amp;lt;/groupId&amp;gt;
+  &amp;lt;artifactId&amp;gt;h2-support&amp;lt;/artifactId&amp;gt;
+  &amp;lt;version&amp;gt;1.5&amp;lt;/version&amp;gt;
+&amp;lt;/dependency&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;On a side note, the stats feature of Sonatype Nexus are plain awesome.
+I can have direct insights of the amount of downloads of H2 support
+over time, split by version number. Check it out:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/post/h2stats.png&quot; title=&quot;H2 download stats&quot; alt=&quot;H2 download stats&quot; /&gt;&lt;/p&gt;
+
+&lt;h1&gt;Your chance to be awesome&lt;/h1&gt;
+
+&lt;p&gt;Jon was just great to help H2 support and provide the patch that made
+1.5 happen. It&#39;s always inspiring to see how OpenSource drives people
+to build something together, spending time to shape technology to be
+the way we need, asking for nothing else in return than just be part
+of the community.&lt;/p&gt;
+
+&lt;p&gt;H2 support is a tiny project, and requires little
+development and maintenance. Still, you can always help by either
+testing it against &lt;a href=&quot;https://github.com/skuro/alfresco-h2-support/wiki/H2-Database-support-for-Alfresco&quot;&gt;undocumented Alfresco versions&lt;/a&gt;, or &lt;a href=&quot;https://github.com/skuro/alfresco-h2-support/issues&quot;&gt;reporting bugs&lt;/a&gt;
+or your wish list as soon as you figure them out.&lt;/p&gt;
+
+&lt;p&gt;Thanks for reading this and happy Alfresco hacking!&lt;/p&gt;
+</summary>
+</entry>
+
+
+<entry>
+  <title>H2 support updated to the latest Alfresco versions</title>
+  <link href="http://skuro.tk/2012/06/27/h2-support-for-the-lates-alfresco-versions/"/>
+  <updated>2012-06-27T00:00:00+02:00</updated>
+  <id>http://skuro.tk/2012/06/27/h2-support-for-the-lates-alfresco-versions/</id>
+  <summary type="html">&lt;p&gt;&lt;strong&gt;tl;dr:&lt;/strong&gt; two new releases of &lt;a href=&quot;https://github.com/skuro/alfresco-h2-support&quot;&gt;H2 Support&lt;/a&gt; are available, to support both Alfresco v4.0.1 and v4.0.2 Enterprise edition&lt;/p&gt;
+
+&lt;p&gt;Time flies, and (good) software always keeps a fast development pace. This applies to &lt;a href=&quot;http://www.alfresco.com&quot;&gt;Alfresco&lt;/a&gt;, which released a couple of Enterprise versions since I last updated the &lt;a href=&quot;https://github.com/skuro/alfresco-h2-support&quot;&gt;H2 Support&lt;/a&gt; module. Promptly, &lt;a href=&quot;https://twitter.com/#!/pjlucidi&quot;&gt;Piergiorgio Lucidi&lt;/a&gt; &lt;a href=&quot;http://code.google.com/p/maven-alfresco-archetypes/issues/detail?id=94&quot;&gt;found out&lt;/a&gt; that the latest H2 Support version was incompatible with Alfresco v4.0.2. Time for a new release.&lt;/p&gt;
+
+&lt;h2&gt;Double rainbows&lt;/h2&gt;
+
+&lt;p&gt;Last time I released H2 Support Alfresco was still on v4.0.0, with v4.0.1 and v4.0.2 already released in the meanwhile. The effort to upgrade H2 Support is fairly trivial, as it only requires some diff&amp;amp;merge of DB related configuration from the original Alfresco codebase to H2 Support sources. Hence, not one but &lt;strong&gt;two&lt;/strong&gt; releases of H2 Support were issued today, namely&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/skuro/alfresco-h2-support/tree/v1.4&quot;&gt;v1.4&lt;/a&gt; -- H2 Support for Alfresco v4.0.2&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/skuro/alfresco-h2-support/tree/v1.3&quot;&gt;v1.3&lt;/a&gt; -- H2 Support for Alfresco v4.0.1&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;As usual, please refer to the &lt;a href=&quot;https://github.com/skuro/alfresco-h2-support/wiki/H2-Database-support-for-Alfresco&quot;&gt;official documentation&lt;/a&gt; for matching H2 Support and Alfresco versions.&lt;/p&gt;
+
+&lt;h2&gt;Availability on Central&lt;/h2&gt;
+
+&lt;p&gt;The new releases are already available on OSS Sonatype &lt;a href=&quot;https://oss.sonatype.org/content/groups/public/tk/skuro/alfresco/h2-support/&quot;&gt;maven repository&lt;/a&gt;. Give it enough time and they&#39;ll end up in Maven Central.&lt;/p&gt;
+</summary>
+</entry>
+
+
+<entry>
+  <title>Spring surf Clojure and Alfresco H2 support now in Maven Central</title>
+  <link href="http://skuro.tk/2012/03/06/spring-surf-clojure-and-alfresco-h2-support-now-in-maven-central/"/>
+  <updated>2012-03-06T00:00:00+01:00</updated>
+  <id>http://skuro.tk/2012/03/06/spring-surf-clojure-and-alfresco-h2-support-now-in-maven-central/</id>
+  <summary type="html">&lt;p&gt;&lt;strong&gt;tl;dr:&lt;/strong&gt; I had to change the groupId of both
+  &lt;a href=&quot;https://github.com/skuro/alfresco-h2-support&quot;&gt;h2-support&lt;/a&gt; and
+  &lt;a href=&quot;https://github.com/skuro/spring-webscripts-addon-clojure&quot;&gt;spring-webscripts-addon-clojure&lt;/a&gt;. Good
+  news is, they&#39;re now available on Maven Central!&lt;/p&gt;
+
+&lt;h2&gt;Build management dilemma&lt;/h2&gt;
+
+&lt;p&gt;Part of &lt;a href=&quot;http://www.backbase.com&quot;&gt;my company&lt;/a&gt; offering is an Alfresco
+based CMS, which we build the
+&lt;a href=&quot;code.google.com/p/maven-alfresco-archetypes/&quot;&gt;maven way&lt;/a&gt;. While this
+is already a nicely integrated build with the rest of the other
+products, I currently find it annoying to require a database to be
+installed wherever the project is built (ubiquitous MySQL installed
+locally on my laptop, on the CI server, etc.). As I&#39;m maintaining an
+H2 &lt;a href=&quot;https://github.com/skuro/alfresco-h2-support&quot;&gt;compatibility module&lt;/a&gt;
+for Alfresco it&#39;s natural for me to integrate and use it.&lt;/p&gt;
+
+&lt;p&gt;There was only one thing blocking this process, and that&#39;s the maven
+repository where such artifact were deployed.&lt;/p&gt;
+
+&lt;h2&gt;Deploy on Central&lt;/h2&gt;
+
+&lt;p&gt;As much as I love &lt;a href=&quot;http://clojars.org&quot;&gt;Clojars&lt;/a&gt;, it still requires to be manually configured
+when dealing with a pure Maven build. Since it&#39;s not quite an option to add
+an artifacts repository for something as small as &lt;code&gt;h2-support&lt;/code&gt;, I
+decided to just follow the guidelines for Maven Central sync on
+&lt;a href=&quot;https://docs.sonatype.org/display/Repository/Sonatype+OSS+Maven+Repository+Usage+Guide&quot;&gt;OSS Sonatype&lt;/a&gt; and
+rename the group ID to resabmle my personal web domain. This means I
+did dirty, dirty things that bought me an entire eternity in hell,
+such as retagging both
+&lt;a href=&quot;https://github.com/skuro/alfresco-h2-support/tree/v1.1&quot;&gt;v1.1&lt;/a&gt; and
+&lt;a href=&quot;https://github.com/skuro/alfresco-h2-support/tree/v1.2&quot;&gt;v1.2&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;But, as the only change in the POM is &quot;non functional&quot; such as
+description, developers and such, it&#39;s not going to hurt much I
+believe.&lt;/p&gt;
+
+&lt;p&gt;This move is reflected also in the currently unreleased
+&lt;code&gt;spring-webscripts-addon-clojure&lt;/code&gt;, so if you&#39;ll be using it or
+you need &lt;code&gt;h2-support&lt;/code&gt; remember to use the &lt;code&gt;tk.skuro.*&lt;/code&gt; group IDs, and
+you won&#39;t need to add a &lt;code&gt;&amp;lt;repository&amp;gt;&lt;/code&gt; to your POM ever again.&lt;/p&gt;
+
+&lt;p&gt;Thanks &lt;a href=&quot;http://www.sonatype.com&quot;&gt;Sonatype&lt;/a&gt; for the awesome service!&lt;/p&gt;
+</summary>
+</entry>
+
+
+<entry>
+  <title>H2 support updated for Alfresco 4.x</title>
+  <link href="http://skuro.tk/2011/12/14/h2-support-for-alfresco-4x/"/>
+  <updated>2011-12-14T00:00:00+01:00</updated>
+  <id>http://skuro.tk/2011/12/14/h2-support-for-alfresco-4x/</id>
+  <summary type="html">&lt;h2&gt;H2 Support reloaded&lt;/h2&gt;
+
+&lt;p&gt;Some time ago I &lt;a href=&quot;/2011/08/03/h2-embedded-db-and-alfresco-3-4/&quot;&gt;announced&lt;/a&gt; a &lt;a href=&quot;https://github.com/skuro/alfresco-h2-support&quot;&gt;module&lt;/a&gt; to enhance &lt;a href=&quot;http://www.alfresco.com&quot;&gt;Alfresco&lt;/a&gt; in order to support H2 as its persistent data storage. While it was successfully tested against Alfresco v3.4 and v3.5, &lt;a href=&quot;http://www.mindthegab.com&quot;&gt;@mindthegab&lt;/a&gt; pointed me out that Alfresco v4.x wasn&#39;t even starting when using the H2 module.&lt;/p&gt;
+
+&lt;p&gt;A quick look at the PostgreSQL scripts and configuration of Alfresco 4 revealed that they were indeed radically changed in the new release, so that an update was necessary.&lt;/p&gt;
+
+&lt;h2&gt;Matching versions&lt;/h2&gt;
+
+&lt;p&gt;Since 3.4+ and 4.x version series have quite different configuration, you need to use a different version of the h2 module depending on the Alfresco version you&#39;re running, namely:&lt;/p&gt;
+
+&lt;table&gt;
+    &lt;tr&gt;
+      &lt;th&gt;H2 module&lt;/th&gt;&lt;th&gt;Alfresco versions supported&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1.1&lt;/td&gt;&lt;td&gt;3.4+&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1.2&lt;/td&gt;&lt;td&gt;4.x&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+
+&lt;p&gt;The artifacts for both versions are available on &lt;a href=&quot;http://clojars.org&quot;&gt;clojars&lt;/a&gt;, please refer to the official documentation for the usage guide.&lt;/p&gt;
+</summary>
+</entry>
+
+
+<entry>
+  <title>Slides from Alfresco the Clojure way</title>
+  <link href="http://skuro.tk/2011/11/10/slides-from-alfresco-the-clojure-way/"/>
+  <updated>2011-11-10T00:00:00+01:00</updated>
+  <id>http://skuro.tk/2011/11/10/slides-from-alfresco-the-clojure-way/</id>
+  <summary type="html">&lt;p&gt;I just gave a talk at the Alfresco DevCon 2011 in London, and I published the slides at slideshare:&lt;/p&gt;
+
+&lt;div style=&quot;width:425px; padding-left: 10%&quot; id=&quot;__ss_10104981&quot;&gt;
+&lt;iframe src=&quot;http://www.slideshare.net/slideshow/embed_code/10104981&quot; width=&quot;425&quot; height=&quot;355&quot; frameborder=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;There&#39;s also an &lt;a href=&quot;http://slidesha.re/uqUqOW&quot;&gt;extended version&lt;/a&gt; of the presentation that I originally wrote, which ended up being too big for the time slot I had.&lt;/p&gt;
+
+&lt;p&gt;Hope you either enjoyed the talk or the slides, next steps are getting to &lt;a href=&quot;https://github.com/skuro&quot;&gt;GitHub&lt;/a&gt; and fork &lt;a href=&quot;https://github.com/skuro/lambdalf&quot;&gt;lambdalf&lt;/a&gt; and &lt;a href=&quot;https://github.com/skuro/spring-webscripts-addon-clojure&quot;&gt;clojure webscripts&lt;/a&gt; away!&lt;/p&gt;
+</summary>
+</entry>
+
+
+<entry>
+  <title>Clojure makes it to the Alfresco DevCon2011</title>
+  <link href="http://skuro.tk/2011/09/04/clojure-makes-it-the-alfresco-devcon-2011-emea-london/"/>
+  <updated>2011-09-04T00:00:00+02:00</updated>
+  <id>http://skuro.tk/2011/09/04/clojure-makes-it-the-alfresco-devcon-2011-emea-london/</id>
+  <summary type="html">&lt;p&gt;If you&#39;re a bit into Alfresco, you surerly know what the &lt;a href=&quot;http://www.amiando.com/alfresco-devcon-london-2011.html&quot;&gt;DevCon&lt;/a&gt; is.&lt;/p&gt;
+
+&lt;p&gt;To use the same words from &lt;a href=&quot;http://blogs.alfresco.com/wp/devcon/2011/08/04/save-the-date-alfresco-devcon-san-diego-london/&quot;&gt;Jeff Potts&lt;/a&gt;:
+&amp;nbsp;&lt;br/&gt;
+&amp;nbsp;&lt;/p&gt;
+
+&lt;blockquote&gt;the premier event for digging into the details of the Alfresco platform and collaborating with others who are doing the same&lt;/blockquote&gt;
+
+
+&lt;p&gt;Now, as soon as I received the &lt;a href=&quot;http://ecmarchitect.com/archives/2011/08/09/1449&quot;&gt;CallForPapers&lt;/a&gt; I immediately (and impulsively!) submitted a talk named &lt;em&gt;Alfresco, the Clojure way&lt;/em&gt; in the Customizing Alfresco track, where I wanted to introduce to enthusiastic Alfresco developers how to do their job using a fantastic &lt;a href=&quot;http://clojure.org&quot;&gt;programming language&lt;/a&gt;. It was just last week that I was notified that yes, my talk made it to the conference schedule! Clojure goes to London!&lt;/p&gt;
+
+&lt;p&gt;It will be great chance for Clojure to prove itself a great tool, and to get some more exposure to software professionals around Europe and beyond. Now that things got serious, I really need to put my presentation together, and that&#39;s where you can provide some help.&lt;/p&gt;
+
+&lt;p&gt;I still don&#39;t know the time slot the presentation will be given, but surely enough I&#39;ll publish online the full version of it as soon as I&#39;ll be back from London. The following is the initial list of topics I&#39;d like to cover, but I&#39;m eager to know from you what you would like to add to it.&lt;/p&gt;
+
+&lt;h2&gt;High level topics&lt;/h2&gt;
+
+&lt;ul&gt;
+    &lt;li&gt;crash-course on &lt;a href=&quot;http://clojure.org/reader&quot;&gt;Clojure syntax&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;extremely fast digression on some core language features and &lt;a href=&quot;http://en.wikipedia.org/wiki/Functional_programming&quot;&gt;functional programming&lt;/a&gt; topics&lt;/li&gt;
+    &lt;li&gt;introduction to &lt;a href=&quot;https://github.com/skuro/lambdalf&quot;&gt;lambdalf&lt;/a&gt;, a Clojure adapter to the Alfresco &lt;a href=&quot;http://wiki.alfresco.com/wiki/Java_Foundation_API&quot;&gt;Foundation API&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;introduction to the &lt;a href=&quot;https://github.com/skuro/spring-webscripts-addon-clojure&quot;&gt;Clojure addon&lt;/a&gt; for the Spring Web Script framework&lt;/li&gt;
+    &lt;li&gt;show and tell: start Alfresco, start a &lt;a href=&quot;https://github.com/technomancy/swank-clojure&quot;&gt;swank&lt;/a&gt; server and do live coding against the repository&lt;/li&gt;
+    &lt;li&gt;&lt;em&gt;OPTIONAL:&lt;/em&gt; showcase a Clojure-based &lt;a href=&quot;https://github.com/skuro/lambdalf-samples&quot;&gt;sample&lt;/a&gt; Alfresco application&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;Again, I don&#39;t know how much time I&#39;ll be given, so I can&#39;t even guarantee I&#39;ll have time for all the above topics to get a proper introduction, but since I also might have still enough time to cover other topics, what would you like to see in there?&lt;/p&gt;
+</summary>
+</entry>
+
+
+<entry>
+  <title>H2 embedded DB and Alfresco 3.4</title>
+  <link href="http://skuro.tk/2011/08/03/h2-embedded-db-and-alfresco-3-4/"/>
+  <updated>2011-08-03T00:00:00+02:00</updated>
+  <id>http://skuro.tk/2011/08/03/h2-embedded-db-and-alfresco-3-4/</id>
+  <summary type="html">&lt;p&gt;One of the most useful thing an embedded DB can do for you is to provide a clean environment in your automated tests to use as a clean slate where to repeatedly and reliably test your code. It&#39;s been a while since Alfresco &lt;a href=&quot;http://issues.alfresco.com/jira/browse/ALFCOM-3691&quot;&gt;broke compatibility&lt;/a&gt; with some embedded DB we used to run our tests (&lt;a href=&quot;http://hsqldb.org/&quot;&gt;HSQLDB&lt;/a&gt; above all others).&lt;/p&gt;
+
+&lt;p&gt;I recently regained interest into cutting out any useless dependency on MySQL or PostgreSQL on the test server to run my Alfresco tests, and H2 looked sexy. I found &lt;a href=&quot;http://www.codinginahurry.com/2010/11/27/running-alfresco-33-with-embedded-database-h2-in-postgresql-compability-mode/&quot;&gt;here&lt;/a&gt; and &lt;a href=&quot;https://issues.alfresco.com/jira/browse/ALF-3537&quot;&gt;there&lt;/a&gt; some promising work by other people, but none worked for me out of the box. I then started from scratch using PostgreSQL DB scripts and voila! Now I have back my Alfresco running against an embeddable DB! You can see &amp;amp; fork &lt;a href=&quot;http://bit.ly/nIJuLY&quot;&gt;the results&lt;/a&gt; of my job if you like. It&#39;s supposed to help you with a Maven Alfresco project, but you can probably benefit from it even if you&#39;re using some other build tools.&lt;/p&gt;
+
+&lt;p&gt;As soon as you have all those files in your classpath, be sure you edit your &lt;em&gt;alfresco-global.properties&lt;/em&gt; like the following:
+    db.driver=org.h2.Driver
+    db.url=jdbc:h2:alf_data/h2_data/alfresco
+    db.username=alfresco
+    db.password=alfresco
+    hibernate.dialect=org.hibernate.dialect.H2Dialect
+Make sure you&#39;re using an hibernate version &amp;gt;= 3.1 as per H2 &lt;a href=&quot;http://www.h2database.com/html/tutorial.html#using_hibernate&quot;&gt;documentation&lt;/a&gt;.&lt;/p&gt;
+</summary>
+</entry>
+
+
+<entry>
+  <title>More Clojure for Spring Surf</title>
+  <link href="http://skuro.tk/2011/05/10/more-clojure-for-spring-surf/"/>
+  <updated>2011-05-10T00:00:00+02:00</updated>
+  <id>http://skuro.tk/2011/05/10/more-clojure-for-spring-surf/</id>
+  <summary type="html">&lt;p&gt;After some time from my &lt;a href=&quot;http://www.skuro.tk/2010/05/23/spring-surf-meets-clojure&quot;&gt;initial announcement&lt;/a&gt;, I&#39;ve started again working on my &lt;a href=&quot;https://github.com/skuro/spring-webscripts-addon-clojure&quot;&gt;Clojure addon for Spring Surf&lt;/a&gt;. While it&#39;s still a rudimentary piece of glue code, it&#39;s now getting better and better, so much that I decided it&#39;s good enough now to release an alpha version on &lt;a href=&quot;http://clojars.org/it.sk.spring.surf.clojure/spring-webscripts-addon-clojure&quot;&gt;clojars&lt;/a&gt;. Here&#39;s what this library currently provides:&lt;/p&gt;
+
+&lt;ul&gt;
+    &lt;li&gt;a &lt;a href=&quot;https://github.com/skuro/spring-webscripts-addon-clojure/blob/master/src/main/java/org/springframework/extensions/webscripts/processor/ClojureScriptProcessor.java&quot;&gt;ScriptProcessor&lt;/a&gt; that allows webscript controllers to be written in Clojure&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/skuro/spring-webscripts-addon-clojure/blob/master/src/main/clojure/spring/surf/webscript.clj&quot;&gt;a &lt;em&gt;WebScript&lt;/em&gt; protocol and some utility functions&lt;/a&gt; to ease development of your own web scripts&lt;/li&gt;
+    &lt;li&gt;enough &lt;a href=&quot;https://github.com/skuro/spring-webscripts-addon-clojure/tree/master/src/main/resources/org/springframework/extensions/clj/webscripts&quot;&gt;spring configuration&lt;/a&gt; to enable this addon just by importing the provided contextes&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;The approach is indeed easy and hopefully straightforward: the idea is to have your WebScript clojure controllers return an instance of a concrete implementation of the WebScript protocol, which will implement the &lt;em&gt;run&lt;/em&gt; method the way you like.&lt;/p&gt;
+
+&lt;p&gt;Here&#39;s the sample code from a &lt;a href=&quot;https://gist.github.com/965008&quot;&gt;gist&lt;/a&gt; you might want to have a look at to better understand how to use this library:&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/965008.js?file=sample.get.clj&quot;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;You can also find other samples in the project &lt;a href=&quot;https://github.com/skuro/spring-webscripts-addon-clojure/tree/master/src/test/resources/webscripts/test&quot;&gt;tests&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The next episode will be about &lt;a href=&quot;https://github.com/skuro/lambdalf&quot;&gt;&lt;em&gt;lambdalf&lt;/em&gt;&lt;/a&gt;, an Alfresco AMP I&#39;ve been initially developing to prove the Clojure surf addon works fine, but that is now growing to be a full blown project by itself: a Clojure API for Alfresco!&lt;/p&gt;
+
+&lt;p&gt;Stay tuned. &lt;span style=&quot;color: #ffffff;&quot;&gt;UVBRKNJTRFH7&lt;/span&gt;&lt;/p&gt;
+</summary>
+</entry>
+
+
+<entry>
+  <title>Spring Surf meets Clojure</title>
+  <link href="http://skuro.tk/2010/05/23/spring-surf-meets-clojure/"/>
+  <updated>2010-05-23T00:00:00+02:00</updated>
+  <id>http://skuro.tk/2010/05/23/spring-surf-meets-clojure/</id>
+  <summary type="html">&lt;p&gt;For those who missed it, some time ago the &lt;a href=&quot;http://www.alfresco.com/&quot;&gt;Alfresco&lt;/a&gt; guys &lt;a href=&quot;http://www.alfresco.com/media/releases/2009/12/spring_surf/&quot;&gt;donated&lt;/a&gt; their &lt;a href=&quot;http://wiki.alfresco.com/wiki/Surf_Platform&quot;&gt;Surf Platform&lt;/a&gt; to &lt;a href=&quot;http://www.springsource.com/&quot;&gt;SpringSource&lt;/a&gt;, giving birth to the now-called &lt;a href=&quot;http://www.springsource.org/extensions/se-surf&quot;&gt;SpringSurf&lt;/a&gt;, which is thereby described as:&lt;/p&gt;
+
+&lt;blockquote&gt;a view composition framework for Spring MVC that plugs into your existing Spring applications. It provides a scriptable and content-centric approach to building web applications.&lt;/blockquote&gt;
+
+
+&lt;p&gt;I&#39;m not going to introduce you how to use this yet-another MVC framework, but Michael Uzquiano provided an &lt;a href=&quot;http://blogs.alfresco.com/wp/uzi/2009/11/03/using-surf-in-your-spring-apps/&quot;&gt;awesome blogpost&lt;/a&gt;, in case you were interested into learning more about it.&lt;/p&gt;
+
+&lt;p&gt;Part of the job of this Spring Surf framework is to provide an easy to use web scripting framework, REST like, that enables you to easily put together a View and, optionally, a Controller to implement a web API, provide them in the classpath together with a small XML descriptor, and your REST API is deployed right away. In the SpringSurf parlance, this is called called WebScript. Again, technical insights about the framework are better explained &lt;a href=&quot;http://blogs.alfresco.com/wp/webcasts/2010/01/introducing-spring-surf-and-spring-web-scripts/&quot;&gt;elsewhere&lt;/a&gt;, so no repetitions here. What I think is cool about Spring Surf, and I&#39;m here with you to discuss, is it&#39;s multi-language focus: web script Controllers can be written in Javascript, PHP or Groovy right out of the box, allowing you to choose whichever language you prefer. Moreover, if you just peek at Spring Surf &lt;a href=&quot;https://anonsvn.springframework.org/svn/se-surf/tags/release-1.0.0.M3/spring-webscripts-addons/&quot;&gt;source code&lt;/a&gt;, plugging in support for new languages doesn&#39;t look so hard, so I decided to challenge myself and write support for Clojure backed webscripts. You can find the result of my efforts on &lt;a href=&quot;http://github.com/skuro/spring-webscripts-addon-clojure&quot;&gt;github&lt;/a&gt;, with a sample webscript that proves the concept.&lt;/p&gt;
+
+&lt;p&gt;Following the webscript framework praxis, a &lt;em&gt;model&lt;/em&gt; map object is passed around that acts as a container for whichever result your computation will produce, that will at the end handed over to a view rendition engine, &lt;a href=&quot;http://freemarker.sourceforge.net/&quot;&gt;Freemarker&lt;/a&gt; in our case, to build the resulting document. Webscripts are intended to support a number of different output formats, from JSON to XML to plain text, so being generic here is not an option.&lt;/p&gt;
+
+&lt;p&gt;Anyway, the first thing you usually do is to populate the &lt;em&gt;model&lt;/em&gt; map with a number of objects that will be needed by the rendering engine to build the response. To support this use case, this first implementation of the Clojure backend for Spring Surf webscripts expects your Clojure &quot;script&quot; to yield a map, in Clojure sense. This map will be then forwarded to a Freemarker template and used to build a webpage or whatever the user asked for, i.e. this controller:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(ns web.script.test)
+
+{:foo &quot;bar&quot;}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;and this freemarker template:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;foo: ${foo}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;will provide &quot;foo: bar&quot; back to the client.&lt;/p&gt;
+
+&lt;p&gt;This is just an experiment at the moment, and far from being production-quality stuff. Still, it has been instructing to build a  Java-to-Clojure integration, and nonetheless it might come in handy when I&#39;ll be trying to put more Clojure in my working life.&lt;/p&gt;
+
+&lt;p&gt;(bye)&lt;/p&gt;
+</summary>
+</entry>
+
+
+<entry>
+  <title>From the grounds up, your Maven powered Alfresco dev box</title>
+  <link href="http://skuro.tk/2010/01/14/from-the-grounds-up-maven-alfresco-tutorial/"/>
+  <updated>2010-01-14T00:00:00+01:00</updated>
+  <id>http://skuro.tk/2010/01/14/from-the-grounds-up-maven-alfresco-tutorial/</id>
+  <summary type="html">&lt;p&gt;&lt;img class=&quot;aligncenter size-full wp-image-240&quot; title=&quot;mint alf mvn&quot; src=&quot;/img/post/mint-alf.png&quot; alt=&quot;mint alf mvn&quot; width=&quot;437&quot; height=&quot;311&quot; /&gt;&lt;/p&gt;
+
+&lt;h2&gt;The target&lt;/h2&gt;
+
+&lt;p&gt;To start your Alfresco development experience, you need a development environment. Let&#39;s say you&#39;re more into this Maven and you&#39;d rather leverage its capabilities instead of using the default ant based build system provided along with the SDK. In this tutorial, I&#39;ll guide you through the process of setting up from scratch your development environment. And by saying &quot;from scratch&quot;, I really mean it: we&#39;ll start from a fresh installed Linux box and the we will add piece over piece until we&#39;ll be see the Alfresco flower on our browser.  This will be a &lt;em&gt;basic&lt;/em&gt; tutorial, just to put in place the foundation for later improvements.&lt;/p&gt;
+
+&lt;p&gt;I&#39;m actually performing these steps in a virtual machine, so that next time a quick&amp;amp;dirty Alfresco PoC is required I might use this very same VM to start right away from a known, dev ready point.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;span style=&quot;color: #ff0000;&quot;&gt;UPDATE: &lt;span style=&quot;color: #000000;&quot;&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;the Maven project structure I end up with at the end of this article can be downloaded directly from &lt;a title=&quot;alfresco-dev.skuro.tk // Tag: #01&quot; href=&quot;http://github.com/skuro/alfresco-dev.skuro.tk/tree/%2301&quot;&gt;GitHub&lt;/a&gt;.&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2&gt;Operating System&lt;/h2&gt;
+
+
+&lt;p&gt;Ok, I assume you know your stuff and don&#39;t want to get a bore-some lesson on how to install Linux. The whole internet is polluted by billions of guides and tutorial since 199x, anyway, so let&#39;s just say I just completed the install process of Mint7 and I&#39;m at my very first login. I would go for &lt;a href=&quot;http://ftp.heanet.ie/pub/linuxmint.com/stable/8/LinuxMint-8.iso&quot;&gt;Mint8&lt;/a&gt; if my current connection was fast enough to download it before I finish writing these notes, but whatever, there&#39;s nothing really bad in v7.&lt;/p&gt;
+
+&lt;h2&gt;Tools&lt;/h2&gt;
+
+
+&lt;p&gt;The shopping list here includes a JDK, Maven and... well, that should be it, theoretically. Unfortunately, due to a nasty &lt;a href=&quot;https://issues.alfresco.com/jira/browse/ALFCOM-3691&quot;&gt;regression&lt;/a&gt;, we&#39;re going to need a db. My choice goes to MySQL.&lt;/p&gt;
+
+&lt;h3&gt;MySQL&lt;/h3&gt;
+
+
+&lt;p&gt;First thing first, let&#39;s install it:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;~$ sudo apt-get install mysql-server
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;When this is done, we have to create the db Alfresco is going to use:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;~$ mysql -u root
+mysql&amp;amp;gt; CREATE DATABASE alf_jetty;
+mysql&amp;amp;gt; GRANT ALL ON alf_jetty.* TO &#39;alfresco&#39;@&#39;%&#39; IDENTIFIED BY &#39;alfresco&#39;;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Username and password are the default for the &lt;a href=&quot;http://wiki.alfresco.com/wiki/Managing_Alfresco_Lifecyle_with_Maven&quot;&gt;maven stuff&lt;/a&gt; we&#39;re going to use.&lt;/p&gt;
+
+&lt;h3&gt;Java&lt;/h3&gt;
+
+
+&lt;p&gt;Java™ 5 &lt;a href=&quot;http://java.sun.com/products/archive/eol.policy.html&quot;&gt;has already passed on&lt;/a&gt;, let it rest in peace. Instead, go and install Java™ 6:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;~$ sudo apt-get install sun-java6-jdk
+[/code]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;Maven&lt;/h3&gt;
+
+
+&lt;p&gt;Hold on the temptation of installing Maven 3 or to ask apt-get to do this task for you. We&#39;re going to the official &lt;a href=&quot;http://maven.apache.org/download.html&quot;&gt;download page&lt;/a&gt; and following the links to get the latest stable 2.x release. You should end up with something like apache-maven-2.2.1-bin.tar.bz2 on your file system. Then do the following:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;~$ cs /opt
+~$ sudo tar xvjf apache-maven-2.2.1-bin.tar.bz2
+~$ sudo ln -sfv /opt/apache-maven-2.2.1/bin/mvn /usr/bin/mvn
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;There are less intrusive ways to bring your downloaded application into your PATH, but this is the quickest possible. Let&#39;s go on to the next step.&lt;/p&gt;
+
+&lt;h3&gt;Plumbing&lt;/h3&gt;
+
+
+&lt;p&gt;We&#39;re almost there, we just have to lay down our projects. Let&#39;s start with the Alfresco repo extension:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;~$ mkdir -p development/alfresco-showcase
+~$ cd development/alfresco-showcase
+alfresco-showcase$ wget http://download.skuro.tk/alfresco-showcase/pom.xml
+alfresco-showcase$ mvn archetype:generate -DarchetypeGroupId=com.sourcesense.alfresco \
+ -DarchetypeArtifactId=maven-alfresco-extension-archetype \
+ -DarchetypeVersion=1.9.1 \
+ -DgroupId=it.sk.alfresco \
+ -DartifactId=alfresco-showcase-extension \
+ -Dversion=1.0-SNAPSHOT \
+ -DarchetypeRepository=http://maven.alfresco.com/nexus/content/repositories/releases \
+ -DinteractiveMode=false
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The POM I&#39;m making available &lt;a href=&quot;http://download.skuro.tk/alfresco-showcase/pom.xml&quot;&gt;here&lt;/a&gt; is just a very basically one, I&#39;m using it here just for you to speed up the process.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;UPDATE: &lt;/strong&gt; as others pointed me out, it looks like you somehow need to download such a pom for the whole thing to stand up. That&#39;s simply not true, I&#39;m just building a more complex dev environment and it&#39;s better if we have some structure in place. This includes having a parent project, along with its parent pom, with nested projects registered as its modules. These will come in the next posts. But that&#39;s just part of the reason for this pom to be here: I also tend to be &lt;a href=&quot;http://blogoscoped.com/archive/2005-08-24-n14.html&quot;&gt;lazy&lt;/a&gt;, so that letting you download it was easier than explaining myself. Note to self: thou shalt not post anything at 2am.&lt;/p&gt;
+
+&lt;h3&gt;First achievement&lt;/h3&gt;
+
+
+&lt;p&gt;Ok, let&#39;s stop here now and see what we&#39;ve done by now. Go to the alfresco-showcase folder and type:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;alfresco-showcase$ MAVEN_OPTS=&quot;-Xmx512m -XX:MaxPermSize=128m&quot; \
+ mvn clean install -Prun
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This will start a local jetty instance where Alfresco 3.2 community will be deployed. So, if you now point your browser to &lt;code&gt;http://localhost:8080/alfresco&lt;/code&gt; you will finally see that flower we talked about at the beginning of this post.&lt;/p&gt;
+
+&lt;h2&gt;Next steps&lt;/h2&gt;
+
+
+&lt;p&gt;That&#39;s it for now, but other blocks are still missing: what about AMPs? And WCM? And does Share fits in the picture? I&#39;ll cover all the points in the next episodes of this series. See you there!&lt;/p&gt;
+</summary>
+</entry>
+
+
+<entry>
+  <title>Alfresco ACL on WCM WebForms, an howto</title>
+  <link href="http://skuro.tk/2010/01/12/alfresco-acl-on-wcm-webforms-an-howto/"/>
+  <updated>2010-01-12T00:00:00+01:00</updated>
+  <id>http://skuro.tk/2010/01/12/alfresco-acl-on-wcm-webforms-an-howto/</id>
+  <summary type="html">&lt;p&gt;When it comes to setting up an Alfresco WebProjects, you configure it to make use of a set of WebForms already available on the Alfresco repository. From that moment on, every user with write rights on the web project will be able to pick one web form and push some content through it into the AVM repository. But what if you want to forbid some users to actually make use of some web forms? The default Alfresco doesn&#39;t present any GUI control that allows you to define web forms level ACLs, but in facts there&#39;s a way to define them in an easy way, without the need of any real customization. Let&#39;s see how to do that on the Alfresco WCM we setup in the previous chapters of this series.&lt;/p&gt;
+
+&lt;h2&gt;The idea&lt;/h2&gt;
+
+&lt;p&gt;So, we want to be able to relate web forms and users or groups, thus restricting access to web forms depending on your credentials. We want to configure a number of web forms to be available on the web project, while users will see only the ones they&#39;ve access to when trying to create some contents, so that dropdowns and links will appear only when it&#39;s appropriate. Moreover, we do not want to waste our time on custom code, we just want Alfresco to do its job.&lt;/p&gt;
+
+&lt;p&gt;The way we are going to address this requirement is through the use of real ACL setup configured on the web forms themselves, so that the Alfresco permission checks will be able to trim the list of available web forms to the users whenever they ask for create content. Sounds reasonable, right?&lt;/p&gt;
+
+&lt;h2&gt;Bug!&lt;/h2&gt;
+
+
+&lt;p&gt;As a disclaimer, I must say the proposed approach doesn&#39;t work with a vanilla Alfresco3.2r because of a &lt;a href=&quot;https://issues.alfresco.com/jira/browse/ETHREEOH-2595&quot;&gt;nasty bug&lt;/a&gt; that will throw Exceptions all over the place once you configured restrictive ACLs on web forms. Thanks to the OpenSource nature of Alfresco, and thanks to &lt;a href=&quot;http://twitter.com/bradsdavis&quot;&gt;Brad Davis&lt;/a&gt; that provided a patch for it, we can just change the Alfresco source code and we&#39;ll be able to go forward. While we wait for a real mavenized Alfresco, this involves having the Alfresco SDK properly installed on your system, apply the patch and upload it to your local maven repo. To ease your life, you can just go with this last step using this patched &lt;a href=&quot;http://download.skuro.tk/alfresco/alfresco-3.2r-community-patched.war&quot;&gt;Alfresco WAR&lt;/a&gt; and type:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;utopia-II:Downloads skuro$ mvn install:install-file -DartifactId=alfresco -DgroupId=org.alfresco \
+ -Dversion=3.2r -Dtype=war -Dclassifier=community-patched -Dfile=alfresco-3.2r-community-patched.war
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;After that you have to switch to this artifact in your alfresco-extension project&#39;s pom dependencies.&lt;/p&gt;
+
+&lt;h2&gt;Define the ACL&lt;/h2&gt;
+
+
+&lt;p&gt;Now start up Alfresco and login as the &lt;em&gt;admin&lt;/em&gt;. To prove the ACL effectiveness, we will need two users and one group. In the following I&#39;ll assume the users are called &lt;em&gt;bob&lt;/em&gt; and &lt;em&gt;todd&lt;/em&gt; and the group, where only &lt;em&gt;bob&lt;/em&gt; is listed, is called &lt;em&gt;full-access&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Now go to the &lt;em&gt;&lt;strong&gt;Company Home/Data Dictionary/Web Forms&lt;/strong&gt;&lt;/em&gt; folder and open the property sheet of the &lt;em&gt;&lt;strong&gt;article&lt;/strong&gt;&lt;/em&gt; web form folder.&lt;/p&gt;
+
+&lt;p&gt;You&#39;ll be now able to customize the permissions on this level by clicking on &lt;em&gt;&lt;strong&gt;Manage Space users&lt;/strong&gt;&lt;/em&gt;, that will bring you to the ACL managing wizard. &lt;strong&gt;Uncheck&lt;/strong&gt; the &lt;strong&gt;&lt;em&gt;Inherit Parent Space Permissions&lt;/em&gt;&lt;/strong&gt; box and then click on &lt;em&gt;&lt;strong&gt;Invite..&lt;/strong&gt;&lt;/em&gt;, setting up the &lt;em&gt;full-access&lt;/em&gt; group to have the &lt;em&gt;&lt;strong&gt;Coordinator&lt;/strong&gt;&lt;/em&gt; role.&lt;/p&gt;
+
+&lt;h2&gt;Test it&lt;/h2&gt;
+
+
+&lt;p&gt;We&#39;re already done! Now, try to log in into Alfresco with the two users and verify that only bob can actually see the article web form appearing on the UI.&lt;/p&gt;
+
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+
+
+&lt;p&gt;This technique allows for a whole lot of use cases, where different divisions are not allowed to author content of different types. The only drawback of this solution is that when you have more than one web project per Alfresco instance, and you want to reuse the web forms, you will need to setup different groups for the different web projects (this will almost always be the case, anyway) and do the ACL configuration twice. Not that big deal, of course, but the lack of any centralized ACL managing tool will make it harder to maintain the permissions schemes.&lt;/p&gt;
+</summary>
+</entry>
+
+
+<entry>
+  <title>Alfresco ECM moving forward on the Maven path</title>
+  <link href="http://skuro.tk/2009/12/03/alfresco-ecm-moving-forward-on-the-maven-path/"/>
+  <updated>2009-12-03T00:00:00+01:00</updated>
+  <id>http://skuro.tk/2009/12/03/alfresco-ecm-moving-forward-on-the-maven-path/</id>
+  <summary type="html">&lt;p&gt;&lt;img class=&quot;aligncenter size-full wp-image-219&quot; title=&quot;mavenalfresco&quot; src=&quot;/img/post/mavenalfresco.jpg&quot; alt=&quot;mavenalfresco&quot; width=&quot;462&quot; height=&quot;106&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;These days some milestones have been placed that are both consolidating past efforts and promising great improvements on maven based processes around &lt;a href=&quot;http://www.alfresco.com&quot;&gt;Alfresco ECM&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;First and foremost, to prove the Alfresco commitment in mavenizing the product, have a look at their hosted &lt;a href=&quot;http://sonatype.com/&quot;&gt;Sonatype&lt;/a&gt; &lt;a href=&quot;http://maven.alfresco.com&quot;&gt;Nexus instance&lt;/a&gt;. Even if big changes &lt;a href=&quot;http://maven.alfresco.com/nexus/content/repositories/releases/org/alfresco/alfresco/3.2r/alfresco-3.2r.pom&quot;&gt;are still due&lt;/a&gt;, you&#39;ll be more than happy to find Alfresco dismembered in maven artifacts, each one with it&#39;s POM. Most of them are just a kind of placeholders, but here and there you can find some &lt;a href=&quot;http://maven.alfresco.com/nexus/content/repositories/releases/org/alfresco/alfresco-jlan/3.3.0-preview-1/alfresco-jlan-3.3.0-preview-1.pom&quot;&gt;hints&lt;/a&gt; of what they&#39;re going to be.&lt;/p&gt;
+
+&lt;p&gt;Aside, the same Nexus instance also offers a new home for the &lt;a href=&quot;http://maven.alfresco.com/nexus/content/repositories/releases/com/sourcesense/&quot;&gt;components&lt;/a&gt; developed within &lt;a href=&quot;http://www.sourcesense.com&quot;&gt;Sourcesense &lt;/a&gt;that up until now are the only way to &lt;a href=&quot;http://mindthegab.com/2009/11/07/maven-alfresco-lifecycle-to-gather-all-maven-alfresco-components/&quot;&gt;leverage Maven when dealing with Alfresco&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;A &lt;a href=&quot;http://mindthegab.com/2009/12/02/dreams-come-true-launching-the-alfresco-community-maven-repository/&quot;&gt;great post&lt;/a&gt; from &lt;a href=&quot;http://twitter.com/mindthegabz&quot;&gt;the guy&lt;/a&gt; that made it happen will provide you more and more &lt;a href=&quot;http://maven.alfresco.com/nexus/content/repositories/alfresco-docs/maven-alfresco-lifecycle/index.html&quot;&gt;insights&lt;/a&gt;, &lt;a href=&quot;http://code.google.com/p/maven-alfresco-archetypes/&quot;&gt;pointers&lt;/a&gt; and stuff. All with a Maven taste.&lt;/p&gt;
+</summary>
+</entry>
+
+
+<entry>
+  <title>Alfresco and LDAP sync lock my Admin no more!</title>
+  <link href="http://skuro.tk/2009/09/15/alfresco-and-ldap-sync-lock-my-admin-no-more/"/>
+  <updated>2009-09-15T00:00:00+02:00</updated>
+  <id>http://skuro.tk/2009/09/15/alfresco-and-ldap-sync-lock-my-admin-no-more/</id>
+  <summary type="html">&lt;p&gt;On the custom &lt;a href=&quot;http://www.alfresco.com&quot;&gt;Alfresco Enterprise&lt;/a&gt; project I&#39;m working we use LDAP sync to import users from a Novell eDirectory server[&lt;a href=&quot;#note-1&quot;&gt;1&lt;/a&gt;]. Now, it happened from time to time that the user Alfresco binds itself with, i.e. the LDAP admin user, got locked in eDirectory as a &quot;Intrusion prevention&quot; mechanism or something like that.&lt;/p&gt;
+
+&lt;p&gt;The LDAP sysadmin said we were guilty of providing wrong credentials too many times when logging in. Which is weird, since most of the time the LDAP sync went well, which meant that either that sysadmin was seldom changing back and forth the Admin credentials or something Evil&amp;#8482; was going on under the hood. I personally feared for the latter, but let the issue wait a bit, since staging environments seemed to work just fine.&lt;/p&gt;
+
+&lt;p&gt;Then, when my dev team grew up with three more people, the issue worsened terribly, with the admin account locked almost any hour. I really started to get bothered by it, and did some investigations.&lt;/p&gt;
+
+&lt;p&gt;It turned out, it was all working &quot;by design&quot;, in the sense that yes, our Alfresco was providing wrong credentials and yes, the admin account was properly configured. This is how it went.&lt;/p&gt;
+
+&lt;p&gt;To be 100% sure our Alfresco configuration was correct, apart from checking every configuration file from here to eternity, I wanted to sniff the network connection to the LDAP server. When networked systems fail to work together, I always feel like I &lt;strong&gt;need&lt;/strong&gt; raw network data.&lt;/p&gt;
+
+&lt;p&gt;Made a &lt;a href=&quot;http://www.google.com/search?q=socat&quot;&gt;&lt;strong&gt;socat&lt;/strong&gt;&lt;/a&gt; tunnel[&lt;a href=&quot;#note-2&quot;&gt;2&lt;/a&gt;] to look at data BEFORE it entered the encrypted VPN connection, started Alfresco and waited. And, eventually, got it: I expected one bind connection request, I got more. Plus, the first three or four attempts were using almost random user accounts, while the last showed the known LDAP admin user name and the wrong password! WTF?&lt;/p&gt;
+
+&lt;p&gt;A closer look at the &lt;a href=&quot;http://svn.alfresco.com/repos/alfresco-open-mirror/alfresco/HEAD/root/projects/repository/source/java/org/alfresco/repo/security/authentication/ldap/LDAPInitialDirContextFactoryImpl.java&quot;&gt;Alfresco LDAP connector&lt;/a&gt; solved the mistery. Here&#39;s an excerpt from that code:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; // Correct principal invalid password
+ env = new Hashtable(initialDirContextEnvironment.size());
+ env.putAll(initialDirContextEnvironment);
+ env.put(Context.SECURITY_CREDENTIALS, &quot;sdasdasdasdasd123123123&quot;);
+ try
+ {
+
+     new InitialDirContext(env);
+
+     throw new AuthenticationException(
+             &quot;The ldap server at &quot;
+                     + env.get(Context.PROVIDER_URL)
+                     + &quot; falls back to use anonymous bind for a known principal if  invalid security credentials are presented. This is not supported.&quot;);
+ }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;That&#39;s it: Alfresco performs intentionally a number of connections that are supposed to fail, in order to infer some LDAP server configurations. The code presented here above is what made eDirectory lock the admin user: when our 5~6 developer environments started up, almost simultaneously at the morning, they performed too many wrong login attempts with the correct user name in a row before the first one eventually started using both the valid username &lt;strong&gt;and&lt;/strong&gt; the correct password.&lt;/p&gt;
+
+&lt;p&gt;Setting up the allowed failed logins on eDirectory for the local testing environment, finally, solved this hidden and tedious issue. Still unclear if the Alfresco approach is really a smart one, due to some limitations of the LDAP handshake protocol I&#39;m not aware of (well, I&#39;m not that LDAP expert, after all) or such intentionally failing logins can/should be deleted/changed. What do you think?&lt;/p&gt;
+
+&lt;p&gt;[&lt;a name=&quot;note-1&quot;&gt;1&lt;/a&gt;] Here Alfresco happens to be MultiTenant, but still we are able to import users&amp;amp;groups from the Directory. Which has been my very first successful customization task as an Alfresco dev :)&lt;/p&gt;
+
+&lt;p&gt;[&lt;a name=&quot;note-2&quot;&gt;2&lt;/a&gt;] I&#39;ll eventually end up using socat for brushing my teeth, I guess&lt;/p&gt;
+</summary>
+</entry>
+
+
+
+</feed>
