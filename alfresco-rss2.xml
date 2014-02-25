@@ -1,0 +1,7 @@
+---
+layout: feed
+permalink: /category/alfresco/feed
+---
+{% for post in site.categories.alfresco limit:20 %}
+{% include feeditem.xml %}
+{% endfor %}
