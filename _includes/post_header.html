@@ -10,7 +10,7 @@
     {% if page.categories != empty %}
     &nbsp;
     {% for c in page.categories %}
-    <a href="/category/{{ c }}">#{{ c }}</a><span>&nbsp;&nbsp;</span>
+    <span class="label label-primary"><a href="/category/{{ c }}">#{{ c }}</a></span>
     {% endfor %}
     {% endif %}
   </h5>

@@ -6,6 +6,51 @@
 
     <body>
 
+    <!-- Main content  -->
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container"><!-- containers restrict width -->
+            <span class="navbar-header">
+                <a class="navbar-brand" href="/">SKURO!</a>
+            </span>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="/archive">Browse the <strong>Archive</strong></a></li>
+                    <li><a href="/category">Browse by <strong>Categories</strong></a></li>
+                    <li><a href="/about">Learn more <strong>About me</strong></a></li>
+                </ul>
+
+                <div id="social-links" class="nav navbar-nav navbar-right">
+                    <div class="btn-toolbar">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-default"><a href="https://github.com/skuro"><img src="/img/github.png" /></a></button>
+                            <button type="button" class="btn btn-default"><a href="http://nl.linkedin.com/in/carlosciolla"><img src="/img/linkedin.png" /></a></button>
+                            <button type="button" class="btn btn-default"><a href="https://twitter.com/skuro"><img src="/img/twitter.png" /></a></button>
+                            <button type="button" class="btn btn-default"><a href="/rss2.xml"><img src="/img/rss.png" /></a></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container post-content">
+{{ content }}
+
+        <hr />
+        <!-- Footer -->
+        <footer>
+            <p>
+                <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license">
+                    <img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0;margin-bottom:10px" alt="Creative Commons License" />
+                </a> licensed under a Creative Commons <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license">license</a>
+            </p>
+            <span rel="dct:type" property="dct:title" href="http://purl.org/dc/dcmitype/Text">SKURO! blog</span> by <a rel="cc:attributionURL" property="cc:attributionName" href="http://skuro.tk">Carlo Sciolla</a></p>
+        </footer> <!-- end Footer -->
+    </div>
+
+    <!-- end Main content -->
+
     <!-- Advertisement  -->
     <div>
       <script type="text/javascript"><!--
@@ -20,44 +65,6 @@
               src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
       </script>
     </div> <!-- end Advertisement -->
-
-    <!-- Main content  -->
-    <div>
-      <header>
-        <span>
-          <img src="http://www.gravatar.com/avatar/3246c43cf35485e40a18e72fa1fa7ace" />
-        </span>
-        <h1><a href="/">SKURO!</a></h1>
-        <ul>
-          <li><a href="/archive">Browse the <strong>Archive</strong></a></li>
-          <li><a href="/category">Browse by <strong>Categories</strong></a></li>
-          <li><a href="/about">Learn more <strong>About me</strong></a></li>
-        </ul>
-        <p>
-          <a href="https://github.com/skuro"><img src="/img/github.png" /></a>
-          <a href="http://nl.linkedin.com/in/carlosciolla"><img src="/img/linkedin.png" /></a>
-          <a href="https://twitter.com/skuro"><img src="/img/twitter.png" /></a>
-          <a href="/rss2.xml"><img src="/img/rss.png" /></a>
-          <span>shading lights</span>
-        </p>
-      </header>
-
-      <section>
-        {{ content }}
-      </section>
-
-    </div> <!-- end Main content -->
-
-
-    <!-- Footer -->
-    <footer>
-        <p>
-            <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license">
-                <img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0;margin-bottom:10px" alt="Creative Commons License" />
-            </a> licensed under a Creative Commons <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license">license</a>
-        </p>
-        <span rel="dct:type" property="dct:title" href="http://purl.org/dc/dcmitype/Text">SKURO! blog</span> by <a rel="cc:attributionURL" property="cc:attributionName" href="http://skuro.tk">Carlo Sciolla</a></p>
-    </footer> <!-- end Footer -->
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>

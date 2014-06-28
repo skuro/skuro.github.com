@@ -5,11 +5,11 @@ comments: true
 <div>
   {% include post_header.html %}
   {% if page.primary_img %}
-  <img src="{{ page.primary_img }}" />
+  <img class="primary-image" src="{{ page.primary_img }}" />
   {% endif %}
   {{ content }}
   {% if page.comments %}
+  <hr />
   {% include disqus.html %}
   {% endif %}
-
 </div>
