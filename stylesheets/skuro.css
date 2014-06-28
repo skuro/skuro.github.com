@@ -9,6 +9,7 @@ div.post-content {
   position: absolute;
   top: 60px;
   left: 145px;
+  font-size: initial;
 }
 
 img.primary-image {

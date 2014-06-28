@@ -4,7 +4,7 @@
     <img src="/img/link.jpg" alt="Permalink to {{ page.title }}" />
   </a>
 </h1>
-<blockquote>
+<div class="well well-sm">
   <h5>
     {{ page.date | date: "%B %e, %Y" }}
     {% if page.categories != empty %}
@@ -14,4 +14,4 @@
     {% endfor %}
     {% endif %}
   </h5>
-</blockquote>
+</div>
