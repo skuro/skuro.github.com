@@ -1,36 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
     <head>
-        <!--
-        This is the personal blog of Carlo Sciolla, a.k.a. skuro.
-
-        Thank you oh so much for peeking around the source code of my blog! I'm
-        an experienced software developer, but as I usually hang around the
-        server side of the world, the markup, JS and CSS here might not be
-        the most beautiful thing you have ever seen.
-
-        Also, most of it is a cut'n'paste, or strongly inspired by half of
-        the Internet, so if you recognize any of your work in this site please
-        let me know if you want any public endorsement, as I have eternal
-        gratitude for you!
-
-        Truly yours,
-        c.
-        -->
-        <meta charset="utf-8" />
-        <meta name="generator" content="skuro.tk/0.1 | jekyll/2.0.3" />
-        <meta name="description" content="{% if page.meta-description %}{{ page.meta-description }}{% else %}{{ site.description }}{% endif %}" />
-        {% if page.keywords %}<meta name="keywords" content="{{ page.keywords | join: ', ' }}" />{% else %}<meta name="keywords" content="{{ site.keywords }}" />{% endif %}
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-
-        <link rel="stylesheet" href="/stylesheets/styles.css" type="text/css" />
-        <link rel="stylesheet" href="/stylesheets/pygment_trac.css" type="text/css" />
-        <link rel="stylesheet" href="/stylesheets/skuro.css" type="text/css" />
-
-        <title>{% if page.title %}{{ page.title }} @ {% endif %}{{ site.title }}</title>
-        <!--[if lt IE 9]>
-        <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
+        {% include head.html %}
     </head>
 
     <body>

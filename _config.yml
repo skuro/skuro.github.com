@@ -2,6 +2,8 @@
 title      : SKURO! -- Shading lights
 description: Personal Blog of Carlo Sciolla (skuro)
 keywords   : clojure,java,scala,alfresco,lambdalf,performance,programming,developer,backbase
+logo       : avatar.jpg
+url        : http://skuro.tk
 
 # Owner/author information
 owner:
