@@ -1,4 +1,26 @@
+# Site meta
+title      : SKURO! -- Shading lights
+description: Personal Blog of Carlo Sciolla (skuro)
+keywords   : clojure,java,scala,alfresco,lambdalf,performance,programming,developer,backbase
+
+# Owner/author information
+owner:
+  name         : Carlo Sciolla
+  avatar       :
+  email        : carlo.sciolla@gmail.com
+  twitter      : skuro
+  facebook     :
+  github       : skuro
+  stackexchange:
+  linkedin     :
+  instagram    :
+  flickr       :
+  tumblr       :
+  # For Google Authorship https://plus.google.com/authorship
+  google_plus  :
+
+# Jekyll config
 highlighter: pygments
-paginate: 7
-markdown: rdiscount
-permalink: /:year/:month/:day/:title
+paginate   : 7
+markdown   : rdiscount
+permalink  : /:year/:month/:day/:title
