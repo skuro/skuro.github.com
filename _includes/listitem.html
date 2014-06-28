@@ -1,9 +1,9 @@
 <li>
-  <span class="date">{{ post.date | date: "%e %B %Y" }}</span>
+  <span>{{ post.date | date: "%e %B %Y" }}</span>
   <a href="{{ post.url }}">{{ post.title }}</a>
-  <span class="categories">
+  <span>
     {% for c in post.categories %}
-    <a class="tag" href="/category/{{ c }}">#{{ c }}</a>
+    <a href="/category/{{ c }}">#{{ c }}</a>
     {% endfor %}
-  </span>        
-</li> 
+  </span>
+</li>

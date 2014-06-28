@@ -5,7 +5,7 @@ layout: default
   <h1>Categories</h1>
   <div>
     {% for c in page.categories %}
-    <a class="tag" href="/category/{{ c.title }}/" style="font-size:{{ c.size }}px">#{{ c.title }}</a>
+    <a href="/category/{{ c.title }}/" style="font-size:{{ c.size }}px">#{{ c.title }}</a>
     {% endfor %}
   </div>
 </section>
