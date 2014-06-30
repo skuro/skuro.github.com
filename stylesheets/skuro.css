@@ -1,7 +1,19 @@
+/* overriding defaults from the bootstrap theme */
+body {
+  color: #000;
+}
+
 /* header and top stuff */
 div#social-links {
   position: relative;
-  top: 6px;
+  top: 10px;
+}
+
+/* post header */
+.category a {
+  color: #fff;
+  font-weight: initial;
+  font-variant: small-caps;
 }
 
 /* post contents */
@@ -18,4 +30,10 @@ img.primary-image {
   -moz-border-radius: 5px;
   border-radius: 5px;
   margin-left: 10px;
+}
+
+/* ads */
+div.google-ads {
+  position: absolute;
+  top: 60px;
 }

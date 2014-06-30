@@ -14,21 +14,21 @@ comments: false
     <img src="/img/link.jpg" alt="Permalink to {{ post.title }}" />
   </a>
 </h1>
-<blockquote class="date-wrapper">
-  <h5 class="date">
+<div class="well well-sm">
+  <h5>
     {{ post.date | date: "%B %e, %Y" }}
     {% if post.categories != empty %}
     &nbsp;
     {% for c in post.categories %}
-    <a class="tag" href="/category/{{ c }}">#{{ c }}</a><span>&nbsp;&nbsp;</span>
+    <span class="label label-primary category"><a href="/category/{{ c }}">#{{ c }}</a></span>
     {% endfor %}
     {% endif %}
   </h5>
-</blockquote>
+</div>
 <!-- end copy -->
 
   {% if post.primary_img %}
-  <img src="{{ post.primary_img }}" class="primary" />
+  <img class="primary-image" src="{{ post.primary_img }}" />
   {% endif %}
   {{ post.content }}
 
