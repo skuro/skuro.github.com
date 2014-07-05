@@ -7,6 +7,8 @@ comments: false
 
 <div class="post">
 
+{% include previous_next.html %}
+
 <!-- copied from post_header include -->
 <h1>
   {{ post.title }}
