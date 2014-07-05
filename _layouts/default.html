@@ -35,6 +35,13 @@
     </div>
 
     <div class="container post-content">
+
+      <ul class="pager">
+        {% if page.previous %}<li class="previous"><a href="{{ page.previous.url }}">&#8617; {{ page.previous.title }}</a></li>{% else if site.posts[1] %}
+        <li class="previous"><a href="{{ site.posts[1].url }}">&#8617; {{ site.posts[1].title }}</a></li>{% endif %}
+        {% if page.next %}<li class="next"><a class="pull-right" href="{{ page.next.url }}">{{ page.next.title }} &#8618;</a></li>{% endif %}
+      </ul>
+
 {{ content }}
 
         <hr />
