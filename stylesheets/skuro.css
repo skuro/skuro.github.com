@@ -1,6 +1,23 @@
 /* overriding defaults from the bootstrap theme */
 body {
+  background: url("/img/repeat.png") repeat-y -8px bottom;
   color: #000;
+}
+
+.navbar {
+  background: url("/img/repeat.png") repeat-y -8px bottom;
+  background-color: #fff;
+}
+
+.btn-default {
+  /* background-color: #f5f5f5;
+  border-color: #e3e3e3; */
+  background-color: #fff;
+  border: 0px;
+}
+
+.btn-default:hover {
+  background-color: #eeeeee;
 }
 
 /* header and top stuff */
