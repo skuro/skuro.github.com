@@ -1,11 +1,11 @@
 ---
 layout: default
 ---
-<div class="post">
-  <h1 class="title">
+<div>
+  <h1>
     Posts filed under <a href="{{ page.url }}">#{{ page.title }}</a>
   </h1>
-  <div id="archive" class="archive">
+  <div>
     <ul>
       {% for post in page.category %}
         {% include listitem.html %}
