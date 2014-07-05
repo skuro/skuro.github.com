@@ -18,8 +18,8 @@ Quick user guide
 
 If you need an user guide, the site is itself not easy enough to use. But let's give a couple of pointers to start with:
 
-- you need to start a new diagram, you go to [http://seeduml.com]()
-- a random diagram ID is generated, and you'll be redirected to such diagram page (eg: [http://seeduml.com/GBK3c]())
+- you need to start a new diagram, you go to [http://seeduml.com](http://seeduml.com)
+- a random diagram ID is generated, and you'll be redirected to such diagram page (eg: [http://seeduml.com/GBK3c](http://seeduml.com/GBK3c))
 - remember to bookmark the URL if the diagram is important, as there's no user save
 - you follow PlantUML docs and create beautiful diagram
 - whenever you need to edit the doc again, you go back to the same URL (you bookmarked it, right?)
