@@ -3,12 +3,13 @@ layout: post
 title: About me
 date: November 20, 2011
 categories: []
+keywords: [skuro, carlo sciolla, clojure, backbase, biography, architecture]
 permalink: /about/
 ---
 
-> Although a firm friend of order, I am (in the full force of the term) an anarchist
+> Patrias est mellus a ddas tenni prus de una
 >
-> *J. P. Proudhon*
+> *Joice Lussu*
 
 This little piece of blogosphere is owned by `skuro`, a.k.a. Carlo
 Sciolla. I'm an IT professional by day and Clojurian,
@@ -18,8 +19,6 @@ night.
 Work stuff
 ------------------------
 
-<img src="http://krypthonas.de/images/alfresco_thumb.png" style="float:right; margin: 0px 20px" />
-
 <img src="http://profile.ak.fbcdn.net/hprofile-ak-snc4/23271_352288013495_939_q.jpg" style="float:right; margin: 0px 20px" />
 
 I grew up from fiddling with embedded linux systems, to mobile
@@ -27,7 +26,7 @@ development, to mainstream Java&trade; backend development. I got
 certified as an [Alfresco](http://www.alfresco.com) Recognized Developer on 2011.
 
 I currently work at [Backbase](http://www.backbase.com), where I act
-as a Product Lead and content/ECM expert.
+as the Technical Managerfor the server components of the [Backbase CXP](http://www.backbase.com/portal-software) product.
 
 Clojure
 -------
@@ -41,8 +40,6 @@ Open Source
 There simply isn't any other way of doing software (said the guy that
 works for a closed source software company). I contribute at different
 levels to the following open source projects:
-
-<img src="http://www.elementmypc.com/main/images/featured/opensource.png" alt="OSI" style="float:left; margin: 0px 20px;" />
 
 * [`plan-maven-plugin`](http://plan-maven-plugin.skuro.tk) -- Unravel your maven build
 * [`lambdalf`](http://lambdalf.skuro.tk) -- Clojure bridge for Alfresco
