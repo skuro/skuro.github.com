@@ -3,13 +3,45 @@
     <title type="text" xml:lang="en">SKURO! -- Shading lights</title>
     <link type="application/atom+xml" href="http://skuro.tk/rss2/" rel="self"/>
     <link type="text" href="http://skuro.tk" rel="alternate"/>
-    <updated>2014-02-09T01:49:01+01:00</updated>
+    <updated>2014-07-06T14:58:56+02:00</updated>
     <id>http://skuro.tk</id>
     <author>
         <name>Carlo Sciolla</name>
     </author>
     <rights>Copyright (c) 2010-2011 Carlo Sciolla</rights>
     
+<entry>
+  <title>Alfresco H2 support releases and versioning scheme</title>
+  <link href="http://skuro.tk/2014/07/06/alfresco-h2-support-new-releases-version-scheme/"/>
+  <updated>2014-07-06T00:00:00+02:00</updated>
+  <id>http://skuro.tk/2014/07/06/alfresco-h2-support-new-releases-version-scheme/</id>
+  <summary type="html">&lt;p&gt;Some time has passed since the &lt;a href=&quot;/2013/03/27/h2-support-for-alfresco-3-4-12-and-maven/&quot;&gt;last releases&lt;/a&gt;, and all the merits go once again to our dear &lt;a href=&quot;http://springyweb.com/&quot;&gt;John Evans&lt;/a&gt; from &lt;a href=&quot;http://www.ixxus.com/&quot;&gt;Ixxus&lt;/a&gt;. Let&#39;s see what&#39;s new in the project.&lt;/p&gt;
+
+&lt;h1&gt;Lots of releases, now with a new version scheme!&lt;/h1&gt;
+
+&lt;p&gt;We were lagging behind Alfresco releases quite a bit, so you now have quite some &lt;a href=&quot;https://github.com/skuro/alfresco-h2-support/wiki/H2-Database-support-for-Alfresco&quot;&gt;new releases&lt;/a&gt; to look at. Most importantly, starting with Alfresco 4.2.0 we decided to align H2 Support with the official Alfresco versioning. So, while H2 Support v1.7 and v1.8 are the ones to be used respectively with Alfresco Enterprise 4.1.5 and 4.1.6, you will easily guess what versions of Alfresco Enterprise will have to use H2 Support v4.2.0 and v4.2.1.&lt;/p&gt;
+
+&lt;p&gt;Say your Alfresco v4.2.0 project is based on the &lt;a href=&quot;https://code.google.com/p/maven-alfresco-archetypes/&quot;&gt;maven archetypes&lt;/a&gt; (and shame on you if it&#39;s not), then you could simply override the following &lt;code&gt;&amp;lt;property&amp;gt;&lt;/code&gt; in your pom:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-xml&quot; data-lang=&quot;xml&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;h2-support.version&amp;gt;&lt;/span&gt;${alfresco.version}&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h2-support.version&amp;gt;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- WARN WARN WARN!! --&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Neah huh? But there&#39;s a big &lt;code&gt;WARN&lt;/code&gt; sign in there, why&#39;s that?&lt;/p&gt;
+
+&lt;p&gt;Say the release of H2 Support is broken in any way (in theory it should never happen, but in practice it might happen). Then it might be a bit unfortunate if your poms rely on H2 Support and Alfresco to have exactly the same version. So, while the above should work in most cases, the preferred way to include H2 Support in your project is still as follows:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-xml&quot; data-lang=&quot;xml&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;h2-support.version&amp;gt;&lt;/span&gt;4.2.0&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h2-support.version&amp;gt;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- much better! --&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1&gt;Plans for the future&lt;/h1&gt;
+
+&lt;p&gt;In the future we plan to have a different strategy to bring H2 Support for Alfresco. Currently, we simply copy all the PostgreSQL in an H2 friendly package, so that the internal Alfresco machinery will automatically find them. Then, H2 compatibility mode is used to make the PostgreSQL dialect understood by the H2 driver. That&#39;s obviously suboptimal, and we will research methods to skip shuffling files around, but rather override the Alfresco SQL files locator strategy. The new strategy should provide a better integration with any Alfresco release, and we might very well need not new H2 Support releases per Alfresco version.&lt;/p&gt;
+
+&lt;p&gt;If you&#39;d like to help us realizing this integration sweet spot, you&#39;re so much welcome to joink the H2 Support crew!&lt;/p&gt;
+</summary>
+</entry>
+
+
 <entry>
   <title>SeedUML, an online PlantUML editor</title>
   <link href="http://skuro.tk/2014/02/09/seeduml-an-online-plantuml-editor/"/>
@@ -26,8 +58,8 @@
 &lt;p&gt;If you need an user guide, the site is itself not easy enough to use. But let&#39;s give a couple of pointers to start with:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;you need to start a new diagram, you go to &lt;a href=&quot;&quot;&gt;http://seeduml.com&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;a random diagram ID is generated, and you&#39;ll be redirected to such diagram page (eg: &lt;a href=&quot;&quot;&gt;http://seeduml.com/GBK3c&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;you need to start a new diagram, you go to &lt;a href=&quot;http://seeduml.com&quot;&gt;http://seeduml.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;a random diagram ID is generated, and you&#39;ll be redirected to such diagram page (eg: &lt;a href=&quot;http://seeduml.com/GBK3c&quot;&gt;http://seeduml.com/GBK3c&lt;/a&gt;)&lt;/li&gt;
 &lt;li&gt;remember to bookmark the URL if the diagram is important, as there&#39;s no user save&lt;/li&gt;
 &lt;li&gt;you follow PlantUML docs and create beautiful diagram&lt;/li&gt;
 &lt;li&gt;whenever you need to edit the doc again, you go back to the same URL (you bookmarked it, right?)&lt;/li&gt;
@@ -988,23 +1020,6 @@ lesser attention to fully understanding Maven: after all, a recipes book cannot 
 &lt;p&gt;There&#39;s also an &lt;a href=&quot;http://slidesha.re/uqUqOW&quot;&gt;extended version&lt;/a&gt; of the presentation that I originally wrote, which ended up being too big for the time slot I had.&lt;/p&gt;
 
 &lt;p&gt;Hope you either enjoyed the talk or the slides, next steps are getting to &lt;a href=&quot;https://github.com/skuro&quot;&gt;GitHub&lt;/a&gt; and fork &lt;a href=&quot;https://github.com/skuro/lambdalf&quot;&gt;lambdalf&lt;/a&gt; and &lt;a href=&quot;https://github.com/skuro/spring-webscripts-addon-clojure&quot;&gt;clojure webscripts&lt;/a&gt; away!&lt;/p&gt;
-</summary>
-</entry>
-
-
-<entry>
-  <title>October Amsterdam Clojure with Uncle Bob</title>
-  <link href="http://skuro.tk/2011/09/27/october-amsterdam-clojure-with-uncle-bob/"/>
-  <updated>2011-09-27T00:00:00+02:00</updated>
-  <id>http://skuro.tk/2011/09/27/october-amsterdam-clojure-with-uncle-bob/</id>
-  <summary type="html">&lt;p&gt;I&#39;m very excited to announce that we have finalized the details, and
-Wednesday, October 12th we&#39;re going to have a great &lt;a href=&quot;http://bit.ly/ams-clj&quot;&gt;Amsterdam Clojure meetup&lt;/a&gt;&quot;, with great talks and an awesome guest speaker: &lt;a href=&quot;http://twitter.com/#!/unclebobmartin&quot;&gt;&quot;Uncle&quot; Bob Martin&lt;/a&gt; from &lt;a href=&quot;http://www.objectmentor.com/&quot;&gt;Object Mentor&lt;/a&gt; and of &lt;a href=&quot;http://www.cleancoders.com/&quot;&gt;Clean Coders&lt;/a&gt; fame.&lt;/p&gt;
-
-&lt;p&gt;Thanks to &lt;a href=&quot;http://www.sourcesense.com&quot;&gt;Sourcesense&lt;/a&gt;, which is once again backing up and ultimately allowing this event to happen in an awesome location such as the &lt;a href=&quot;http://www.dezwijger.nl/&quot;&gt;Pakhuis de Zwijger&lt;/a&gt;, I look forward to meet a number of Clojure enthusiast, newcomers or tired Java developers looking for something new.&lt;/p&gt;
-
-&lt;p&gt;We have limited seating possibilities, so make sure to register at the &lt;a href=&quot;http://www.meetup.com/The-Amsterdam-Clojure-Meetup-Group/events/33351892/&quot;&gt;meetup official page&lt;/a&gt; to ensure there will be a spot for you!&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://bit.ly/ams-clj&quot;&gt;&lt;img src=&quot;http://download.skuro.tk/flyer.jpg&quot; alt=&quot;&amp;quot;Click to register&amp;quot;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 </summary>
 </entry>
 

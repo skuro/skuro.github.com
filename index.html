@@ -102,31 +102,31 @@ c.
 
 <ul class="pager">
   
-  <li class="previous"><a href="/2013/03/27/h2-support-for-alfresco-3-4-12-and-maven">&#8617; H2 support 1.1.1 for Alfresco 3.4.12 Enterprise with Maven</a></li>
+  <li class="previous"><a href="/2014/02/09/seeduml-an-online-plantuml-editor">&#8617; SeedUML, an online PlantUML editor</a></li>
   
 </ul>
 
 
 <!-- copied from post_header include -->
 <h1>
-  SeedUML, an online PlantUML editor
-  <a href="/2014/02/09/seeduml-an-online-plantuml-editor">
-    <img src="/img/link.jpg" alt="Permalink to SeedUML, an online PlantUML editor" />
+  Alfresco H2 support releases and versioning scheme
+  <a href="/2014/07/06/alfresco-h2-support-new-releases-version-scheme">
+    <img src="/img/link.jpg" alt="Permalink to Alfresco H2 support releases and versioning scheme" />
   </a>
 </h1>
 <div class="well well-sm">
   <h5>
-    February  9, 2014
+    July  6, 2014
     
     &nbsp;
     
-    <span class="label label-primary category"><a href="/category/seeduml">#seeduml</a></span>
+    <span class="label label-primary category"><a href="/category/alfresco">#alfresco</a></span>
     
-    <span class="label label-primary category"><a href="/category/uml">#uml</a></span>
+    <span class="label label-primary category"><a href="/category/alm">#alm</a></span>
     
-    <span class="label label-primary category"><a href="/category/design">#design</a></span>
+    <span class="label label-primary category"><a href="/category/h2-support">#h2-support</a></span>
     
-    <span class="label label-primary category"><a href="/category/software">#software</a></span>
+    <span class="label label-primary category"><a href="/category/maven">#maven</a></span>
     
     
   </h5>
@@ -134,43 +134,31 @@ c.
 <!-- end copy -->
 
   
-  <img class="primary-image" src="/img/post/seeduml.png" />
+  <img class="primary-image" src="/img/post/alfresco-h2.png" />
   
-  <h1>Finally online</h1>
+  <p>Some time has passed since the <a href="/2013/03/27/h2-support-for-alfresco-3-4-12-and-maven/">last releases</a>, and all the merits go once again to our dear <a href="http://springyweb.com/">John Evans</a> from <a href="http://www.ixxus.com/">Ixxus</a>. Let's see what's new in the project.</p>
 
-<p>It's my pleasure to announce the availability of <a href="http://seeduml.com">SeedUML</a>, the online editor for UML diagrams based on the great <a href="http://plantuml.sourceforge.net/">PlantUML language</a>.</p>
+<h1>Lots of releases, now with a new version scheme!</h1>
 
-<p>As it's in its early beta stages, I'm sure you'll find some rough edges here and there, but there's some great and useful features I'm sure you'll love. Especially if you're new to PlantUML, you'll find a damn easy way to create all sorts of UML diagrams, like <a href="http://seeduml.com/GBK3c">state</a>, <a href="http://seeduml.com/Nmr0D">sequence</a>, <a href="http://seeduml.com/Jgfv9">class</a>, etc, all with a crystal clear plain text description. The diagram updates as you type, and you can save the image for later use, or simply link it wherever you need it to show up.</p>
+<p>We were lagging behind Alfresco releases quite a bit, so you now have quite some <a href="https://github.com/skuro/alfresco-h2-support/wiki/H2-Database-support-for-Alfresco">new releases</a> to look at. Most importantly, starting with Alfresco 4.2.0 we decided to align H2 Support with the official Alfresco versioning. So, while H2 Support v1.7 and v1.8 are the ones to be used respectively with Alfresco Enterprise 4.1.5 and 4.1.6, you will easily guess what versions of Alfresco Enterprise will have to use H2 Support v4.2.0 and v4.2.1.</p>
 
-<h1>Quick user guide</h1>
+<p>Say your Alfresco v4.2.0 project is based on the <a href="https://code.google.com/p/maven-alfresco-archetypes/">maven archetypes</a> (and shame on you if it's not), then you could simply override the following <code>&lt;property&gt;</code> in your pom:</p>
 
-<p>If you need an user guide, the site is itself not easy enough to use. But let's give a couple of pointers to start with:</p>
-
-<ul>
-<li>you need to start a new diagram, you go to <a href="http://seeduml.com">http://seeduml.com</a></li>
-<li>a random diagram ID is generated, and you'll be redirected to such diagram page (eg: <a href="http://seeduml.com/GBK3c">http://seeduml.com/GBK3c</a>)</li>
-<li>remember to bookmark the URL if the diagram is important, as there's no user save</li>
-<li>you follow PlantUML docs and create beautiful diagram</li>
-<li>whenever you need to edit the doc again, you go back to the same URL (you bookmarked it, right?)</li>
-</ul>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;h2-support.version&gt;</span>${alfresco.version}<span class="nt">&lt;/h2-support.version&gt;</span> <span class="c">&lt;!-- WARN WARN WARN!! --&gt;</span></code></pre></div>
 
 
-<p>Done. Easy, huh?</p>
+<p>Neah huh? But there's a big <code>WARN</code> sign in there, why's that?</p>
 
-<h1>Disclaimer</h1>
+<p>Say the release of H2 Support is broken in any way (in theory it should never happen, but in practice it might happen). Then it might be a bit unfortunate if your poms rely on H2 Support and Alfresco to have exactly the same version. So, while the above should work in most cases, the preferred way to include H2 Support in your project is still as follows:</p>
 
-<p>This is an <strong>early beta</strong>, use at your own risk (and pleasure, hopefully). Especially, don't expect to</p>
-
-<ul>
-<li>be guaranteed that your diagrams will stay there forever</li>
-<li>the service will be up and running at all times</li>
-<li>be able to save hidden diagrams</li>
-<li>have a rock solid syntax highlight</li>
-<li>etc etc etc</li>
-</ul>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;h2-support.version&gt;</span>4.2.0<span class="nt">&lt;/h2-support.version&gt;</span> <span class="c">&lt;!-- much better! --&gt;</span></code></pre></div>
 
 
-<p>I will share some of the juicy technical details of that site later on on these pages, but for now, have fun and happy diagram authoring!</p>
+<h1>Plans for the future</h1>
+
+<p>In the future we plan to have a different strategy to bring H2 Support for Alfresco. Currently, we simply copy all the PostgreSQL in an H2 friendly package, so that the internal Alfresco machinery will automatically find them. Then, H2 compatibility mode is used to make the PostgreSQL dialect understood by the H2 driver. That's obviously suboptimal, and we will research methods to skip shuffling files around, but rather override the Alfresco SQL files locator strategy. The new strategy should provide a better integration with any Alfresco release, and we might very well need not new H2 Support releases per Alfresco version.</p>
+
+<p>If you'd like to help us realizing this integration sweet spot, you're so much welcome to joink the H2 Support crew!</p>
 
 
 </div>

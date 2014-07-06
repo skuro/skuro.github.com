@@ -24,24 +24,24 @@ c.
 -->
 <meta charset="utf-8" />
 <meta name="generator" content="skuro.tk/0.1 | jekyll/2.0.3" />
-<meta name="description" content="Personal Blog of Carlo Sciolla (skuro)" />
-<meta name="keywords" content="clojure,java,scala,alfresco,lambdalf,performance,programming,developer,backbase" />
+<meta name="description" content="Alfresco H2 support got new releases and a new versioning scheme" />
+<meta name="keywords" content="alfresco, h2, github, database, maven" />
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
 <!-- Twitter Cards -->
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://skuro.tk/img/avatar.jpg">
-<meta name="twitter:title" content="GOTO's spirit still haunts Java...">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://skuro.tk/img/post/alfresco-h2.png">
+<meta name="twitter:title" content="Alfresco H2 support releases and versioning scheme">
 <meta name="twitter:description" content="Personal Blog of Carlo Sciolla (skuro)">
 <meta name="twitter:creator" content="@skuro">
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="GOTO's spirit still haunts Java...">
+<meta property="og:title" content="Alfresco H2 support releases and versioning scheme">
 <meta property="og:description" content="Personal Blog of Carlo Sciolla (skuro)">
-<meta property="og:url" content="http://skuro.tk/2008/12/20/gotos-spirit-still-haunts-javaor-not">
+<meta property="og:url" content="http://skuro.tk/2014/07/06/alfresco-h2-support-new-releases-version-scheme">
 <meta property="og:site_name" content="SKURO! -- Shading lights">
 
 <!-- <link rel="stylesheet" href="/stylesheets/styles.css" type="text/css" /> -->
@@ -60,7 +60,7 @@ c.
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 
-<title>GOTO's spirit still haunts Java... @ SKURO! -- Shading lights</title>
+<title>Alfresco H2 support releases and versioning scheme @ SKURO! -- Shading lights</title>
 
     </head>
 
@@ -97,80 +97,62 @@ c.
     <div class="container post-content">
 
 <ul class="pager">
-  
   <li class="previous"><a href="/2014/02/09/seeduml-an-online-plantuml-editor">&#8617; SeedUML, an online PlantUML editor</a></li>
-  <li class="next"><a class="pull-right" href="/2008/12/20/here-we-are-again">Here we are. Again &#8618;</a></li>
+  
 </ul>
 
 
 <div>
   <h1>
-  GOTO's spirit still haunts Java...
-  <a href="/2008/12/20/gotos-spirit-still-haunts-javaor-not">
-    <img src="/img/link.jpg" alt="Permalink to GOTO's spirit still haunts Java..." />
+  Alfresco H2 support releases and versioning scheme
+  <a href="/2014/07/06/alfresco-h2-support-new-releases-version-scheme">
+    <img src="/img/link.jpg" alt="Permalink to Alfresco H2 support releases and versioning scheme" />
   </a>
 </h1>
 <div class="well well-sm">
   <h5>
-    December 20, 2008
+    July  6, 2014
     
     &nbsp;
     
-    <span class="label label-primary category"><a href="/category/java">#java</a></span>
+    <span class="label label-primary category"><a href="/category/alfresco">#alfresco</a></span>
+    
+    <span class="label label-primary category"><a href="/category/alm">#alm</a></span>
+    
+    <span class="label label-primary category"><a href="/category/h2-support">#h2-support</a></span>
+    
+    <span class="label label-primary category"><a href="/category/maven">#maven</a></span>
     
     
   </h5>
 </div>
 
   
-  <p>Some days ago I was debugging some LDAP-related customizations I made on <a title="Alfresco ECM" href="http://www.alfresco.com" target="_blank">Alfresco</a>, and I run into an odd piece of code which made my eyebrow raise: labeled <code>break</code> (and <code>continue</code>) statements. Believe it or not, labels are still there, and someone still uses them. Here's a dumb example:</p>
+  <img class="primary-image" src="/img/post/alfresco-h2.png" />
+  
+  <p>Some time has passed since the <a href="/2013/03/27/h2-support-for-alfresco-3-4-12-and-maven/">last releases</a>, and all the merits go once again to our dear <a href="http://springyweb.com/">John Evans</a> from <a href="http://www.ixxus.com/">Ixxus</a>. Let's see what's new in the project.</p>
 
-<pre><code>String[] someStrings = getStringsFromSomewhere ();
-String[] patterns = getPatternsFromSomewhereElse ();
-// find a string which matches one of the patterns
-// and send it to someone
-outer:
-for (String s : strings)
-{
-  for (String pattern : patterns)
-  {
-    if (str.matches(pattern))
-    {
-       sendMessage (str);
-       break outer;
-    }
-  }
-}
-</code></pre>
+<h1>Lots of releases, now with a new version scheme!</h1>
 
-<p>Using lables, we're now to break the <strong>outer</strong> loop while still inside the <strong>inner</strong> loop. Even if this example code is somewhat clear and straightforward, and it could be handy to use lables in nested loops, with more complex logic and/or with an extensive use of labels, the code can easily became unreadable, with a taste of spaghetti a' la' GOTO.</p>
+<p>We were lagging behind Alfresco releases quite a bit, so you now have quite some <a href="https://github.com/skuro/alfresco-h2-support/wiki/H2-Database-support-for-Alfresco">new releases</a> to look at. Most importantly, starting with Alfresco 4.2.0 we decided to align H2 Support with the official Alfresco versioning. So, while H2 Support v1.7 and v1.8 are the ones to be used respectively with Alfresco Enterprise 4.1.5 and 4.1.6, you will easily guess what versions of Alfresco Enterprise will have to use H2 Support v4.2.0 and v4.2.1.</p>
 
-<p>Anyway, labels can still be used in a clever way, and many renowned code makes use of them. Most notably, <a title="String class sources" href="http://docjar.org/html/api/java/lang/String.java.html" target="_blank"><code>java.lang.String</code></a> contains some good examples (<code>toLowerCase</code> and <code>toUpperCase</code>) which are worth some minutes to understand how they work.</p>
+<p>Say your Alfresco v4.2.0 project is based on the <a href="https://code.google.com/p/maven-alfresco-archetypes/">maven archetypes</a> (and shame on you if it's not), then you could simply override the following <code>&lt;property&gt;</code> in your pom:</p>
 
-<p>UPDATE:
-it turned out, <b>labels can be attached on every kind of statement</b>, not only on loops. Thus this code is still valid Java&trade; code, though it maybe lacks common sense:</p>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;h2-support.version&gt;</span>${alfresco.version}<span class="nt">&lt;/h2-support.version&gt;</span> <span class="c">&lt;!-- WARN WARN WARN!! --&gt;</span></code></pre></div>
 
-<pre><code>public class Ugly
-{
-  public static void main (String[] argv)
-  {
-    int tmp = 0;
-    LABEL:
-    {
-      ++tmp;
-      System.out.println ("before breaking");
-      if (true)
-        break LABEL;
-        System.out.println ("after breaking");
-    }
-  }
-}
-</code></pre>
 
-<p>As you can imagine, the second <code>println</code> is neved executed, since the labeled <code>break</code> statement makes the program jump to the end of the labeled statement.
-Could you find any reason to give ground for such a code?</p>
+<p>Neah huh? But there's a big <code>WARN</code> sign in there, why's that?</p>
 
-<p>Bye!</p>
+<p>Say the release of H2 Support is broken in any way (in theory it should never happen, but in practice it might happen). Then it might be a bit unfortunate if your poms rely on H2 Support and Alfresco to have exactly the same version. So, while the above should work in most cases, the preferred way to include H2 Support in your project is still as follows:</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;h2-support.version&gt;</span>4.2.0<span class="nt">&lt;/h2-support.version&gt;</span> <span class="c">&lt;!-- much better! --&gt;</span></code></pre></div>
+
+
+<h1>Plans for the future</h1>
+
+<p>In the future we plan to have a different strategy to bring H2 Support for Alfresco. Currently, we simply copy all the PostgreSQL in an H2 friendly package, so that the internal Alfresco machinery will automatically find them. Then, H2 compatibility mode is used to make the PostgreSQL dialect understood by the H2 driver. That's obviously suboptimal, and we will research methods to skip shuffling files around, but rather override the Alfresco SQL files locator strategy. The new strategy should provide a better integration with any Alfresco release, and we might very well need not new H2 Support releases per Alfresco version.</p>
+
+<p>If you'd like to help us realizing this integration sweet spot, you're so much welcome to joink the H2 Support crew!</p>
 
   
   <hr />
@@ -178,7 +160,7 @@ Could you find any reason to give ground for such a code?</p>
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
     var disqus_shortname = 'skuro';
-//    var disqus_id = '/2008/12/20/gotos-spirit-still-haunts-javaor-not';
+//    var disqus_id = '/2014/07/06/alfresco-h2-support-new-releases-version-scheme';
 //    var disqus_url = [location.protocol, '//', location.host, location.pathname].join('');
 
     /* * * DON'T EDIT BELOW THIS LINE * * */
