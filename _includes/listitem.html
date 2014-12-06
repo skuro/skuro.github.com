@@ -1,9 +1,10 @@
 <li>
-  <span>{{ post.date | date: "%e %B %Y" }}</span>
   <a href="{{ post.url }}">{{ post.title }}</a>
+  <h6>{{ post.date | date: "%e %B %Y" }}
   <span>
     {% for c in post.categories %}
     <span class="label label-primary category"><a href="/category/{{ c }}">#{{ c }}</a></span>
     {% endfor %}
   </span>
+  </h6>
 </li>
