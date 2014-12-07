@@ -1,10 +1,9 @@
 <h1>
-  {{ page.title }}
   <a href="{{ page.url }}">
-    <img src="/img/link.jpg" alt="Permalink to {{ page.title }}" />
+    {{ page.title }}
   </a>
 </h1>
-<div class="well well-sm">
+<div class="meta">
   <h5>
     {{ page.date | date: "%B %e, %Y" }}
     {% if page.categories != empty %}
@@ -15,3 +14,5 @@
     {% endif %}
   </h5>
 </div>
+
+<hr />

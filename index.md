@@ -11,12 +11,11 @@ comments: false
 
 <!-- copied from post_header include -->
 <h1>
-  {{ post.title }}
   <a href="{{ post.url }}">
-    <img src="/img/link.jpg" alt="Permalink to {{ post.title }}" />
+    {{ post.title }}
   </a>
 </h1>
-<div class="well well-sm">
+<div class="meta">
   <h5>
     {{ post.date | date: "%B %e, %Y" }}
     {% if post.categories != empty %}
@@ -27,6 +26,8 @@ comments: false
     {% endif %}
   </h5>
 </div>
+
+<hr />
 <!-- end copy -->
 
   {% if post.primary_img %}

@@ -15,6 +15,14 @@ body {
   background-color: #fff;
 }
 
+.pager {
+  font-size: 12px;
+}
+
+.post-content {
+  margin-bottom: 250px;
+}
+
 .btn-default {
   /* background-color: #f5f5f5;
   border-color: #e3e3e3; */
