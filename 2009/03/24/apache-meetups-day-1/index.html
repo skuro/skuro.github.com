@@ -48,7 +48,7 @@ c.
 <!-- <link rel="stylesheet" href="/stylesheets/pygment_trac.css" type="text/css" /> -->
 
 <!-- Bootstrap -->
-<link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="/stylesheets/bootstrap.min.css" type="text/css" />
 
 <!-- Personal CSS -->
 <link rel="stylesheet" href="/stylesheets/skuro.css" type="text/css" />
@@ -95,21 +95,32 @@ c.
     </div>
 
     <div class="container post-content">
-
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-7">
 <ul class="pager">
-  <li class="previous"><a href="/2009/02/17/tutorial-corkscrew-on-leopard">&#8617; Tutorial: Corkscrew on Leopard</a></li>
-  <li class="next"><a class="pull-right" href="/2009/04/05/quick-fix-for-alsa-error-cannot-find-the-slot-for-index-0">Quick fix for ALSA error: cannot find the slot for index 0 &#8618;</a></li>
+  
+  <li class="previous"><a href="/2009/02/17/tutorial-corkscrew-on-leopard">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      Tutorial: Corkscrew on Leopard</a>
+  </li>
+  
+  
+  <li class="next"><a class="pull-right" href="/2009/04/05/quick-fix-for-alsa-error-cannot-find-the-slot-for-index-0">
+      Quick fix for ALSA error: cannot find the slot for index 0
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+  </li>
+  
 </ul>
 
 
 <div>
   <h1>
-  Apache Meetups - Day #1
   <a href="/2009/03/24/apache-meetups-day-1">
-    <img src="/img/link.jpg" alt="Permalink to Apache Meetups - Day #1" />
+    Apache Meetups - Day #1
   </a>
 </h1>
-<div class="well well-sm">
+<div class="meta">
   <h5>
     March 24, 2009
     
@@ -120,6 +131,8 @@ c.
     
   </h5>
 </div>
+
+<hr />
 
   
   <p><a href="http://www.eu.apachecon.com/c/aceu2009/"><img title="ApacheCon 2009" src="http://us.apachecon.com/page_attachments/0000/0035/feather.gif" alt="ApacheCon 2009" width="356" height="107" /></a></p>
@@ -168,17 +181,31 @@ I'm still working on ubiquity[1], so I attended at Maven meetup only, which was 
 </div>
 
 
-        <hr />
-        <!-- Footer -->
-        <footer>
-            <p>
-                <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license">
-                    <img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0;margin-bottom:10px" alt="Creative Commons License" />
-                </a> licensed under a Creative Commons <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license">license</a>
-            </p>
-            <span rel="dct:type" property="dct:title" href="http://purl.org/dc/dcmitype/Text">SKURO! blog</span> by <a rel="cc:attributionURL" property="cc:attributionName" href="http://skuro.tk">Carlo Sciolla</a></p>
-        </footer> <!-- end Footer -->
+        </div><!-- col-md-6 -->
+        <div class="span5">&nbsp;</div>
+      </div><!-- row -->
     </div>
+
+
+    <!-- Footer -->
+    <footer>
+      <div class="container foot-info">
+        <div class="row">
+          <div class="col-md-12">
+            <p>
+              <span rel="dct:type" property="dct:title" href="http://purl.org/dc/dcmitype/Text">SKURO! blog</span> by
+              <a rel="cc:attributionURL" property="cc:attributionName" href="http://skuro.tk">
+                Carlo Sciolla
+              </a>
+            </p>
+            <p>
+              All text licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license">CC BY 3.0</a>
+            <br />
+              All code licensed under <a href="#">MIT</a> unless otherwise specified
+          </div>
+        </div>
+      </div>
+    </footer> <!-- end Footer -->
 
     <!-- end Main content -->
 

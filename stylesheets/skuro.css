@@ -1,12 +1,26 @@
+@import url("http://fonts.googleapis.com/css?family=Lato:400,700,700italic,900,400italic,300");
+
 /* overriding defaults from the bootstrap theme */
 body {
   background: url("/img/repeat.png") repeat-y -8px bottom;
-  color: #000;
+  color: #333;
+  padding-top: 70px; /* see http://getbootstrap.com/components/#navbar-fixed-top */
+  font-size: 18px;
+  line-height: 1.722169;
+  font-family: Lato, sans-serif;
 }
 
 .navbar {
   background: url("/img/repeat.png") repeat-y -8px bottom;
   background-color: #fff;
+}
+
+.pager {
+  font-size: 12px;
+}
+
+.post-content {
+  margin-bottom: 250px;
 }
 
 .btn-default {
@@ -33,14 +47,6 @@ div#social-links {
   font-variant: small-caps;
 }
 
-/* post contents */
-div.post-content {
-  position: absolute;
-  top: 60px;
-  left: 145px;
-  font-size: initial;
-}
-
 img.primary-image {
   float: right;
   -webkit-border-radius: 5px;
@@ -49,8 +55,26 @@ img.primary-image {
   margin-left: 10px;
 }
 
+/* Archive list */
+div#archive ul li {
+  margin: 1em 0;
+  list-style: none;
+}
+
 /* ads */
 div.google-ads {
   position: absolute;
   top: 60px;
+}
+
+footer {
+  background-color: #f2f2ef;
+  border-top: 2px solid black;
+  padding-top: 20px;
+  font-size: 11px;
+  min-height: 350px;
+}
+
+.foot-info {
+  text-align: center;
 }

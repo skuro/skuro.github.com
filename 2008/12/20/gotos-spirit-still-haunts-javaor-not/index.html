@@ -48,7 +48,7 @@ c.
 <!-- <link rel="stylesheet" href="/stylesheets/pygment_trac.css" type="text/css" /> -->
 
 <!-- Bootstrap -->
-<link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="/stylesheets/bootstrap.min.css" type="text/css" />
 
 <!-- Personal CSS -->
 <link rel="stylesheet" href="/stylesheets/skuro.css" type="text/css" />
@@ -95,22 +95,32 @@ c.
     </div>
 
     <div class="container post-content">
-
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-7">
 <ul class="pager">
   
-  <li class="previous"><a href="/2014/02/09/seeduml-an-online-plantuml-editor">&#8617; SeedUML, an online PlantUML editor</a></li>
-  <li class="next"><a class="pull-right" href="/2008/12/20/here-we-are-again">Here we are. Again &#8618;</a></li>
+  <li class="previous"><a href="/2014/02/09/seeduml-an-online-plantuml-editor">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      SeedUML, an online PlantUML editor</a>
+  </li>
+  
+  
+  <li class="next"><a class="pull-right" href="/2008/12/20/here-we-are-again">
+      Here we are. Again
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+  </li>
+  
 </ul>
 
 
 <div>
   <h1>
-  GOTO's spirit still haunts Java...
   <a href="/2008/12/20/gotos-spirit-still-haunts-javaor-not">
-    <img src="/img/link.jpg" alt="Permalink to GOTO's spirit still haunts Java..." />
+    GOTO's spirit still haunts Java...
   </a>
 </h1>
-<div class="well well-sm">
+<div class="meta">
   <h5>
     December 20, 2008
     
@@ -121,6 +131,8 @@ c.
     
   </h5>
 </div>
+
+<hr />
 
   
   <p>Some days ago I was debugging some LDAP-related customizations I made on <a title="Alfresco ECM" href="http://www.alfresco.com" target="_blank">Alfresco</a>, and I run into an odd piece of code which made my eyebrow raise: labeled <code>break</code> (and <code>continue</code>) statements. Believe it or not, labels are still there, and someone still uses them. Here's a dumb example:</p>
@@ -195,17 +207,31 @@ Could you find any reason to give ground for such a code?</p>
 </div>
 
 
-        <hr />
-        <!-- Footer -->
-        <footer>
-            <p>
-                <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license">
-                    <img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0;margin-bottom:10px" alt="Creative Commons License" />
-                </a> licensed under a Creative Commons <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license">license</a>
-            </p>
-            <span rel="dct:type" property="dct:title" href="http://purl.org/dc/dcmitype/Text">SKURO! blog</span> by <a rel="cc:attributionURL" property="cc:attributionName" href="http://skuro.tk">Carlo Sciolla</a></p>
-        </footer> <!-- end Footer -->
+        </div><!-- col-md-6 -->
+        <div class="span5">&nbsp;</div>
+      </div><!-- row -->
     </div>
+
+
+    <!-- Footer -->
+    <footer>
+      <div class="container foot-info">
+        <div class="row">
+          <div class="col-md-12">
+            <p>
+              <span rel="dct:type" property="dct:title" href="http://purl.org/dc/dcmitype/Text">SKURO! blog</span> by
+              <a rel="cc:attributionURL" property="cc:attributionName" href="http://skuro.tk">
+                Carlo Sciolla
+              </a>
+            </p>
+            <p>
+              All text licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license">CC BY 3.0</a>
+            <br />
+              All code licensed under <a href="#">MIT</a> unless otherwise specified
+          </div>
+        </div>
+      </div>
+    </footer> <!-- end Footer -->
 
     <!-- end Main content -->
 

@@ -48,7 +48,7 @@ c.
 <!-- <link rel="stylesheet" href="/stylesheets/pygment_trac.css" type="text/css" /> -->
 
 <!-- Bootstrap -->
-<link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="/stylesheets/bootstrap.min.css" type="text/css" />
 
 <!-- Personal CSS -->
 <link rel="stylesheet" href="/stylesheets/skuro.css" type="text/css" />
@@ -95,21 +95,32 @@ c.
     </div>
 
     <div class="container post-content">
-
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-7">
 <ul class="pager">
-  <li class="previous"><a href="/2008/12/21/encode-videos-for-the-philips-sa3325-with-mencoder">&#8617; Encode videos for the Philips SA3325 with mencoder</a></li>
-  <li class="next"><a class="pull-right" href="/2009/01/08/gobolinux-vs-macosx-1-0">GoboLinux vs MacOSX 1-0 &#8618;</a></li>
+  
+  <li class="previous"><a href="/2008/12/21/encode-videos-for-the-philips-sa3325-with-mencoder">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      Encode videos for the Philips SA3325 with mencoder</a>
+  </li>
+  
+  
+  <li class="next"><a class="pull-right" href="/2009/01/08/gobolinux-vs-macosx-1-0">
+      GoboLinux vs MacOSX 1-0
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+  </li>
+  
 </ul>
 
 
 <div>
   <h1>
-  VirtualBox'ed Ubuntu with KDE4 on a MacbookPro
   <a href="/2008/12/30/virtualboxed-ubuntu-with-kde4-on-a-macbookpro">
-    <img src="/img/link.jpg" alt="Permalink to VirtualBox'ed Ubuntu with KDE4 on a MacbookPro" />
+    VirtualBox'ed Ubuntu with KDE4 on a MacbookPro
   </a>
 </h1>
-<div class="well well-sm">
+<div class="meta">
   <h5>
     December 30, 2008
     
@@ -122,6 +133,8 @@ c.
     
   </h5>
 </div>
+
+<hr />
 
   
   <p>Today I decided to spend a little of my time on configuring an Ubuntu VBox on my MacbookPro. I was bugged by a "your system is not supported by us" error message while connecting to a remote service, which in turn stated Linux was actually supported. (Un)Fair enough, I love Linux much more than Macs too.
@@ -173,17 +186,31 @@ After about 1 hour (my Internet connection sucks, I know it) all was configured 
 </div>
 
 
-        <hr />
-        <!-- Footer -->
-        <footer>
-            <p>
-                <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license">
-                    <img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0;margin-bottom:10px" alt="Creative Commons License" />
-                </a> licensed under a Creative Commons <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license">license</a>
-            </p>
-            <span rel="dct:type" property="dct:title" href="http://purl.org/dc/dcmitype/Text">SKURO! blog</span> by <a rel="cc:attributionURL" property="cc:attributionName" href="http://skuro.tk">Carlo Sciolla</a></p>
-        </footer> <!-- end Footer -->
+        </div><!-- col-md-6 -->
+        <div class="span5">&nbsp;</div>
+      </div><!-- row -->
     </div>
+
+
+    <!-- Footer -->
+    <footer>
+      <div class="container foot-info">
+        <div class="row">
+          <div class="col-md-12">
+            <p>
+              <span rel="dct:type" property="dct:title" href="http://purl.org/dc/dcmitype/Text">SKURO! blog</span> by
+              <a rel="cc:attributionURL" property="cc:attributionName" href="http://skuro.tk">
+                Carlo Sciolla
+              </a>
+            </p>
+            <p>
+              All text licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license">CC BY 3.0</a>
+            <br />
+              All code licensed under <a href="#">MIT</a> unless otherwise specified
+          </div>
+        </div>
+      </div>
+    </footer> <!-- end Footer -->
 
     <!-- end Main content -->
 

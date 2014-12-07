@@ -48,7 +48,7 @@ c.
 <!-- <link rel="stylesheet" href="/stylesheets/pygment_trac.css" type="text/css" /> -->
 
 <!-- Bootstrap -->
-<link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="/stylesheets/bootstrap.min.css" type="text/css" />
 
 <!-- Personal CSS -->
 <link rel="stylesheet" href="/stylesheets/skuro.css" type="text/css" />
@@ -95,7 +95,9 @@ c.
     </div>
 
     <div class="container post-content">
-
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-7">
 <section>
   <h1>Categories</h1>
   <div>
@@ -168,17 +170,31 @@ c.
 </section>
 
 
-        <hr />
-        <!-- Footer -->
-        <footer>
-            <p>
-                <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license">
-                    <img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" style="border-width:0;margin-bottom:10px" alt="Creative Commons License" />
-                </a> licensed under a Creative Commons <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license">license</a>
-            </p>
-            <span rel="dct:type" property="dct:title" href="http://purl.org/dc/dcmitype/Text">SKURO! blog</span> by <a rel="cc:attributionURL" property="cc:attributionName" href="http://skuro.tk">Carlo Sciolla</a></p>
-        </footer> <!-- end Footer -->
+        </div><!-- col-md-6 -->
+        <div class="span5">&nbsp;</div>
+      </div><!-- row -->
     </div>
+
+
+    <!-- Footer -->
+    <footer>
+      <div class="container foot-info">
+        <div class="row">
+          <div class="col-md-12">
+            <p>
+              <span rel="dct:type" property="dct:title" href="http://purl.org/dc/dcmitype/Text">SKURO! blog</span> by
+              <a rel="cc:attributionURL" property="cc:attributionName" href="http://skuro.tk">
+                Carlo Sciolla
+              </a>
+            </p>
+            <p>
+              All text licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license">CC BY 3.0</a>
+            <br />
+              All code licensed under <a href="#">MIT</a> unless otherwise specified
+          </div>
+        </div>
+      </div>
+    </footer> <!-- end Footer -->
 
     <!-- end Main content -->
 
