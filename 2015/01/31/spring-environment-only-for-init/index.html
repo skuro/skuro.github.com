@@ -24,24 +24,24 @@ c.
 -->
 <meta charset="utf-8" />
 <meta name="generator" content="skuro.tk/0.1 | jekyll/2.0.3" />
-<meta name="description" content="Personal Blog of Carlo Sciolla (skuro)" />
-<meta name="keywords" content="skuro, carlo sciolla, clojure, backbase, biography, architecture" />
+<meta name="description" content="Spring Environment is a handy interface towards your configuration, but as it introduces a performance hit it should be only used for initialization code" />
+<meta name="keywords" content="java, performance, spring, benchmark, jmh" />
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
 <!-- Twitter Cards -->
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://skuro.tk/img/avatar.jpg">
-<meta name="twitter:title" content="About me">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://skuro.tk/img/post/spring-by-pivotal.png">
+<meta name="twitter:title" content="Spring Environment is for initialization code only">
 <meta name="twitter:description" content="Personal Blog of Carlo Sciolla (skuro)">
 <meta name="twitter:creator" content="@skuro">
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="About me">
+<meta property="og:title" content="Spring Environment is for initialization code only">
 <meta property="og:description" content="Personal Blog of Carlo Sciolla (skuro)">
-<meta property="og:url" content="http://skuro.tk/about/">
+<meta property="og:url" content="http://skuro.tk/2015/01/31/spring-environment-only-for-init">
 <meta property="og:site_name" content="SKURO! -- Shading lights">
 
 <!-- <link rel="stylesheet" href="/stylesheets/styles.css" type="text/css" /> -->
@@ -60,7 +60,7 @@ c.
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 
-<title>About me @ SKURO! -- Shading lights</title>
+<title>Spring Environment is for initialization code only @ SKURO! -- Shading lights</title>
 
     </head>
 
@@ -111,13 +111,20 @@ c.
 
 <div>
   <h1>
-  <a href="/about/">
-    About me
+  <a href="/2015/01/31/spring-environment-only-for-init">
+    Spring Environment is for initialization code only
   </a>
 </h1>
 <div class="meta">
   <h5>
-    November 20, 2011
+    January 31, 2015
+    
+    &nbsp;
+    
+    <span class="label label-primary category"><a href="/category/java">#java</a></span>
+    
+    <span class="label label-primary category"><a href="/category/performance">#performance</a></span>
+    
     
   </h5>
 </div>
@@ -125,44 +132,104 @@ c.
 <hr />
 
   
-  <blockquote><p>Patrias est mellus a ddas tenni prus de una</p>
+  <img class="primary-image" src="/img/post/spring-by-pivotal.png" />
+  
+  <p>Since version 3.1, the <a href="https://spring.io/">Spring framework</a> offers an abstraction towards several different
+sources through which you can easily configure your application: the <a href="http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/core/env/Environment.html"><code>Environment</code></a>.</p>
 
-<p><em>Joice Lussu</em></p></blockquote>
+<p>In this post I describe a micro benchmark that I ran to prove that, while it's a convenient API if you're
+using Spring in your application, it might introduce a performance penalty for which you should not use it
+outside of your initialization code.</p>
 
-<p>This little piece of blogosphere is owned by <code>skuro</code>, a.k.a. Carlo
-Sciolla. I'm an IT professional by day and Clojurian,
-meetup organizer, open source developer, biker and, well, blogger by
-night.</p>
+<h1>How it works</h1>
 
-<h2>Work stuff</h2>
+<p>Before getting into the numbers, a quick digression on the internals of the <code>Environment</code> that are important
+to this post.</p>
 
-<p><img src="http://profile.ak.fbcdn.net/hprofile-ak-snc4/23271_352288013495_939_q.jpg" style="float:right; margin: 0px 20px" /></p>
+<p>From the documentation:</p>
 
-<p>I grew up from fiddling with embedded linux systems, to mobile
-development, to mainstream Java&trade; backend development. I got
-certified as an <a href="http://www.alfresco.com">Alfresco</a> Recognized Developer on 2011.</p>
+<blockquote><blockquote><p><em>Properties play an important role in almost all applications, and may originate from a variety of sources: properties files, JVM system properties, system environment variables, JNDI, servlet context parameters, ad-hoc Properties objects, Maps, and so on. The role of the environment object with relation to properties is to provide the user with a convenient service interface for configuring property sources and resolving properties from them.</em></p></blockquote></blockquote>
 
-<p>I currently work at <a href="http://www.backbase.com">Backbase</a>, where I act
-as the Technical Managerfor the server components of the <a href="http://www.backbase.com/portal-software">Backbase CXP</a> product.</p>
+<p>So, you can use the <code>Environment</code> to have a common interface to properties provided with different strategies, using
+a simple <code>getProperty</code> call to access the required value. Look at the following Groovy code:</p>
 
-<h2>Clojure</h2>
+<pre><code class="java">    @Component
+    public class Greeter {
 
-<p><img src="http://clojure.org/file/view/clojure-icon.gif" style="float:right; margin: 0px 20px;" />
-This awesome functional programming <a href="http://clojure.org">language</a> is the current sink of most of my spare time. Besides coding, I try to contribute to its already great community by organizing the <a href="http://www.meetup.com/The-Amsterdam-Clojure-Meetup-Group/">Amsterdam Clojurians Meetup</a>.</p>
+        private Environment environment
 
-<h2>Open Source</h2>
+        @Autowired
+        public Greeter greeter(Environment environment){
+            this.environment = environment
+        }
 
-<p>There simply isn't any other way of doing software (said the guy that
-works for a closed source software company). I contribute at different
-levels to the following open source projects:</p>
+        def nickName(user) {
+            environment.getProperty("user") // here be magic
+        }
 
-<ul>
-<li><a href="http://plan-maven-plugin.skuro.tk"><code>plan-maven-plugin</code></a> -- Unravel your maven build</li>
-<li><a href="http://lambdalf.skuro.tk"><code>lambdalf</code></a> -- Clojure bridge for Alfresco</li>
-<li><a href="https://github.com/skuro/spring-webscripts-clojure-plugin"><code>spring-webscripts-clojure-plugin</code></a> -- The name tells it all</li>
-<li><a href="http://code.google.com/p/maven-alfresco-archetypes/"><code>maven-alfresco-archetypes</code></a> -- Properly build your Alfresco projects</li>
-</ul>
+        def greet(user) {
+            def nick = nickName(user)
+            if (name == null) println "Hi, ${user}!"
+                         else println "Hi, ${nick}!"
+        }
 
+    }
+</code></pre>
+
+<p>Now, I can specify nicknames in a properties file so that I can greet know users with a more familiar nick name,
+still being able to salute also users which are not given a nickname. Neat, but how about performance?</p>
+
+<h1>The hidden Exception</h1>
+
+<p>I got into this exercise while debugging a couple of slow pages in the website I'm working on: the
+<a href="http://www.klm.com/destinations/nl/en/search">destinations pages</a> of the KLM main site. While performance is generally
+satisfactory, two pages were constantly giving above second response times. Definitely <a href="http://www.vm.ibm.com/devpages/jelliott/evrrt.html">too much</a>.</p>
+
+<p>In our code, we were translating some country names into queriable keys for an external services. We also needed to override
+an otherwise straightforward translation algorithm with very specific exceptions to the rule. The actual code was pretty much
+like the above <code>Greeter.greet(user)</code>, and a <a href="http://docs.oracle.com/javacomponents/jmc-5-4/jfr-runtime-guide/run.htm">Flight Recorder</a> session
+eventually provided us with the performance bottleneck (click to open):</p>
+
+<p><a href="/img/post/exceptions.png"><img style="width: 500px" src="/img/post/exceptions.png" /></a></p>
+
+<p>For 12 page refreshes we were silently throwing 140k+ exceptions. And exceptions are
+<a href="http://java-performance.info/throwing-an-exception-in-java-is-very-slow/">sloooooow</a>, even if you just create them.</p>
+
+<p>Looking at the top thrown exception, it was actually pretty
+easy to understand what's going on: the <code>Environment</code> checks whether the requested property is defined in the current JNDI context. But, if the
+name is not found, a <a href="http://docs.oracle.com/javase/8/docs/api/javax/naming/NameNotFoundException.html"><code>NameNotFoundException</code></a> is thrown. In our specific case we were using property lookup for <em>exceptional</em> cases,
+which means the vast majority of cases resulted in an exception being thrown.</p>
+
+<h1>Micro benchmark</h1>
+
+<p>I put together a <a href="https://gist.github.com/skuro/648cf1d871d203a73a0c">micro benchmark</a> to evaluate the potential performance gain
+of the original property lookup strategy versus a simpler one where relevant properties are loaded up at class construction time. I used the
+<a href="http://openjdk.java.net/projects/code-tools/jmh/">Java Microbenchmark Harness</a>, which does an incredible job at making micro benchmarks
+easy on the JVM: JIT, warm up, class loading, all is taken care of for you and you can just go ahead and put your code under test. Here the results
+(higher numbers better):</p>
+
+<blockquote><blockquote><p>[Property lookup per invocation]</p>
+
+<p>Result: 28917.876 ?(99.9%) 183.630 ops/s [Average] <br />
+Statistics: (min, avg, max) = (25688.067, 28917.876, 30976.876), stdev = 777.500 <br />
+<strong>Confidence interval (99.9%): [28734.246, 29101.505]</strong></p></blockquote></blockquote>
+
+<hr />
+
+<blockquote><blockquote><p>[Property loading at class construction]</p>
+
+<p>Result: 159062.900 ?(99.9%) 1013.309 ops/s [Average] <br />
+Statistics: (min, avg, max) = (138707.926, 159062.900, 177183.549), stdev = 4290.413 <br />
+<strong>Confidence interval (99.9%): [158049.591, 160076.209]</strong></p></blockquote></blockquote>
+
+<p>As expected, five times as fast.</p>
+
+<h1>Conclusions</h1>
+
+<p>I'm not a big fan of Spring, but if you're using it the <code>Environment</code> class is a dead easy interface to your application configuration. But,
+unless you're using JNDI as your main store of configuration  properties,
+its performance characteristics make it a great tool only if you're using it in your initialization code, and not during on-line processing of
+requests.</p>
 
   
   <hr />
@@ -170,7 +237,7 @@ levels to the following open source projects:</p>
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
     var disqus_shortname = 'skuro';
-//    var disqus_id = '/about/';
+//    var disqus_id = '/2015/01/31/spring-environment-only-for-init';
 //    var disqus_url = [location.protocol, '//', location.host, location.pathname].join('');
 
     /* * * DON'T EDIT BELOW THIS LINE * * */

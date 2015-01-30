@@ -3,13 +3,118 @@
     <title type="text" xml:lang="en">SKURO! -- Shading lights</title>
     <link type="application/atom+xml" href="http://skuro.tk/rss2/" rel="self"/>
     <link type="text" href="http://skuro.tk" rel="alternate"/>
-    <updated>2014-07-06T14:58:56+02:00</updated>
+    <updated>2015-01-30T22:48:33+01:00</updated>
     <id>http://skuro.tk</id>
     <author>
         <name>Carlo Sciolla</name>
     </author>
     <rights>Copyright (c) 2010-2011 Carlo Sciolla</rights>
     
+<entry>
+  <title>Spring Environment is for initialization code only</title>
+  <link href="http://skuro.tk/2015/01/31/spring-environment-only-for-init/"/>
+  <updated>2015-01-31T00:00:00+01:00</updated>
+  <id>http://skuro.tk/2015/01/31/spring-environment-only-for-init/</id>
+  <summary type="html">&lt;p&gt;Since version 3.1, the &lt;a href=&quot;https://spring.io/&quot;&gt;Spring framework&lt;/a&gt; offers an abstraction towards several different
+sources through which you can easily configure your application: the &lt;a href=&quot;http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/core/env/Environment.html&quot;&gt;&lt;code&gt;Environment&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;In this post I describe a micro benchmark that I ran to prove that, while it&#39;s a convenient API if you&#39;re
+using Spring in your application, it might introduce a performance penalty for which you should not use it
+outside of your initialization code.&lt;/p&gt;
+
+&lt;h1&gt;How it works&lt;/h1&gt;
+
+&lt;p&gt;Before getting into the numbers, a quick digression on the internals of the &lt;code&gt;Environment&lt;/code&gt; that are important
+to this post.&lt;/p&gt;
+
+&lt;p&gt;From the documentation:&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;em&gt;Properties play an important role in almost all applications, and may originate from a variety of sources: properties files, JVM system properties, system environment variables, JNDI, servlet context parameters, ad-hoc Properties objects, Maps, and so on. The role of the environment object with relation to properties is to provide the user with a convenient service interface for configuring property sources and resolving properties from them.&lt;/em&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;So, you can use the &lt;code&gt;Environment&lt;/code&gt; to have a common interface to properties provided with different strategies, using
+a simple &lt;code&gt;getProperty&lt;/code&gt; call to access the required value. Look at the following Groovy code:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;java&quot;&gt;    @Component
+    public class Greeter {
+
+        private Environment environment
+
+        @Autowired
+        public Greeter greeter(Environment environment){
+            this.environment = environment
+        }
+
+        def nickName(user) {
+            environment.getProperty(&quot;user&quot;) // here be magic
+        }
+
+        def greet(user) {
+            def nick = nickName(user)
+            if (name == null) println &quot;Hi, ${user}!&quot;
+                         else println &quot;Hi, ${nick}!&quot;
+        }
+
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now, I can specify nicknames in a properties file so that I can greet know users with a more familiar nick name,
+still being able to salute also users which are not given a nickname. Neat, but how about performance?&lt;/p&gt;
+
+&lt;h1&gt;The hidden Exception&lt;/h1&gt;
+
+&lt;p&gt;I got into this exercise while debugging a couple of slow pages in the website I&#39;m working on: the
+&lt;a href=&quot;http://www.klm.com/destinations/nl/en/search&quot;&gt;destinations pages&lt;/a&gt; of the KLM main site. While performance is generally
+satisfactory, two pages were constantly giving above second response times. Definitely &lt;a href=&quot;http://www.vm.ibm.com/devpages/jelliott/evrrt.html&quot;&gt;too much&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;In our code, we were translating some country names into queriable keys for an external services. We also needed to override
+an otherwise straightforward translation algorithm with very specific exceptions to the rule. The actual code was pretty much
+like the above &lt;code&gt;Greeter.greet(user)&lt;/code&gt;, and a &lt;a href=&quot;http://docs.oracle.com/javacomponents/jmc-5-4/jfr-runtime-guide/run.htm&quot;&gt;Flight Recorder&lt;/a&gt; session
+eventually provided us with the performance bottleneck (click to open):&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/img/post/exceptions.png&quot;&gt;&lt;img style=&quot;width: 500px&quot; src=&quot;/img/post/exceptions.png&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;For 12 page refreshes we were silently throwing 140k+ exceptions. And exceptions are
+&lt;a href=&quot;http://java-performance.info/throwing-an-exception-in-java-is-very-slow/&quot;&gt;sloooooow&lt;/a&gt;, even if you just create them.&lt;/p&gt;
+
+&lt;p&gt;Looking at the top thrown exception, it was actually pretty
+easy to understand what&#39;s going on: the &lt;code&gt;Environment&lt;/code&gt; checks whether the requested property is defined in the current JNDI context. But, if the
+name is not found, a &lt;a href=&quot;http://docs.oracle.com/javase/8/docs/api/javax/naming/NameNotFoundException.html&quot;&gt;&lt;code&gt;NameNotFoundException&lt;/code&gt;&lt;/a&gt; is thrown. In our specific case we were using property lookup for &lt;em&gt;exceptional&lt;/em&gt; cases,
+which means the vast majority of cases resulted in an exception being thrown.&lt;/p&gt;
+
+&lt;h1&gt;Micro benchmark&lt;/h1&gt;
+
+&lt;p&gt;I put together a &lt;a href=&quot;https://gist.github.com/skuro/648cf1d871d203a73a0c&quot;&gt;micro benchmark&lt;/a&gt; to evaluate the potential performance gain
+of the original property lookup strategy versus a simpler one where relevant properties are loaded up at class construction time. I used the
+&lt;a href=&quot;http://openjdk.java.net/projects/code-tools/jmh/&quot;&gt;Java Microbenchmark Harness&lt;/a&gt;, which does an incredible job at making micro benchmarks
+easy on the JVM: JIT, warm up, class loading, all is taken care of for you and you can just go ahead and put your code under test. Here the results
+(higher numbers better):&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;blockquote&gt;&lt;p&gt;[Property lookup per invocation]&lt;/p&gt;
+
+&lt;p&gt;Result: 28917.876 ?(99.9%) 183.630 ops/s [Average] &lt;br /&gt;
+Statistics: (min, avg, max) = (25688.067, 28917.876, 30976.876), stdev = 777.500 &lt;br /&gt;
+&lt;strong&gt;Confidence interval (99.9%): [28734.246, 29101.505]&lt;/strong&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;blockquote&gt;&lt;blockquote&gt;&lt;p&gt;[Property loading at class construction]&lt;/p&gt;
+
+&lt;p&gt;Result: 159062.900 ?(99.9%) 1013.309 ops/s [Average] &lt;br /&gt;
+Statistics: (min, avg, max) = (138707.926, 159062.900, 177183.549), stdev = 4290.413 &lt;br /&gt;
+&lt;strong&gt;Confidence interval (99.9%): [158049.591, 160076.209]&lt;/strong&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;As expected, five times as fast.&lt;/p&gt;
+
+&lt;h1&gt;Conclusions&lt;/h1&gt;
+
+&lt;p&gt;I&#39;m not a big fan of Spring, but if you&#39;re using it the &lt;code&gt;Environment&lt;/code&gt; class is a dead easy interface to your application configuration. But,
+unless you&#39;re using JNDI as your main store of configuration  properties,
+its performance characteristics make it a great tool only if you&#39;re using it in your initialization code, and not during on-line processing of
+requests.&lt;/p&gt;
+</summary>
+</entry>
+
+
 <entry>
   <title>Alfresco H2 support releases and versioning scheme</title>
   <link href="http://skuro.tk/2014/07/06/alfresco-h2-support-new-releases-version-scheme/"/>
@@ -1001,25 +1106,6 @@ lesser attention to fully understanding Maven: after all, a recipes book cannot 
 &lt;h2&gt;Full disclosure&lt;/h2&gt;
 
 &lt;p&gt;I was asked by Packt to provide this online review, for which I&#39;ve been handed over a digital preview of the book.&lt;/p&gt;
-</summary>
-</entry>
-
-
-<entry>
-  <title>Slides from Alfresco the Clojure way</title>
-  <link href="http://skuro.tk/2011/11/10/slides-from-alfresco-the-clojure-way/"/>
-  <updated>2011-11-10T00:00:00+01:00</updated>
-  <id>http://skuro.tk/2011/11/10/slides-from-alfresco-the-clojure-way/</id>
-  <summary type="html">&lt;p&gt;I just gave a talk at the Alfresco DevCon 2011 in London, and I published the slides at slideshare:&lt;/p&gt;
-
-&lt;div style=&quot;width:425px; padding-left: 10%&quot; id=&quot;__ss_10104981&quot;&gt;
-&lt;iframe src=&quot;http://www.slideshare.net/slideshow/embed_code/10104981&quot; width=&quot;425&quot; height=&quot;355&quot; frameborder=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-
-&lt;p&gt;There&#39;s also an &lt;a href=&quot;http://slidesha.re/uqUqOW&quot;&gt;extended version&lt;/a&gt; of the presentation that I originally wrote, which ended up being too big for the time slot I had.&lt;/p&gt;
-
-&lt;p&gt;Hope you either enjoyed the talk or the slides, next steps are getting to &lt;a href=&quot;https://github.com/skuro&quot;&gt;GitHub&lt;/a&gt; and fork &lt;a href=&quot;https://github.com/skuro/lambdalf&quot;&gt;lambdalf&lt;/a&gt; and &lt;a href=&quot;https://github.com/skuro/spring-webscripts-addon-clojure&quot;&gt;clojure webscripts&lt;/a&gt; away!&lt;/p&gt;
 </summary>
 </entry>
 
