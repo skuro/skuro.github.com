@@ -3,13 +3,51 @@
     <title type="text" xml:lang="en">SKURO! -- Shading lights</title>
     <link type="application/atom+xml" href="http://skuro.tk/rss2/" rel="self"/>
     <link type="text" href="http://skuro.tk" rel="alternate"/>
-    <updated>2015-01-30T22:48:33+01:00</updated>
+    <updated>2015-03-04T17:03:38+01:00</updated>
     <id>http://skuro.tk</id>
     <author>
         <name>Carlo Sciolla</name>
     </author>
     <rights>Copyright (c) 2010-2011 Carlo Sciolla</rights>
     
+<entry>
+  <title>The best keyboard layout for Clojurists</title>
+  <link href="http://skuro.tk/2015/03/01/colemak-best-keyboard-for-clojurists/"/>
+  <updated>2015-03-01T00:00:00+01:00</updated>
+  <id>http://skuro.tk/2015/03/01/colemak-best-keyboard-for-clojurists/</id>
+  <summary type="html">&lt;h1&gt;Keyboards, oh my!&lt;/h1&gt;
+
+&lt;p&gt;If you&#39;re a programmer, you spend most of your working life on your keyboard, and a good keyboard layout can make the difference between touch typing and carpal syndrome.&lt;/p&gt;
+
+&lt;p&gt;That, and an irresistible drive for being the alpha nerd around, pushed me to teach myself &lt;a href=&quot;http://colemak.com/&quot;&gt;Colemak&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;It was painful and frustrating at the beginning, when I saw my typing speed precipitating from a respectable 80 words per minute to a horrific 20wpm. But now, now that touch typing has no mysteries for me on this mystical keyboard, now I got beyond my past self, recently crushing the 90wpm milestone. Hooray!&lt;/p&gt;
+
+&lt;h1&gt;&lt;code&gt;(def best)&lt;/code&gt;&lt;/h1&gt;
+
+&lt;p&gt;In this data driven world, we constantly need to verify whether the decisions we make are still valid, and therefore the question: would Colemak be the best keyboard for me? Am I losing by sticking with the wrong choice? And would I be even willing to switch again keyboard layout in the foreseeable future?&lt;/p&gt;
+
+&lt;p&gt;While the answer to the last question is a roaring &lt;a href=&quot;http://images.sodahead.com/polls/003657975/125779928_Noooooooooooooooo_answer_1_xlarge.Peg&quot;&gt;&quot;NO!&quot;&lt;/a&gt;, I needed to know. I needed data. But how?&lt;/p&gt;
+
+&lt;p&gt;Well, first things first, I type lots of &lt;a href=&quot;http://groovy.codehaus.org/&quot;&gt;Groovy&lt;/a&gt; and &lt;a href=&quot;http://clojure.org/&quot;&gt;Clojure&lt;/a&gt; these days. But I don&#39;t care for the former language, my heart is really about my dear lispy friend. I just had to find a way to produce an automatic comparison, surely enough, here it is: the &lt;a href=&quot;http://patorjk.com/keyboard-layout-analyzer/&quot;&gt;Keyboard Layout Analyzer&lt;/a&gt;, courtesy of &lt;a href=&quot;http://patorjk.com/&quot;&gt;Patrick Gillespie&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I love the Internet.&lt;/p&gt;
+
+&lt;h1&gt;The winner is..&lt;/h1&gt;
+
+&lt;p&gt;Aaaaand here it is: a comparative analysis of what keyboard is the best for Clojure Developers&amp;#8482;, after feeding the analyzer with &lt;a href=&quot;https://github.com/clojure/clojure/blob/master/src/clj/clojure/core.clj&quot;&gt;&lt;code&gt;clojure/core.clj&lt;/code&gt;&lt;/a&gt;, with its impressive 7447 lines of code:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/post/colemak_clj.png&quot; alt=&quot;Test results&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Now you know. Now it&#39;s official.&lt;/p&gt;
+
+&lt;p&gt;Happy touch typing, everyone!&lt;/p&gt;
+
+&lt;p&gt;p.s.: you can read the details of the comparison &lt;a href=&quot;http://patorjk.com/keyboard-layout-analyzer/#/load/D40PQ0hB&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+</summary>
+</entry>
+
+
 <entry>
   <title>Spring Environment is for initialization code only</title>
   <link href="http://skuro.tk/2015/01/31/spring-environment-only-for-init/"/>
@@ -1066,46 +1104,6 @@ you won&#39;t need to add a &lt;code&gt;&amp;lt;repository&amp;gt;&lt;/code&gt; 
 &lt;h2&gt;Conclusions&lt;/h2&gt;
 
 &lt;p&gt;With this first post I just started feeling the good parts of my new setup. There are huge areas of improvements here and there, but hey, for just a 4 days job I can&#39;t be more happy!&lt;/p&gt;
-</summary>
-</entry>
-
-
-<entry>
-  <title>Maven 3 Cookbook reviewed</title>
-  <link href="http://skuro.tk/2011/11/15/maven-3-cookbook-reviewed/"/>
-  <updated>2011-11-15T00:00:00+01:00</updated>
-  <id>http://skuro.tk/2011/11/15/maven-3-cookbook-reviewed/</id>
-  <summary type="html">&lt;p&gt;Better late than ever, here you can find my review on the Packt
-Publishing &lt;a href=&quot;http://www.google.nl/url?sa=t&amp;amp;rct=j&amp;amp;q=packt&amp;amp;source=web&amp;amp;cd=1&amp;amp;ved=0CCkQFjAA&amp;amp;url=http%3A%2F%2Fwww.packtpub.com%2F&amp;amp;ei=2VbCTq6qHsjs-gbEzZD_DQ&amp;amp;usg=AFQjCNE3QDtLQQneLEduZpKvWcyN8Bp3kg&amp;amp;sig2=AHMqZnDXQwCV5prbVMayGQ&quot;&gt;Apache Maven 3 Cookbook&lt;/a&gt; written by &lt;a href=&quot;http://srirangan.net/&quot;&gt;Srirangan&lt;/a&gt;. Let&#39;s see what it has to offer.&lt;/p&gt;
-
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-
-&lt;h2&gt;The basics&lt;/h2&gt;
-
-&lt;p&gt;The author aims to talk to Maven, and possibly &lt;span title=&quot;Application Lifecycle Management&quot;&gt;ALM&lt;/span&gt;, illiterates. This means the first step is to allow the reader to bootstrap his build infrastructure. This is one of the main Maven features, and the first chapters are easily leaping from nothing to a QA and TDD enabled build system. The book exploits Maven magic all the way there, and goes really fast to the target, no time for digressions on how, why or how does it compare with other build systems.&lt;/p&gt;
-
-&lt;h2&gt;The ALM&lt;/h2&gt;
-
-&lt;p&gt;Chapter 3 it&#39;s a bit off topic, even though it&#39;s probably for the greater good: it broadens the attention to ALM as a whole, all on open source products such as Hudson/Jenkins, SCM and a bit of agile. The topic is so huge that one single chapter cannot afford to cover it extensively, nor effectively: take it as an introduction to software lifecycle management, and dig somewhere else if you want more (and you definitely want). Chapter 4 indulges a bit more in QA and non functional build features, such as documentation and reporting. After all, the real mission of Maven &lt;strong&gt;is&lt;/strong&gt; ALM.&lt;/p&gt;
-
-&lt;h2&gt;The Meat&lt;/h2&gt;
-
-&lt;p&gt;Chapters 5 to 9 form the really juicy part of the book. I&#39;m not going to rewrite the &lt;a href=&quot;http://www.packtpub.com/toc/apache-maven-3-cookbook-table-contents&quot;&gt;TOC&lt;/a&gt; here, but it&#39;s definitely a rich set of handy recipes that can either directly target common needs or provide inspirational snippets that will effectively help you writing your POM. Good marks for the attention to languages other than Java (but bad marks for forgetting &lt;a href=&quot;https://github.com/talios/clojure-maven-plugin&quot;&gt;Clojure&lt;/a&gt;!).&lt;/p&gt;
-
-&lt;p&gt;These chapters offer much more value than the previous, as they&#39;re better aiming at developer needs. Still, focus could have been more towards existing Maven users, leaving the newbies to better learning paths.&lt;/p&gt;
-
-&lt;h2&gt;Overall impression&lt;/h2&gt;
-
-&lt;blockquote&gt;&lt;strong&gt;tl;dr:&lt;/strong&gt; If you are already a Maven literate, it&#39;s a book you probably want to have close to your keyboard. Just forget about the first three or four chapters.
-&lt;/blockquote&gt;
-
-
-&lt;p&gt;The book is an authentic source of good base recipes, that you would keep on your desk for quick reference of specific build tasks you need to implement (and your Google foo is weak). All the recipes are provided with a little description of what happens under the hood, so that you may use such knowledge to build upon them your more complex procedures. The whole focus on the book is on getting things done, with
-lesser attention to fully understanding Maven: after all, a recipes book cannot replace a cooking course. As a result, its tutorial style of presenting recipes completely overlooks fundamental concepts such as plugins, executions and goals, with seldom sloppy terminology (&quot;archetype:generate&quot; is a goal, not a command). While it can be good to always have this book on your desk, if you&#39;re a Maven newbie it&#39;s highly recommended to look somewhere else to build up your knowledge.&lt;/p&gt;
-
-&lt;h2&gt;Full disclosure&lt;/h2&gt;
-
-&lt;p&gt;I was asked by Packt to provide this online review, for which I&#39;ve been handed over a digital preview of the book.&lt;/p&gt;
 </summary>
 </entry>
 

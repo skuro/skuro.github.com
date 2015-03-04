@@ -3,13 +3,51 @@
     <title type="text" xml:lang="en">SKURO! -- Shading lights</title>
     <link type="application/atom+xml" href="http://skuro.tk/rss2/" rel="self"/>
     <link type="text" href="http://skuro.tk" rel="alternate"/>
-    <updated>2015-01-30T22:48:33+01:00</updated>
+    <updated>2015-03-04T17:03:38+01:00</updated>
     <id>http://skuro.tk</id>
     <author>
         <name>Carlo Sciolla</name>
     </author>
     <rights>Copyright (c) 2010-2011 Carlo Sciolla</rights>
     
+<entry>
+  <title>The best keyboard layout for Clojurists</title>
+  <link href="http://skuro.tk/2015/03/01/colemak-best-keyboard-for-clojurists/"/>
+  <updated>2015-03-01T00:00:00+01:00</updated>
+  <id>http://skuro.tk/2015/03/01/colemak-best-keyboard-for-clojurists/</id>
+  <summary type="html">&lt;h1&gt;Keyboards, oh my!&lt;/h1&gt;
+
+&lt;p&gt;If you&#39;re a programmer, you spend most of your working life on your keyboard, and a good keyboard layout can make the difference between touch typing and carpal syndrome.&lt;/p&gt;
+
+&lt;p&gt;That, and an irresistible drive for being the alpha nerd around, pushed me to teach myself &lt;a href=&quot;http://colemak.com/&quot;&gt;Colemak&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;It was painful and frustrating at the beginning, when I saw my typing speed precipitating from a respectable 80 words per minute to a horrific 20wpm. But now, now that touch typing has no mysteries for me on this mystical keyboard, now I got beyond my past self, recently crushing the 90wpm milestone. Hooray!&lt;/p&gt;
+
+&lt;h1&gt;&lt;code&gt;(def best)&lt;/code&gt;&lt;/h1&gt;
+
+&lt;p&gt;In this data driven world, we constantly need to verify whether the decisions we make are still valid, and therefore the question: would Colemak be the best keyboard for me? Am I losing by sticking with the wrong choice? And would I be even willing to switch again keyboard layout in the foreseeable future?&lt;/p&gt;
+
+&lt;p&gt;While the answer to the last question is a roaring &lt;a href=&quot;http://images.sodahead.com/polls/003657975/125779928_Noooooooooooooooo_answer_1_xlarge.Peg&quot;&gt;&quot;NO!&quot;&lt;/a&gt;, I needed to know. I needed data. But how?&lt;/p&gt;
+
+&lt;p&gt;Well, first things first, I type lots of &lt;a href=&quot;http://groovy.codehaus.org/&quot;&gt;Groovy&lt;/a&gt; and &lt;a href=&quot;http://clojure.org/&quot;&gt;Clojure&lt;/a&gt; these days. But I don&#39;t care for the former language, my heart is really about my dear lispy friend. I just had to find a way to produce an automatic comparison, surely enough, here it is: the &lt;a href=&quot;http://patorjk.com/keyboard-layout-analyzer/&quot;&gt;Keyboard Layout Analyzer&lt;/a&gt;, courtesy of &lt;a href=&quot;http://patorjk.com/&quot;&gt;Patrick Gillespie&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I love the Internet.&lt;/p&gt;
+
+&lt;h1&gt;The winner is..&lt;/h1&gt;
+
+&lt;p&gt;Aaaaand here it is: a comparative analysis of what keyboard is the best for Clojure Developers&amp;#8482;, after feeding the analyzer with &lt;a href=&quot;https://github.com/clojure/clojure/blob/master/src/clj/clojure/core.clj&quot;&gt;&lt;code&gt;clojure/core.clj&lt;/code&gt;&lt;/a&gt;, with its impressive 7447 lines of code:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/post/colemak_clj.png&quot; alt=&quot;Test results&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Now you know. Now it&#39;s official.&lt;/p&gt;
+
+&lt;p&gt;Happy touch typing, everyone!&lt;/p&gt;
+
+&lt;p&gt;p.s.: you can read the details of the comparison &lt;a href=&quot;http://patorjk.com/keyboard-layout-analyzer/#/load/D40PQ0hB&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+</summary>
+</entry>
+
+
 <entry>
   <title>October Amsterdam Clojure 2012 is coming up!</title>
   <link href="http://skuro.tk/2012/10/14/october-amsterdam-clojure-coming-up/"/>
